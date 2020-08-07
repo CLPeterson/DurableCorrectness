@@ -1,0 +1,489 @@
+Test size = 10
+Testing BOOST_STACK
+PRODUCE ITEM 4
+CONSUME ITEM 0
+CONSUME ITEM 7
+CONSUME ITEM 3
+PRODUCE ITEM 36
+CONSUME ITEM 36
+CONSUME ITEM 5
+CONSUME ITEM 1
+PRODUCE ITEM 68
+CONSUME ITEM 68
+PRODUCE ITEM 5
+PRODUCE ITEM 13
+PRODUCE ITEM 21
+PRODUCE ITEM 29
+CONSUME ITEM 27
+PRODUCE ITEM 45
+PRODUCE ITEM 53
+CONSUME ITEM 74
+PRODUCE ITEM 69
+CONSUME ITEM 65
+PRODUCE ITEM 6
+CONSUME ITEM 10
+CONSUME ITEM 18
+CONSUME ITEM 2
+CONSUME ITEM 8
+CONSUME ITEM 31
+CONSUME ITEM 50
+CONSUME ITEM 55
+PRODUCE ITEM 70
+PRODUCE ITEM 78
+PRODUCE ITEM 7
+CONSUME ITEM 13
+CONSUME ITEM 9
+PRODUCE ITEM 31
+PRODUCE ITEM 39
+PRODUCE ITEM 47
+PRODUCE ITEM 55
+PRODUCE ITEM 63
+CONSUME ITEM 70
+CONSUME ITEM 45
+PRODUCE ITEM 0
+PRODUCE ITEM 8
+PRODUCE ITEM 16
+CONSUME ITEM 29
+CONSUME ITEM 58
+CONSUME ITEM 16
+PRODUCE ITEM 48
+CONSUME ITEM 53
+PRODUCE ITEM 64
+CONSUME ITEM 17
+PRODUCE ITEM 1
+PRODUCE ITEM 9
+PRODUCE ITEM 17
+CONSUME ITEM 47
+PRODUCE ITEM 33
+CONSUME ITEM 48
+PRODUCE ITEM 49
+CONSUME ITEM 78
+PRODUCE ITEM 65
+PRODUCE ITEM 73
+PRODUCE ITEM 2
+PRODUCE ITEM 10
+PRODUCE ITEM 18
+CONSUME ITEM 6
+CONSUME ITEM 4
+CONSUME ITEM 11
+PRODUCE ITEM 50
+PRODUCE ITEM 58
+CONSUME ITEM 33
+PRODUCE ITEM 74
+PRODUCE ITEM 3
+PRODUCE ITEM 11
+CONSUME ITEM 21
+PRODUCE ITEM 27
+CONSUME ITEM 39
+CONSUME ITEM 49
+CONSUME ITEM 63
+CONSUME ITEM 64
+PRODUCE ITEM 67
+PRODUCE ITEM 75
+PRODUCE ITEM 4
+CONSUME ITEM 0
+CONSUME ITEM 7
+CONSUME ITEM 3
+PRODUCE ITEM 36
+CONSUME ITEM 36
+CONSUME ITEM 5
+CONSUME ITEM 1
+PRODUCE ITEM 68
+CONSUME ITEM 68
+PRODUCE ITEM 5
+PRODUCE ITEM 13
+PRODUCE ITEM 21
+PRODUCE ITEM 29
+CONSUME ITEM 27
+PRODUCE ITEM 45
+PRODUCE ITEM 53
+CONSUME ITEM 74
+PRODUCE ITEM 69
+CONSUME ITEM 65
+PRODUCE ITEM 6
+CONSUME ITEM 10
+CONSUME ITEM 18
+CONSUME ITEM 2
+CONSUME ITEM 8
+CONSUME ITEM 31
+CONSUME ITEM 50
+CONSUME ITEM 55
+PRODUCE ITEM 70
+PRODUCE ITEM 78
+PRODUCE ITEM 7
+CONSUME ITEM 13
+CONSUME ITEM 9
+PRODUCE ITEM 31
+PRODUCE ITEM 39
+PRODUCE ITEM 47
+PRODUCE ITEM 55
+PRODUCE ITEM 63
+CONSUME ITEM 70
+CONSUME ITEM 45
+VERIFY CHECKPOINT
+PRODUCER invocation 344225, response 347825, item 4
+VERIFY CHECKPOINT PERSIST
+PRODUCER invocation 344225, response 347825, item 4
+PRODUCE ITEM 0
+PRODUCE ITEM 8
+PRODUCE ITEM 16
+CONSUME ITEM 29
+CONSUME ITEM 58
+CONSUME ITEM 16
+PRODUCE ITEM 48
+CONSUME ITEM 53
+PRODUCE ITEM 64
+CONSUME ITEM 17
+PRODUCE ITEM 1
+PRODUCE ITEM 9
+PRODUCE ITEM 17
+CONSUME ITEM 47
+PRODUCE ITEM 33
+CONSUME ITEM 48
+PRODUCE ITEM 49
+CONSUME ITEM 78
+PRODUCE ITEM 65
+PRODUCE ITEM 73
+PRODUCE ITEM 2
+PRODUCE ITEM 10
+PRODUCE ITEM 18
+CONSUME ITEM 6
+CONSUME ITEM 4
+CONSUME ITEM 11
+PRODUCE ITEM 50
+PRODUCE ITEM 58
+CONSUME ITEM 33
+PRODUCE ITEM 74
+PRODUCE ITEM 3
+PRODUCE ITEM 11
+CONSUME ITEM 21
+PRODUCE ITEM 27
+CONSUME ITEM 39
+CONSUME ITEM 49
+CONSUME ITEM 63
+CONSUME ITEM 64
+PRODUCE ITEM 67
+PRODUCE ITEM 75
+VERIFY CHECKPOINT
+PRODUCER invocation 344225, response 347825, item 4
+VERIFY CHECKPOINT PERSIST
+PRODUCER invocation 344225, response 347825, item 4
+VERIFY CHECKPOINT
+PRODUCER invocation 344225, response 347825, item 4
+Method Count = 0
+PRODUCER invocation 344525, response 348915, item 2
+PRODUCER invocation 344265, response 350635, item 6
+PRODUCER invocation 344875, response 352505, item 1
+PRODUCER invocation 344435, response 353425, item 5
+PRODUCER invocation 346195, response 354255, item 3
+PRODUCER invocation 346215, response 354785, item 7
+PRODUCER invocation 345205, response 355135, item 0
+CONSUMER invocation 635949, response 638039, item 0
+CONSUMER invocation 639209, response 639959, item 7
+CONSUMER invocation 641009, response 642009, item 3
+PRODUCER invocation 642999, response 643609, item 36
+CONSUMER invocation 644529, response 645219, item 36
+CONSUMER invocation 646209, response 646879, item 5
+CONSUMER invocation 647869, response 648379, item 1
+PRODUCER invocation 860812, response 862442, item 68
+CONSUMER invocation 864002, response 864672, item 68
+PRODUCER invocation 876112, response 877912, item 10
+CONSUMER invocation 877942, response 879792, item 10
+PRODUCER invocation 880192, response 882012, item 18
+PRODUCER invocation 880872, response 884042, item 13
+CONSUMER invocation 881752, response 884352, item 18
+CONSUMER invocation 882192, response 885362, item 13
+PRODUCER invocation 884802, response 887442, item 9
+CONSUMER invocation 884962, response 887922, item 6
+Item 9 promotes Item 6
+CONSUMER invocation 887532, response 889682, item 9
+CONSUMER invocation 886942, response 891282, item 2
+Item 9 promotes Item 2
+PRODUCER invocation 886152, response 891392, item 11
+PRODUCER invocation 887362, response 892302, item 8
+CONSUMER invocation 890082, response 892442, item 4
+Item 11 promotes Item 4
+Item 8 promotes Item 4
+CONSUMER invocation 892862, response 895852, item 8
+PRODUCER invocation 885742, response 895922, item 21
+CONSUMER invocation 893202, response 897762, item 21
+PRODUCER invocation 891792, response 899122, item 31
+CONSUMER invocation 894412, response 899452, item 11
+Item 31 promotes Item 11
+PRODUCER invocation 890362, response 901462, item 17
+PRODUCER invocation 894702, response 902122, item 16
+CONSUMER invocation 898322, response 902502, item 31
+PRODUCER invocation 900632, response 904912, item 39
+PRODUCER invocation 898612, response 905372, item 29
+PRODUCER invocation 900992, response 907062, item 50
+PRODUCER invocation 899312, response 907772, item 27
+CONSUMER invocation 904262, response 908352, item 29
+PRODUCER invocation 906632, response 908872, item 47
+PRODUCER invocation 908962, response 911152, item 58
+CONSUMER invocation 904762, response 912322, item 50
+Item 58 promotes Item 50
+CONSUMER invocation 903952, response 913852, item 47
+Item 58 promotes Item 47
+CONSUMER invocation 906912, response 916242, item 27
+Item 58 promotes Item 27
+CONSUMER invocation 910392, response 916612, item 58
+PRODUCER invocation 910942, response 917182, item 55
+CONSUMER invocation 913822, response 919092, item 55
+PRODUCER invocation 916522, response 920162, item 33
+CONSUMER invocation 918112, response 920612, item 16
+Item 33 promotes Item 16
+PRODUCER invocation 919262, response 922822, item 45
+PRODUCER invocation 919552, response 923192, item 63
+PRODUCER invocation 922162, response 923892, item 48
+CONSUMER invocation 909532, response 924383, item 39
+Item 58 promotes Item 39
+Item 55 promotes Item 39
+Item 33 promotes Item 39
+Item 45 promotes Item 39
+Item 63 promotes Item 39
+Item 48 promotes Item 39
+CONSUMER invocation 919292, response 924793, item 33
+Item 48 promotes Item 33
+CONSUMER invocation 921892, response 925003, item 48
+PRODUCER invocation 924783, response 926703, item 70
+PRODUCER invocation 925063, response 927293, item 53
+PRODUCER invocation 928163, response 930333, item 49
+CONSUMER invocation 927893, response 930603, item 53
+Item 49 promotes Item 53
+PRODUCER invocation 930363, response 932553, item 78
+CONSUMER invocation 928453, response 932554, item 49
+Item 78 promotes Item 49
+CONSUMER invocation 929543, response 933183, item 70
+Item 49 promotes Item 70
+Item 78 promotes Item 70
+CONSUMER invocation 929843, response 934643, item 74
+PRODUCER invocation 927613, response 936353, item 74
+CONSUMER invocation 932013, response 937663, item 78
+CONSUMER invocation 934343, response 939263, item 63
+Item 74 promotes Item 63
+CONSUMER invocation 938083, response 939753, item 45
+PRODUCER invocation 935423, response 941173, item 64
+CONSUMER invocation 941443, response 943043, item 64
+CONSUMER invocation 943093, response 945103, item 17
+PRODUCER invocation 943153, response 945273, item 69
+PRODUCER invocation 943413, response 946323, item 65
+CONSUMER invocation 947213, response 948783, item 65
+PRODUCER invocation 948883, response 951133, item 67
+PRODUCER invocation 948223, response 952793, item 73
+PRODUCER invocation 956343, response 957353, item 75
+Item 65 promotes Item 74
+Item 64 promotes Item 17
+Item 45 promotes Item 17
+Item 63 promotes Item 17
+Item 78 promotes Item 17
+Item 78 promotes Item 45
+Item 78 promotes Item 63
+Item 74 promotes Item 17
+Item 74 promotes Item 45
+Item 70 promotes Item 17
+Item 70 promotes Item 45
+Item 70 promotes Item 63
+Item 49 promotes Item 17
+Item 49 promotes Item 45
+Item 49 promotes Item 63
+Item 53 promotes Item 17
+Item 53 promotes Item 45
+Item 53 promotes Item 63
+Item 48 promotes Item 17
+Item 33 promotes Item 17
+Item 55 promotes Item 17
+Item 55 promotes Item 16
+Item 58 promotes Item 17
+Item 58 promotes Item 16
+Item 47 promotes Item 17
+Item 47 promotes Item 16
+Item 47 promotes Item 39
+Item 9 promotes Item 4
+Item 13 promotes Item 4
+Item 13 promotes Item 2
+Item 13 promotes Item 6
+Item 18 promotes Item 4
+Item 18 promotes Item 2
+Item 18 promotes Item 6
+Item 10 promotes Item 4
+Item 10 promotes Item 2
+Item 10 promotes Item 6
+Item 68 promotes Item 4
+Item 68 promotes Item 2
+Item 68 promotes Item 6
+Item 36 promotes Item 4
+Item 36 promotes Item 2
+Item 36 promotes Item 6
+Item 36 promotes Item 1
+Item 36 promotes Item 5
+WARNING: Item 74, sum -0.94
+Demote list:
+69, Promote List: 74 
+65, Promote List: 74 
+67, Promote List: 74 69 
+73, Promote List: 74 69 
+75, Promote List: 74 69 67 73 
+
+VERIFY CHECKPOINT PERSIST
+PRODUCER invocation 344225, response 347825, item 4
+PRODUCER invocation 344525, response 348915, item 2
+PRODUCER invocation 344265, response 350635, item 6
+PRODUCER invocation 344875, response 352505, item 1
+PRODUCER invocation 344435, response 353425, item 5
+PRODUCER invocation 346195, response 354255, item 3
+PRODUCER invocation 346215, response 354785, item 7
+PRODUCER invocation 345205, response 355135, item 0
+CONSUMER invocation 635949, response 638039, item 0
+CONSUMER invocation 639209, response 639959, item 7
+CONSUMER invocation 641009, response 642009, item 3
+PRODUCER invocation 642999, response 643609, item 36
+CONSUMER invocation 644529, response 645219, item 36
+CONSUMER invocation 646209, response 646879, item 5
+CONSUMER invocation 647869, response 648379, item 1
+PRODUCER invocation 860812, response 862442, item 68
+CONSUMER invocation 864002, response 864672, item 68
+PRODUCER invocation 876112, response 877912, item 10
+CONSUMER invocation 877942, response 879792, item 10
+PRODUCER invocation 880192, response 882012, item 18
+PRODUCER invocation 880872, response 884042, item 13
+CONSUMER invocation 881752, response 884352, item 18
+CONSUMER invocation 882192, response 885362, item 13
+PRODUCER invocation 884802, response 887442, item 9
+CONSUMER invocation 884962, response 887922, item 6
+Item 9 promotes Item 6
+CONSUMER invocation 887532, response 889682, item 9
+CONSUMER invocation 886942, response 891282, item 2
+Item 9 promotes Item 2
+PRODUCER invocation 886152, response 891392, item 11
+PRODUCER invocation 887362, response 892302, item 8
+CONSUMER invocation 890082, response 892442, item 4
+Item 11 promotes Item 4
+Item 8 promotes Item 4
+CONSUMER invocation 892862, response 895852, item 8
+PRODUCER invocation 885742, response 895922, item 21
+CONSUMER invocation 893202, response 897762, item 21
+PRODUCER invocation 891792, response 899122, item 31
+CONSUMER invocation 894412, response 899452, item 11
+Item 31 promotes Item 11
+PRODUCER invocation 890362, response 901462, item 17
+PRODUCER invocation 894702, response 902122, item 16
+CONSUMER invocation 898322, response 902502, item 31
+PRODUCER invocation 900632, response 904912, item 39
+PRODUCER invocation 898612, response 905372, item 29
+PRODUCER invocation 900992, response 907062, item 50
+PRODUCER invocation 899312, response 907772, item 27
+CONSUMER invocation 904262, response 908352, item 29
+PRODUCER invocation 906632, response 908872, item 47
+PRODUCER invocation 908962, response 911152, item 58
+CONSUMER invocation 904762, response 912322, item 50
+Item 58 promotes Item 50
+CONSUMER invocation 903952, response 913852, item 47
+Item 58 promotes Item 47
+CONSUMER invocation 906912, response 916242, item 27
+Item 58 promotes Item 27
+CONSUMER invocation 910392, response 916612, item 58
+PRODUCER invocation 910942, response 917182, item 55
+CONSUMER invocation 913822, response 919092, item 55
+PRODUCER invocation 916522, response 920162, item 33
+CONSUMER invocation 918112, response 920612, item 16
+Item 33 promotes Item 16
+PRODUCER invocation 919262, response 922822, item 45
+PRODUCER invocation 919552, response 923192, item 63
+PRODUCER invocation 922162, response 923892, item 48
+CONSUMER invocation 909532, response 924383, item 39
+Item 58 promotes Item 39
+Item 55 promotes Item 39
+Item 33 promotes Item 39
+Item 45 promotes Item 39
+Item 63 promotes Item 39
+Item 48 promotes Item 39
+CONSUMER invocation 919292, response 924793, item 33
+Item 48 promotes Item 33
+CONSUMER invocation 921892, response 925003, item 48
+PRODUCER invocation 924783, response 926703, item 70
+PRODUCER invocation 925063, response 927293, item 53
+PRODUCER invocation 928163, response 930333, item 49
+CONSUMER invocation 927893, response 930603, item 53
+Item 49 promotes Item 53
+CONSUMER invocation 928453, response 932553, item 49
+PRODUCER invocation 930363, response 932554, item 78
+CONSUMER invocation 929543, response 933183, item 70
+Item 49 promotes Item 70
+Item 78 promotes Item 70
+CONSUMER invocation 929843, response 934643, item 74
+PRODUCER invocation 927613, response 936353, item 74
+CONSUMER invocation 932013, response 937663, item 78
+CONSUMER invocation 934343, response 939263, item 63
+Item 74 promotes Item 63
+CONSUMER invocation 938083, response 939753, item 45
+PRODUCER invocation 935423, response 941173, item 64
+CONSUMER invocation 941443, response 943043, item 64
+CONSUMER invocation 943093, response 945103, item 17
+PRODUCER invocation 943153, response 945273, item 69
+PRODUCER invocation 943413, response 946323, item 65
+CONSUMER invocation 947213, response 948783, item 65
+PRODUCER invocation 948883, response 951133, item 67
+PRODUCER invocation 948223, response 952793, item 73
+PRODUCER invocation 956343, response 957353, item 75
+Item 65 promotes Item 74
+Item 64 promotes Item 17
+Item 45 promotes Item 17
+Item 63 promotes Item 17
+Item 78 promotes Item 17
+Item 78 promotes Item 45
+Item 78 promotes Item 63
+Item 74 promotes Item 17
+Item 74 promotes Item 45
+Item 70 promotes Item 17
+Item 70 promotes Item 45
+Item 70 promotes Item 63
+Item 49 promotes Item 17
+Item 49 promotes Item 45
+Item 49 promotes Item 63
+Item 53 promotes Item 17
+Item 53 promotes Item 45
+Item 53 promotes Item 63
+Item 48 promotes Item 17
+Item 33 promotes Item 17
+Item 55 promotes Item 17
+Item 55 promotes Item 16
+Item 58 promotes Item 17
+Item 58 promotes Item 16
+Item 47 promotes Item 17
+Item 47 promotes Item 16
+Item 47 promotes Item 39
+Item 9 promotes Item 4
+Item 13 promotes Item 4
+Item 13 promotes Item 2
+Item 13 promotes Item 6
+Item 18 promotes Item 4
+Item 18 promotes Item 2
+Item 18 promotes Item 6
+Item 10 promotes Item 4
+Item 10 promotes Item 2
+Item 10 promotes Item 6
+Item 68 promotes Item 4
+Item 68 promotes Item 2
+Item 68 promotes Item 6
+Item 36 promotes Item 4
+Item 36 promotes Item 2
+Item 36 promotes Item 6
+Item 36 promotes Item 1
+Item 36 promotes Item 5
+WARNING: Item 74, sum -0.94
+Demote list:
+69, Promote List: 74 
+65, Promote List: 74 
+67, Promote List: 74 69 
+73, Promote List: 74 69 
+75, Promote List: 74 69 67 73 
+
+-------------Program Not Correct-------------
+-------------Persisted Program Not Correct-------------
+VECTOR SUMS EQUAL
+Total Time: 0.005208860000000 seconds
+Total Method Time: 0.000055051000000 seconds
+Total Verification Time: 0.004737053000000 seconds
+Final Stack Configuration:
+75 73 67 69 
+

@@ -1,0 +1,4350 @@
+NUM_THRDS = 9, TEST_SIZE = 100, TRANS_SIZE = 4, KEY_RANGE_ = 102
+VSV_Init()
+VSV_Init() Finished
+Start testing OneFileTMLinkedListSet with 8 threads 100 iterations 4 operations 100 unique keys 33% insert 33% delete.
+Thread 0: new Method PRODUCE ITEM 57
+Transaction P 57:Commit
+Thread 0: new Method PRODUCE ITEM 7
+Transaction P 7:Commit
+Thread 0: new Method PRODUCE ITEM 2
+Transaction P 2:Commit
+Thread 0: new Method PRODUCE ITEM 1
+Transaction P 1:Commit
+Thread 0: new Method PRODUCE ITEM 92
+Transaction P 92:Commit
+Thread 0: new Method PRODUCE ITEM 49
+Transaction P 49:Commit
+Thread 0: new Method PRODUCE ITEM 83
+Transaction P 83:Commit
+Thread 0: new Method PRODUCE ITEM 1
+Thread 0: m pop_back PRODUCE ITEM 1
+Transaction P 1:Abort
+Thread 0: new Method PRODUCE ITEM 77
+Transaction P 77:Commit
+Thread 0: new Method PRODUCE ITEM 78
+Transaction P 78:Commit
+Thread 0: new Method PRODUCE ITEM 39
+Transaction P 39:Commit
+Thread 0: new Method PRODUCE ITEM 35
+Transaction P 35:Commit
+Thread 0: new Method PRODUCE ITEM 15
+Transaction P 15:Commit
+Thread 0: new Method PRODUCE ITEM 58
+Transaction P 58:Commit
+Thread 0: new Method PRODUCE ITEM 94
+Transaction P 94:Commit
+Thread 0: new Method PRODUCE ITEM 86
+Transaction P 86:Commit
+Thread 0: new Method PRODUCE ITEM 69
+Transaction P 69:Commit
+Thread 0: new Method PRODUCE ITEM 1
+Thread 0: m pop_back PRODUCE ITEM 1
+Transaction P 1:Abort
+Thread 0: new Method PRODUCE ITEM 82
+Transaction P 82:Commit
+Thread 0: new Method PRODUCE ITEM 3
+Transaction P 3:Commit
+Thread 0: new Method PRODUCE ITEM 95
+Transaction P 95:Commit
+Thread 0: new Method PRODUCE ITEM 81
+Transaction P 81:Commit
+Thread 0: new Method PRODUCE ITEM 65
+Transaction P 65:Commit
+Thread 0: new Method PRODUCE ITEM 65
+Thread 0: m pop_back PRODUCE ITEM 65
+Transaction P 65:Abort
+Thread 0: new Method PRODUCE ITEM 19
+Transaction P 19:Commit
+Thread 0: new Method PRODUCE ITEM 35
+Thread 0: m pop_back PRODUCE ITEM 35
+Transaction P 35:Abort
+Thread 0: new Method PRODUCE ITEM 92
+Thread 0: m pop_back PRODUCE ITEM 92
+Transaction P 92:Abort
+Thread 0: new Method PRODUCE ITEM 11
+Transaction P 11:Commit
+Thread 0: new Method PRODUCE ITEM 31
+Transaction P 31:Commit
+Thread 0: new Method PRODUCE ITEM 48
+Transaction P 48:Commit
+Thread 0: new Method PRODUCE ITEM 37
+Transaction P 37:Commit
+Thread 0: new Method PRODUCE ITEM 90
+Transaction P 90:Commit
+Thread 0: new Method PRODUCE ITEM 66
+Transaction P 66:Commit
+Thread 0: new Method PRODUCE ITEM 47
+Transaction P 47:Commit
+Thread 0: new Method PRODUCE ITEM 94
+Thread 0: m pop_back PRODUCE ITEM 94
+Transaction P 94:Abort
+Thread 0: new Method PRODUCE ITEM 74
+Transaction P 74:Commit
+Thread 0: new Method PRODUCE ITEM 9
+Transaction P 9:Commit
+Thread 0: new Method PRODUCE ITEM 34
+Transaction P 34:Commit
+Thread 0: new Method PRODUCE ITEM 40
+Transaction P 40:Commit
+Thread 0: new Method PRODUCE ITEM 61
+Transaction P 61:Commit
+Thread 0: new Method PRODUCE ITEM 71
+Transaction P 71:Commit
+Thread 0: new Method PRODUCE ITEM 42
+Transaction P 42:Commit
+Thread 0: new Method PRODUCE ITEM 36
+Transaction P 36:Commit
+Thread 0: new Method PRODUCE ITEM 80
+Transaction P 80:Commit
+Thread 0: new Method PRODUCE ITEM 73
+Transaction P 73:Commit
+Thread 0: new Method PRODUCE ITEM 31
+Thread 0: m pop_back PRODUCE ITEM 31
+Transaction P 31:Abort
+Thread 0: new Method PRODUCE ITEM 90
+Thread 0: m pop_back PRODUCE ITEM 90
+Transaction P 90:Abort
+Thread 0: new Method PRODUCE ITEM 57
+Thread 0: m pop_back PRODUCE ITEM 57
+Transaction P 57:Abort
+Thread 0: new Method PRODUCE ITEM 43
+Transaction P 43:Commit
+Thread 0: new Method PRODUCE ITEM 27
+Transaction P 27:Commit
+Thread 0: new Method PRODUCE ITEM 93
+Transaction P 93:Commit
+Thread 0: new Method PRODUCE ITEM 83
+Thread 0: m pop_back PRODUCE ITEM 83
+Transaction P 83:Abort
+Thread 0: new Method PRODUCE ITEM 78
+Thread 0: m pop_back PRODUCE ITEM 78
+Transaction P 78:Abort
+Thread 0: new Method PRODUCE ITEM 57
+Thread 0: m pop_back PRODUCE ITEM 57
+Transaction P 57:Abort
+Thread 0: new Method PRODUCE ITEM 96
+Transaction P 96:Commit
+Thread 0: new Method PRODUCE ITEM 6
+Transaction P 6:Commit
+Thread 0: new Method PRODUCE ITEM 97
+Transaction P 97:Commit
+Thread 0: new Method PRODUCE ITEM 100
+Transaction P 100:Commit
+Thread 0: new Method PRODUCE ITEM 93
+Thread 0: m pop_back PRODUCE ITEM 93
+Transaction P 93:Abort
+Thread 0: new Method PRODUCE ITEM 76
+Transaction P 76:Commit
+Thread 0: new Method PRODUCE ITEM 37
+Thread 0: m pop_back PRODUCE ITEM 37
+Transaction P 37:Abort
+Thread 0: new Method PRODUCE ITEM 20
+Transaction P 20:Commit
+Thread 0: new Method PRODUCE ITEM 80
+Thread 0: m pop_back PRODUCE ITEM 80
+Transaction P 80:Abort
+Thread 0: new Method PRODUCE ITEM 54
+Transaction P 54:Commit
+Thread 0: new Method PRODUCE ITEM 63
+Transaction P 63:Commit
+Thread 0: new Method PRODUCE ITEM 10
+Transaction P 10:Commit
+Thread 0: new Method PRODUCE ITEM 73
+Thread 0: m pop_back PRODUCE ITEM 73
+Transaction P 73:Abort
+Thread 0: new Method PRODUCE ITEM 84
+Transaction P 84:Commit
+Thread 0: new Method PRODUCE ITEM 74
+Thread 0: m pop_back PRODUCE ITEM 74
+Transaction P 74:Abort
+Thread 0: new Method PRODUCE ITEM 25
+Transaction P 25:Commit
+Thread 0: new Method PRODUCE ITEM 35
+Thread 0: m pop_back PRODUCE ITEM 35
+Transaction P 35:Abort
+Thread 0: new Method PRODUCE ITEM 53
+Transaction P 53:Commit
+Thread 0: new Method PRODUCE ITEM 100
+Thread 0: m pop_back PRODUCE ITEM 100
+Transaction P 100:Abort
+Thread 0: new Method PRODUCE ITEM 9
+Thread 0: m pop_back PRODUCE ITEM 9
+Transaction P 9:Abort
+Thread 0: new Method PRODUCE ITEM 99
+Transaction P 99:Commit
+Thread 0: new Method PRODUCE ITEM 98
+Transaction P 98:Commit
+Thread 0: new Method PRODUCE ITEM 29
+Transaction P 29:Commit
+Thread 0: new Method PRODUCE ITEM 73
+Thread 0: m pop_back PRODUCE ITEM 73
+Transaction P 73:Abort
+Thread 0: new Method PRODUCE ITEM 38
+Transaction P 38:Commit
+Thread 0: new Method PRODUCE ITEM 89
+Transaction P 89:Commit
+Thread 0: new Method PRODUCE ITEM 2
+Thread 0: m pop_back PRODUCE ITEM 2
+Transaction P 2:Abort
+Thread 0: new Method PRODUCE ITEM 45
+Transaction P 45:Commit
+Thread 0: new Method PRODUCE ITEM 42
+Thread 0: m pop_back PRODUCE ITEM 42
+Transaction P 42:Abort
+Thread 0: new Method PRODUCE ITEM 56
+Transaction P 56:Commit
+Thread 0: new Method PRODUCE ITEM 89
+Thread 0: m pop_back PRODUCE ITEM 89
+Transaction P 89:Abort
+Thread 0: new Method PRODUCE ITEM 39
+Thread 0: m pop_back PRODUCE ITEM 39
+Transaction P 39:Abort
+Thread 0: new Method PRODUCE ITEM 88
+Transaction P 88:Commit
+Thread 0: new Method PRODUCE ITEM 92
+Thread 0: m pop_back PRODUCE ITEM 92
+Transaction P 92:Abort
+Thread 0: new Method PRODUCE ITEM 27
+Thread 0: m pop_back PRODUCE ITEM 27
+Transaction P 27:Abort
+Thread 0: new Method PRODUCE ITEM 30
+Transaction P 30:Commit
+Thread 0: new Method PRODUCE ITEM 31
+Thread 0: m pop_back PRODUCE ITEM 31
+Transaction P 31:Abort
+Thread 0: new Method PRODUCE ITEM 53
+Thread 0: m pop_back PRODUCE ITEM 53
+Transaction P 53:Abort
+Thread 0: new Method PRODUCE ITEM 57
+Thread 0: m pop_back PRODUCE ITEM 57
+Transaction P 57:Abort
+Thread 0: new Method PRODUCE ITEM 83
+Thread 0: m pop_back PRODUCE ITEM 83
+Transaction P 83:Abort
+Thread 0: new Method PRODUCE ITEM 53
+Thread 0: m pop_back PRODUCE ITEM 53
+Transaction P 53:Abort
+Thread 0: new Method PRODUCE ITEM 25
+Thread 0: m pop_back PRODUCE ITEM 25
+Transaction P 25:Abort
+Thread 0: new Method PRODUCE ITEM 9
+Thread 0: m pop_back PRODUCE ITEM 9
+Transaction P 9:Abort
+Thread 0: new Method PRODUCE ITEM 42
+Thread 0: m pop_back PRODUCE ITEM 42
+Transaction P 42:Abort
+Thread 0: new Method PRODUCE ITEM 15
+Thread 0: m pop_back PRODUCE ITEM 15
+Transaction P 15:Abort
+Thread 0: new Method PRODUCE ITEM 96
+Thread 0: m pop_back PRODUCE ITEM 96
+Transaction P 96:Abort
+Begin Verification
+Thread 2: new Method PRODUCE ITEM 40
+Thread 6: new Method READ ITEM 1
+Thread 7: new Method CONSUME ITEM 16
+Thread 7: m pop_back CONSUME ITEM 16
+Thread 2: m pop_back PRODUCE ITEM 40
+Thread 8: new Method READ ITEM 17
+Thread 6: new Method PRODUCE ITEM 12
+Thread 8: m pop_back READ ITEM 17
+Transaction C 16 C 76 P 26 P 50:Abort
+Transaction P 40 F 70 F 27 P 15:Abort
+Transaction F 17 P 14 P 7 F 17:Abort
+Thread 6: new Method CONSUME ITEM 66
+Thread 2: new Method READ ITEM 61
+Thread 7: new Method PRODUCE ITEM 13
+Thread 8: new Method PRODUCE ITEM 95
+Thread 6: new Method CONSUME ITEM 68
+Thread 6: m pop_back CONSUME ITEM 68
+Thread 2: new Method CONSUME ITEM 67
+Thread 6: m pop_back CONSUME ITEM 66
+Thread 6: m pop_back PRODUCE ITEM 12
+Thread 6: m pop_back READ ITEM 1
+Thread 7: new Method READ ITEM 88
+Thread 2: m pop_back CONSUME ITEM 67
+Thread 8: m pop_back PRODUCE ITEM 95
+Thread 3: new Method CONSUME ITEM 69
+Thread 2: m pop_back READ ITEM 61
+Transaction P 95 F 98 F 59 P 7:Abort
+Thread 7: new Method CONSUME ITEM 84
+Transaction F 1 P 12 C 66 C 68:Abort
+Transaction F 61 C 67 P 55 P 42:Abort
+Thread 8: new Method CONSUME ITEM 6
+Thread 6: new Method PRODUCE ITEM 40
+Thread 2: new Method READ ITEM 3
+Thread 3: new Method PRODUCE ITEM 14
+Thread 7: new Method CONSUME ITEM 77
+Thread 6: m pop_back PRODUCE ITEM 40
+Thread 8: new Method PRODUCE ITEM 6
+Thread 2: new Method PRODUCE ITEM 6
+Thread 3: new Method READ ITEM 45
+Thread 2: m pop_back PRODUCE ITEM 6
+Transaction P 40 C 11 F 84 P 94:Abort
+Thread 2: m pop_back READ ITEM 3
+Thread 5: new Method PRODUCE ITEM 54
+Thread 6: new Method CONSUME ITEM 18
+Thread 1: new Method READ ITEM 78
+Thread 6: m pop_back CONSUME ITEM 18
+Thread 5: m pop_back PRODUCE ITEM 54
+Transaction F 3 P 6 F 36 F 33:Abort
+Transaction P 13 F 88 C 84 C 77:Commit
+Transaction C 18 C 30 F 71 C 53:Abort
+Thread 2: new Method READ ITEM 71
+Thread 7: new Method PRODUCE ITEM 7
+Transaction P 54 F 82 P 69 F 23:Abort
+Thread 7: m pop_back PRODUCE ITEM 7
+Thread 2: new Method READ ITEM 11
+Thread 5: new Method CONSUME ITEM 64
+Thread 6: new Method PRODUCE ITEM 48
+Thread 2: new Method READ ITEM 27
+Thread 5: m pop_back CONSUME ITEM 64
+Thread 6: m pop_back PRODUCE ITEM 48
+Transaction P 7 F 45 P 37 C 10:Abort
+Thread 2: new Method CONSUME ITEM 18
+Transaction C 64 C 6 P 14 P 81:Abort
+Transaction P 48 F 50 C 14 F 15:Abort
+Thread 2: m pop_back CONSUME ITEM 18
+Thread 5: new Method READ ITEM 20
+Thread 2: m pop_back READ ITEM 27
+Thread 2: m pop_back READ ITEM 11
+Thread 2: m pop_back READ ITEM 71
+Thread 5: new Method READ ITEM 6
+Thread 7: new Method PRODUCE ITEM 93
+Thread 6: new Method READ ITEM 14
+Transaction F 71 F 11 F 27 C 18:Abort
+Thread 7: m pop_back PRODUCE ITEM 93
+Thread 5: new Method READ ITEM 35
+Thread 6: m pop_back READ ITEM 14
+Thread 2: new Method READ ITEM 54
+Thread 3: m pop_back READ ITEM 45
+Thread 3: m pop_back PRODUCE ITEM 14
+Thread 3: m pop_back CONSUME ITEM 69
+Thread 1: m pop_back READ ITEM 78
+Thread 8: m pop_back PRODUCE ITEM 6
+Thread 8: m pop_back CONSUME ITEM 6
+Thread 5: new Method PRODUCE ITEM 5
+Transaction F 14 F 76 P 54 F 89:Abort
+Transaction P 93 P 71 P 83 F 8:Abort
+Thread 7: new Method READ ITEM 45
+Thread 4: new Method CONSUME ITEM 61
+Thread 1: new Method READ ITEM 78
+Thread 2: new Method CONSUME ITEM 31
+Thread 8: new Method CONSUME ITEM 6
+Thread 3: new Method CONSUME ITEM 69
+Thread 6: new Method PRODUCE ITEM 65
+Thread 6: m pop_back PRODUCE ITEM 65
+Transaction P 65 F 61 F 47 C 99:Abort
+Transaction F 20 F 6 F 35 P 5:Commit
+Thread 6: new Method READ ITEM 26
+Thread 6: m pop_back READ ITEM 26
+Thread 5: new Method PRODUCE ITEM 81
+Thread 5: m pop_back PRODUCE ITEM 81
+Transaction F 26 C 2 P 93 P 6:Abort
+Transaction P 81 F 6 P 39 C 63:Abort
+Thread 6: new Method PRODUCE ITEM 8
+Thread 5: new Method READ ITEM 81
+Thread 6: new Method READ ITEM 89
+Thread 5: new Method PRODUCE ITEM 96
+Thread 5: m pop_back PRODUCE ITEM 96
+Thread 5: m pop_back READ ITEM 81
+Thread 6: new Method READ ITEM 18
+Thread 6: m pop_back READ ITEM 18
+Thread 6: m pop_back READ ITEM 89
+Thread 6: m pop_back PRODUCE ITEM 8
+Transaction F 81 P 96 F 19 P 24:Abort
+Thread 7: m pop_back READ ITEM 45
+Thread 5: new Method READ ITEM 70
+Transaction P 8 F 89 F 18 F 36:Abort
+Thread 3: m pop_back CONSUME ITEM 69
+Thread 8: m pop_back CONSUME ITEM 6
+Thread 1: m pop_back READ ITEM 78
+Thread 5: m pop_back READ ITEM 70
+Thread 6: new Method CONSUME ITEM 16
+Thread 7: new Method READ ITEM 45
+Thread 2: m pop_back CONSUME ITEM 31
+Thread 2: m pop_back READ ITEM 54
+Thread 4: m pop_back CONSUME ITEM 61
+Thread 1: new Method READ ITEM 78
+Thread 8: new Method CONSUME ITEM 6
+Thread 3: new Method CONSUME ITEM 69
+Thread 6: m pop_back CONSUME ITEM 16
+Transaction F 70 F 69 P 36 C 88:Abort
+Thread 7: new Method PRODUCE ITEM 61
+Thread 5: new Method READ ITEM 13
+Thread 4: new Method CONSUME ITEM 61
+Thread 5: new Method READ ITEM 10
+Thread 7: m pop_back PRODUCE ITEM 61
+Thread 7: m pop_back READ ITEM 45
+Thread 2: new Method READ ITEM 54
+Thread 5: new Method CONSUME ITEM 4
+Thread 8: new Method PRODUCE ITEM 6
+Transaction F 45 P 61 P 67 C 78:Abort
+Thread 4: new Method CONSUME ITEM 62
+Thread 1: new Method CONSUME ITEM 10
+Thread 5: m pop_back CONSUME ITEM 4
+Thread 5: m pop_back READ ITEM 10
+Thread 5: m pop_back READ ITEM 13
+Thread 3: new Method PRODUCE ITEM 14
+Thread 7: new Method READ ITEM 96
+Thread 4: m pop_back CONSUME ITEM 62
+Thread 2: new Method CONSUME ITEM 31
+Thread 4: m pop_back CONSUME ITEM 61
+Transaction C 16 F 40 C 83 F 19:Abort
+Transaction F 13 F 10 C 4 F 76:Abort
+Thread 1: new Method CONSUME ITEM 24
+Thread 8: new Method CONSUME ITEM 61
+Thread 7: new Method CONSUME ITEM 68
+Thread 3: new Method READ ITEM 45
+Thread 1: m pop_back CONSUME ITEM 24
+Thread 1: m pop_back CONSUME ITEM 10
+Thread 2: new Method READ ITEM 34
+Thread 1: m pop_back READ ITEM 78
+Thread 6: new Method CONSUME ITEM 29
+Transaction C 61 C 62 F 26 F 96:Abort
+Thread 7: m pop_back CONSUME ITEM 68
+Thread 7: m pop_back READ ITEM 96
+Thread 5: new Method PRODUCE ITEM 14
+Thread 8: new Method CONSUME ITEM 98
+Thread 3: new Method PRODUCE ITEM 14
+Thread 2: new Method PRODUCE ITEM 97
+Thread 4: new Method PRODUCE ITEM 38
+Transaction F 78 C 10 C 24 C 2:Abort
+Thread 6: new Method CONSUME ITEM 51
+Thread 3: m pop_back PRODUCE ITEM 14
+Transaction F 96 C 68 P 11 P 39:Abort
+Thread 3: m pop_back READ ITEM 45
+Thread 3: m pop_back PRODUCE ITEM 14
+Thread 3: m pop_back CONSUME ITEM 69
+Thread 4: m pop_back PRODUCE ITEM 38
+Thread 2: m pop_back PRODUCE ITEM 97
+Thread 5: new Method CONSUME ITEM 85
+Thread 2: m pop_back READ ITEM 34
+Thread 2: m pop_back CONSUME ITEM 31
+Thread 1: new Method PRODUCE ITEM 100
+Thread 6: m pop_back CONSUME ITEM 51
+Thread 6: m pop_back CONSUME ITEM 29
+Thread 7: new Method PRODUCE ITEM 4
+Thread 2: m pop_back READ ITEM 54
+Transaction P 38 P 12 C 38 C 32:Abort
+Thread 5: m pop_back CONSUME ITEM 85
+Thread 5: m pop_back PRODUCE ITEM 14
+Thread 1: m pop_back PRODUCE ITEM 100
+Transaction C 69 P 14 F 45 P 14:Abort
+Transaction C 29 C 51 C 19 C 54:Abort
+Thread 4: new Method PRODUCE ITEM 74
+Transaction F 54 C 31 F 34 P 97:Abort
+Transaction P 14 C 85 C 22 C 92:Abort
+Transaction P 100 F 74 F 100 C 98:Abort
+Thread 6: new Method CONSUME ITEM 32
+Thread 7: new Method PRODUCE ITEM 70
+Thread 4: m pop_back PRODUCE ITEM 74
+Transaction C 6 P 6 C 61 C 98:Commit
+Thread 5: new Method PRODUCE ITEM 49
+Thread 2: new Method READ ITEM 28
+Thread 1: new Method READ ITEM 59
+Thread 6: m pop_back CONSUME ITEM 32
+Thread 3: new Method CONSUME ITEM 56
+Thread 8: new Method CONSUME ITEM 32
+Thread 5: m pop_back PRODUCE ITEM 49
+Thread 2: m pop_back READ ITEM 28
+Transaction P 74 P 18 C 94 F 97:Abort
+Thread 1: m pop_back READ ITEM 59
+Transaction C 32 P 79 F 89 F 84:Abort
+Thread 3: new Method READ ITEM 9
+Thread 7: new Method CONSUME ITEM 94
+Transaction P 49 C 90 C 72 P 53:Abort
+Thread 8: m pop_back CONSUME ITEM 32
+Thread 6: new Method PRODUCE ITEM 42
+Transaction F 28 P 11 P 33 F 2:Abort
+Thread 4: new Method PRODUCE ITEM 77
+Thread 3: new Method READ ITEM 60
+Transaction F 59 P 1 F 42 C 96:Abort
+Thread 6: m pop_back PRODUCE ITEM 42
+Thread 2: new Method READ ITEM 55
+Thread 7: new Method CONSUME ITEM 60
+Thread 5: new Method CONSUME ITEM 37
+Thread 2: m pop_back READ ITEM 55
+Thread 4: new Method PRODUCE ITEM 34
+Thread 3: m pop_back READ ITEM 60
+Thread 3: m pop_back READ ITEM 9
+Thread 3: m pop_back CONSUME ITEM 56
+Thread 7: m pop_back CONSUME ITEM 60
+Thread 7: m pop_back CONSUME ITEM 94
+Thread 1: new Method CONSUME ITEM 90
+Thread 7: m pop_back PRODUCE ITEM 70
+Thread 7: m pop_back PRODUCE ITEM 4
+Thread 4: m pop_back PRODUCE ITEM 34
+Thread 4: m pop_back PRODUCE ITEM 77
+Transaction P 42 C 73 F 15 P 27:Abort
+Transaction F 55 F 99 F 92 P 99:Abort
+Thread 5: new Method READ ITEM 77
+Transaction C 56 F 9 F 60 P 9:Abort
+Transaction P 77 P 34 C 24 C 90:Abort
+Transaction P 4 P 70 C 94 C 60:Abort
+Thread 1: new Method READ ITEM 58
+Thread 7: new Method CONSUME ITEM 98
+Thread 7: m pop_back CONSUME ITEM 98
+Thread 2: new Method PRODUCE ITEM 7
+Thread 1: new Method PRODUCE ITEM 82
+Thread 2: m pop_back PRODUCE ITEM 7
+Transaction C 98 C 60 C 9 F 89:Abort
+Thread 5: m pop_back READ ITEM 77
+Transaction C 32 F 2 C 54 P 42:Abort
+Thread 4: new Method CONSUME ITEM 68
+Thread 3: new Method READ ITEM 74
+Thread 7: new Method PRODUCE ITEM 8
+Transaction P 7 C 62 C 15 F 47:Abort
+Thread 5: m pop_back CONSUME ITEM 37
+Thread 6: new Method CONSUME ITEM 69
+Thread 1: m pop_back PRODUCE ITEM 82
+Thread 1: m pop_back READ ITEM 58
+Thread 1: m pop_back CONSUME ITEM 90
+Thread 8: new Method READ ITEM 2
+Thread 2: new Method PRODUCE ITEM 53
+Thread 4: m pop_back CONSUME ITEM 68
+Thread 7: new Method PRODUCE ITEM 96
+Transaction C 37 F 77 F 25 C 65:Abort
+Thread 6: new Method PRODUCE ITEM 71
+Thread 2: m pop_back PRODUCE ITEM 53
+Thread 3: new Method CONSUME ITEM 80
+Thread 8: new Method CONSUME ITEM 16
+Thread 7: m pop_back PRODUCE ITEM 96
+Thread 7: m pop_back PRODUCE ITEM 8
+Thread 5: new Method CONSUME ITEM 12
+Transaction C 68 F 44 C 91 P 3:Abort
+Thread 6: m pop_back PRODUCE ITEM 71
+Thread 6: m pop_back CONSUME ITEM 69
+Transaction C 90 F 58 P 82 C 68:Abort
+Thread 8: m pop_back CONSUME ITEM 16
+Thread 8: m pop_back READ ITEM 2
+Thread 4: new Method CONSUME ITEM 33
+Transaction P 53 F 86 F 26 P 56:Abort
+Thread 5: m pop_back CONSUME ITEM 12
+Transaction P 8 P 96 F 50 P 79:Abort
+Thread 1: new Method PRODUCE ITEM 54
+Transaction C 69 P 71 C 48 C 45:Abort
+Thread 4: m pop_back CONSUME ITEM 33
+Thread 3: new Method CONSUME ITEM 86
+Thread 2: new Method CONSUME ITEM 16
+Thread 7: new Method READ ITEM 64
+Transaction F 2 C 16 P 93 F 90:Abort
+Thread 1: m pop_back PRODUCE ITEM 54
+Transaction C 12 P 67 P 49 C 7:Abort
+Thread 2: m pop_back CONSUME ITEM 16
+Thread 6: new Method READ ITEM 92
+Thread 8: new Method READ ITEM 64
+Thread 7: m pop_back READ ITEM 64
+Transaction C 33 P 46 F 93 C 95:Abort
+Thread 3: new Method READ ITEM 82
+Thread 5: new Method READ ITEM 44
+Transaction P 54 F 42 F 98 P 100:Abort
+Thread 8: m pop_back READ ITEM 64
+Thread 6: new Method READ ITEM 31
+Thread 4: new Method READ ITEM 91
+Thread 5: m pop_back READ ITEM 44
+Transaction C 16 C 98 C 13 F 85:Abort
+Transaction F 64 P 61 P 64 P 69:Abort
+Thread 1: new Method READ ITEM 4
+Thread 4: m pop_back READ ITEM 91
+Transaction F 64 P 2 F 40 C 63:Abort
+Thread 2: new Method CONSUME ITEM 22
+Thread 6: new Method PRODUCE ITEM 47
+Thread 7: new Method CONSUME ITEM 60
+Transaction F 44 C 56 F 38 F 32:Abort
+Thread 1: m pop_back READ ITEM 4
+Thread 8: new Method PRODUCE ITEM 27
+Transaction F 91 C 82 P 86 F 86:Abort
+Thread 7: m pop_back CONSUME ITEM 60
+Thread 2: m pop_back CONSUME ITEM 22
+Thread 5: new Method READ ITEM 73
+Transaction F 4 C 2 P 55 C 51:Abort
+Thread 6: m pop_back PRODUCE ITEM 47
+Thread 6: m pop_back READ ITEM 31
+Thread 6: m pop_back READ ITEM 92
+Thread 8: m pop_back PRODUCE ITEM 27
+Thread 4: new Method READ ITEM 97
+Transaction C 22 P 87 P 52 C 44:Abort
+Thread 5: new Method CONSUME ITEM 44
+Thread 1: new Method CONSUME ITEM 39
+Transaction F 92 F 31 P 47 F 81:Abort
+Transaction C 60 F 98 C 54 P 30:Abort
+Transaction P 27 P 25 P 1 P 96:Abort
+Thread 2: new Method READ ITEM 45
+Thread 4: new Method PRODUCE ITEM 5
+Thread 5: m pop_back CONSUME ITEM 44
+Thread 5: m pop_back READ ITEM 73
+Thread 7: new Method READ ITEM 84
+Transaction F 74 C 80 C 86 F 82:Commit
+Thread 6: new Method READ ITEM 62
+Thread 4: m pop_back PRODUCE ITEM 5
+Thread 4: m pop_back READ ITEM 97
+Thread 7: m pop_back READ ITEM 84
+Thread 8: new Method PRODUCE ITEM 52
+Transaction F 73 C 44 P 85 P 8:Abort
+Thread 6: m pop_back READ ITEM 62
+Thread 2: new Method CONSUME ITEM 3
+Thread 1: new Method CONSUME ITEM 10
+Thread 3: new Method CONSUME ITEM 74
+Transaction F 97 P 5 F 53 F 73:Abort
+Thread 5: new Method CONSUME ITEM 89
+Transaction F 84 F 72 C 11 C 9:Abort
+Transaction F 62 P 58 P 1 C 80:Abort
+Thread 1: new Method CONSUME ITEM 15
+Thread 4: new Method READ ITEM 81
+Thread 8: new Method CONSUME ITEM 35
+Thread 3: new Method READ ITEM 45
+Thread 2: new Method CONSUME ITEM 78
+Thread 6: new Method READ ITEM 44
+Thread 2: new Method READ ITEM 36
+Thread 7: new Method CONSUME ITEM 76
+Thread 4: new Method READ ITEM 30
+Thread 1: new Method CONSUME ITEM 75
+Transaction F 45 C 3 C 78 F 36:Commit
+Thread 5: new Method CONSUME ITEM 82
+Thread 1: m pop_back CONSUME ITEM 75
+Thread 2: new Method READ ITEM 5
+Thread 1: m pop_back CONSUME ITEM 15
+Thread 1: m pop_back CONSUME ITEM 10
+Thread 1: m pop_back CONSUME ITEM 39
+Thread 8: new Method PRODUCE ITEM 5
+Thread 3: new Method PRODUCE ITEM 97
+Thread 2: new Method PRODUCE ITEM 80
+Thread 6: m pop_back READ ITEM 44
+Thread 3: m pop_back PRODUCE ITEM 97
+Thread 3: m pop_back READ ITEM 45
+Thread 3: m pop_back CONSUME ITEM 74
+Thread 8: m pop_back PRODUCE ITEM 5
+Thread 8: m pop_back CONSUME ITEM 35
+Thread 8: m pop_back PRODUCE ITEM 52
+Transaction C 39 C 10 C 15 C 75:Abort
+Thread 7: m pop_back CONSUME ITEM 76
+Thread 2: new Method CONSUME ITEM 28
+Transaction F 44 F 4 F 33 C 37:Abort
+Thread 5: m pop_back CONSUME ITEM 82
+Thread 5: m pop_back CONSUME ITEM 89
+Thread 4: m pop_back READ ITEM 30
+Thread 1: new Method PRODUCE ITEM 36
+Thread 4: m pop_back READ ITEM 81
+Thread 2: m pop_back CONSUME ITEM 28
+Transaction C 74 F 45 P 97 C 33:Abort
+Thread 2: m pop_back PRODUCE ITEM 80
+Thread 2: m pop_back READ ITEM 5
+Thread 6: new Method PRODUCE ITEM 66
+Thread 1: m pop_back PRODUCE ITEM 36
+Transaction P 52 C 35 P 5 F 2:Abort
+Thread 7: new Method CONSUME ITEM 76
+Thread 3: new Method PRODUCE ITEM 1
+Thread 4: new Method READ ITEM 81
+Thread 6: m pop_back PRODUCE ITEM 66
+Thread 5: new Method CONSUME ITEM 89
+Thread 3: m pop_back PRODUCE ITEM 1
+Transaction P 36 P 86 F 17 C 63:Abort
+Thread 8: new Method READ ITEM 70
+Transaction F 5 P 80 C 28 P 40:Abort
+Thread 7: new Method READ ITEM 34
+Transaction P 66 P 87 F 87 F 76:Abort
+Thread 4: new Method READ ITEM 30
+Thread 8: m pop_back READ ITEM 70
+Thread 2: new Method PRODUCE ITEM 35
+Thread 5: new Method CONSUME ITEM 82
+Transaction P 1 C 97 F 34 C 46:Abort
+Thread 1: new Method READ ITEM 16
+Thread 6: new Method READ ITEM 51
+Thread 7: new Method READ ITEM 82
+Thread 4: new Method PRODUCE ITEM 69
+Thread 2: m pop_back PRODUCE ITEM 35
+Thread 6: m pop_back READ ITEM 51
+Thread 5: new Method READ ITEM 31
+Thread 3: new Method CONSUME ITEM 30
+Transaction F 70 P 31 P 27 P 53:Abort
+Thread 1: m pop_back READ ITEM 16
+Thread 4: m pop_back PRODUCE ITEM 69
+Thread 4: m pop_back READ ITEM 30
+Thread 4: m pop_back READ ITEM 81
+Thread 7: new Method READ ITEM 88
+Transaction P 35 F 48 F 57 P 86:Abort
+Thread 8: new Method CONSUME ITEM 46
+Thread 3: new Method READ ITEM 36
+Transaction F 51 C 12 C 98 F 73:Abort
+Transaction F 16 F 5 P 6 F 36:Abort
+Thread 2: new Method READ ITEM 10
+Transaction F 81 F 30 P 69 C 37:Abort
+Thread 5: new Method CONSUME ITEM 73
+Thread 8: m pop_back CONSUME ITEM 46
+Thread 6: new Method PRODUCE ITEM 20
+Thread 3: new Method PRODUCE ITEM 58
+Thread 1: new Method PRODUCE ITEM 55
+Thread 4: new Method PRODUCE ITEM 47
+Thread 2: new Method READ ITEM 70
+Thread 6: m pop_back PRODUCE ITEM 20
+Thread 3: m pop_back PRODUCE ITEM 58
+Thread 3: m pop_back READ ITEM 36
+Thread 3: m pop_back CONSUME ITEM 30
+Transaction C 46 P 44 C 85 C 100:Abort
+Thread 4: m pop_back PRODUCE ITEM 47
+Thread 5: new Method CONSUME ITEM 89
+Thread 2: m pop_back READ ITEM 70
+Thread 2: m pop_back READ ITEM 10
+Thread 1: new Method READ ITEM 69
+Transaction P 20 C 73 C 92 F 87:Abort
+Transaction C 30 F 36 P 58 F 7:Abort
+Thread 8: new Method PRODUCE ITEM 17
+Transaction P 47 C 29 C 35 F 68:Abort
+Transaction C 76 F 34 F 82 F 88:Commit
+Thread 6: new Method READ ITEM 3
+Transaction F 10 F 70 C 97 P 66:Abort
+Thread 5: new Method CONSUME ITEM 82
+Thread 3: new Method READ ITEM 84
+Thread 1: new Method PRODUCE ITEM 85
+Thread 6: m pop_back READ ITEM 3
+Thread 8: new Method READ ITEM 40
+Thread 4: new Method CONSUME ITEM 82
+Thread 2: new Method PRODUCE ITEM 45
+Thread 5: new Method READ ITEM 31
+Thread 7: new Method READ ITEM 36
+Thread 1: new Method READ ITEM 21
+Thread 3: m pop_back READ ITEM 84
+Thread 8: new Method PRODUCE ITEM 38
+Thread 1: m pop_back READ ITEM 21
+Thread 1: m pop_back PRODUCE ITEM 85
+Thread 1: m pop_back READ ITEM 69
+Thread 1: m pop_back PRODUCE ITEM 55
+Transaction F 3 P 36 P 98 C 61:Abort
+Transaction P 55 F 69 P 85 F 21:Abort
+Thread 2: m pop_back PRODUCE ITEM 45
+Thread 6: new Method CONSUME ITEM 14
+Thread 1: new Method CONSUME ITEM 24
+Thread 4: new Method READ ITEM 73
+Transaction P 45 P 75 C 18 P 56:Abort
+Thread 7: new Method PRODUCE ITEM 11
+Thread 5: new Method CONSUME ITEM 73
+Thread 8: m pop_back PRODUCE ITEM 38
+Thread 6: m pop_back CONSUME ITEM 14
+Thread 8: m pop_back READ ITEM 40
+Thread 1: m pop_back CONSUME ITEM 24
+Transaction F 84 F 7 C 43 P 43:Abort
+Thread 8: m pop_back PRODUCE ITEM 17
+Thread 2: new Method READ ITEM 35
+Thread 7: m pop_back PRODUCE ITEM 11
+Thread 7: m pop_back READ ITEM 36
+Thread 3: new Method READ ITEM 66
+Transaction P 17 F 40 P 38 P 46:Abort
+Transaction C 14 C 65 P 12 C 19:Abort
+Thread 4: new Method CONSUME ITEM 43
+Transaction F 36 P 11 F 46 P 41:Abort
+Thread 2: new Method CONSUME ITEM 8
+Transaction C 24 C 21 P 40 P 30:Abort
+Thread 3: new Method READ ITEM 60
+Thread 6: new Method PRODUCE ITEM 88
+Thread 2: m pop_back CONSUME ITEM 8
+Thread 2: m pop_back READ ITEM 35
+Thread 8: new Method CONSUME ITEM 56
+Thread 4: m pop_back CONSUME ITEM 43
+Thread 4: m pop_back READ ITEM 73
+Thread 4: m pop_back CONSUME ITEM 82
+Thread 7: new Method PRODUCE ITEM 85
+Thread 1: new Method READ ITEM 97
+Thread 3: m pop_back READ ITEM 60
+Thread 3: m pop_back READ ITEM 66
+Thread 6: m pop_back PRODUCE ITEM 88
+Transaction F 35 C 8 F 64 F 74:Abort
+Thread 8: new Method CONSUME ITEM 15
+Thread 4: new Method CONSUME ITEM 82
+Thread 7: new Method READ ITEM 26
+Transaction F 66 F 60 F 23 C 42:Abort
+Transaction C 89 C 82 F 31 C 73:Commit
+Thread 1: new Method CONSUME ITEM 10
+Transaction P 88 P 100 F 91 C 51:Abort
+Thread 2: new Method READ ITEM 45
+Thread 4: m pop_back CONSUME ITEM 82
+Thread 5: new Method READ ITEM 30
+Thread 3: new Method READ ITEM 40
+Thread 7: m pop_back READ ITEM 26
+Thread 7: m pop_back PRODUCE ITEM 85
+Thread 6: new Method PRODUCE ITEM 31
+Thread 8: new Method CONSUME ITEM 100
+Thread 2: new Method CONSUME ITEM 33
+Thread 5: new Method READ ITEM 87
+Transaction C 82 F 73 C 43 F 90:Abort
+Thread 6: m pop_back PRODUCE ITEM 31
+Thread 1: new Method CONSUME ITEM 27
+Transaction P 85 F 26 F 84 F 66:Abort
+Thread 2: m pop_back CONSUME ITEM 33
+Thread 2: m pop_back READ ITEM 45
+Thread 8: new Method PRODUCE ITEM 25
+Thread 5: m pop_back READ ITEM 87
+Thread 5: m pop_back READ ITEM 30
+Thread 3: new Method CONSUME ITEM 90
+Thread 4: new Method CONSUME ITEM 51
+Transaction P 31 F 39 F 49 F 78:Abort
+Thread 8: m pop_back PRODUCE ITEM 25
+Thread 8: m pop_back CONSUME ITEM 100
+Thread 4: m pop_back CONSUME ITEM 51
+Transaction F 45 C 33 F 79 P 92:Abort
+Thread 7: new Method CONSUME ITEM 100
+Thread 1: new Method CONSUME ITEM 29
+Thread 3: new Method CONSUME ITEM 89
+Transaction F 30 F 87 P 20 P 8:Abort
+Thread 6: new Method PRODUCE ITEM 31
+Thread 8: m pop_back CONSUME ITEM 15
+Thread 8: m pop_back CONSUME ITEM 56
+Thread 2: new Method PRODUCE ITEM 90
+Thread 3: m pop_back CONSUME ITEM 89
+Thread 3: m pop_back CONSUME ITEM 90
+Thread 3: m pop_back READ ITEM 40
+Thread 5: new Method READ ITEM 5
+Thread 6: m pop_back PRODUCE ITEM 31
+Transaction C 51 P 2 C 6 C 85:Abort
+Thread 2: m pop_back PRODUCE ITEM 90
+Transaction C 56 C 15 C 100 P 25:Abort
+Transaction F 40 C 90 C 89 C 42:Abort
+Thread 7: m pop_back CONSUME ITEM 100
+Thread 4: new Method PRODUCE ITEM 77
+Transaction P 31 F 12 C 15 C 16:Abort
+Transaction P 90 F 49 C 94 C 34:Abort
+Thread 8: new Method READ ITEM 16
+Thread 5: m pop_back READ ITEM 5
+Thread 3: new Method PRODUCE ITEM 26
+Thread 6: new Method PRODUCE ITEM 15
+Thread 8: m pop_back READ ITEM 16
+Thread 2: new Method PRODUCE ITEM 63
+Transaction F 97 C 10 C 27 C 29:Commit
+Thread 7: new Method CONSUME ITEM 100
+Thread 4: new Method READ ITEM 6
+Thread 5: new Method READ ITEM 5
+Thread 6: m pop_back PRODUCE ITEM 15
+Thread 2: m pop_back PRODUCE ITEM 63
+Thread 3: new Method CONSUME ITEM 52
+Transaction F 16 F 16 F 99 C 46:Abort
+Thread 5: new Method READ ITEM 29
+Thread 1: new Method CONSUME ITEM 2
+Thread 4: new Method PRODUCE ITEM 54
+Thread 7: new Method CONSUME ITEM 2
+Thread 3: m pop_back CONSUME ITEM 52
+Thread 7: new Method PRODUCE ITEM 92
+Thread 3: m pop_back PRODUCE ITEM 26
+Transaction P 63 C 94 F 100 F 54:Abort
+Thread 8: new Method READ ITEM 10
+Thread 7: m pop_back PRODUCE ITEM 92
+Transaction P 15 P 58 P 68 C 88:Abort
+Thread 5: m pop_back READ ITEM 29
+Thread 5: m pop_back READ ITEM 5
+Thread 7: m pop_back CONSUME ITEM 2
+Thread 7: m pop_back CONSUME ITEM 100
+Thread 4: m pop_back PRODUCE ITEM 54
+Thread 1: new Method PRODUCE ITEM 68
+Thread 4: m pop_back READ ITEM 6
+Thread 2: new Method PRODUCE ITEM 38
+Thread 4: m pop_back PRODUCE ITEM 77
+Transaction P 26 C 52 F 43 C 18:Abort
+Thread 8: m pop_back READ ITEM 10
+Thread 6: new Method PRODUCE ITEM 13
+Thread 2: m pop_back PRODUCE ITEM 38
+Thread 3: new Method CONSUME ITEM 24
+Transaction F 5 F 29 F 3 P 63:Abort
+Transaction C 100 C 2 P 92 P 65:Abort
+Thread 6: m pop_back PRODUCE ITEM 13
+Thread 1: new Method CONSUME ITEM 43
+Transaction F 10 F 80 F 44 F 57:Abort
+Transaction P 77 F 6 P 54 C 94:Abort
+Thread 5: new Method READ ITEM 99
+Thread 3: m pop_back CONSUME ITEM 24
+Thread 7: new Method READ ITEM 85
+Transaction P 38 P 58 P 31 P 67:Abort
+Thread 8: new Method READ ITEM 38
+Thread 1: new Method CONSUME ITEM 24
+Thread 4: new Method CONSUME ITEM 74
+Thread 7: m pop_back READ ITEM 85
+Transaction P 13 C 15 C 38 P 28:Abort
+Thread 2: new Method READ ITEM 71
+Thread 5: new Method CONSUME ITEM 9
+Transaction C 24 P 94 F 22 P 11:Abort
+Thread 8: new Method READ ITEM 85
+Thread 1: m pop_back CONSUME ITEM 24
+Thread 1: m pop_back CONSUME ITEM 43
+Thread 1: m pop_back PRODUCE ITEM 68
+Thread 1: m pop_back CONSUME ITEM 2
+Thread 6: new Method READ ITEM 3
+Thread 4: new Method CONSUME ITEM 21
+Transaction F 85 F 59 P 94 C 26:Abort
+Thread 8: m pop_back READ ITEM 85
+Thread 8: m pop_back READ ITEM 38
+Thread 5: new Method PRODUCE ITEM 42
+Thread 3: new Method PRODUCE ITEM 77
+Thread 6: m pop_back READ ITEM 3
+Transaction C 2 P 68 C 43 C 24:Abort
+Thread 2: new Method CONSUME ITEM 9
+Thread 4: m pop_back CONSUME ITEM 21
+Thread 4: m pop_back CONSUME ITEM 74
+Thread 5: m pop_back PRODUCE ITEM 42
+Thread 5: m pop_back CONSUME ITEM 9
+Thread 7: new Method PRODUCE ITEM 45
+Thread 5: m pop_back READ ITEM 99
+Transaction F 38 F 85 C 89 C 10:Abort
+Thread 1: new Method CONSUME ITEM 26
+Transaction F 3 F 84 C 26 P 63:Abort
+Thread 2: new Method READ ITEM 1
+Transaction C 74 C 21 C 35 F 51:Abort
+Thread 7: m pop_back PRODUCE ITEM 45
+Thread 3: new Method PRODUCE ITEM 29
+Transaction F 99 C 9 P 42 C 78:Abort
+Thread 1: m pop_back CONSUME ITEM 26
+Thread 8: new Method CONSUME ITEM 58
+Thread 6: new Method PRODUCE ITEM 60
+Thread 2: new Method READ ITEM 50
+Thread 4: new Method PRODUCE ITEM 32
+Thread 5: new Method CONSUME ITEM 23
+Transaction P 45 F 64 P 8 P 57:Abort
+Transaction C 26 C 45 F 10 C 25:Abort
+Thread 3: new Method PRODUCE ITEM 33
+Thread 5: m pop_back CONSUME ITEM 23
+Thread 8: new Method PRODUCE ITEM 63
+Thread 2: m pop_back READ ITEM 50
+Thread 2: m pop_back READ ITEM 1
+Thread 2: m pop_back CONSUME ITEM 9
+Thread 2: m pop_back READ ITEM 71
+Thread 7: new Method PRODUCE ITEM 23
+Thread 6: new Method PRODUCE ITEM 69
+Thread 1: new Method CONSUME ITEM 4
+Thread 4: new Method CONSUME ITEM 93
+Thread 6: m pop_back PRODUCE ITEM 69
+Thread 6: m pop_back PRODUCE ITEM 60
+Thread 3: new Method READ ITEM 42
+Thread 1: m pop_back CONSUME ITEM 4
+Transaction C 23 C 19 P 8 F 11:Abort
+Transaction F 71 C 9 F 1 F 50:Abort
+Thread 8: m pop_back PRODUCE ITEM 63
+Thread 8: m pop_back CONSUME ITEM 58
+Thread 4: new Method CONSUME ITEM 76
+Thread 2: new Method READ ITEM 37
+Thread 7: new Method PRODUCE ITEM 70
+Thread 5: new Method CONSUME ITEM 29
+Transaction P 60 P 69 P 10 P 39:Abort
+Transaction C 4 P 9 C 48 C 29:Abort
+Thread 4: m pop_back CONSUME ITEM 76
+Thread 4: m pop_back CONSUME ITEM 93
+Thread 4: m pop_back PRODUCE ITEM 32
+Transaction C 58 P 63 C 96 P 72:Abort
+Thread 6: new Method PRODUCE ITEM 6
+Thread 5: m pop_back CONSUME ITEM 29
+Thread 1: new Method PRODUCE ITEM 25
+Thread 8: new Method PRODUCE ITEM 57
+Thread 6: m pop_back PRODUCE ITEM 6
+Transaction P 32 C 93 C 76 P 27:Abort
+Thread 1: m pop_back PRODUCE ITEM 25
+Transaction C 29 F 92 P 97 C 21:Abort
+Transaction P 6 F 27 F 58 C 49:Abort
+Transaction P 25 C 62 F 34 P 1:Abort
+Transaction P 77 P 29 P 33 F 42:Commit
+Thread 8: m pop_back PRODUCE ITEM 57
+Thread 6: new Method READ ITEM 39
+Thread 1: new Method PRODUCE ITEM 1
+Thread 7: m pop_back PRODUCE ITEM 70
+Thread 7: m pop_back PRODUCE ITEM 23
+Thread 3: new Method READ ITEM 47
+Thread 4: new Method PRODUCE ITEM 97
+Thread 5: new Method PRODUCE ITEM 23
+Thread 1: m pop_back PRODUCE ITEM 1
+Thread 2: m pop_back READ ITEM 37
+Transaction P 57 F 7 F 97 F 67:Abort
+Thread 6: new Method PRODUCE ITEM 23
+Thread 4: m pop_back PRODUCE ITEM 97
+Thread 3: new Method READ ITEM 55
+Transaction P 1 F 34 C 4 F 64:Abort
+Thread 8: new Method READ ITEM 44
+Thread 2: new Method READ ITEM 37
+Thread 7: new Method PRODUCE ITEM 23
+Thread 6: new Method READ ITEM 7
+Thread 5: new Method PRODUCE ITEM 67
+Transaction P 97 F 27 F 11 F 44:Abort
+Thread 3: m pop_back READ ITEM 55
+Thread 3: m pop_back READ ITEM 47
+Thread 8: m pop_back READ ITEM 44
+Thread 1: new Method READ ITEM 46
+Thread 4: new Method READ ITEM 79
+Thread 6: new Method READ ITEM 36
+Thread 2: new Method PRODUCE ITEM 85
+Thread 1: m pop_back READ ITEM 46
+Thread 7: new Method PRODUCE ITEM 70
+Thread 5: new Method READ ITEM 61
+Transaction F 44 C 58 F 74 C 8:Abort
+Transaction F 47 F 55 P 93 P 88:Abort
+Thread 4: m pop_back READ ITEM 79
+Thread 5: m pop_back READ ITEM 61
+Thread 5: m pop_back PRODUCE ITEM 67
+Thread 5: m pop_back PRODUCE ITEM 23
+Transaction F 46 P 52 F 80 F 43:Abort
+Thread 8: new Method CONSUME ITEM 84
+Thread 2: new Method READ ITEM 23
+Thread 3: new Method READ ITEM 42
+Thread 7: new Method READ ITEM 93
+Transaction F 79 F 81 F 72 P 62:Abort
+Thread 8: m pop_back CONSUME ITEM 84
+Transaction P 23 P 67 F 61 P 50:Abort
+Thread 2: m pop_back READ ITEM 23
+Thread 2: m pop_back PRODUCE ITEM 85
+Thread 2: m pop_back READ ITEM 37
+Thread 1: new Method PRODUCE ITEM 80
+Thread 4: new Method PRODUCE ITEM 62
+Transaction C 84 P 50 F 69 C 63:Abort
+Thread 7: m pop_back READ ITEM 93
+Thread 7: m pop_back PRODUCE ITEM 70
+Thread 7: m pop_back PRODUCE ITEM 23
+Thread 3: m pop_back READ ITEM 42
+Thread 5: new Method READ ITEM 10
+Thread 1: new Method READ ITEM 33
+Transaction F 37 P 85 F 23 C 83:Abort
+Thread 5: m pop_back READ ITEM 10
+Transaction F 39 P 23 F 7 F 36:Commit
+Thread 8: new Method PRODUCE ITEM 86
+Thread 7: new Method PRODUCE ITEM 23
+Thread 3: new Method READ ITEM 42
+Thread 2: new Method READ ITEM 89
+Thread 4: new Method PRODUCE ITEM 60
+Thread 6: new Method PRODUCE ITEM 19
+Thread 1: new Method READ ITEM 65
+Transaction F 10 P 24 P 94 C 26:Abort
+Thread 2: m pop_back READ ITEM 89
+Thread 7: m pop_back PRODUCE ITEM 23
+Thread 8: new Method PRODUCE ITEM 1
+Thread 4: new Method READ ITEM 22
+Thread 6: m pop_back PRODUCE ITEM 19
+Thread 1: new Method CONSUME ITEM 4
+Thread 3: new Method CONSUME ITEM 40
+Thread 8: m pop_back PRODUCE ITEM 1
+Thread 8: m pop_back PRODUCE ITEM 86
+Thread 4: m pop_back READ ITEM 22
+Thread 4: m pop_back PRODUCE ITEM 60
+Thread 4: m pop_back PRODUCE ITEM 62
+Transaction P 23 P 70 F 93 F 26:Abort
+Transaction F 89 P 72 C 79 C 48:Abort
+Thread 1: m pop_back CONSUME ITEM 4
+Thread 1: m pop_back READ ITEM 65
+Thread 1: m pop_back READ ITEM 33
+Thread 1: m pop_back PRODUCE ITEM 80
+Thread 5: new Method CONSUME ITEM 33
+Transaction P 19 P 85 P 65 P 49:Abort
+Thread 3: new Method PRODUCE ITEM 6
+Transaction P 86 P 1 P 63 P 75:Abort
+Thread 2: new Method READ ITEM 52
+Thread 7: new Method CONSUME ITEM 68
+Thread 6: new Method PRODUCE ITEM 33
+Thread 3: m pop_back PRODUCE ITEM 6
+Thread 3: m pop_back CONSUME ITEM 40
+Thread 3: m pop_back READ ITEM 42
+Transaction P 62 P 60 F 22 P 36:Abort
+Transaction P 80 F 33 F 65 C 4:Abort
+Thread 8: new Method CONSUME ITEM 40
+Thread 2: m pop_back READ ITEM 52
+Thread 5: new Method READ ITEM 18
+Thread 6: m pop_back PRODUCE ITEM 33
+Thread 7: m pop_back CONSUME ITEM 68
+Thread 1: new Method PRODUCE ITEM 83
+Thread 4: new Method READ ITEM 6
+Thread 5: m pop_back READ ITEM 18
+Thread 5: m pop_back CONSUME ITEM 33
+Thread 8: new Method CONSUME ITEM 68
+Transaction F 42 C 40 P 6 F 83:Abort
+Transaction F 52 P 79 F 64 F 30:Abort
+Thread 1: m pop_back PRODUCE ITEM 83
+Thread 3: new Method PRODUCE ITEM 7
+Transaction C 33 F 18 P 40 P 2:Abort
+Transaction C 68 P 18 P 24 C 34:Abort
+Transaction P 33 P 89 P 73 C 82:Abort
+Thread 8: m pop_back CONSUME ITEM 68
+Thread 8: m pop_back CONSUME ITEM 40
+Thread 5: new Method READ ITEM 44
+Thread 3: m pop_back PRODUCE ITEM 7
+Thread 2: new Method CONSUME ITEM 84
+Thread 7: new Method READ ITEM 97
+Transaction P 83 C 72 C 52 F 11:Abort
+Thread 4: new Method CONSUME ITEM 61
+Thread 6: new Method READ ITEM 22
+Transaction C 40 C 68 C 46 F 25:Abort
+Thread 2: m pop_back CONSUME ITEM 84
+Thread 5: m pop_back READ ITEM 44
+Thread 1: new Method READ ITEM 10
+Thread 4: m pop_back CONSUME ITEM 61
+Thread 4: m pop_back READ ITEM 6
+Thread 7: new Method READ ITEM 58
+Thread 6: m pop_back READ ITEM 22
+Transaction P 7 F 27 P 71 F 39:Abort
+Thread 8: new Method CONSUME ITEM 57
+Transaction C 84 P 50 P 23 P 2:Abort
+Thread 1: m pop_back READ ITEM 10
+Transaction F 44 P 70 C 94 F 58:Abort
+Thread 3: new Method READ ITEM 34
+Transaction F 6 C 61 P 77 P 73:Abort
+Thread 2: new Method READ ITEM 87
+Transaction F 22 P 9 F 80 P 87:Abort
+Thread 7: new Method CONSUME ITEM 68
+Thread 5: new Method READ ITEM 93
+Thread 8: new Method CONSUME ITEM 46
+Thread 4: new Method PRODUCE ITEM 9
+Thread 2: m pop_back READ ITEM 87
+Transaction F 10 C 67 P 83 P 79:Abort
+Thread 7: m pop_back CONSUME ITEM 68
+Thread 7: m pop_back READ ITEM 58
+Thread 7: m pop_back READ ITEM 97
+Thread 6: new Method CONSUME ITEM 48
+Thread 8: m pop_back CONSUME ITEM 46
+Thread 4: m pop_back PRODUCE ITEM 9
+Thread 1: new Method READ ITEM 4
+Thread 8: m pop_back CONSUME ITEM 57
+Thread 3: new Method PRODUCE ITEM 32
+Thread 5: new Method CONSUME ITEM 49
+Transaction F 87 F 23 P 25 P 74:Abort
+Thread 6: new Method READ ITEM 20
+Transaction F 97 F 58 C 68 C 73:Abort
+Thread 1: m pop_back READ ITEM 4
+Transaction P 9 F 26 F 63 P 72:Abort
+Thread 2: new Method PRODUCE ITEM 23
+Thread 3: new Method READ ITEM 15
+Thread 7: new Method PRODUCE ITEM 92
+Thread 5: new Method PRODUCE ITEM 58
+Transaction C 57 C 46 C 48 F 69:Abort
+Thread 6: new Method READ ITEM 80
+Transaction F 4 P 1 C 69 F 76:Abort
+Thread 5: m pop_back PRODUCE ITEM 58
+Thread 4: new Method CONSUME ITEM 94
+Thread 2: m pop_back PRODUCE ITEM 23
+Thread 5: m pop_back CONSUME ITEM 49
+Thread 5: m pop_back READ ITEM 93
+Thread 7: m pop_back PRODUCE ITEM 92
+Thread 1: new Method PRODUCE ITEM 48
+Thread 6: m pop_back READ ITEM 80
+Thread 6: m pop_back READ ITEM 20
+Thread 6: m pop_back CONSUME ITEM 48
+Thread 8: new Method PRODUCE ITEM 32
+Thread 3: new Method PRODUCE ITEM 21
+Thread 1: m pop_back PRODUCE ITEM 48
+Thread 4: new Method READ ITEM 57
+Transaction F 93 C 49 P 58 P 81:Abort
+Transaction P 92 P 90 F 50 C 18:Abort
+Transaction P 23 F 58 F 71 C 50:Abort
+Transaction C 48 F 20 F 80 F 73:Abort
+Thread 8: new Method CONSUME ITEM 68
+Thread 7: new Method PRODUCE ITEM 81
+Thread 5: new Method CONSUME ITEM 86
+Transaction P 48 C 74 F 4 F 49:Abort
+Thread 4: m pop_back READ ITEM 57
+Thread 2: new Method READ ITEM 98
+Thread 8: m pop_back CONSUME ITEM 68
+Thread 7: m pop_back PRODUCE ITEM 81
+Thread 5: m pop_back CONSUME ITEM 86
+Thread 1: new Method PRODUCE ITEM 54
+Thread 8: m pop_back PRODUCE ITEM 32
+Thread 4: m pop_back CONSUME ITEM 94
+Thread 6: new Method CONSUME ITEM 79
+Thread 2: m pop_back READ ITEM 98
+Thread 1: m pop_back PRODUCE ITEM 54
+Thread 6: m pop_back CONSUME ITEM 79
+Transaction P 81 F 75 C 67 P 38:Abort
+Transaction C 86 C 91 F 97 F 77:Abort
+Transaction P 32 C 68 P 92 C 69:Abort
+Transaction F 98 P 46 F 67 F 69:Abort
+Thread 4: new Method CONSUME ITEM 94
+Transaction P 54 C 100 C 7 C 67:Abort
+Thread 8: new Method READ ITEM 38
+Thread 5: new Method CONSUME ITEM 24
+Transaction F 34 P 32 F 15 P 21:Commit
+Transaction C 79 F 88 F 56 F 7:Abort
+Thread 7: new Method CONSUME ITEM 5
+Thread 1: new Method CONSUME ITEM 50
+Thread 2: new Method PRODUCE ITEM 61
+Thread 6: new Method PRODUCE ITEM 30
+Thread 5: m pop_back CONSUME ITEM 24
+Thread 4: new Method READ ITEM 57
+Thread 3: new Method READ ITEM 7
+Thread 1: m pop_back CONSUME ITEM 50
+Thread 7: new Method CONSUME ITEM 76
+Thread 8: new Method PRODUCE ITEM 76
+Thread 6: m pop_back PRODUCE ITEM 30
+Thread 4: new Method CONSUME ITEM 86
+Thread 3: new Method READ ITEM 96
+Transaction C 50 F 87 F 83 F 66:Abort
+Thread 2: new Method PRODUCE ITEM 88
+Thread 7: m pop_back CONSUME ITEM 76
+Thread 8: new Method READ ITEM 87
+Thread 7: m pop_back CONSUME ITEM 5
+Transaction C 24 F 33 P 41 F 82:Abort
+Thread 2: m pop_back PRODUCE ITEM 88
+Thread 2: m pop_back PRODUCE ITEM 61
+Thread 1: new Method PRODUCE ITEM 20
+Thread 4: m pop_back CONSUME ITEM 86
+Thread 4: m pop_back READ ITEM 57
+Thread 3: new Method READ ITEM 9
+Thread 8: m pop_back READ ITEM 87
+Transaction P 30 P 30 F 90 C 67:Abort
+Transaction C 5 C 76 P 53 C 45:Abort
+Thread 1: m pop_back PRODUCE ITEM 20
+Thread 8: m pop_back PRODUCE ITEM 76
+Thread 8: m pop_back READ ITEM 38
+Thread 4: m pop_back CONSUME ITEM 94
+Transaction P 61 P 88 P 20 P 61:Abort
+Thread 5: new Method CONSUME ITEM 14
+Thread 6: new Method READ ITEM 71
+Thread 7: new Method CONSUME ITEM 72
+Thread 3: new Method PRODUCE ITEM 43
+Transaction P 20 C 9 C 62 P 99:Abort
+Thread 5: m pop_back CONSUME ITEM 14
+Transaction F 38 P 76 F 87 F 64:Abort
+Transaction C 94 F 57 C 86 C 63:Abort
+Thread 2: new Method PRODUCE ITEM 72
+Thread 7: m pop_back CONSUME ITEM 72
+Thread 3: m pop_back PRODUCE ITEM 43
+Thread 3: m pop_back READ ITEM 9
+Thread 3: m pop_back READ ITEM 96
+Thread 3: m pop_back READ ITEM 7
+Thread 6: new Method PRODUCE ITEM 39
+Thread 4: new Method PRODUCE ITEM 90
+Transaction C 14 C 30 C 66 F 59:Abort
+Thread 1: new Method PRODUCE ITEM 98
+Thread 6: m pop_back PRODUCE ITEM 39
+Transaction C 72 C 66 F 39 F 77:Abort
+Thread 6: m pop_back READ ITEM 71
+Thread 8: new Method READ ITEM 59
+Thread 2: new Method CONSUME ITEM 29
+Transaction F 7 F 96 F 9 P 43:Abort
+Thread 4: m pop_back PRODUCE ITEM 90
+Thread 8: m pop_back READ ITEM 59
+Thread 5: new Method CONSUME ITEM 48
+Thread 1: new Method CONSUME ITEM 27
+Transaction F 71 P 39 C 72 C 54:Abort
+Thread 2: new Method READ ITEM 41
+Thread 7: new Method CONSUME ITEM 42
+Thread 3: new Method CONSUME ITEM 39
+Transaction F 59 F 57 C 32 P 72:Abort
+Thread 1: m pop_back CONSUME ITEM 27
+Thread 1: m pop_back PRODUCE ITEM 98
+Transaction P 90 P 77 F 17 C 24:Abort
+Thread 2: m pop_back READ ITEM 41
+Thread 2: m pop_back CONSUME ITEM 29
+Thread 2: m pop_back PRODUCE ITEM 72
+Thread 6: new Method CONSUME ITEM 83
+Thread 5: new Method PRODUCE ITEM 28
+Thread 8: new Method PRODUCE ITEM 36
+Thread 3: new Method PRODUCE ITEM 47
+Thread 4: new Method READ ITEM 46
+Transaction P 98 C 27 F 12 F 57:Abort
+Thread 7: new Method PRODUCE ITEM 71
+Transaction P 72 C 29 F 41 F 53:Abort
+Thread 8: m pop_back PRODUCE ITEM 36
+Thread 3: m pop_back PRODUCE ITEM 47
+Thread 3: m pop_back CONSUME ITEM 39
+Thread 5: new Method READ ITEM 78
+Thread 4: m pop_back READ ITEM 46
+Thread 6: new Method PRODUCE ITEM 12
+Thread 7: m pop_back PRODUCE ITEM 71
+Thread 7: m pop_back CONSUME ITEM 42
+Thread 1: new Method CONSUME ITEM 81
+Thread 5: m pop_back READ ITEM 78
+Thread 2: new Method CONSUME ITEM 62
+Thread 5: m pop_back PRODUCE ITEM 28
+Thread 5: m pop_back CONSUME ITEM 48
+Transaction P 36 P 8 P 45 P 52:Abort
+Transaction C 39 P 47 F 54 C 83:Abort
+Thread 2: m pop_back CONSUME ITEM 62
+Transaction C 42 P 71 F 75 P 10:Abort
+Transaction F 46 C 99 F 12 F 74:Abort
+Thread 6: new Method CONSUME ITEM 21
+Transaction C 48 P 28 F 78 P 35:Abort
+Thread 7: new Method PRODUCE ITEM 15
+Thread 1: new Method PRODUCE ITEM 10
+Thread 8: new Method PRODUCE ITEM 67
+Transaction C 62 F 38 F 80 C 52:Abort
+Thread 3: new Method CONSUME ITEM 48
+Thread 4: new Method READ ITEM 40
+Thread 6: new Method CONSUME ITEM 41
+Thread 7: m pop_back PRODUCE ITEM 15
+Thread 2: new Method PRODUCE ITEM 19
+Thread 5: new Method PRODUCE ITEM 59
+Thread 1: new Method PRODUCE ITEM 23
+Thread 6: m pop_back CONSUME ITEM 41
+Thread 6: m pop_back CONSUME ITEM 21
+Thread 6: m pop_back PRODUCE ITEM 12
+Thread 6: m pop_back CONSUME ITEM 83
+Thread 4: new Method PRODUCE ITEM 29
+Thread 3: new Method READ ITEM 20
+Thread 8: new Method PRODUCE ITEM 91
+Thread 1: m pop_back PRODUCE ITEM 23
+Transaction P 15 P 71 P 66 F 20:Abort
+Thread 1: m pop_back PRODUCE ITEM 10
+Thread 1: m pop_back CONSUME ITEM 81
+Thread 2: m pop_back PRODUCE ITEM 19
+Thread 8: new Method PRODUCE ITEM 77
+Transaction C 81 P 10 P 23 P 22:Abort
+Thread 4: m pop_back PRODUCE ITEM 29
+Thread 8: m pop_back PRODUCE ITEM 77
+Thread 8: m pop_back PRODUCE ITEM 91
+Thread 8: m pop_back PRODUCE ITEM 67
+Thread 4: m pop_back READ ITEM 40
+Thread 7: new Method PRODUCE ITEM 43
+Thread 1: new Method CONSUME ITEM 7
+Transaction P 19 C 7 F 30 C 61:Abort
+Transaction C 83 P 12 C 21 C 41:Abort
+Thread 5: new Method CONSUME ITEM 43
+Transaction P 67 P 91 P 77 F 33:Abort
+Transaction F 40 P 29 F 31 P 64:Abort
+Thread 3: new Method READ ITEM 31
+Thread 7: m pop_back PRODUCE ITEM 43
+Thread 2: new Method READ ITEM 85
+Thread 8: new Method PRODUCE ITEM 81
+Thread 6: new Method READ ITEM 30
+Thread 2: m pop_back READ ITEM 85
+Thread 1: new Method CONSUME ITEM 83
+Thread 5: new Method READ ITEM 30
+Thread 3: new Method READ ITEM 6
+Thread 4: new Method PRODUCE ITEM 79
+Transaction P 43 P 41 C 77 P 93:Abort
+Thread 8: m pop_back PRODUCE ITEM 81
+Thread 6: new Method READ ITEM 74
+Thread 7: new Method READ ITEM 43
+Transaction F 85 C 78 F 35 P 38:Abort
+Transaction P 81 C 40 F 56 F 53:Abort
+Thread 1: new Method PRODUCE ITEM 84
+Thread 2: new Method READ ITEM 75
+Thread 5: new Method CONSUME ITEM 92
+Thread 6: new Method CONSUME ITEM 44
+Thread 4: m pop_back PRODUCE ITEM 79
+Thread 2: m pop_back READ ITEM 75
+Thread 8: new Method CONSUME ITEM 29
+Thread 6: m pop_back CONSUME ITEM 44
+Thread 6: m pop_back READ ITEM 74
+Thread 6: m pop_back READ ITEM 30
+Thread 7: m pop_back READ ITEM 43
+Thread 4: new Method PRODUCE ITEM 79
+Transaction F 75 C 84 P 54 P 50:Abort
+Thread 1: m pop_back PRODUCE ITEM 84
+Thread 5: new Method PRODUCE ITEM 59
+Thread 1: m pop_back CONSUME ITEM 83
+Thread 1: m pop_back CONSUME ITEM 7
+Thread 8: new Method CONSUME ITEM 35
+Transaction F 30 F 74 C 44 F 76:Abort
+Transaction C 48 F 20 F 31 F 6:Commit
+Thread 2: new Method READ ITEM 24
+Thread 7: new Method READ ITEM 43
+Thread 6: new Method PRODUCE ITEM 34
+Thread 8: new Method READ ITEM 45
+Thread 3: new Method READ ITEM 100
+Thread 2: m pop_back READ ITEM 24
+Thread 4: new Method CONSUME ITEM 77
+Thread 5: new Method CONSUME ITEM 43
+Thread 1: new Method CONSUME ITEM 7
+Thread 6: m pop_back PRODUCE ITEM 34
+Thread 8: new Method READ ITEM 96
+Thread 7: new Method CONSUME ITEM 45
+Transaction F 24 F 36 F 60 C 41:Abort
+Thread 5: new Method READ ITEM 30
+Thread 3: new Method PRODUCE ITEM 22
+Thread 4: new Method PRODUCE ITEM 12
+Thread 2: new Method READ ITEM 8
+Transaction P 34 F 71 C 89 C 25:Abort
+Thread 1: new Method CONSUME ITEM 83
+Thread 2: m pop_back READ ITEM 8
+Thread 7: new Method PRODUCE ITEM 22
+Thread 6: new Method CONSUME ITEM 74
+Transaction F 8 C 83 C 64 F 64:Abort
+Thread 6: new Method READ ITEM 41
+Transaction C 29 C 35 F 45 F 96:Commit
+Thread 5: m pop_back READ ITEM 30
+Thread 5: m pop_back CONSUME ITEM 43
+Thread 5: m pop_back PRODUCE ITEM 59
+Thread 2: new Method PRODUCE ITEM 44
+Thread 6: m pop_back READ ITEM 41
+Thread 6: m pop_back CONSUME ITEM 74
+Thread 8: new Method READ ITEM 58
+Thread 7: m pop_back PRODUCE ITEM 22
+Thread 2: new Method CONSUME ITEM 8
+Thread 4: m pop_back PRODUCE ITEM 12
+Thread 7: m pop_back CONSUME ITEM 45
+Transaction C 74 F 41 C 83 P 13:Abort
+Thread 2: m pop_back CONSUME ITEM 8
+Thread 4: m pop_back CONSUME ITEM 77
+Thread 8: new Method READ ITEM 88
+Thread 4: m pop_back PRODUCE ITEM 79
+Thread 5: new Method PRODUCE ITEM 59
+Thread 1: m pop_back CONSUME ITEM 83
+Thread 3: m pop_back PRODUCE ITEM 22
+Thread 6: new Method CONSUME ITEM 84
+Thread 3: m pop_back READ ITEM 100
+Thread 2: m pop_back PRODUCE ITEM 44
+Thread 7: m pop_back READ ITEM 43
+Thread 1: m pop_back CONSUME ITEM 7
+Thread 8: new Method PRODUCE ITEM 71
+Thread 6: m pop_back CONSUME ITEM 84
+Thread 5: new Method CONSUME ITEM 43
+Transaction P 44 C 8 P 10 F 10:Abort
+Thread 3: new Method READ ITEM 100
+Thread 7: new Method READ ITEM 43
+Thread 8: m pop_back PRODUCE ITEM 71
+Thread 8: m pop_back READ ITEM 88
+Thread 8: m pop_back READ ITEM 58
+Thread 4: new Method PRODUCE ITEM 79
+Thread 1: new Method CONSUME ITEM 7
+Transaction C 84 F 75 F 23 C 4:Abort
+Thread 2: new Method CONSUME ITEM 79
+Thread 5: new Method READ ITEM 30
+Thread 3: new Method PRODUCE ITEM 22
+Thread 6: new Method READ ITEM 18
+Thread 7: new Method CONSUME ITEM 45
+Thread 2: m pop_back CONSUME ITEM 79
+Thread 4: new Method CONSUME ITEM 77
+Transaction F 58 F 88 P 71 P 56:Abort
+Thread 1: new Method CONSUME ITEM 83
+Thread 6: m pop_back READ ITEM 18
+Thread 3: new Method CONSUME ITEM 51
+Thread 8: new Method PRODUCE ITEM 77
+Transaction C 79 P 55 C 55 C 67:Abort
+Thread 5: new Method CONSUME ITEM 92
+Thread 7: new Method PRODUCE ITEM 22
+Thread 4: new Method PRODUCE ITEM 12
+Transaction F 18 C 54 P 7 F 14:Abort
+Thread 1: new Method PRODUCE ITEM 84
+Thread 2: new Method READ ITEM 79
+Thread 3: m pop_back CONSUME ITEM 51
+Thread 3: m pop_back PRODUCE ITEM 22
+Thread 3: m pop_back READ ITEM 100
+Thread 8: m pop_back PRODUCE ITEM 77
+Thread 2: m pop_back READ ITEM 79
+Thread 1: new Method READ ITEM 58
+Thread 6: new Method PRODUCE ITEM 17
+Thread 7: m pop_back PRODUCE ITEM 22
+Thread 4: new Method READ ITEM 58
+Transaction F 100 P 22 C 51 F 24:Abort
+Thread 7: m pop_back CONSUME ITEM 45
+Thread 7: m pop_back READ ITEM 43
+Transaction P 77 F 91 C 10 F 38:Abort
+Transaction F 79 C 98 P 5 F 50:Abort
+Thread 3: new Method READ ITEM 11
+Thread 8: new Method PRODUCE ITEM 95
+Thread 7: new Method READ ITEM 43
+Thread 1: new Method CONSUME ITEM 7
+Thread 6: m pop_back PRODUCE ITEM 17
+Thread 8: m pop_back PRODUCE ITEM 95
+Thread 2: new Method CONSUME ITEM 71
+Thread 7: m pop_back READ ITEM 43
+Thread 3: new Method READ ITEM 67
+Transaction P 59 C 43 F 30 C 92:Commit
+Thread 1: new Method CONSUME ITEM 83
+Thread 4: new Method PRODUCE ITEM 79
+Thread 3: m pop_back READ ITEM 67
+Thread 3: m pop_back READ ITEM 11
+Transaction P 95 F 52 C 18 F 39:Abort
+Thread 2: new Method READ ITEM 23
+Thread 5: new Method READ ITEM 18
+Thread 6: new Method PRODUCE ITEM 17
+Transaction F 43 C 45 P 22 C 34:Abort
+Thread 8: new Method PRODUCE ITEM 19
+Thread 1: new Method PRODUCE ITEM 84
+Thread 4: new Method CONSUME ITEM 77
+Thread 5: m pop_back READ ITEM 18
+Transaction F 11 F 67 F 40 F 78:Abort
+Thread 2: new Method READ ITEM 81
+Thread 7: new Method READ ITEM 100
+Thread 6: new Method READ ITEM 51
+Thread 8: m pop_back PRODUCE ITEM 19
+Thread 3: new Method CONSUME ITEM 28
+Thread 1: new Method READ ITEM 58
+Thread 6: m pop_back READ ITEM 51
+Thread 6: m pop_back PRODUCE ITEM 17
+Transaction F 18 P 8 F 31 P 88:Abort
+Thread 7: new Method READ ITEM 11
+Thread 3: m pop_back CONSUME ITEM 28
+Thread 2: new Method CONSUME ITEM 13
+Thread 4: new Method PRODUCE ITEM 12
+Transaction P 19 F 92 F 14 F 71:Abort
+Thread 5: new Method PRODUCE ITEM 55
+Transaction P 17 F 51 P 23 P 7:Abort
+Thread 7: new Method READ ITEM 32
+Transaction C 28 P 68 P 45 C 26:Abort
+Thread 4: m pop_back PRODUCE ITEM 12
+Thread 4: m pop_back CONSUME ITEM 77
+Thread 4: m pop_back PRODUCE ITEM 79
+Thread 8: new Method PRODUCE ITEM 98
+Thread 6: new Method CONSUME ITEM 85
+Thread 3: new Method READ ITEM 12
+Thread 2: new Method CONSUME ITEM 71
+Thread 5: m pop_back PRODUCE ITEM 55
+Thread 7: m pop_back READ ITEM 32
+Thread 7: m pop_back READ ITEM 11
+Thread 7: m pop_back READ ITEM 100
+Thread 6: m pop_back CONSUME ITEM 85
+Thread 3: m pop_back READ ITEM 12
+Thread 4: new Method PRODUCE ITEM 79
+Thread 8: new Method PRODUCE ITEM 10
+Thread 2: new Method READ ITEM 23
+Transaction C 7 C 83 P 84 F 58:Commit
+Thread 5: new Method PRODUCE ITEM 55
+Thread 7: new Method READ ITEM 100
+Transaction F 12 F 45 C 86 P 23:Abort
+Transaction C 85 F 74 C 100 C 98:Abort
+Thread 2: new Method READ ITEM 81
+Thread 1: new Method READ ITEM 27
+Thread 8: new Method CONSUME ITEM 59
+Thread 3: new Method CONSUME ITEM 92
+Thread 7: new Method READ ITEM 11
+Thread 5: new Method READ ITEM 93
+Thread 1: m pop_back READ ITEM 27
+Thread 4: new Method CONSUME ITEM 77
+Thread 6: new Method PRODUCE ITEM 28
+Thread 3: m pop_back CONSUME ITEM 92
+Thread 2: new Method CONSUME ITEM 13
+Thread 7: new Method READ ITEM 32
+Thread 8: new Method CONSUME ITEM 90
+Thread 5: new Method READ ITEM 23
+Transaction C 92 C 83 C 28 F 23:Abort
+Transaction F 27 P 66 F 14 C 21:Abort
+Thread 7: new Method CONSUME ITEM 61
+Thread 6: new Method CONSUME ITEM 66
+Thread 4: new Method PRODUCE ITEM 12
+Thread 1: new Method CONSUME ITEM 3
+Thread 1: m pop_back CONSUME ITEM 3
+Thread 5: m pop_back READ ITEM 23
+Thread 5: m pop_back READ ITEM 93
+Thread 5: m pop_back PRODUCE ITEM 55
+Thread 7: m pop_back CONSUME ITEM 61
+Thread 4: m pop_back PRODUCE ITEM 12
+Thread 4: m pop_back CONSUME ITEM 77
+Transaction C 3 F 43 P 11 P 60:Abort
+Thread 7: m pop_back READ ITEM 32
+Thread 8: new Method PRODUCE ITEM 98
+Thread 4: m pop_back PRODUCE ITEM 79
+Thread 6: m pop_back CONSUME ITEM 66
+Thread 3: new Method CONSUME ITEM 97
+Thread 5: new Method PRODUCE ITEM 55
+Thread 1: new Method CONSUME ITEM 50
+Thread 7: m pop_back READ ITEM 11
+Thread 7: m pop_back READ ITEM 100
+Thread 6: m pop_back PRODUCE ITEM 28
+Transaction C 71 F 23 F 81 C 13:Commit
+Thread 1: m pop_back CONSUME ITEM 50
+Thread 4: new Method PRODUCE ITEM 79
+Thread 2: new Method READ ITEM 31
+Thread 5: new Method READ ITEM 93
+Transaction F 100 F 11 F 32 C 61:Abort
+Thread 8: new Method PRODUCE ITEM 10
+Transaction C 50 C 13 F 92 C 5:Abort
+Thread 3: new Method PRODUCE ITEM 60
+Thread 6: new Method PRODUCE ITEM 28
+Thread 7: new Method READ ITEM 30
+Thread 4: new Method CONSUME ITEM 77
+Thread 5: new Method READ ITEM 23
+Thread 1: new Method PRODUCE ITEM 1
+Thread 2: new Method PRODUCE ITEM 10
+Thread 8: new Method CONSUME ITEM 59
+Thread 7: new Method PRODUCE ITEM 66
+Thread 1: m pop_back PRODUCE ITEM 1
+Thread 6: new Method CONSUME ITEM 66
+Thread 5: new Method PRODUCE ITEM 53
+Thread 3: new Method CONSUME ITEM 31
+Thread 2: new Method CONSUME ITEM 27
+Thread 4: new Method PRODUCE ITEM 12
+Thread 7: m pop_back PRODUCE ITEM 66
+Thread 7: m pop_back READ ITEM 30
+Thread 5: m pop_back PRODUCE ITEM 53
+Thread 5: m pop_back READ ITEM 23
+Thread 5: m pop_back READ ITEM 93
+Transaction P 1 C 80 P 82 C 37:Abort
+Thread 5: m pop_back PRODUCE ITEM 55
+Thread 8: new Method CONSUME ITEM 90
+Thread 2: m pop_back CONSUME ITEM 27
+Thread 2: m pop_back PRODUCE ITEM 10
+Thread 2: m pop_back READ ITEM 31
+Thread 6: new Method PRODUCE ITEM 31
+Thread 3: new Method CONSUME ITEM 87
+Thread 4: new Method READ ITEM 58
+Transaction F 30 P 66 C 60 P 87:Abort
+Thread 6: m pop_back PRODUCE ITEM 31
+Transaction P 55 F 93 F 23 P 53:Abort
+Thread 6: m pop_back CONSUME ITEM 66
+Thread 1: new Method PRODUCE ITEM 72
+Thread 6: m pop_back PRODUCE ITEM 28
+Thread 3: m pop_back CONSUME ITEM 87
+Thread 3: m pop_back CONSUME ITEM 31
+Thread 7: new Method PRODUCE ITEM 36
+Thread 3: m pop_back PRODUCE ITEM 60
+Thread 3: m pop_back CONSUME ITEM 97
+Transaction F 31 P 10 C 27 C 79:Abort
+Thread 5: new Method PRODUCE ITEM 74
+Thread 7: m pop_back PRODUCE ITEM 36
+Thread 1: m pop_back PRODUCE ITEM 72
+Transaction P 28 C 66 P 31 C 95:Abort
+Thread 5: m pop_back PRODUCE ITEM 74
+Thread 4: new Method PRODUCE ITEM 79
+Transaction C 97 P 60 C 31 C 87:Abort
+Thread 2: new Method PRODUCE ITEM 4
+Transaction P 36 F 100 P 91 C 13:Abort
+Thread 6: new Method READ ITEM 90
+Transaction P 74 P 34 C 46 P 15:Abort
+Thread 3: new Method READ ITEM 89
+Thread 2: new Method READ ITEM 36
+Thread 1: new Method PRODUCE ITEM 72
+Transaction P 98 P 10 C 59 C 90:Commit
+Thread 7: new Method CONSUME ITEM 60
+Thread 6: m pop_back READ ITEM 90
+Thread 4: new Method CONSUME ITEM 77
+Thread 5: new Method PRODUCE ITEM 21
+Thread 3: m pop_back READ ITEM 89
+Thread 2: new Method READ ITEM 100
+Thread 1: new Method CONSUME ITEM 22
+Thread 7: m pop_back CONSUME ITEM 60
+Thread 5: m pop_back PRODUCE ITEM 21
+Transaction F 90 F 19 C 65 P 8:Abort
+Thread 8: new Method CONSUME ITEM 6
+Transaction F 89 C 10 P 1 P 45:Abort
+Thread 1: m pop_back CONSUME ITEM 22
+Thread 4: new Method PRODUCE ITEM 12
+Thread 1: m pop_back PRODUCE ITEM 72
+Thread 2: new Method CONSUME ITEM 60
+Thread 6: new Method READ ITEM 83
+Transaction P 21 C 74 P 90 F 71:Abort
+Thread 3: new Method PRODUCE ITEM 1
+Transaction C 60 P 57 P 37 C 74:Abort
+Thread 8: new Method READ ITEM 2
+Thread 2: m pop_back CONSUME ITEM 60
+Thread 2: m pop_back READ ITEM 100
+Thread 2: m pop_back READ ITEM 36
+Thread 2: m pop_back PRODUCE ITEM 4
+Thread 6: m pop_back READ ITEM 83
+Thread 3: m pop_back PRODUCE ITEM 1
+Transaction P 72 C 22 F 8 F 100:Abort
+Thread 7: new Method READ ITEM 1
+Thread 4: new Method READ ITEM 58
+Thread 8: new Method CONSUME ITEM 47
+Transaction F 83 F 35 C 5 F 24:Abort
+Thread 7: new Method CONSUME ITEM 68
+Thread 5: new Method PRODUCE ITEM 24
+Transaction P 1 F 92 C 49 C 75:Abort
+Thread 1: new Method PRODUCE ITEM 37
+Transaction P 4 F 36 F 100 C 60:Abort
+Thread 6: new Method PRODUCE ITEM 8
+Thread 8: new Method PRODUCE ITEM 3
+Thread 7: m pop_back CONSUME ITEM 68
+Thread 1: m pop_back PRODUCE ITEM 37
+Thread 3: new Method CONSUME ITEM 80
+Thread 5: m pop_back PRODUCE ITEM 24
+Thread 7: m pop_back READ ITEM 1
+Thread 3: m pop_back CONSUME ITEM 80
+Thread 2: new Method PRODUCE ITEM 90
+Thread 6: m pop_back PRODUCE ITEM 8
+Transaction P 37 P 27 P 83 C 28:Abort
+Thread 5: new Method PRODUCE ITEM 24
+Transaction F 1 C 68 P 59 C 96:Abort
+Thread 8: new Method CONSUME ITEM 6
+Transaction C 80 P 17 P 20 P 86:Abort
+Thread 2: new Method READ ITEM 9
+Thread 1: new Method READ ITEM 97
+Thread 5: new Method READ ITEM 44
+Thread 7: new Method READ ITEM 22
+Transaction P 79 C 77 P 12 F 58:Commit
+Thread 8: new Method READ ITEM 2
+Thread 6: new Method PRODUCE ITEM 8
+Thread 3: new Method CONSUME ITEM 95
+Thread 2: m pop_back READ ITEM 9
+Thread 2: m pop_back PRODUCE ITEM 90
+Thread 5: m pop_back READ ITEM 44
+Thread 5: m pop_back PRODUCE ITEM 24
+Thread 7: m pop_back READ ITEM 22
+Thread 4: new Method CONSUME ITEM 67
+Thread 1: new Method CONSUME ITEM 93
+Thread 3: new Method READ ITEM 83
+Thread 6: new Method CONSUME ITEM 77
+Thread 4: m pop_back CONSUME ITEM 67
+Thread 8: new Method CONSUME ITEM 47
+Transaction F 22 P 51 C 72 P 64:Abort
+Transaction P 24 F 44 F 49 P 67:Abort
+Thread 3: m pop_back READ ITEM 83
+Thread 3: m pop_back CONSUME ITEM 95
+Thread 1: new Method READ ITEM 48
+Thread 6: m pop_back CONSUME ITEM 77
+Thread 6: m pop_back PRODUCE ITEM 8
+Thread 2: new Method PRODUCE ITEM 90
+Thread 5: new Method READ ITEM 99
+Transaction C 67 C 73 C 64 P 6:Abort
+Thread 1: m pop_back READ ITEM 48
+Thread 1: m pop_back CONSUME ITEM 93
+Thread 7: new Method PRODUCE ITEM 61
+Thread 1: m pop_back READ ITEM 97
+Thread 8: new Method PRODUCE ITEM 3
+Transaction P 8 C 77 F 68 F 72:Abort
+Transaction C 95 F 83 C 90 P 23:Abort
+Thread 4: new Method CONSUME ITEM 92
+Thread 2: new Method READ ITEM 9
+Thread 5: new Method CONSUME ITEM 99
+Thread 6: new Method READ ITEM 8
+Thread 4: m pop_back CONSUME ITEM 92
+Transaction F 97 C 93 F 48 F 12:Abort
+Thread 3: new Method PRODUCE ITEM 89
+Thread 6: m pop_back READ ITEM 8
+Thread 1: new Method READ ITEM 71
+Transaction C 92 P 4 F 10 C 8:Abort
+Transaction F 8 P 98 C 5 P 33:Abort
+Thread 1: m pop_back READ ITEM 71
+Thread 2: m pop_back READ ITEM 9
+Thread 2: m pop_back PRODUCE ITEM 90
+Thread 7: m pop_back PRODUCE ITEM 61
+Thread 4: new Method READ ITEM 36
+Thread 5: m pop_back CONSUME ITEM 99
+Thread 5: m pop_back READ ITEM 99
+Thread 6: new Method READ ITEM 29
+Thread 3: m pop_back PRODUCE ITEM 89
+Transaction C 6 F 2 C 47 P 3:Commit
+Transaction F 71 C 51 C 21 P 58:Abort
+Thread 6: m pop_back READ ITEM 29
+Thread 4: new Method READ ITEM 89
+Thread 2: new Method PRODUCE ITEM 90
+Thread 5: new Method READ ITEM 99
+Thread 7: new Method PRODUCE ITEM 61
+Thread 4: m pop_back READ ITEM 89
+Thread 4: m pop_back READ ITEM 36
+Thread 8: new Method CONSUME ITEM 33
+Thread 1: new Method READ ITEM 66
+Transaction F 29 F 28 F 59 C 36:Abort
+Thread 3: new Method PRODUCE ITEM 89
+Thread 2: new Method READ ITEM 9
+Thread 8: new Method PRODUCE ITEM 49
+Thread 6: new Method READ ITEM 40
+Transaction F 36 F 89 C 46 F 85:Abort
+Thread 5: new Method CONSUME ITEM 99
+Thread 7: new Method CONSUME ITEM 31
+Thread 1: new Method PRODUCE ITEM 46
+Thread 3: new Method READ ITEM 58
+Thread 8: m pop_back PRODUCE ITEM 49
+Thread 8: m pop_back CONSUME ITEM 33
+Thread 4: new Method READ ITEM 93
+Thread 2: new Method PRODUCE ITEM 66
+Thread 5: new Method READ ITEM 48
+Thread 7: new Method READ ITEM 67
+Thread 2: m pop_back PRODUCE ITEM 66
+Thread 2: m pop_back READ ITEM 9
+Thread 2: m pop_back PRODUCE ITEM 90
+Transaction C 33 P 49 C 78 F 43:Abort
+Thread 6: new Method READ ITEM 82
+Thread 4: new Method READ ITEM 43
+Thread 3: new Method PRODUCE ITEM 68
+Thread 1: new Method CONSUME ITEM 86
+Thread 5: m pop_back READ ITEM 48
+Thread 1: m pop_back CONSUME ITEM 86
+Thread 5: m pop_back CONSUME ITEM 99
+Thread 1: m pop_back PRODUCE ITEM 46
+Thread 5: m pop_back READ ITEM 99
+Thread 7: m pop_back READ ITEM 67
+Thread 8: new Method CONSUME ITEM 6
+Thread 1: m pop_back READ ITEM 66
+Thread 7: m pop_back CONSUME ITEM 31
+Transaction P 90 F 9 P 66 P 76:Abort
+Thread 7: m pop_back PRODUCE ITEM 61
+Thread 3: new Method READ ITEM 66
+Thread 4: m pop_back READ ITEM 43
+Transaction F 99 C 99 F 48 P 20:Abort
+Thread 8: m pop_back CONSUME ITEM 6
+Thread 4: m pop_back READ ITEM 93
+Thread 6: m pop_back READ ITEM 82
+Thread 6: m pop_back READ ITEM 40
+Transaction F 66 P 46 C 86 P 51:Abort
+Thread 2: new Method PRODUCE ITEM 88
+Transaction P 61 C 31 F 67 P 11:Abort
+Thread 5: new Method PRODUCE ITEM 87
+Transaction F 93 F 43 C 55 P 17:Abort
+Thread 1: new Method PRODUCE ITEM 27
+Transaction C 6 F 38 F 83 P 17:Abort
+Transaction F 40 F 82 C 44 P 2:Abort
+Thread 2: m pop_back PRODUCE ITEM 88
+Thread 7: new Method CONSUME ITEM 51
+Thread 6: new Method PRODUCE ITEM 45
+Thread 4: new Method READ ITEM 88
+Thread 7: m pop_back CONSUME ITEM 51
+Thread 8: new Method PRODUCE ITEM 81
+Thread 5: m pop_back PRODUCE ITEM 87
+Transaction P 88 F 97 P 69 F 52:Abort
+Thread 1: m pop_back PRODUCE ITEM 27
+Thread 6: m pop_back PRODUCE ITEM 45
+Thread 8: m pop_back PRODUCE ITEM 81
+Thread 2: new Method READ ITEM 11
+Thread 4: new Method CONSUME ITEM 76
+Transaction C 51 F 24 C 58 C 27:Abort
+Thread 1: new Method PRODUCE ITEM 27
+Thread 5: new Method PRODUCE ITEM 87
+Transaction P 89 F 58 P 68 F 66:Commit
+Transaction P 45 F 46 F 77 F 5:Abort
+Thread 7: new Method READ ITEM 28
+Thread 4: m pop_back CONSUME ITEM 76
+Thread 4: m pop_back READ ITEM 88
+Transaction P 81 C 27 F 93 F 77:Abort
+Thread 2: new Method READ ITEM 45
+Thread 3: new Method READ ITEM 66
+Thread 7: m pop_back READ ITEM 28
+Thread 5: new Method READ ITEM 87
+Thread 8: new Method CONSUME ITEM 64
+Thread 1: new Method PRODUCE ITEM 41
+Thread 6: new Method READ ITEM 14
+Transaction F 88 C 76 P 7 C 100:Abort
+Thread 2: new Method CONSUME ITEM 33
+Thread 8: m pop_back CONSUME ITEM 64
+Thread 3: new Method PRODUCE ITEM 6
+Thread 4: new Method READ ITEM 69
+Thread 5: new Method PRODUCE ITEM 88
+Transaction F 28 F 37 C 12 C 46:Abort
+Thread 1: new Method PRODUCE ITEM 57
+Thread 6: m pop_back READ ITEM 14
+Transaction C 64 F 10 P 73 C 21:Abort
+Thread 5: m pop_back PRODUCE ITEM 88
+Thread 5: m pop_back READ ITEM 87
+Thread 5: m pop_back PRODUCE ITEM 87
+Thread 1: m pop_back PRODUCE ITEM 57
+Thread 1: m pop_back PRODUCE ITEM 41
+Thread 4: new Method READ ITEM 11
+Thread 1: m pop_back PRODUCE ITEM 27
+Thread 2: new Method CONSUME ITEM 100
+Thread 3: new Method READ ITEM 71
+Thread 7: new Method PRODUCE ITEM 14
+Thread 8: new Method PRODUCE ITEM 51
+Transaction F 14 C 24 P 92 F 40:Abort
+Transaction P 87 F 87 P 88 C 37:Abort
+Transaction P 27 P 41 P 57 F 85:Abort
+Thread 3: m pop_back READ ITEM 71
+Thread 3: m pop_back PRODUCE ITEM 6
+Thread 3: m pop_back READ ITEM 66
+Thread 4: new Method CONSUME ITEM 25
+Thread 6: new Method READ ITEM 57
+Thread 5: new Method PRODUCE ITEM 82
+Thread 7: m pop_back PRODUCE ITEM 14
+Thread 8: m pop_back PRODUCE ITEM 51
+Thread 1: new Method CONSUME ITEM 79
+Transaction F 66 P 6 F 71 C 44:Abort
+Thread 4: new Method READ ITEM 16
+Thread 6: m pop_back READ ITEM 57
+Thread 5: new Method CONSUME ITEM 10
+Thread 4: m pop_back READ ITEM 16
+Thread 4: m pop_back CONSUME ITEM 25
+Thread 4: m pop_back READ ITEM 11
+Thread 7: new Method PRODUCE ITEM 14
+Thread 4: m pop_back READ ITEM 69
+Thread 6: new Method READ ITEM 57
+Thread 8: new Method PRODUCE ITEM 51
+Thread 5: new Method READ ITEM 92
+Thread 3: new Method PRODUCE ITEM 61
+Thread 1: new Method PRODUCE ITEM 72
+Transaction F 11 F 45 C 33 C 100:Commit
+Thread 5: m pop_back READ ITEM 92
+Thread 5: m pop_back CONSUME ITEM 10
+Thread 5: m pop_back PRODUCE ITEM 82
+Thread 6: new Method READ ITEM 45
+Thread 2: new Method CONSUME ITEM 92
+Thread 8: new Method PRODUCE ITEM 84
+Thread 7: new Method READ ITEM 63
+Transaction F 69 F 11 C 25 F 16:Abort
+Thread 1: new Method READ ITEM 43
+Thread 2: m pop_back CONSUME ITEM 92
+Thread 3: new Method CONSUME ITEM 66
+Transaction P 82 C 10 F 92 F 81:Abort
+Thread 3: new Method READ ITEM 12
+Thread 4: new Method READ ITEM 34
+Thread 5: new Method PRODUCE ITEM 23
+Thread 3: new Method READ ITEM 55
+Thread 6: new Method READ ITEM 43
+Thread 5: m pop_back PRODUCE ITEM 23
+Thread 8: m pop_back PRODUCE ITEM 84
+Thread 3: m pop_back READ ITEM 55
+Thread 8: m pop_back PRODUCE ITEM 51
+Thread 3: m pop_back READ ITEM 12
+Thread 4: new Method READ ITEM 23
+Thread 7: new Method PRODUCE ITEM 9
+Transaction P 23 F 89 P 90 F 17:Abort
+Thread 3: m pop_back CONSUME ITEM 66
+Thread 3: m pop_back PRODUCE ITEM 61
+Transaction P 51 P 84 F 42 C 65:Abort
+Transaction C 92 C 80 P 87 F 58:Abort
+Thread 1: m pop_back READ ITEM 43
+Thread 1: m pop_back PRODUCE ITEM 72
+Thread 1: m pop_back CONSUME ITEM 79
+Thread 6: m pop_back READ ITEM 43
+Thread 5: new Method PRODUCE ITEM 10
+Thread 6: m pop_back READ ITEM 45
+Thread 6: m pop_back READ ITEM 57
+Thread 8: new Method PRODUCE ITEM 23
+Thread 7: m pop_back PRODUCE ITEM 9
+Thread 7: m pop_back READ ITEM 63
+Thread 7: m pop_back PRODUCE ITEM 14
+Thread 2: new Method READ ITEM 90
+Thread 4: new Method CONSUME ITEM 67
+Transaction P 61 C 66 F 12 F 55:Abort
+Thread 8: m pop_back PRODUCE ITEM 23
+Thread 5: m pop_back PRODUCE ITEM 10
+Thread 2: m pop_back READ ITEM 90
+Transaction C 79 P 72 F 43 P 18:Abort
+Transaction F 57 F 45 F 43 P 78:Abort
+Thread 4: m pop_back CONSUME ITEM 67
+Thread 3: new Method CONSUME ITEM 14
+Thread 4: m pop_back READ ITEM 23
+Transaction P 14 F 63 P 9 F 5:Abort
+Thread 4: m pop_back READ ITEM 34
+Thread 1: new Method PRODUCE ITEM 5
+Transaction P 23 F 32 C 45 P 55:Abort
+Transaction P 10 P 12 P 91 P 16:Abort
+Thread 7: new Method READ ITEM 3
+Thread 3: m pop_back CONSUME ITEM 14
+Transaction F 90 P 64 C 85 C 84:Abort
+Thread 6: new Method CONSUME ITEM 12
+Thread 5: new Method PRODUCE ITEM 49
+Thread 1: m pop_back PRODUCE ITEM 5
+Thread 8: new Method CONSUME ITEM 14
+Transaction F 34 F 23 C 67 P 13:Abort
+Thread 5: m pop_back PRODUCE ITEM 49
+Transaction C 14 P 15 F 94 C 64:Abort
+Thread 2: new Method CONSUME ITEM 53
+Thread 8: m pop_back CONSUME ITEM 14
+Thread 7: new Method PRODUCE ITEM 72
+Thread 4: new Method READ ITEM 69
+Transaction P 5 P 40 C 71 F 29:Abort
+Thread 6: new Method CONSUME ITEM 15
+Thread 3: new Method PRODUCE ITEM 5
+Thread 1: new Method READ ITEM 30
+Thread 2: new Method CONSUME ITEM 61
+Thread 4: new Method CONSUME ITEM 7
+Transaction C 14 F 23 P 11 F 39:Abort
+Transaction P 49 C 53 F 41 P 64:Abort
+Thread 6: new Method READ ITEM 16
+Thread 3: m pop_back PRODUCE ITEM 5
+Thread 2: m pop_back CONSUME ITEM 61
+Thread 2: m pop_back CONSUME ITEM 53
+Thread 5: new Method PRODUCE ITEM 84
+Thread 7: new Method CONSUME ITEM 31
+Thread 8: new Method PRODUCE ITEM 57
+Thread 1: new Method PRODUCE ITEM 74
+Thread 6: m pop_back READ ITEM 16
+Thread 6: m pop_back CONSUME ITEM 15
+Thread 4: m pop_back CONSUME ITEM 7
+Thread 6: m pop_back CONSUME ITEM 12
+Thread 4: m pop_back READ ITEM 69
+Transaction P 5 C 10 C 35 P 24:Abort
+Thread 8: m pop_back PRODUCE ITEM 57
+Thread 1: m pop_back PRODUCE ITEM 74
+Thread 1: m pop_back READ ITEM 30
+Transaction C 53 C 61 C 74 P 93:Abort
+Thread 7: new Method READ ITEM 54
+Thread 5: m pop_back PRODUCE ITEM 84
+Transaction C 12 C 15 F 16 C 46:Abort
+Transaction F 69 C 7 P 88 P 88:Abort
+Thread 3: new Method CONSUME ITEM 99
+Thread 2: new Method READ ITEM 37
+Transaction P 57 C 92 F 5 C 86:Abort
+Transaction F 30 P 74 P 98 C 61:Abort
+Thread 4: new Method READ ITEM 3
+Thread 6: new Method PRODUCE ITEM 59
+Transaction P 84 F 47 P 34 C 47:Abort
+Thread 8: new Method READ ITEM 28
+Thread 1: new Method PRODUCE ITEM 50
+Thread 8: m pop_back READ ITEM 28
+Thread 5: new Method CONSUME ITEM 40
+Thread 3: m pop_back CONSUME ITEM 99
+Transaction F 28 P 79 P 23 P 63:Abort
+Thread 1: new Method CONSUME ITEM 32
+Thread 5: new Method READ ITEM 95
+Thread 2: m pop_back READ ITEM 37
+Thread 6: m pop_back PRODUCE ITEM 59
+Thread 4: m pop_back READ ITEM 3
+Thread 8: new Method CONSUME ITEM 2
+Thread 5: new Method READ ITEM 22
+Thread 1: new Method CONSUME ITEM 80
+Thread 3: new Method CONSUME ITEM 99
+Thread 2: new Method READ ITEM 37
+Thread 5: m pop_back READ ITEM 22
+Thread 5: m pop_back READ ITEM 95
+Thread 2: new Method READ ITEM 80
+Thread 5: m pop_back CONSUME ITEM 40
+Thread 2: m pop_back READ ITEM 80
+Thread 1: m pop_back CONSUME ITEM 80
+Thread 2: m pop_back READ ITEM 37
+Thread 1: m pop_back CONSUME ITEM 32
+Thread 8: new Method READ ITEM 30
+Thread 4: new Method READ ITEM 3
+Transaction F 3 P 72 C 31 F 54:Commit
+Thread 1: m pop_back PRODUCE ITEM 50
+Transaction C 40 F 95 F 22 C 34:Abort
+Thread 6: new Method PRODUCE ITEM 59
+Thread 3: new Method PRODUCE ITEM 95
+Transaction F 37 F 80 C 34 F 78:Abort
+Thread 2: new Method CONSUME ITEM 35
+Thread 3: m pop_back PRODUCE ITEM 95
+Thread 3: m pop_back CONSUME ITEM 99
+Thread 8: new Method PRODUCE ITEM 40
+Thread 4: new Method READ ITEM 52
+Thread 7: new Method PRODUCE ITEM 80
+Thread 5: new Method PRODUCE ITEM 4
+Transaction P 50 C 32 C 80 C 74:Abort
+Thread 6: new Method PRODUCE ITEM 38
+Thread 2: m pop_back CONSUME ITEM 35
+Thread 4: m pop_back READ ITEM 52
+Thread 4: m pop_back READ ITEM 3
+Thread 8: m pop_back PRODUCE ITEM 40
+Thread 1: new Method CONSUME ITEM 8
+Thread 8: m pop_back READ ITEM 30
+Thread 8: m pop_back CONSUME ITEM 2
+Transaction C 99 P 95 F 46 P 48:Abort
+Thread 6: m pop_back PRODUCE ITEM 38
+Thread 6: m pop_back PRODUCE ITEM 59
+Thread 5: new Method READ ITEM 67
+Thread 7: new Method READ ITEM 78
+Thread 1: m pop_back CONSUME ITEM 8
+Thread 3: new Method PRODUCE ITEM 19
+Transaction C 35 C 61 C 93 P 72:Abort
+Thread 7: m pop_back READ ITEM 78
+Transaction C 2 F 30 P 40 P 72:Abort
+Thread 5: m pop_back READ ITEM 67
+Thread 5: m pop_back PRODUCE ITEM 4
+Transaction P 59 P 38 F 35 P 84:Abort
+Thread 3: m pop_back PRODUCE ITEM 19
+Transaction F 3 F 52 P 1 P 95:Abort
+Thread 2: new Method READ ITEM 85
+Transaction C 8 C 58 F 41 F 48:Abort
+Thread 8: new Method CONSUME ITEM 35
+Thread 7: m pop_back PRODUCE ITEM 80
+Transaction P 4 F 67 P 54 P 28:Abort
+Thread 8: m pop_back CONSUME ITEM 35
+Thread 4: new Method PRODUCE ITEM 91
+Thread 2: m pop_back READ ITEM 85
+Thread 6: new Method CONSUME ITEM 98
+Thread 1: new Method CONSUME ITEM 96
+Transaction P 19 P 58 P 43 F 36:Abort
+Transaction P 80 F 78 F 39 P 46:Abort
+Thread 5: new Method PRODUCE ITEM 27
+Thread 3: new Method READ ITEM 63
+Thread 7: new Method PRODUCE ITEM 53
+Transaction C 35 C 10 P 68 P 59:Abort
+Thread 1: new Method READ ITEM 12
+Thread 6: new Method READ ITEM 88
+Transaction F 85 F 48 C 6 C 86:Abort
+Thread 7: m pop_back PRODUCE ITEM 53
+Thread 4: new Method CONSUME ITEM 47
+Thread 8: new Method READ ITEM 91
+Thread 5: new Method PRODUCE ITEM 14
+Thread 3: new Method CONSUME ITEM 46
+Thread 2: new Method PRODUCE ITEM 84
+Thread 1: new Method PRODUCE ITEM 97
+Thread 8: m pop_back READ ITEM 91
+Thread 6: new Method READ ITEM 80
+Thread 1: m pop_back PRODUCE ITEM 97
+Thread 1: m pop_back READ ITEM 12
+Thread 1: m pop_back CONSUME ITEM 96
+Transaction P 53 C 18 C 46 C 54:Abort
+Thread 3: m pop_back CONSUME ITEM 46
+Thread 5: new Method PRODUCE ITEM 56
+Thread 2: m pop_back PRODUCE ITEM 84
+Thread 3: m pop_back READ ITEM 63
+Thread 4: m pop_back CONSUME ITEM 47
+Thread 4: m pop_back PRODUCE ITEM 91
+Thread 6: m pop_back READ ITEM 80
+Thread 6: m pop_back READ ITEM 88
+Thread 5: m pop_back PRODUCE ITEM 56
+Transaction F 91 C 77 F 37 P 32:Abort
+Thread 7: new Method READ ITEM 75
+Thread 5: m pop_back PRODUCE ITEM 14
+Thread 5: m pop_back PRODUCE ITEM 27
+Transaction C 96 F 12 P 97 C 11:Abort
+Thread 6: m pop_back CONSUME ITEM 98
+Transaction P 84 C 86 P 97 F 17:Abort
+Transaction F 63 C 46 P 86 F 99:Abort
+Transaction P 91 C 47 C 66 C 73:Abort
+Thread 7: m pop_back READ ITEM 75
+Thread 8: new Method CONSUME ITEM 72
+Thread 1: new Method PRODUCE ITEM 58
+Thread 2: new Method READ ITEM 86
+Thread 3: new Method PRODUCE ITEM 37
+Transaction P 27 P 14 P 56 P 24:Abort
+Transaction C 98 F 88 F 80 F 98:Abort
+Thread 1: m pop_back PRODUCE ITEM 58
+Transaction F 75 C 15 P 73 F 56:Abort
+Thread 4: new Method PRODUCE ITEM 8
+Thread 2: m pop_back READ ITEM 86
+Thread 5: new Method PRODUCE ITEM 76
+Thread 3: m pop_back PRODUCE ITEM 37
+Thread 8: new Method CONSUME ITEM 79
+Thread 6: new Method CONSUME ITEM 46
+Transaction P 58 P 28 C 26 F 18:Abort
+Thread 7: new Method READ ITEM 74
+Transaction F 86 P 40 F 50 F 25:Abort
+Thread 1: new Method CONSUME ITEM 59
+Thread 2: new Method PRODUCE ITEM 75
+Thread 4: new Method PRODUCE ITEM 62
+Thread 1: m pop_back CONSUME ITEM 59
+Thread 2: new Method READ ITEM 15
+Thread 5: new Method READ ITEM 50
+Transaction C 59 P 36 F 71 C 10:Abort
+Transaction P 37 C 99 P 73 C 89:Abort
+Thread 8: new Method READ ITEM 67
+Thread 5: m pop_back READ ITEM 50
+Thread 1: new Method CONSUME ITEM 34
+Thread 3: new Method PRODUCE ITEM 6
+Thread 7: new Method PRODUCE ITEM 99
+Thread 8: m pop_back READ ITEM 67
+Thread 1: new Method READ ITEM 100
+Thread 4: new Method PRODUCE ITEM 96
+Thread 8: m pop_back CONSUME ITEM 79
+Thread 8: m pop_back CONSUME ITEM 72
+Thread 2: new Method READ ITEM 85
+Thread 5: m pop_back PRODUCE ITEM 76
+Thread 6: m pop_back CONSUME ITEM 46
+Thread 1: m pop_back READ ITEM 100
+Thread 7: m pop_back PRODUCE ITEM 99
+Thread 1: m pop_back CONSUME ITEM 34
+Thread 7: m pop_back READ ITEM 74
+Thread 3: new Method PRODUCE ITEM 48
+Thread 2: m pop_back READ ITEM 85
+Thread 4: m pop_back PRODUCE ITEM 96
+Thread 2: m pop_back READ ITEM 15
+Transaction C 72 C 79 F 67 F 64:Abort
+Transaction P 76 F 50 C 65 C 47:Abort
+Thread 2: m pop_back PRODUCE ITEM 75
+Transaction C 46 C 54 F 42 P 69:Abort
+Thread 4: m pop_back PRODUCE ITEM 62
+Thread 4: m pop_back PRODUCE ITEM 8
+Transaction C 34 F 100 P 66 F 38:Abort
+Transaction F 74 P 99 C 15 P 73:Abort
+Thread 8: new Method READ ITEM 6
+Thread 3: new Method READ ITEM 99
+Thread 5: new Method READ ITEM 98
+Thread 6: new Method PRODUCE ITEM 38
+Thread 1: new Method READ ITEM 77
+Transaction P 75 F 15 F 85 F 32:Abort
+Thread 8: m pop_back READ ITEM 6
+Thread 7: new Method READ ITEM 93
+Transaction P 8 P 62 P 96 P 30:Abort
+Thread 6: m pop_back PRODUCE ITEM 38
+Thread 1: m pop_back READ ITEM 77
+Thread 2: new Method READ ITEM 47
+Thread 5: new Method CONSUME ITEM 81
+Thread 3: new Method PRODUCE ITEM 77
+Thread 4: new Method READ ITEM 31
+Transaction F 6 C 22 C 12 C 89:Abort
+Thread 2: m pop_back READ ITEM 47
+Thread 7: new Method CONSUME ITEM 9
+Transaction P 38 P 28 C 93 P 1:Abort
+Thread 4: m pop_back READ ITEM 31
+Thread 8: new Method CONSUME ITEM 15
+Transaction F 77 C 2 P 32 P 7:Abort
+Thread 5: new Method CONSUME ITEM 31
+Transaction F 47 C 98 P 16 F 60:Abort
+Thread 6: new Method PRODUCE ITEM 87
+Thread 7: m pop_back CONSUME ITEM 9
+Thread 7: m pop_back READ ITEM 93
+Thread 5: m pop_back CONSUME ITEM 31
+Thread 5: m pop_back CONSUME ITEM 81
+Thread 5: m pop_back READ ITEM 98
+Transaction F 31 F 92 C 15 C 81:Abort
+Thread 1: new Method CONSUME ITEM 31
+Thread 8: m pop_back CONSUME ITEM 15
+Thread 2: new Method CONSUME ITEM 38
+Thread 1: m pop_back CONSUME ITEM 31
+Thread 7: new Method READ ITEM 93
+Thread 4: new Method READ ITEM 31
+Thread 6: m pop_back PRODUCE ITEM 87
+Transaction F 98 C 81 C 31 P 57:Abort
+Thread 4: m pop_back READ ITEM 31
+Thread 8: new Method CONSUME ITEM 15
+Transaction C 31 F 96 C 31 C 66:Abort
+Transaction P 6 P 48 F 99 P 77:Commit
+Thread 2: new Method PRODUCE ITEM 35
+Thread 7: new Method CONSUME ITEM 9
+Thread 6: new Method PRODUCE ITEM 87
+Thread 5: new Method CONSUME ITEM 58
+Thread 1: new Method PRODUCE ITEM 54
+Transaction F 31 C 73 F 55 P 21:Abort
+Thread 8: new Method CONSUME ITEM 79
+Thread 3: new Method PRODUCE ITEM 95
+Thread 2: new Method READ ITEM 26
+Thread 1: m pop_back PRODUCE ITEM 54
+Thread 5: new Method PRODUCE ITEM 2
+Thread 7: new Method PRODUCE ITEM 74
+Thread 6: new Method CONSUME ITEM 83
+Thread 4: new Method READ ITEM 42
+Thread 3: m pop_back PRODUCE ITEM 95
+Thread 2: m pop_back READ ITEM 26
+Thread 2: m pop_back PRODUCE ITEM 35
+Thread 2: m pop_back CONSUME ITEM 38
+Thread 5: m pop_back PRODUCE ITEM 2
+Thread 5: m pop_back CONSUME ITEM 58
+Thread 7: m pop_back PRODUCE ITEM 74
+Thread 7: m pop_back CONSUME ITEM 9
+Thread 7: m pop_back READ ITEM 93
+Thread 8: new Method PRODUCE ITEM 50
+Transaction P 54 F 60 F 75 P 8:Abort
+Thread 6: m pop_back CONSUME ITEM 83
+Thread 6: m pop_back PRODUCE ITEM 87
+Transaction P 95 C 93 F 35 C 81:Abort
+Transaction C 38 P 35 F 26 C 90:Abort
+Thread 4: new Method CONSUME ITEM 34
+Transaction C 58 P 2 F 63 F 48:Abort
+Transaction P 87 C 83 F 90 P 54:Abort
+Transaction F 93 C 9 P 74 P 48:Abort
+Thread 6: new Method READ ITEM 60
+Thread 4: new Method CONSUME ITEM 28
+Thread 8: new Method READ ITEM 81
+Thread 1: new Method PRODUCE ITEM 19
+Thread 3: new Method PRODUCE ITEM 14
+Thread 5: new Method READ ITEM 61
+Thread 4: m pop_back CONSUME ITEM 28
+Thread 6: m pop_back READ ITEM 60
+Thread 4: m pop_back CONSUME ITEM 34
+Thread 4: m pop_back READ ITEM 42
+Thread 2: new Method READ ITEM 97
+Thread 1: m pop_back PRODUCE ITEM 19
+Thread 7: new Method CONSUME ITEM 81
+Thread 5: m pop_back READ ITEM 61
+Thread 3: new Method CONSUME ITEM 18
+Transaction F 42 C 34 C 28 F 15:Abort
+Transaction F 60 C 66 F 91 C 60:Abort
+Transaction P 19 P 35 P 98 F 56:Abort
+Thread 3: m pop_back CONSUME ITEM 18
+Thread 3: m pop_back PRODUCE ITEM 14
+Thread 2: m pop_back READ ITEM 97
+Transaction F 61 C 16 F 10 F 45:Abort
+Thread 7: m pop_back CONSUME ITEM 81
+Thread 4: new Method CONSUME ITEM 23
+Thread 1: new Method PRODUCE ITEM 4
+Thread 6: new Method PRODUCE ITEM 61
+Thread 2: new Method READ ITEM 97
+Transaction P 14 C 18 P 14 F 56:Abort
+Thread 5: new Method PRODUCE ITEM 26
+Thread 4: new Method READ ITEM 18
+Transaction C 15 C 79 P 50 F 81:Commit
+Thread 7: new Method CONSUME ITEM 81
+Thread 3: new Method READ ITEM 96
+Thread 4: m pop_back READ ITEM 18
+Thread 4: m pop_back CONSUME ITEM 23
+Thread 2: new Method READ ITEM 17
+Thread 8: new Method READ ITEM 90
+Thread 1: new Method CONSUME ITEM 42
+Thread 5: new Method CONSUME ITEM 31
+Thread 6: new Method CONSUME ITEM 45
+Thread 2: m pop_back READ ITEM 17
+Thread 2: m pop_back READ ITEM 97
+Thread 8: m pop_back READ ITEM 90
+Thread 5: m pop_back CONSUME ITEM 31
+Thread 5: m pop_back PRODUCE ITEM 26
+Thread 7: new Method PRODUCE ITEM 76
+Transaction C 23 F 18 F 86 F 71:Abort
+Thread 1: new Method PRODUCE ITEM 53
+Thread 3: new Method READ ITEM 79
+Thread 6: new Method PRODUCE ITEM 29
+Transaction F 90 F 51 P 74 C 69:Abort
+Transaction F 97 F 17 P 64 C 51:Abort
+Thread 1: m pop_back PRODUCE ITEM 53
+Transaction P 26 C 31 P 3 P 71:Abort
+Thread 1: m pop_back CONSUME ITEM 42
+Thread 1: m pop_back PRODUCE ITEM 4
+Thread 8: new Method PRODUCE ITEM 10
+Thread 3: m pop_back READ ITEM 79
+Thread 7: new Method READ ITEM 14
+Thread 4: new Method CONSUME ITEM 41
+Thread 3: m pop_back READ ITEM 96
+Thread 8: m pop_back PRODUCE ITEM 10
+Thread 2: new Method READ ITEM 78
+Thread 5: new Method CONSUME ITEM 50
+Transaction P 4 C 42 P 53 C 55:Abort
+Thread 6: new Method PRODUCE ITEM 82
+Thread 7: m pop_back READ ITEM 14
+Thread 7: m pop_back PRODUCE ITEM 76
+Thread 7: m pop_back CONSUME ITEM 81
+Thread 4: m pop_back CONSUME ITEM 41
+Thread 2: m pop_back READ ITEM 78
+Transaction F 96 F 79 C 16 P 5:Abort
+Thread 1: new Method READ ITEM 77
+Transaction P 10 P 24 F 55 F 10:Abort
+Thread 5: new Method PRODUCE ITEM 86
+Thread 8: new Method CONSUME ITEM 86
+Thread 3: new Method CONSUME ITEM 46
+Transaction F 78 F 20 P 93 F 90:Abort
+Transaction C 41 F 92 P 63 P 100:Abort
+Thread 1: new Method PRODUCE ITEM 24
+Transaction C 81 P 76 F 14 C 76:Abort
+Thread 5: new Method PRODUCE ITEM 10
+Thread 3: m pop_back CONSUME ITEM 46
+Thread 8: m pop_back CONSUME ITEM 86
+Thread 4: new Method PRODUCE ITEM 65
+Thread 7: new Method READ ITEM 56
+Thread 5: m pop_back PRODUCE ITEM 10
+Thread 5: m pop_back PRODUCE ITEM 86
+Thread 5: m pop_back CONSUME ITEM 50
+Thread 2: new Method CONSUME ITEM 93
+Thread 1: m pop_back PRODUCE ITEM 24
+Thread 1: m pop_back READ ITEM 77
+Thread 4: m pop_back PRODUCE ITEM 65
+Transaction C 46 P 80 C 66 C 30:Abort
+Transaction C 86 C 62 C 32 C 68:Abort
+Thread 7: new Method PRODUCE ITEM 82
+Transaction C 50 P 86 P 10 P 11:Abort
+Thread 2: new Method READ ITEM 87
+Thread 1: new Method READ ITEM 77
+Transaction P 61 C 45 P 29 P 82:Commit
+Thread 8: new Method READ ITEM 17
+Thread 7: m pop_back PRODUCE ITEM 82
+Thread 5: new Method CONSUME ITEM 46
+Thread 2: m pop_back READ ITEM 87
+Transaction P 65 C 43 F 71 F 5:Abort
+Thread 2: m pop_back CONSUME ITEM 93
+Thread 7: m pop_back READ ITEM 56
+Thread 6: new Method CONSUME ITEM 73
+Thread 3: new Method CONSUME ITEM 12
+Thread 8: m pop_back READ ITEM 17
+Thread 5: m pop_back CONSUME ITEM 46
+Thread 1: new Method PRODUCE ITEM 24
+Thread 3: new Method CONSUME ITEM 36
+Transaction C 46 P 20 P 57 P 28:Abort
+Thread 6: m pop_back CONSUME ITEM 73
+Thread 5: new Method READ ITEM 13
+Thread 3: new Method READ ITEM 80
+Thread 4: new Method CONSUME ITEM 47
+Thread 1: new Method PRODUCE ITEM 96
+Transaction F 17 C 89 C 24 F 11:Abort
+Thread 5: m pop_back READ ITEM 13
+Thread 3: m pop_back READ ITEM 80
+Thread 3: m pop_back CONSUME ITEM 36
+Thread 1: m pop_back PRODUCE ITEM 96
+Transaction C 93 F 87 C 56 C 91:Abort
+Thread 4: m pop_back CONSUME ITEM 47
+Thread 8: new Method READ ITEM 20
+Transaction C 73 C 83 P 36 C 64:Abort
+Transaction F 13 F 83 F 51 C 67:Abort
+Thread 3: m pop_back CONSUME ITEM 12
+Transaction F 56 P 82 P 100 C 7:Abort
+Thread 1: m pop_back PRODUCE ITEM 24
+Thread 1: m pop_back READ ITEM 77
+Thread 2: new Method CONSUME ITEM 17
+Thread 6: new Method READ ITEM 5
+Thread 8: new Method READ ITEM 75
+Transaction C 47 P 15 P 80 P 46:Abort
+Thread 5: new Method CONSUME ITEM 37
+Thread 7: new Method CONSUME ITEM 96
+Transaction C 12 C 36 F 80 C 29:Abort
+Thread 2: m pop_back CONSUME ITEM 17
+Transaction F 77 P 24 P 96 P 39:Abort
+Thread 4: new Method PRODUCE ITEM 84
+Thread 8: m pop_back READ ITEM 75
+Thread 8: m pop_back READ ITEM 20
+Thread 1: new Method READ ITEM 97
+Thread 6: new Method CONSUME ITEM 95
+Thread 7: new Method CONSUME ITEM 47
+Transaction C 17 F 53 P 27 F 21:Abort
+Thread 4: m pop_back PRODUCE ITEM 84
+Thread 3: new Method PRODUCE ITEM 64
+Thread 5: new Method PRODUCE ITEM 100
+Thread 7: m pop_back CONSUME ITEM 47
+Thread 7: m pop_back CONSUME ITEM 96
+Transaction F 20 F 75 F 18 F 8:Abort
+Thread 6: new Method READ ITEM 70
+Thread 1: new Method CONSUME ITEM 11
+Thread 3: new Method PRODUCE ITEM 72
+Thread 2: new Method PRODUCE ITEM 17
+Transaction P 84 P 87 F 80 F 85:Abort
+Thread 8: new Method READ ITEM 90
+Thread 6: m pop_back READ ITEM 70
+Thread 6: m pop_back CONSUME ITEM 95
+Thread 6: m pop_back READ ITEM 5
+Thread 3: m pop_back PRODUCE ITEM 72
+Thread 3: m pop_back PRODUCE ITEM 64
+Transaction C 96 C 47 P 89 P 64:Abort
+Thread 5: new Method CONSUME ITEM 48
+Thread 8: m pop_back READ ITEM 90
+Thread 4: new Method PRODUCE ITEM 36
+Thread 2: new Method PRODUCE ITEM 10
+Thread 1: new Method PRODUCE ITEM 55
+Thread 4: m pop_back PRODUCE ITEM 36
+Thread 7: new Method READ ITEM 74
+Transaction F 5 C 95 F 70 P 26:Abort
+Transaction P 64 P 72 F 35 C 44:Abort
+Thread 2: m pop_back PRODUCE ITEM 10
+Thread 2: m pop_back PRODUCE ITEM 17
+Transaction F 90 F 33 P 32 P 66:Abort
+Thread 5: new Method PRODUCE ITEM 22
+Thread 1: new Method READ ITEM 32
+Thread 7: new Method READ ITEM 65
+Transaction P 36 P 62 P 56 F 76:Abort
+Thread 6: new Method CONSUME ITEM 54
+Thread 3: new Method READ ITEM 68
+Transaction P 17 P 10 F 55 C 93:Abort
+Thread 8: new Method PRODUCE ITEM 43
+Thread 4: new Method CONSUME ITEM 59
+Thread 1: new Method READ ITEM 97
+Thread 4: m pop_back CONSUME ITEM 59
+Thread 2: new Method PRODUCE ITEM 48
+Thread 6: m pop_back CONSUME ITEM 54
+Thread 7: m pop_back READ ITEM 65
+Thread 7: m pop_back READ ITEM 74
+Thread 1: new Method CONSUME ITEM 11
+Transaction C 59 F 36 F 49 C 21:Abort
+Thread 8: m pop_back PRODUCE ITEM 43
+Thread 2: new Method PRODUCE ITEM 92
+Thread 3: m pop_back READ ITEM 68
+Transaction C 37 P 100 C 48 P 22:Commit
+Thread 4: new Method CONSUME ITEM 50
+Thread 7: new Method READ ITEM 74
+Thread 1: new Method PRODUCE ITEM 55
+Thread 6: new Method CONSUME ITEM 54
+Thread 3: new Method READ ITEM 68
+Thread 2: new Method READ ITEM 25
+Thread 8: new Method PRODUCE ITEM 43
+Thread 5: new Method PRODUCE ITEM 71
+Thread 1: new Method READ ITEM 32
+Thread 7: new Method READ ITEM 65
+Thread 3: new Method CONSUME ITEM 37
+Thread 6: new Method READ ITEM 78
+Thread 4: new Method CONSUME ITEM 63
+Thread 2: new Method READ ITEM 79
+Thread 8: new Method READ ITEM 44
+Thread 3: m pop_back CONSUME ITEM 37
+Thread 3: m pop_back READ ITEM 68
+Thread 7: new Method CONSUME ITEM 37
+Thread 6: m pop_back READ ITEM 78
+Thread 6: m pop_back CONSUME ITEM 54
+Thread 2: m pop_back READ ITEM 79
+Thread 2: m pop_back READ ITEM 25
+Thread 2: m pop_back PRODUCE ITEM 92
+Thread 2: m pop_back PRODUCE ITEM 48
+Thread 8: m pop_back READ ITEM 44
+Thread 8: m pop_back PRODUCE ITEM 43
+Transaction F 97 C 11 P 55 F 32:Commit
+Thread 5: new Method CONSUME ITEM 82
+Thread 1: new Method CONSUME ITEM 93
+Thread 7: m pop_back CONSUME ITEM 37
+Transaction P 43 F 44 F 83 C 84:Abort
+Thread 7: m pop_back READ ITEM 65
+Thread 7: m pop_back READ ITEM 74
+Transaction F 68 C 37 C 77 C 8:Abort
+Thread 4: m pop_back CONSUME ITEM 63
+Transaction C 54 F 78 F 19 F 24:Abort
+Thread 4: m pop_back CONSUME ITEM 50
+Transaction P 48 P 92 F 25 F 79:Abort
+Thread 8: new Method CONSUME ITEM 52
+Thread 5: m pop_back CONSUME ITEM 82
+Thread 5: m pop_back PRODUCE ITEM 71
+Thread 1: new Method CONSUME ITEM 3
+Thread 6: new Method READ ITEM 64
+Transaction F 74 F 65 C 37 F 24:Abort
+Thread 2: new Method READ ITEM 89
+Thread 8: m pop_back CONSUME ITEM 52
+Thread 3: new Method CONSUME ITEM 24
+Thread 6: m pop_back READ ITEM 64
+Thread 4: new Method CONSUME ITEM 50
+Thread 7: new Method PRODUCE ITEM 93
+Thread 1: new Method PRODUCE ITEM 53
+Thread 5: new Method PRODUCE ITEM 71
+Thread 3: m pop_back CONSUME ITEM 24
+Transaction C 52 C 62 P 94 P 31:Abort
+Thread 2: new Method CONSUME ITEM 52
+Thread 1: m pop_back PRODUCE ITEM 53
+Thread 1: m pop_back CONSUME ITEM 3
+Thread 1: m pop_back CONSUME ITEM 93
+Thread 7: m pop_back PRODUCE ITEM 93
+Transaction F 64 C 62 C 56 C 42:Abort
+Thread 2: m pop_back CONSUME ITEM 52
+Thread 2: m pop_back READ ITEM 89
+Thread 8: new Method PRODUCE ITEM 69
+Thread 4: new Method CONSUME ITEM 63
+Thread 5: new Method CONSUME ITEM 82
+Transaction C 24 F 88 F 32 F 32:Abort
+Thread 6: new Method CONSUME ITEM 46
+Thread 8: m pop_back PRODUCE ITEM 69
+Transaction P 93 F 30 F 58 P 55:Abort
+Transaction C 93 C 3 P 53 F 89:Abort
+Transaction F 89 C 52 F 49 F 8:Abort
+Thread 6: m pop_back CONSUME ITEM 46
+Thread 7: new Method CONSUME ITEM 86
+Thread 1: new Method READ ITEM 28
+Thread 3: new Method CONSUME ITEM 39
+Thread 5: new Method CONSUME ITEM 26
+Thread 4: new Method CONSUME ITEM 82
+Thread 2: new Method READ ITEM 60
+Transaction P 69 P 45 C 2 C 16:Abort
+Thread 7: m pop_back CONSUME ITEM 86
+Thread 1: m pop_back READ ITEM 28
+Thread 5: m pop_back CONSUME ITEM 26
+Thread 5: m pop_back CONSUME ITEM 82
+Thread 5: m pop_back PRODUCE ITEM 71
+Transaction C 46 P 78 C 73 P 5:Abort
+Thread 2: m pop_back READ ITEM 60
+Thread 3: new Method READ ITEM 16
+Transaction F 28 C 3 C 94 P 71:Abort
+Thread 8: new Method CONSUME ITEM 63
+Transaction C 86 P 65 F 44 P 57:Abort
+Thread 4: new Method PRODUCE ITEM 41
+Transaction P 71 C 82 C 26 P 26:Abort
+Thread 3: m pop_back READ ITEM 16
+Thread 3: m pop_back CONSUME ITEM 39
+Thread 6: new Method CONSUME ITEM 99
+Transaction F 60 P 50 F 66 P 32:Abort
+Thread 1: new Method READ ITEM 55
+Thread 7: new Method PRODUCE ITEM 56
+Thread 8: new Method PRODUCE ITEM 6
+Thread 5: new Method CONSUME ITEM 23
+Thread 2: new Method READ ITEM 57
+Transaction C 39 F 16 F 79 C 100:Abort
+Thread 6: new Method READ ITEM 22
+Thread 8: m pop_back PRODUCE ITEM 6
+Thread 7: m pop_back PRODUCE ITEM 56
+Thread 8: m pop_back CONSUME ITEM 63
+Thread 1: new Method READ ITEM 37
+Thread 3: new Method PRODUCE ITEM 17
+Thread 1: m pop_back READ ITEM 37
+Thread 1: m pop_back READ ITEM 55
+Transaction P 56 F 42 P 5 C 14:Abort
+Transaction C 63 P 6 P 77 F 75:Abort
+Thread 5: m pop_back CONSUME ITEM 23
+Transaction F 55 F 37 C 36 C 41:Abort
+Thread 2: m pop_back READ ITEM 57
+Thread 6: m pop_back READ ITEM 22
+Thread 8: new Method CONSUME ITEM 51
+Transaction C 50 C 63 C 82 P 41:Commit
+Thread 3: new Method PRODUCE ITEM 80
+Thread 7: new Method CONSUME ITEM 53
+Thread 6: m pop_back CONSUME ITEM 99
+Thread 1: new Method READ ITEM 15
+Thread 8: m pop_back CONSUME ITEM 51
+Thread 2: new Method READ ITEM 57
+Thread 1: m pop_back READ ITEM 15
+Thread 5: new Method CONSUME ITEM 23
+Thread 4: new Method CONSUME ITEM 55
+Thread 7: new Method PRODUCE ITEM 62
+Thread 3: new Method PRODUCE ITEM 18
+Thread 6: new Method CONSUME ITEM 99
+Transaction C 51 F 89 P 97 C 55:Abort
+Thread 2: new Method READ ITEM 77
+Transaction F 15 C 30 P 28 C 60:Abort
+Thread 4: new Method PRODUCE ITEM 98
+Thread 8: new Method READ ITEM 53
+Thread 6: new Method READ ITEM 22
+Thread 1: new Method CONSUME ITEM 37
+Thread 3: new Method CONSUME ITEM 92
+Thread 6: new Method PRODUCE ITEM 48
+Thread 5: new Method CONSUME ITEM 100
+Thread 3: m pop_back CONSUME ITEM 92
+Thread 3: m pop_back PRODUCE ITEM 18
+Thread 3: m pop_back PRODUCE ITEM 80
+Thread 3: m pop_back PRODUCE ITEM 17
+Thread 6: new Method CONSUME ITEM 93
+Thread 2: new Method CONSUME ITEM 87
+Transaction P 17 P 80 P 18 C 92:Abort
+Thread 7: new Method CONSUME ITEM 94
+Thread 4: m pop_back PRODUCE ITEM 98
+Thread 4: m pop_back CONSUME ITEM 55
+Thread 1: m pop_back CONSUME ITEM 37
+Thread 5: new Method PRODUCE ITEM 97
+Thread 2: m pop_back CONSUME ITEM 87
+Thread 2: m pop_back READ ITEM 77
+Thread 2: m pop_back READ ITEM 57
+Thread 3: new Method READ ITEM 44
+Thread 8: new Method CONSUME ITEM 79
+Thread 5: m pop_back PRODUCE ITEM 97
+Thread 5: m pop_back CONSUME ITEM 100
+Thread 7: new Method READ ITEM 33
+Thread 5: m pop_back CONSUME ITEM 23
+Transaction C 55 P 98 F 65 C 100:Abort
+Thread 3: m pop_back READ ITEM 44
+Transaction C 37 F 35 C 92 P 31:Abort
+Thread 8: m pop_back CONSUME ITEM 79
+Thread 8: m pop_back READ ITEM 53
+Transaction F 57 F 77 C 87 C 88:Abort
+Thread 4: new Method CONSUME ITEM 7
+Thread 7: m pop_back READ ITEM 33
+Thread 7: m pop_back CONSUME ITEM 94
+Thread 7: m pop_back PRODUCE ITEM 62
+Thread 7: m pop_back CONSUME ITEM 53
+Thread 2: new Method READ ITEM 84
+Transaction C 23 C 100 P 97 P 20:Abort
+Transaction F 44 F 34 C 43 P 22:Abort
+Thread 1: new Method PRODUCE ITEM 82
+Thread 4: m pop_back CONSUME ITEM 7
+Transaction F 53 C 79 P 95 C 81:Abort
+Thread 5: new Method PRODUCE ITEM 94
+Thread 3: new Method PRODUCE ITEM 40
+Thread 8: new Method READ ITEM 51
+Transaction C 53 P 62 C 94 F 33:Abort
+Thread 2: new Method READ ITEM 85
+Thread 5: m pop_back PRODUCE ITEM 94
+Thread 1: new Method READ ITEM 58
+Transaction C 99 F 22 P 48 C 93:Commit
+Thread 8: m pop_back READ ITEM 51
+Thread 3: m pop_back PRODUCE ITEM 40
+Transaction C 7 F 69 C 71 F 84:Abort
+Thread 2: m pop_back READ ITEM 85
+Thread 2: m pop_back READ ITEM 84
+Thread 6: new Method READ ITEM 72
+Thread 7: new Method CONSUME ITEM 54
+Transaction P 94 C 95 P 99 P 6:Abort
+Transaction F 51 C 15 F 73 P 99:Abort
+Transaction P 40 C 86 C 4 C 18:Abort
+Thread 1: new Method CONSUME ITEM 9
+Thread 4: new Method PRODUCE ITEM 31
+Transaction F 84 F 85 P 77 C 75:Abort
+Thread 7: new Method CONSUME ITEM 54
+Thread 8: new Method READ ITEM 58
+Thread 5: new Method READ ITEM 39
+Thread 6: new Method CONSUME ITEM 33
+Thread 3: new Method CONSUME ITEM 42
+Thread 1: new Method READ ITEM 51
+Thread 7: m pop_back CONSUME ITEM 54
+Thread 7: m pop_back CONSUME ITEM 54
+Thread 6: m pop_back CONSUME ITEM 33
+Thread 2: new Method CONSUME ITEM 81
+Thread 6: m pop_back READ ITEM 72
+Thread 4: new Method CONSUME ITEM 25
+Thread 5: new Method CONSUME ITEM 33
+Thread 1: m pop_back READ ITEM 51
+Thread 1: m pop_back CONSUME ITEM 9
+Thread 1: m pop_back READ ITEM 58
+Thread 1: m pop_back PRODUCE ITEM 82
+Thread 8: new Method PRODUCE ITEM 64
+Thread 3: new Method READ ITEM 52
+Transaction C 54 C 54 P 49 P 95:Abort
+Thread 5: m pop_back CONSUME ITEM 33
+Thread 2: new Method READ ITEM 23
+Thread 5: m pop_back READ ITEM 39
+Transaction F 72 C 33 P 83 F 91:Abort
+Transaction P 82 F 58 C 9 F 51:Abort
+Thread 3: m pop_back READ ITEM 52
+Thread 3: m pop_back CONSUME ITEM 42
+Thread 8: new Method PRODUCE ITEM 57
+Thread 4: new Method PRODUCE ITEM 85
+Thread 7: new Method READ ITEM 56
+Thread 6: new Method PRODUCE ITEM 100
+Thread 2: new Method READ ITEM 58
+Thread 8: m pop_back PRODUCE ITEM 57
+Thread 8: m pop_back PRODUCE ITEM 64
+Thread 8: m pop_back READ ITEM 58
+Transaction F 39 C 33 F 37 C 92:Abort
+Thread 1: new Method READ ITEM 26
+Thread 6: m pop_back PRODUCE ITEM 100
+Transaction C 42 F 52 C 39 C 83:Abort
+Thread 4: new Method PRODUCE ITEM 71
+Thread 1: m pop_back READ ITEM 26
+Thread 2: new Method CONSUME ITEM 91
+Thread 5: new Method PRODUCE ITEM 71
+Transaction F 58 P 64 P 57 F 19:Abort
+Thread 7: new Method PRODUCE ITEM 24
+Transaction P 100 F 20 F 83 F 17:Abort
+Thread 3: new Method CONSUME ITEM 11
+Thread 2: m pop_back CONSUME ITEM 91
+Thread 2: m pop_back READ ITEM 58
+Thread 2: m pop_back READ ITEM 23
+Thread 2: m pop_back CONSUME ITEM 81
+Thread 8: new Method PRODUCE ITEM 38
+Transaction C 81 F 23 F 58 C 91:Abort
+Thread 5: new Method READ ITEM 5
+Thread 8: m pop_back PRODUCE ITEM 38
+Transaction F 26 P 75 C 67 C 3:Abort
+Thread 2: new Method CONSUME ITEM 42
+Thread 7: new Method CONSUME ITEM 16
+Transaction P 31 C 25 P 85 P 71:Commit
+Transaction P 38 P 65 P 39 P 4:Abort
+Thread 3: m pop_back CONSUME ITEM 11
+Thread 6: new Method PRODUCE ITEM 67
+Thread 1: new Method CONSUME ITEM 54
+Thread 7: m pop_back CONSUME ITEM 16
+Thread 7: m pop_back PRODUCE ITEM 24
+Thread 7: m pop_back READ ITEM 56
+Thread 5: m pop_back READ ITEM 5
+Thread 5: m pop_back PRODUCE ITEM 71
+Thread 8: new Method PRODUCE ITEM 49
+Thread 2: new Method PRODUCE ITEM 11
+Thread 4: new Method CONSUME ITEM 29
+Transaction C 11 F 16 P 69 P 29:Abort
+Transaction F 56 P 24 C 16 F 64:Abort
+Thread 8: m pop_back PRODUCE ITEM 49
+Thread 5: new Method PRODUCE ITEM 71
+Thread 6: m pop_back PRODUCE ITEM 67
+Thread 1: new Method CONSUME ITEM 84
+Thread 3: new Method READ ITEM 39
+Thread 2: new Method READ ITEM 93
+Thread 7: new Method CONSUME ITEM 39
+Transaction P 49 C 58 P 61 P 65:Abort
+Thread 5: m pop_back PRODUCE ITEM 71
+Thread 4: new Method PRODUCE ITEM 75
+Thread 2: m pop_back READ ITEM 93
+Thread 2: m pop_back PRODUCE ITEM 11
+Thread 2: m pop_back CONSUME ITEM 42
+Thread 1: new Method READ ITEM 63
+Thread 6: new Method PRODUCE ITEM 67
+Thread 8: new Method READ ITEM 59
+Thread 3: new Method READ ITEM 90
+Thread 7: new Method READ ITEM 38
+Transaction P 71 F 5 F 61 C 28:Abort
+Thread 4: new Method CONSUME ITEM 64
+Thread 1: m pop_back READ ITEM 63
+Thread 1: m pop_back CONSUME ITEM 84
+Thread 1: m pop_back CONSUME ITEM 54
+Thread 8: m pop_back READ ITEM 59
+Thread 3: m pop_back READ ITEM 90
+Thread 3: m pop_back READ ITEM 39
+Transaction C 42 P 11 F 93 F 84:Abort
+Thread 4: m pop_back CONSUME ITEM 64
+Thread 4: m pop_back PRODUCE ITEM 75
+Thread 4: m pop_back CONSUME ITEM 29
+Thread 5: new Method PRODUCE ITEM 9
+Thread 6: new Method PRODUCE ITEM 48
+Transaction C 54 C 84 F 63 C 79:Abort
+Thread 7: new Method READ ITEM 35
+Thread 2: new Method CONSUME ITEM 39
+Transaction F 59 F 83 F 19 C 65:Abort
+Thread 6: m pop_back PRODUCE ITEM 48
+Transaction C 29 P 75 C 64 P 35:Abort
+Thread 6: m pop_back PRODUCE ITEM 67
+Thread 1: new Method CONSUME ITEM 14
+Thread 7: m pop_back READ ITEM 35
+Thread 7: m pop_back READ ITEM 38
+Thread 7: m pop_back CONSUME ITEM 39
+Transaction F 39 F 90 F 8 F 44:Abort
+Thread 5: m pop_back PRODUCE ITEM 9
+Thread 8: new Method PRODUCE ITEM 54
+Thread 4: new Method PRODUCE ITEM 77
+Thread 3: new Method READ ITEM 49
+Thread 1: m pop_back CONSUME ITEM 14
+Thread 2: new Method READ ITEM 50
+Thread 8: m pop_back PRODUCE ITEM 54
+Transaction P 67 P 48 F 88 C 49:Abort
+Thread 4: m pop_back PRODUCE ITEM 77
+Transaction P 9 F 70 F 25 F 97:Abort
+Transaction C 39 F 38 F 35 P 89:Abort
+Thread 2: m pop_back READ ITEM 50
+Thread 2: m pop_back CONSUME ITEM 39
+Thread 3: new Method READ ITEM 56
+Transaction C 14 F 88 F 28 F 1:Abort
+Thread 6: new Method PRODUCE ITEM 54
+Thread 5: new Method READ ITEM 63
+Transaction P 77 F 7 P 19 P 91:Abort
+Transaction P 54 C 83 C 76 C 52:Abort
+Thread 7: new Method CONSUME ITEM 77
+Thread 6: m pop_back PRODUCE ITEM 54
+Thread 4: new Method READ ITEM 2
+Thread 5: m pop_back READ ITEM 63
+Thread 1: new Method CONSUME ITEM 100
+Transaction C 39 F 50 C 60 F 88:Abort
+Thread 3: new Method CONSUME ITEM 48
+Thread 8: new Method PRODUCE ITEM 99
+Thread 2: new Method CONSUME ITEM 25
+Transaction F 63 F 47 F 75 P 26:Abort
+Thread 7: new Method CONSUME ITEM 85
+Thread 4: new Method CONSUME ITEM 78
+Transaction P 54 C 63 F 5 P 28:Abort
+Thread 2: m pop_back CONSUME ITEM 25
+Thread 1: new Method CONSUME ITEM 58
+Thread 5: new Method CONSUME ITEM 43
+Thread 8: new Method READ ITEM 11
+Thread 4: m pop_back CONSUME ITEM 78
+Thread 4: m pop_back READ ITEM 2
+Thread 6: new Method READ ITEM 33
+Thread 5: m pop_back CONSUME ITEM 43
+Thread 3: new Method CONSUME ITEM 6
+Thread 8: m pop_back READ ITEM 11
+Thread 8: m pop_back PRODUCE ITEM 99
+Thread 1: new Method CONSUME ITEM 17
+Transaction C 25 P 38 P 6 P 88:Abort
+Thread 7: new Method PRODUCE ITEM 78
+Thread 6: m pop_back READ ITEM 33
+Transaction F 2 C 78 C 41 F 73:Abort
+Transaction F 49 F 56 C 48 C 6:Commit
+Transaction C 43 P 55 P 43 C 4:Abort
+Thread 4: new Method PRODUCE ITEM 98
+Thread 3: new Method READ ITEM 94
+Thread 1: m pop_back CONSUME ITEM 17
+Thread 4: m pop_back PRODUCE ITEM 98
+Thread 1: m pop_back CONSUME ITEM 58
+Thread 5: new Method READ ITEM 84
+Thread 2: new Method CONSUME ITEM 19
+Thread 3: new Method READ ITEM 42
+Thread 1: m pop_back CONSUME ITEM 100
+Transaction P 98 C 98 C 67 P 10:Abort
+Transaction P 99 F 11 F 25 P 30:Abort
+Thread 7: new Method READ ITEM 97
+Transaction F 33 C 77 F 31 P 47:Abort
+Thread 5: new Method PRODUCE ITEM 42
+Thread 3: new Method CONSUME ITEM 75
+Thread 4: new Method CONSUME ITEM 4
+Thread 6: new Method READ ITEM 21
+Thread 2: m pop_back CONSUME ITEM 19
+Transaction C 100 C 58 C 17 C 58:Abort
+Thread 8: new Method CONSUME ITEM 52
+Thread 5: m pop_back PRODUCE ITEM 42
+Thread 5: m pop_back READ ITEM 84
+Thread 4: m pop_back CONSUME ITEM 4
+Thread 3: m pop_back CONSUME ITEM 75
+Thread 3: m pop_back READ ITEM 42
+Thread 3: m pop_back READ ITEM 94
+Thread 1: new Method READ ITEM 73
+Thread 7: new Method CONSUME ITEM 77
+Thread 8: m pop_back CONSUME ITEM 52
+Thread 1: m pop_back READ ITEM 73
+Thread 6: new Method READ ITEM 44
+Thread 2: new Method CONSUME ITEM 19
+Transaction F 84 P 42 F 1 C 59:Abort
+Transaction C 4 P 54 P 37 C 93:Abort
+Transaction F 94 F 42 C 75 P 55:Abort
+Transaction C 52 F 18 F 100 C 51:Abort
+Thread 6: m pop_back READ ITEM 44
+Thread 6: m pop_back READ ITEM 21
+Transaction F 73 F 19 F 1 P 53:Abort
+Thread 7: new Method CONSUME ITEM 85
+Thread 2: new Method READ ITEM 31
+Thread 5: new Method PRODUCE ITEM 45
+Thread 8: new Method CONSUME ITEM 4
+Thread 3: new Method PRODUCE ITEM 78
+Thread 4: new Method CONSUME ITEM 77
+Thread 1: new Method READ ITEM 17
+Transaction F 21 F 44 P 67 C 14:Abort
+Thread 8: m pop_back CONSUME ITEM 4
+Thread 2: new Method CONSUME ITEM 90
+Thread 5: new Method READ ITEM 96
+Thread 7: new Method PRODUCE ITEM 78
+Thread 1: m pop_back READ ITEM 17
+Thread 6: new Method PRODUCE ITEM 12
+Thread 4: new Method READ ITEM 27
+Thread 3: new Method READ ITEM 42
+Thread 2: m pop_back CONSUME ITEM 90
+Thread 2: m pop_back READ ITEM 31
+Thread 2: m pop_back CONSUME ITEM 19
+Transaction C 4 C 68 F 49 C 66:Abort
+Thread 6: m pop_back PRODUCE ITEM 12
+Thread 4: m pop_back READ ITEM 27
+Thread 4: m pop_back CONSUME ITEM 77
+Thread 5: new Method CONSUME ITEM 36
+Thread 7: new Method READ ITEM 97
+Thread 8: new Method CONSUME ITEM 18
+Transaction F 17 F 44 C 4 P 91:Abort
+Transaction C 19 F 31 C 90 P 49:Abort
+Thread 3: new Method READ ITEM 40
+Thread 8: m pop_back CONSUME ITEM 18
+Transaction P 12 F 18 P 11 C 68:Abort
+Thread 5: new Method CONSUME ITEM 60
+Transaction C 77 F 27 P 87 P 13:Abort
+Thread 2: new Method READ ITEM 17
+Thread 1: new Method CONSUME ITEM 1
+Thread 6: new Method READ ITEM 100
+Thread 5: m pop_back CONSUME ITEM 60
+Thread 5: m pop_back CONSUME ITEM 36
+Thread 5: m pop_back READ ITEM 96
+Thread 2: m pop_back READ ITEM 17
+Thread 5: m pop_back PRODUCE ITEM 45
+Thread 4: new Method READ ITEM 87
+Transaction C 18 F 91 C 47 C 46:Abort
+Thread 3: m pop_back READ ITEM 40
+Thread 3: m pop_back READ ITEM 42
+Thread 3: m pop_back PRODUCE ITEM 78
+Thread 1: new Method READ ITEM 38
+Thread 6: new Method READ ITEM 26
+Thread 4: m pop_back READ ITEM 87
+Transaction P 45 F 96 C 36 C 60:Abort
+Transaction F 17 P 84 P 55 F 100:Abort
+Thread 3: new Method PRODUCE ITEM 78
+Thread 8: new Method PRODUCE ITEM 87
+Thread 6: m pop_back READ ITEM 26
+Thread 6: m pop_back READ ITEM 100
+Thread 1: new Method READ ITEM 3
+Thread 5: new Method READ ITEM 79
+Thread 3: m pop_back PRODUCE ITEM 78
+Thread 2: new Method READ ITEM 89
+Transaction F 87 P 59 F 70 P 92:Abort
+Transaction C 77 C 85 P 78 F 97:Commit
+Thread 5: m pop_back READ ITEM 79
+Transaction F 100 F 26 F 67 C 34:Abort
+Thread 8: new Method PRODUCE ITEM 64
+Thread 1: m pop_back READ ITEM 3
+Thread 1: m pop_back READ ITEM 38
+Thread 1: m pop_back CONSUME ITEM 1
+Thread 2: new Method READ ITEM 73
+Thread 4: new Method CONSUME ITEM 12
+Transaction P 78 F 42 F 40 C 1:Abort
+Thread 7: new Method CONSUME ITEM 32
+Transaction F 79 C 87 C 53 F 68:Abort
+Thread 3: new Method CONSUME ITEM 4
+Thread 2: m pop_back READ ITEM 73
+Thread 2: m pop_back READ ITEM 89
+Thread 8: new Method PRODUCE ITEM 15
+Thread 6: new Method PRODUCE ITEM 11
+Thread 1: new Method CONSUME ITEM 1
+Thread 7: new Method READ ITEM 1
+Thread 4: new Method READ ITEM 11
+Thread 3: m pop_back CONSUME ITEM 4
+Thread 5: new Method READ ITEM 17
+Thread 4: m pop_back READ ITEM 11
+Thread 4: m pop_back CONSUME ITEM 12
+Transaction F 89 F 73 P 7 C 9:Abort
+Thread 1: new Method READ ITEM 38
+Thread 8: new Method PRODUCE ITEM 45
+Thread 7: new Method CONSUME ITEM 26
+Thread 6: new Method CONSUME ITEM 31
+Thread 5: m pop_back READ ITEM 17
+Thread 2: new Method CONSUME ITEM 86
+Transaction C 4 C 70 F 40 F 21:Abort
+Transaction C 12 F 11 C 94 F 88:Abort
+Thread 1: new Method READ ITEM 3
+Thread 7: m pop_back CONSUME ITEM 26
+Thread 7: m pop_back READ ITEM 1
+Thread 7: m pop_back CONSUME ITEM 32
+Thread 2: m pop_back CONSUME ITEM 86
+Thread 3: new Method READ ITEM 11
+Thread 6: new Method READ ITEM 56
+Transaction F 17 C 62 F 11 C 39:Abort
+Thread 4: new Method PRODUCE ITEM 57
+Thread 3: m pop_back READ ITEM 11
+Transaction C 86 F 38 P 45 C 21:Abort
+Thread 1: m pop_back READ ITEM 3
+Thread 1: m pop_back READ ITEM 38
+Transaction C 32 F 1 C 26 F 53:Abort
+Thread 1: m pop_back CONSUME ITEM 1
+Thread 4: m pop_back PRODUCE ITEM 57
+Thread 5: new Method READ ITEM 95
+Thread 6: m pop_back READ ITEM 56
+Thread 6: m pop_back CONSUME ITEM 31
+Thread 6: m pop_back PRODUCE ITEM 11
+Transaction F 11 F 13 F 45 C 10:Abort
+Thread 7: new Method READ ITEM 2
+Thread 2: new Method READ ITEM 40
+Transaction P 57 C 92 C 97 C 64:Abort
+Thread 5: new Method READ ITEM 10
+Thread 1: new Method CONSUME ITEM 1
+Thread 3: new Method READ ITEM 26
+Transaction P 87 P 64 P 15 P 45:Commit
+Thread 4: new Method READ ITEM 99
+Thread 6: new Method PRODUCE ITEM 11
+Thread 7: new Method CONSUME ITEM 87
+Thread 3: m pop_back READ ITEM 26
+Thread 2: new Method PRODUCE ITEM 86
+Thread 8: new Method READ ITEM 48
+Thread 1: new Method READ ITEM 38
+Thread 4: m pop_back READ ITEM 99
+Thread 5: new Method CONSUME ITEM 57
+Thread 8: m pop_back READ ITEM 48
+Thread 7: new Method READ ITEM 38
+Thread 2: new Method PRODUCE ITEM 20
+Transaction F 26 F 58 P 24 P 7:Abort
+Thread 6: new Method CONSUME ITEM 31
+Thread 1: new Method READ ITEM 3
+Transaction F 99 C 25 P 95 C 80:Abort
+Transaction F 48 C 54 P 24 F 19:Abort
+Thread 5: new Method READ ITEM 34
+Thread 2: m pop_back PRODUCE ITEM 20
+Thread 2: m pop_back PRODUCE ITEM 86
+Thread 2: m pop_back READ ITEM 40
+Thread 7: new Method PRODUCE ITEM 41
+Thread 3: new Method PRODUCE ITEM 24
+Thread 6: new Method READ ITEM 56
+Thread 8: new Method READ ITEM 34
+Thread 4: new Method PRODUCE ITEM 33
+Thread 1: new Method CONSUME ITEM 97
+Transaction F 40 P 86 P 20 P 28:Abort
+Thread 7: m pop_back PRODUCE ITEM 41
+Thread 7: m pop_back READ ITEM 38
+Thread 7: m pop_back CONSUME ITEM 87
+Thread 7: m pop_back READ ITEM 2
+Thread 6: new Method READ ITEM 38
+Thread 3: new Method READ ITEM 4
+Thread 2: new Method READ ITEM 53
+Thread 3: m pop_back READ ITEM 4
+Thread 3: m pop_back PRODUCE ITEM 24
+Thread 1: new Method CONSUME ITEM 1
+Transaction F 2 C 87 F 38 P 41:Abort
+Thread 8: m pop_back READ ITEM 34
+Thread 4: m pop_back PRODUCE ITEM 33
+Thread 2: new Method PRODUCE ITEM 51
+Thread 6: new Method PRODUCE ITEM 11
+Thread 7: new Method READ ITEM 20
+Transaction P 24 F 4 F 51 C 71:Abort
+Thread 1: new Method READ ITEM 38
+Thread 8: new Method READ ITEM 34
+Transaction F 95 F 10 C 57 F 34:Commit
+Thread 4: new Method PRODUCE ITEM 33
+Thread 3: new Method READ ITEM 89
+Thread 5: new Method PRODUCE ITEM 95
+Thread 2: new Method READ ITEM 23
+Thread 7: new Method READ ITEM 60
+Thread 8: new Method CONSUME ITEM 69
+Thread 6: new Method CONSUME ITEM 31
+Thread 1: new Method READ ITEM 3
+Thread 3: new Method READ ITEM 5
+Thread 7: m pop_back READ ITEM 60
+Thread 7: m pop_back READ ITEM 20
+Thread 5: m pop_back PRODUCE ITEM 95
+Thread 4: new Method PRODUCE ITEM 64
+Thread 2: new Method READ ITEM 14
+Thread 6: new Method READ ITEM 56
+Thread 8: new Method PRODUCE ITEM 37
+Thread 4: m pop_back PRODUCE ITEM 64
+Thread 4: m pop_back PRODUCE ITEM 33
+Thread 8: new Method PRODUCE ITEM 49
+Thread 1: new Method CONSUME ITEM 97
+Thread 2: m pop_back READ ITEM 14
+Thread 8: m pop_back PRODUCE ITEM 49
+Thread 8: m pop_back PRODUCE ITEM 37
+Thread 2: m pop_back READ ITEM 23
+Thread 8: m pop_back CONSUME ITEM 69
+Transaction F 20 F 60 P 56 F 88:Abort
+Transaction P 95 F 33 F 98 C 99:Abort
+Thread 8: m pop_back READ ITEM 34
+Thread 2: m pop_back PRODUCE ITEM 51
+Thread 3: new Method PRODUCE ITEM 17
+Thread 6: new Method READ ITEM 38
+Transaction P 33 P 64 P 81 P 89:Abort
+Thread 2: m pop_back READ ITEM 53
+Thread 7: new Method CONSUME ITEM 94
+Thread 5: new Method READ ITEM 37
+Thread 4: new Method READ ITEM 35
+Transaction F 34 C 69 P 37 P 49:Abort
+Thread 5: m pop_back READ ITEM 37
+Transaction F 53 P 51 F 23 F 14:Abort
+Thread 3: m pop_back PRODUCE ITEM 17
+Thread 3: m pop_back READ ITEM 5
+Thread 3: m pop_back READ ITEM 89
+Thread 4: m pop_back READ ITEM 35
+Thread 7: new Method PRODUCE ITEM 42
+Thread 6: new Method PRODUCE ITEM 11
+Transaction F 37 P 83 F 6 P 85:Abort
+Thread 8: new Method CONSUME ITEM 54
+Thread 2: new Method READ ITEM 12
+Transaction C 1 F 38 F 3 C 97:Commit
+Thread 7: m pop_back PRODUCE ITEM 42
+Thread 7: m pop_back CONSUME ITEM 94
+Thread 3: new Method READ ITEM 89
+Transaction F 35 C 98 P 98 C 100:Abort
+Thread 5: new Method READ ITEM 63
+Thread 1: new Method CONSUME ITEM 67
+Thread 6: new Method CONSUME ITEM 31
+Thread 4: new Method CONSUME ITEM 73
+Thread 8: new Method CONSUME ITEM 62
+Transaction C 94 P 42 P 3 F 32:Abort
+Thread 5: m pop_back READ ITEM 63
+Thread 2: new Method READ ITEM 59
+Thread 1: m pop_back CONSUME ITEM 67
+Thread 3: new Method READ ITEM 5
+Thread 8: m pop_back CONSUME ITEM 62
+Thread 8: m pop_back CONSUME ITEM 54
+Thread 4: m pop_back CONSUME ITEM 73
+Thread 6: new Method READ ITEM 56
+Thread 2: m pop_back READ ITEM 59
+Thread 2: m pop_back READ ITEM 12
+Thread 7: new Method PRODUCE ITEM 67
+Transaction F 63 C 57 C 59 F 59:Abort
+Transaction C 67 C 12 C 34 C 83:Abort
+Transaction C 54 C 62 P 4 C 25:Abort
+Thread 6: new Method READ ITEM 38
+Thread 3: new Method PRODUCE ITEM 17
+Thread 5: new Method CONSUME ITEM 75
+Transaction C 73 C 45 C 30 P 32:Abort
+Transaction F 12 F 59 F 63 F 22:Abort
+Thread 1: new Method CONSUME ITEM 29
+Thread 8: new Method PRODUCE ITEM 25
+Thread 5: m pop_back CONSUME ITEM 75
+Thread 7: new Method PRODUCE ITEM 79
+Thread 3: new Method READ ITEM 51
+Thread 2: new Method READ ITEM 79
+Thread 4: new Method CONSUME ITEM 22
+Thread 3: m pop_back READ ITEM 51
+Thread 3: m pop_back PRODUCE ITEM 17
+Transaction C 75 F 85 P 26 C 92:Abort
+Thread 1: m pop_back CONSUME ITEM 29
+Thread 3: m pop_back READ ITEM 5
+Thread 3: m pop_back READ ITEM 89
+Thread 2: m pop_back READ ITEM 79
+Thread 5: new Method PRODUCE ITEM 89
+Thread 7: m pop_back PRODUCE ITEM 79
+Thread 7: m pop_back PRODUCE ITEM 67
+Thread 4: m pop_back CONSUME ITEM 22
+Transaction P 11 C 31 F 56 F 38:Commit
+Thread 8: m pop_back PRODUCE ITEM 25
+Transaction F 89 F 5 P 17 F 51:Abort
+Thread 5: m pop_back PRODUCE ITEM 89
+Thread 1: new Method CONSUME ITEM 29
+Transaction F 79 P 56 F 20 P 11:Abort
+Thread 4: new Method CONSUME ITEM 22
+Thread 6: new Method PRODUCE ITEM 48
+Thread 3: new Method CONSUME ITEM 19
+Thread 7: new Method PRODUCE ITEM 67
+Transaction P 89 F 11 C 67 P 62:Abort
+Thread 8: new Method PRODUCE ITEM 25
+Thread 2: new Method CONSUME ITEM 70
+Thread 1: new Method READ ITEM 68
+Thread 6: new Method READ ITEM 20
+Thread 4: new Method READ ITEM 63
+Thread 8: new Method READ ITEM 62
+Thread 2: m pop_back CONSUME ITEM 70
+Thread 4: m pop_back READ ITEM 63
+Thread 1: new Method READ ITEM 84
+Thread 4: m pop_back CONSUME ITEM 22
+Thread 7: new Method PRODUCE ITEM 79
+Thread 3: new Method CONSUME ITEM 65
+Thread 8: m pop_back READ ITEM 62
+Thread 5: new Method PRODUCE ITEM 90
+Thread 8: m pop_back PRODUCE ITEM 25
+Thread 6: new Method PRODUCE ITEM 73
+Transaction C 70 F 96 F 58 P 20:Abort
+Transaction C 22 F 63 F 32 C 80:Abort
+Thread 1: new Method READ ITEM 28
+Thread 5: new Method CONSUME ITEM 83
+Thread 3: new Method READ ITEM 43
+Transaction P 25 F 62 C 98 P 10:Abort
+Thread 7: new Method CONSUME ITEM 52
+Thread 2: new Method PRODUCE ITEM 66
+Thread 7: m pop_back CONSUME ITEM 52
+Thread 8: new Method PRODUCE ITEM 67
+Thread 7: m pop_back PRODUCE ITEM 79
+Thread 7: m pop_back PRODUCE ITEM 67
+Thread 5: m pop_back CONSUME ITEM 83
+Thread 4: new Method READ ITEM 77
+Thread 1: m pop_back READ ITEM 28
+Thread 5: m pop_back PRODUCE ITEM 90
+Thread 1: m pop_back READ ITEM 84
+Thread 3: m pop_back READ ITEM 43
+Thread 6: new Method PRODUCE ITEM 44
+Thread 2: m pop_back PRODUCE ITEM 66
+Thread 8: new Method READ ITEM 28
+Thread 3: m pop_back CONSUME ITEM 65
+Transaction P 67 P 79 C 52 P 32:Abort
+Thread 3: m pop_back CONSUME ITEM 19
+Thread 1: m pop_back READ ITEM 68
+Thread 4: m pop_back READ ITEM 77
+Thread 1: m pop_back CONSUME ITEM 29
+Thread 8: m pop_back READ ITEM 28
+Thread 8: m pop_back PRODUCE ITEM 67
+Transaction P 90 C 83 P 24 C 17:Abort
+Thread 7: new Method PRODUCE ITEM 36
+Transaction P 66 P 79 C 80 P 72:Abort
+Transaction F 77 C 23 C 5 P 78:Abort
+Transaction C 19 C 65 F 43 P 39:Abort
+Transaction C 29 F 68 F 84 F 28:Abort
+Thread 5: new Method READ ITEM 10
+Thread 7: m pop_back PRODUCE ITEM 36
+Thread 2: new Method PRODUCE ITEM 19
+Transaction P 67 F 28 C 33 P 47:Abort
+Thread 1: new Method CONSUME ITEM 1
+Thread 4: new Method PRODUCE ITEM 93
+Thread 2: m pop_back PRODUCE ITEM 19
+Thread 3: new Method CONSUME ITEM 74
+Thread 8: new Method CONSUME ITEM 48
+Thread 5: new Method READ ITEM 13
+Thread 1: m pop_back CONSUME ITEM 1
+Transaction P 36 F 84 C 91 P 7:Abort
+Thread 5: m pop_back READ ITEM 13
+Thread 5: m pop_back READ ITEM 10
+Transaction P 48 F 20 P 73 P 44:Commit
+Thread 3: new Method PRODUCE ITEM 38
+Transaction P 19 P 65 P 97 C 68:Abort
+Thread 7: new Method PRODUCE ITEM 96
+Thread 8: new Method PRODUCE ITEM 21
+Thread 4: new Method PRODUCE ITEM 91
+Transaction C 1 F 13 F 92 C 95:Abort
+Thread 6: new Method PRODUCE ITEM 65
+Thread 2: new Method CONSUME ITEM 43
+Thread 8: m pop_back PRODUCE ITEM 21
+Transaction F 10 F 13 C 82 C 40:Abort
+Thread 8: m pop_back CONSUME ITEM 48
+Thread 3: m pop_back PRODUCE ITEM 38
+Thread 3: m pop_back CONSUME ITEM 74
+Thread 6: m pop_back PRODUCE ITEM 65
+Thread 1: new Method READ ITEM 70
+Thread 7: m pop_back PRODUCE ITEM 96
+Thread 2: m pop_back CONSUME ITEM 43
+Thread 4: new Method READ ITEM 40
+Thread 1: m pop_back READ ITEM 70
+Transaction C 74 P 38 P 23 C 56:Abort
+Thread 5: new Method PRODUCE ITEM 50
+Transaction C 48 P 21 C 79 F 57:Abort
+Transaction P 65 F 54 P 35 P 20:Abort
+Transaction P 96 F 90 F 19 C 36:Abort
+Thread 8: new Method PRODUCE ITEM 65
+Transaction C 43 F 18 C 88 F 61:Abort
+Thread 3: new Method READ ITEM 37
+Thread 7: new Method READ ITEM 78
+Transaction F 70 C 99 C 41 C 100:Abort
+Thread 4: new Method READ ITEM 18
+Thread 5: new Method PRODUCE ITEM 58
+Thread 6: new Method CONSUME ITEM 68
+Thread 2: new Method READ ITEM 15
+Thread 8: m pop_back PRODUCE ITEM 65
+Thread 3: m pop_back READ ITEM 37
+Thread 4: m pop_back READ ITEM 18
+Thread 4: m pop_back READ ITEM 40
+Thread 5: m pop_back PRODUCE ITEM 58
+Thread 7: new Method PRODUCE ITEM 95
+Thread 1: new Method CONSUME ITEM 84
+Thread 5: m pop_back PRODUCE ITEM 50
+Thread 4: m pop_back PRODUCE ITEM 91
+Thread 4: m pop_back PRODUCE ITEM 93
+Thread 6: new Method READ ITEM 58
+Thread 7: m pop_back PRODUCE ITEM 95
+Transaction F 37 P 28 P 5 P 7:Abort
+Thread 1: new Method CONSUME ITEM 18
+Thread 2: new Method PRODUCE ITEM 38
+Transaction P 50 P 58 F 46 F 43:Abort
+Transaction P 65 F 80 P 77 P 6:Abort
+Thread 7: m pop_back READ ITEM 78
+Thread 3: new Method PRODUCE ITEM 9
+Thread 1: m pop_back CONSUME ITEM 18
+Thread 1: m pop_back CONSUME ITEM 84
+Transaction P 93 P 91 F 40 F 18:Abort
+Thread 6: new Method READ ITEM 81
+Thread 5: new Method CONSUME ITEM 1
+Thread 2: m pop_back PRODUCE ITEM 38
+Thread 2: m pop_back READ ITEM 15
+Thread 8: new Method PRODUCE ITEM 5
+Thread 3: m pop_back PRODUCE ITEM 9
+Transaction F 78 P 95 F 87 C 17:Abort
+Thread 4: new Method READ ITEM 35
+Thread 5: m pop_back CONSUME ITEM 1
+Transaction C 84 C 18 P 6 C 49:Abort
+Thread 6: new Method READ ITEM 71
+Thread 8: m pop_back PRODUCE ITEM 5
+Thread 4: m pop_back READ ITEM 35
+Thread 7: new Method PRODUCE ITEM 3
+Transaction F 15 P 38 C 88 C 55:Abort
+Transaction C 1 C 2 F 40 F 30:Abort
+Thread 7: m pop_back PRODUCE ITEM 3
+Thread 1: new Method CONSUME ITEM 95
+Transaction P 5 F 67 P 8 P 84:Abort
+Transaction F 35 C 69 C 7 F 60:Abort
+Transaction P 9 F 92 C 60 P 55:Abort
+Thread 2: new Method READ ITEM 20
+Thread 1: m pop_back CONSUME ITEM 95
+Thread 8: new Method PRODUCE ITEM 8
+Thread 5: new Method CONSUME ITEM 95
+Thread 3: new Method CONSUME ITEM 5
+Transaction P 3 P 100 C 19 C 88:Abort
+Thread 4: new Method PRODUCE ITEM 43
+Thread 8: new Method CONSUME ITEM 17
+Thread 2: m pop_back READ ITEM 20
+Thread 5: new Method CONSUME ITEM 68
+Thread 7: new Method READ ITEM 32
+Thread 3: new Method CONSUME ITEM 8
+Thread 1: new Method CONSUME ITEM 95
+Thread 4: new Method READ ITEM 48
+Transaction C 68 F 58 F 81 F 71:Commit
+Thread 8: m pop_back CONSUME ITEM 17
+Thread 5: m pop_back CONSUME ITEM 68
+Thread 8: m pop_back PRODUCE ITEM 8
+Thread 5: m pop_back CONSUME ITEM 95
+Thread 2: new Method READ ITEM 20
+Thread 6: new Method READ ITEM 17
+Thread 3: m pop_back CONSUME ITEM 8
+Thread 3: m pop_back CONSUME ITEM 5
+Thread 7: new Method PRODUCE ITEM 38
+Thread 1: new Method READ ITEM 86
+Thread 6: m pop_back READ ITEM 17
+Thread 4: new Method CONSUME ITEM 96
+Transaction P 8 C 17 F 11 P 34:Abort
+Thread 7: m pop_back PRODUCE ITEM 38
+Thread 7: m pop_back READ ITEM 32
+Transaction C 95 C 68 F 65 C 72:Abort
+Thread 2: new Method CONSUME ITEM 2
+Thread 1: m pop_back READ ITEM 86
+Transaction C 5 C 8 F 49 P 40:Abort
+Thread 1: m pop_back CONSUME ITEM 95
+Transaction F 17 C 80 F 47 P 56:Abort
+Thread 5: new Method CONSUME ITEM 63
+Thread 8: new Method PRODUCE ITEM 79
+Transaction F 32 P 38 F 35 F 6:Abort
+Thread 4: new Method PRODUCE ITEM 85
+Thread 5: m pop_back CONSUME ITEM 63
+Thread 3: new Method PRODUCE ITEM 79
+Transaction C 95 F 86 P 5 C 63:Abort
+Thread 7: new Method PRODUCE ITEM 71
+Thread 8: new Method PRODUCE ITEM 58
+Thread 6: new Method PRODUCE ITEM 93
+Thread 2: new Method PRODUCE ITEM 35
+Transaction C 63 C 70 F 49 P 37:Abort
+Thread 1: new Method CONSUME ITEM 14
+Thread 8: m pop_back PRODUCE ITEM 58
+Thread 8: m pop_back PRODUCE ITEM 79
+Thread 7: m pop_back PRODUCE ITEM 71
+Thread 3: new Method CONSUME ITEM 92
+Thread 6: new Method READ ITEM 20
+Thread 1: m pop_back CONSUME ITEM 14
+Thread 3: m pop_back CONSUME ITEM 92
+Thread 3: m pop_back PRODUCE ITEM 79
+Thread 2: m pop_back PRODUCE ITEM 35
+Thread 2: m pop_back CONSUME ITEM 2
+Thread 2: m pop_back READ ITEM 20
+Thread 5: new Method PRODUCE ITEM 47
+Transaction P 79 P 58 P 17 P 12:Abort
+Transaction P 71 F 41 F 50 P 29:Abort
+Transaction C 14 P 30 F 39 C 25:Abort
+Thread 2: new Method READ ITEM 20
+Thread 6: m pop_back READ ITEM 20
+Transaction P 79 C 92 P 99 F 36:Abort
+Thread 6: m pop_back PRODUCE ITEM 93
+Thread 5: new Method READ ITEM 65
+Thread 7: new Method PRODUCE ITEM 40
+Thread 1: new Method READ ITEM 90
+Thread 8: new Method PRODUCE ITEM 91
+Transaction P 43 F 48 C 96 P 85:Commit
+Thread 3: new Method PRODUCE ITEM 94
+Thread 7: m pop_back PRODUCE ITEM 40
+Thread 1: m pop_back READ ITEM 90
+Thread 2: new Method CONSUME ITEM 2
+Thread 3: m pop_back PRODUCE ITEM 94
+Thread 8: new Method CONSUME ITEM 66
+Thread 6: new Method PRODUCE ITEM 93
+Thread 4: new Method READ ITEM 63
+Thread 5: new Method READ ITEM 21
+Transaction P 40 F 99 P 35 C 22:Abort
+Transaction F 90 C 56 C 21 P 16:Abort
+Thread 4: m pop_back READ ITEM 63
+Transaction P 94 F 44 C 94 C 17:Abort
+Thread 8: new Method CONSUME ITEM 50
+Thread 2: new Method PRODUCE ITEM 35
+Thread 6: new Method READ ITEM 20
+Thread 5: new Method PRODUCE ITEM 81
+Thread 3: new Method READ ITEM 63
+Thread 7: new Method PRODUCE ITEM 20
+Thread 1: new Method PRODUCE ITEM 17
+Thread 8: m pop_back CONSUME ITEM 50
+Thread 8: m pop_back CONSUME ITEM 66
+Thread 8: m pop_back PRODUCE ITEM 91
+Thread 3: m pop_back READ ITEM 63
+Thread 5: m pop_back PRODUCE ITEM 81
+Thread 5: m pop_back READ ITEM 21
+Thread 5: m pop_back READ ITEM 65
+Thread 5: m pop_back PRODUCE ITEM 47
+Transaction F 63 P 25 P 22 C 95:Abort
+Thread 2: new Method READ ITEM 68
+Thread 6: new Method CONSUME ITEM 77
+Thread 1: new Method READ ITEM 42
+Thread 7: m pop_back PRODUCE ITEM 20
+Thread 2: m pop_back READ ITEM 68
+Thread 2: m pop_back PRODUCE ITEM 35
+Transaction P 20 P 67 F 100 F 20:Abort
+Thread 1: new Method PRODUCE ITEM 93
+Thread 2: m pop_back CONSUME ITEM 2
+Thread 2: m pop_back READ ITEM 20
+Transaction P 91 C 66 C 50 P 29:Abort
+Thread 4: new Method CONSUME ITEM 4
+Thread 6: m pop_back CONSUME ITEM 77
+Thread 6: m pop_back READ ITEM 20
+Thread 6: m pop_back PRODUCE ITEM 93
+Thread 7: new Method CONSUME ITEM 68
+Transaction F 63 P 68 C 1 F 30:Abort
+Transaction P 47 F 65 F 21 P 81:Abort
+Transaction F 20 C 2 P 35 F 68:Abort
+Thread 4: m pop_back CONSUME ITEM 4
+Thread 8: new Method PRODUCE ITEM 42
+Thread 7: m pop_back CONSUME ITEM 68
+Thread 3: new Method READ ITEM 59
+Thread 1: new Method PRODUCE ITEM 82
+Transaction P 93 F 20 C 77 F 67:Abort
+Thread 2: new Method CONSUME ITEM 1
+Thread 5: new Method PRODUCE ITEM 31
+Thread 8: m pop_back PRODUCE ITEM 42
+Thread 3: m pop_back READ ITEM 59
+Transaction C 4 P 21 C 3 F 63:Abort
+Transaction C 68 P 49 F 19 F 86:Abort
+Thread 2: m pop_back CONSUME ITEM 1
+Thread 6: new Method CONSUME ITEM 87
+Transaction P 42 P 19 C 71 F 82:Abort
+Thread 7: new Method READ ITEM 41
+Thread 5: m pop_back PRODUCE ITEM 31
+Transaction F 59 C 63 F 69 F 91:Abort
+Thread 4: new Method CONSUME ITEM 30
+Thread 8: new Method PRODUCE ITEM 19
+Transaction C 1 F 74 F 87 F 63:Abort
+Thread 6: m pop_back CONSUME ITEM 87
+Thread 7: new Method READ ITEM 39
+Thread 3: new Method READ ITEM 94
+Thread 8: m pop_back PRODUCE ITEM 19
+Thread 5: new Method PRODUCE ITEM 31
+Thread 4: new Method CONSUME ITEM 7
+Thread 2: new Method CONSUME ITEM 7
+Thread 2: m pop_back CONSUME ITEM 7
+Thread 4: m pop_back CONSUME ITEM 7
+Transaction P 19 C 78 C 87 F 85:Abort
+Thread 3: new Method PRODUCE ITEM 53
+Thread 5: new Method CONSUME ITEM 23
+Transaction P 17 F 42 P 93 P 82:Commit
+Thread 4: m pop_back CONSUME ITEM 30
+Thread 7: new Method READ ITEM 55
+Thread 6: new Method CONSUME ITEM 87
+Thread 8: new Method CONSUME ITEM 77
+Thread 3: m pop_back PRODUCE ITEM 53
+Thread 3: m pop_back READ ITEM 94
+Transaction C 7 P 35 P 31 F 6:Abort
+Thread 1: new Method PRODUCE ITEM 73
+Thread 5: new Method READ ITEM 85
+Thread 8: m pop_back CONSUME ITEM 77
+Transaction C 30 C 7 F 9 F 67:Abort
+Thread 6: new Method CONSUME ITEM 59
+Thread 7: new Method PRODUCE ITEM 30
+Thread 2: new Method PRODUCE ITEM 40
+Thread 1: m pop_back PRODUCE ITEM 73
+Transaction F 94 P 53 P 67 F 65:Abort
+Thread 6: m pop_back CONSUME ITEM 59
+Thread 6: m pop_back CONSUME ITEM 87
+Thread 5: new Method CONSUME ITEM 13
+Thread 7: m pop_back PRODUCE ITEM 30
+Thread 4: new Method READ ITEM 6
+Thread 2: m pop_back PRODUCE ITEM 40
+Transaction C 77 P 83 F 61 P 51:Abort
+Thread 3: new Method READ ITEM 12
+Thread 7: m pop_back READ ITEM 55
+Thread 7: m pop_back READ ITEM 39
+Thread 7: m pop_back READ ITEM 41
+Thread 5: m pop_back CONSUME ITEM 13
+Transaction P 73 C 56 F 50 C 10:Abort
+Thread 5: m pop_back READ ITEM 85
+Thread 5: m pop_back CONSUME ITEM 23
+Thread 5: m pop_back PRODUCE ITEM 31
+Thread 4: m pop_back READ ITEM 6
+Transaction C 87 C 59 F 14 C 65:Abort
+Thread 8: new Method PRODUCE ITEM 21
+Thread 1: new Method READ ITEM 11
+Transaction P 40 C 15 P 50 C 98:Abort
+Thread 8: m pop_back PRODUCE ITEM 21
+Thread 6: new Method CONSUME ITEM 83
+Transaction F 41 F 39 F 55 P 30:Abort
+Thread 3: new Method READ ITEM 89
+Transaction F 6 C 83 F 19 F 10:Abort
+Transaction P 31 C 23 F 85 C 13:Abort
+Thread 2: new Method READ ITEM 90
+Thread 6: m pop_back CONSUME ITEM 83
+Thread 7: new Method PRODUCE ITEM 82
+Transaction P 21 F 13 F 20 C 54:Abort
+Thread 1: new Method PRODUCE ITEM 27
+Thread 5: new Method PRODUCE ITEM 79
+Thread 3: new Method READ ITEM 26
+Thread 4: new Method CONSUME ITEM 82
+Thread 2: m pop_back READ ITEM 90
+Thread 8: new Method READ ITEM 62
+Thread 7: m pop_back PRODUCE ITEM 82
+Transaction C 83 F 61 P 23 C 75:Abort
+Thread 5: new Method CONSUME ITEM 13
+Thread 3: m pop_back READ ITEM 26
+Thread 3: m pop_back READ ITEM 89
+Thread 3: m pop_back READ ITEM 12
+Thread 1: new Method PRODUCE ITEM 74
+Thread 8: m pop_back READ ITEM 62
+Thread 4: new Method PRODUCE ITEM 61
+Thread 6: new Method PRODUCE ITEM 15
+Transaction F 90 C 56 F 40 P 28:Abort
+Transaction P 82 C 47 P 68 P 59:Abort
+Thread 5: m pop_back CONSUME ITEM 13
+Thread 4: m pop_back PRODUCE ITEM 61
+Thread 4: m pop_back CONSUME ITEM 82
+Thread 6: m pop_back PRODUCE ITEM 15
+Thread 5: m pop_back PRODUCE ITEM 79
+Transaction F 12 F 89 F 26 P 83:Abort
+Thread 2: new Method READ ITEM 85
+Thread 1: m pop_back PRODUCE ITEM 74
+Thread 1: m pop_back PRODUCE ITEM 27
+Thread 1: m pop_back READ ITEM 11
+Transaction F 62 F 83 F 24 C 76:Abort
+Thread 7: new Method PRODUCE ITEM 79
+Thread 3: new Method CONSUME ITEM 68
+Transaction C 82 P 61 F 2 P 45:Abort
+Transaction P 79 C 13 C 73 P 69:Abort
+Transaction P 15 C 21 P 18 F 15:Abort
+Thread 8: new Method READ ITEM 34
+Thread 3: m pop_back CONSUME ITEM 68
+Transaction F 11 P 27 P 74 C 68:Abort
+Thread 2: new Method PRODUCE ITEM 54
+Thread 7: new Method READ ITEM 48
+Thread 4: new Method CONSUME ITEM 14
+Thread 5: new Method CONSUME ITEM 59
+Thread 6: new Method CONSUME ITEM 38
+Thread 2: m pop_back PRODUCE ITEM 54
+Thread 2: m pop_back READ ITEM 85
+Transaction C 68 C 96 F 81 F 18:Abort
+Thread 4: m pop_back CONSUME ITEM 14
+Thread 5: m pop_back CONSUME ITEM 59
+Thread 8: new Method PRODUCE ITEM 68
+Thread 1: new Method CONSUME ITEM 19
+Thread 7: new Method CONSUME ITEM 55
+Thread 6: new Method PRODUCE ITEM 36
+Transaction F 85 P 54 F 92 F 4:Abort
+Thread 3: new Method CONSUME ITEM 48
+Transaction C 14 C 56 P 91 P 61:Abort
+Thread 7: new Method PRODUCE ITEM 2
+Transaction C 59 C 3 P 35 F 71:Abort
+Thread 1: new Method READ ITEM 6
+Thread 6: m pop_back PRODUCE ITEM 36
+Thread 6: m pop_back CONSUME ITEM 38
+Thread 8: new Method PRODUCE ITEM 90
+Thread 2: new Method CONSUME ITEM 12
+Thread 4: new Method READ ITEM 43
+Thread 7: m pop_back PRODUCE ITEM 2
+Thread 7: m pop_back CONSUME ITEM 55
+Thread 7: m pop_back READ ITEM 48
+Thread 7: m pop_back PRODUCE ITEM 79
+Thread 1: m pop_back READ ITEM 6
+Thread 3: new Method PRODUCE ITEM 50
+Thread 1: m pop_back CONSUME ITEM 19
+Thread 5: new Method PRODUCE ITEM 13
+Transaction C 38 P 36 C 50 F 30:Abort
+Thread 8: new Method CONSUME ITEM 96
+Thread 2: new Method CONSUME ITEM 46
+Transaction P 79 F 48 C 55 P 2:Abort
+Thread 6: new Method READ ITEM 47
+Thread 4: new Method CONSUME ITEM 19
+Transaction C 19 F 6 C 41 C 65:Abort
+Thread 8: m pop_back CONSUME ITEM 96
+Thread 8: m pop_back PRODUCE ITEM 90
+Thread 8: m pop_back PRODUCE ITEM 68
+Thread 2: m pop_back CONSUME ITEM 46
+Thread 5: new Method CONSUME ITEM 68
+Thread 2: m pop_back CONSUME ITEM 12
+Thread 6: m pop_back READ ITEM 47
+Thread 3: new Method PRODUCE ITEM 96
+Thread 8: m pop_back READ ITEM 34
+Thread 7: new Method PRODUCE ITEM 50
+Thread 1: new Method READ ITEM 9
+Thread 5: m pop_back CONSUME ITEM 68
+Thread 5: m pop_back PRODUCE ITEM 13
+Transaction F 47 C 48 C 25 C 31:Abort
+Thread 3: new Method READ ITEM 55
+Transaction C 12 C 46 C 39 P 72:Abort
+Thread 7: new Method READ ITEM 64
+Transaction F 34 P 68 P 90 C 96:Abort
+Transaction P 13 C 68 P 17 C 98:Abort
+Thread 1: new Method PRODUCE ITEM 76
+Thread 4: new Method CONSUME ITEM 38
+Thread 8: new Method READ ITEM 84
+Thread 2: new Method PRODUCE ITEM 47
+Thread 6: new Method CONSUME ITEM 61
+Thread 5: new Method PRODUCE ITEM 51
+Thread 1: new Method CONSUME ITEM 70
+Thread 7: new Method PRODUCE ITEM 51
+Thread 8: new Method PRODUCE ITEM 2
+Thread 4: new Method PRODUCE ITEM 39
+Thread 8: m pop_back PRODUCE ITEM 2
+Thread 8: m pop_back READ ITEM 84
+Thread 1: m pop_back CONSUME ITEM 70
+Thread 1: m pop_back PRODUCE ITEM 76
+Thread 1: m pop_back READ ITEM 9
+Thread 7: new Method PRODUCE ITEM 36
+Thread 4: m pop_back PRODUCE ITEM 39
+Thread 4: m pop_back CONSUME ITEM 38
+Thread 4: m pop_back CONSUME ITEM 19
+Thread 4: m pop_back READ ITEM 43
+Thread 6: m pop_back CONSUME ITEM 61
+Thread 2: m pop_back PRODUCE ITEM 47
+Thread 5: m pop_back PRODUCE ITEM 51
+Thread 7: m pop_back PRODUCE ITEM 36
+Transaction F 84 P 2 F 41 C 76:Abort
+Thread 7: m pop_back PRODUCE ITEM 51
+Transaction F 9 P 76 C 70 C 85:Abort
+Thread 7: m pop_back READ ITEM 64
+Thread 7: m pop_back PRODUCE ITEM 50
+Transaction C 48 P 50 P 96 F 55:Commit
+Transaction F 43 C 19 C 38 P 39:Abort
+Thread 1: new Method PRODUCE ITEM 93
+Thread 6: new Method CONSUME ITEM 61
+Thread 4: new Method READ ITEM 73
+Thread 8: new Method CONSUME ITEM 81
+Thread 6: new Method CONSUME ITEM 89
+Thread 4: new Method PRODUCE ITEM 70
+Transaction P 50 F 64 P 51 P 36:Abort
+Thread 2: new Method PRODUCE ITEM 47
+Thread 5: new Method PRODUCE ITEM 51
+Thread 6: new Method CONSUME ITEM 12
+Thread 8: new Method CONSUME ITEM 72
+Thread 3: new Method CONSUME ITEM 88
+Thread 4: new Method PRODUCE ITEM 91
+Thread 1: m pop_back PRODUCE ITEM 93
+Thread 2: new Method CONSUME ITEM 86
+Thread 7: new Method PRODUCE ITEM 1
+Thread 5: new Method PRODUCE ITEM 100
+Thread 2: m pop_back CONSUME ITEM 86
+Thread 2: m pop_back PRODUCE ITEM 47
+Thread 8: new Method PRODUCE ITEM 34
+Thread 4: new Method PRODUCE ITEM 58
+Thread 5: m pop_back PRODUCE ITEM 100
+Thread 6: new Method READ ITEM 40
+Transaction P 93 C 68 F 99 C 75:Abort
+Thread 7: new Method READ ITEM 59
+Thread 3: new Method READ ITEM 69
+Thread 5: m pop_back PRODUCE ITEM 51
+Thread 4: m pop_back PRODUCE ITEM 58
+Thread 8: m pop_back PRODUCE ITEM 34
+Thread 4: m pop_back PRODUCE ITEM 91
+Thread 4: m pop_back PRODUCE ITEM 70
+Transaction P 47 C 86 C 92 P 38:Abort
+Thread 7: m pop_back READ ITEM 59
+Thread 7: m pop_back PRODUCE ITEM 1
+Thread 4: m pop_back READ ITEM 73
+Thread 1: new Method CONSUME ITEM 65
+Thread 8: m pop_back CONSUME ITEM 72
+Thread 8: m pop_back CONSUME ITEM 81
+Thread 3: new Method CONSUME ITEM 95
+Transaction P 51 P 100 P 48 P 44:Abort
+Thread 2: new Method CONSUME ITEM 34
+Transaction P 1 F 59 F 1 C 95:Abort
+Thread 5: new Method PRODUCE ITEM 22
+Transaction F 73 P 70 P 91 P 58:Abort
+Transaction C 81 C 72 P 34 P 69:Abort
+Thread 3: new Method READ ITEM 3
+Thread 5: m pop_back PRODUCE ITEM 22
+Thread 1: new Method READ ITEM 99
+Thread 4: new Method PRODUCE ITEM 23
+Thread 2: m pop_back CONSUME ITEM 34
+Thread 8: new Method READ ITEM 55
+Thread 7: new Method PRODUCE ITEM 52
+Thread 1: m pop_back READ ITEM 99
+Thread 1: m pop_back CONSUME ITEM 65
+Thread 4: m pop_back PRODUCE ITEM 23
+Transaction P 22 F 79 P 46 P 45:Abort
+Thread 8: new Method PRODUCE ITEM 85
+Thread 2: new Method CONSUME ITEM 34
+Transaction C 65 F 99 C 90 C 26:Abort
+Thread 3: new Method CONSUME ITEM 88
+Thread 7: new Method READ ITEM 81
+Thread 8: m pop_back PRODUCE ITEM 85
+Thread 8: m pop_back READ ITEM 55
+Transaction P 23 C 23 C 75 P 17:Abort
+Thread 5: new Method PRODUCE ITEM 99
+Transaction C 61 C 89 C 12 F 40:Commit
+Thread 1: new Method PRODUCE ITEM 72
+Thread 2: new Method CONSUME ITEM 17
+Thread 7: new Method READ ITEM 10
+Thread 3: new Method READ ITEM 69
+Transaction F 55 P 85 F 9 C 37:Abort
+Thread 4: new Method CONSUME ITEM 17
+Thread 1: m pop_back PRODUCE ITEM 72
+Thread 6: new Method READ ITEM 31
+Thread 5: new Method READ ITEM 9
+Thread 8: new Method READ ITEM 12
+Thread 7: new Method PRODUCE ITEM 40
+Thread 6: m pop_back READ ITEM 31
+Transaction P 72 C 21 P 5 P 83:Abort
+Thread 5: new Method CONSUME ITEM 75
+Thread 4: new Method CONSUME ITEM 26
+Thread 2: new Method READ ITEM 74
+Thread 3: new Method CONSUME ITEM 95
+Thread 8: m pop_back READ ITEM 12
+Thread 7: m pop_back PRODUCE ITEM 40
+Thread 7: m pop_back READ ITEM 10
+Thread 7: m pop_back READ ITEM 81
+Thread 7: m pop_back PRODUCE ITEM 52
+Thread 5: m pop_back CONSUME ITEM 75
+Thread 5: m pop_back READ ITEM 9
+Thread 5: m pop_back PRODUCE ITEM 99
+Thread 1: new Method CONSUME ITEM 88
+Thread 4: m pop_back CONSUME ITEM 26
+Transaction F 31 C 96 F 79 C 37:Abort
+Thread 4: m pop_back CONSUME ITEM 17
+Transaction F 12 C 66 F 34 P 18:Abort
+Thread 3: new Method READ ITEM 3
+Transaction P 99 F 9 C 75 C 35:Abort
+Thread 2: new Method CONSUME ITEM 74
+Transaction P 52 F 81 F 10 P 40:Abort
+Transaction C 17 C 26 P 33 F 91:Abort
+Thread 6: new Method CONSUME ITEM 43
+Thread 8: new Method PRODUCE ITEM 66
+Thread 1: new Method PRODUCE ITEM 58
+Thread 5: new Method PRODUCE ITEM 71
+Thread 7: new Method PRODUCE ITEM 45
+Thread 8: m pop_back PRODUCE ITEM 66
+Thread 1: m pop_back PRODUCE ITEM 58
+Thread 1: m pop_back CONSUME ITEM 88
+Thread 4: new Method CONSUME ITEM 87
+Thread 5: m pop_back PRODUCE ITEM 71
+Thread 6: new Method PRODUCE ITEM 27
+Thread 7: m pop_back PRODUCE ITEM 45
+Thread 2: new Method CONSUME ITEM 34
+Transaction P 66 C 99 C 47 F 74:Abort
+Transaction C 88 P 58 F 41 C 15:Abort
+Thread 4: m pop_back CONSUME ITEM 87
+Thread 2: new Method CONSUME ITEM 17
+Transaction P 71 F 96 P 8 C 40:Abort
+Thread 6: new Method PRODUCE ITEM 30
+Transaction C 88 F 69 C 95 F 3:Commit
+Thread 8: new Method CONSUME ITEM 14
+Transaction P 45 C 96 F 59 P 41:Abort
+Thread 1: new Method PRODUCE ITEM 70
+Thread 2: new Method READ ITEM 74
+Thread 6: m pop_back PRODUCE ITEM 30
+Thread 6: m pop_back PRODUCE ITEM 27
+Thread 6: m pop_back CONSUME ITEM 43
+Thread 8: m pop_back CONSUME ITEM 14
+Thread 5: new Method PRODUCE ITEM 12
+Thread 3: new Method CONSUME ITEM 25
+Thread 7: new Method CONSUME ITEM 21
+Thread 4: new Method CONSUME ITEM 87
+Thread 1: new Method CONSUME ITEM 37
+Transaction C 43 P 27 P 30 F 47:Abort
+Thread 3: m pop_back CONSUME ITEM 25
+Thread 2: new Method CONSUME ITEM 74
+Transaction C 14 F 49 F 51 P 3:Abort
+Thread 5: new Method READ ITEM 39
+Thread 1: m pop_back CONSUME ITEM 37
+Thread 1: m pop_back PRODUCE ITEM 70
+Thread 7: new Method CONSUME ITEM 85
+Thread 4: new Method CONSUME ITEM 44
+Thread 6: new Method CONSUME ITEM 58
+Thread 5: new Method READ ITEM 78
+Transaction P 70 C 37 F 89 P 15:Abort
+Thread 8: new Method CONSUME ITEM 53
+Transaction C 25 F 79 P 19 P 8:Abort
+Thread 1: new Method READ ITEM 27
+Thread 3: new Method PRODUCE ITEM 29
+Thread 1: m pop_back READ ITEM 27
+Thread 7: m pop_back CONSUME ITEM 85
+Thread 7: m pop_back CONSUME ITEM 21
+Thread 3: m pop_back PRODUCE ITEM 29
+Thread 6: m pop_back CONSUME ITEM 58
+Thread 4: m pop_back CONSUME ITEM 44
+Thread 4: m pop_back CONSUME ITEM 87
+Transaction C 34 C 17 F 74 C 74:Commit
+Transaction F 27 F 84 C 54 F 10:Abort
+Thread 8: m pop_back CONSUME ITEM 53
+Thread 5: m pop_back READ ITEM 78
+Thread 5: m pop_back READ ITEM 39
+Thread 5: m pop_back PRODUCE ITEM 12
+Transaction P 29 C 14 F 80 P 57:Abort
+Thread 7: new Method CONSUME ITEM 21
+Thread 4: new Method CONSUME ITEM 87
+Thread 2: new Method PRODUCE ITEM 8
+Thread 6: new Method CONSUME ITEM 58
+Thread 3: new Method CONSUME ITEM 61
+Thread 8: new Method CONSUME ITEM 53
+Thread 1: new Method PRODUCE ITEM 54
+Thread 5: new Method PRODUCE ITEM 12
+Thread 3: m pop_back CONSUME ITEM 61
+Thread 7: new Method CONSUME ITEM 85
+Thread 1: m pop_back PRODUCE ITEM 54
+Thread 4: new Method CONSUME ITEM 44
+Thread 8: new Method READ ITEM 25
+Thread 6: new Method CONSUME ITEM 91
+Thread 2: new Method PRODUCE ITEM 70
+Thread 5: new Method READ ITEM 39
+Transaction C 61 F 100 C 23 P 37:Abort
+Thread 8: m pop_back READ ITEM 25
+Thread 6: m pop_back CONSUME ITEM 91
+Thread 8: m pop_back CONSUME ITEM 53
+Thread 7: new Method READ ITEM 47
+Thread 4: new Method READ ITEM 23
+Thread 3: new Method READ ITEM 60
+Thread 6: m pop_back CONSUME ITEM 58
+Transaction P 54 C 50 C 20 C 31:Abort
+Thread 2: new Method CONSUME ITEM 96
+Thread 5: new Method READ ITEM 78
+Thread 7: m pop_back READ ITEM 47
+Thread 7: m pop_back CONSUME ITEM 85
+Thread 7: m pop_back CONSUME ITEM 21
+Transaction C 53 F 25 C 1 F 24:Abort
+Thread 3: m pop_back READ ITEM 60
+Thread 4: new Method READ ITEM 100
+Transaction C 58 C 91 F 56 C 3:Abort
+Thread 1: new Method PRODUCE ITEM 63
+Transaction C 21 C 85 F 47 C 44:Abort
+Thread 8: new Method CONSUME ITEM 74
+Thread 5: new Method READ ITEM 49
+Thread 2: new Method PRODUCE ITEM 63
+Thread 8: m pop_back CONSUME ITEM 74
+Thread 6: new Method PRODUCE ITEM 63
+Thread 7: new Method PRODUCE ITEM 41
+Transaction F 60 F 77 F 68 F 18:Abort
+Thread 1: new Method PRODUCE ITEM 68
+Thread 5: new Method PRODUCE ITEM 12
+Thread 7: m pop_back PRODUCE ITEM 41
+Transaction C 74 C 18 C 9 F 82:Abort
+Thread 6: m pop_back PRODUCE ITEM 63
+Thread 3: new Method CONSUME ITEM 64
+Thread 2: new Method PRODUCE ITEM 8
+Thread 1: m pop_back PRODUCE ITEM 68
+Thread 1: m pop_back PRODUCE ITEM 63
+Thread 8: new Method CONSUME ITEM 4
+Transaction P 41 F 69 P 21 P 98:Abort
+Thread 5: new Method READ ITEM 39
+Thread 6: new Method PRODUCE ITEM 63
+Thread 3: new Method PRODUCE ITEM 10
+Thread 8: m pop_back CONSUME ITEM 4
+Transaction C 87 C 44 F 23 F 100:Commit
+Thread 7: new Method PRODUCE ITEM 97
+Thread 2: new Method PRODUCE ITEM 70
+Thread 5: new Method READ ITEM 78
+Thread 3: m pop_back PRODUCE ITEM 10
+Thread 3: m pop_back CONSUME ITEM 64
+Thread 6: new Method CONSUME ITEM 65
+Thread 4: new Method PRODUCE ITEM 17
+Thread 7: new Method PRODUCE ITEM 50
+Thread 1: new Method PRODUCE ITEM 63
+Thread 5: new Method READ ITEM 49
+Transaction C 4 F 22 P 27 F 88:Abort
+Thread 2: new Method CONSUME ITEM 96
+Thread 7: m pop_back PRODUCE ITEM 50
+Thread 7: m pop_back PRODUCE ITEM 97
+Transaction C 64 P 10 P 43 C 12:Abort
+Thread 6: new Method READ ITEM 99
+Thread 4: new Method CONSUME ITEM 63
+Thread 8: new Method PRODUCE ITEM 28
+Thread 6: m pop_back READ ITEM 99
+Thread 6: m pop_back CONSUME ITEM 65
+Thread 6: m pop_back PRODUCE ITEM 63
+Thread 4: m pop_back CONSUME ITEM 63
+Thread 1: new Method PRODUCE ITEM 68
+Thread 4: m pop_back PRODUCE ITEM 17
+Thread 2: m pop_back CONSUME ITEM 96
+Thread 2: m pop_back PRODUCE ITEM 70
+Thread 2: m pop_back PRODUCE ITEM 8
+Transaction P 97 P 50 F 9 F 61:Abort
+Thread 3: new Method CONSUME ITEM 85
+Thread 7: new Method CONSUME ITEM 87
+Transaction P 17 C 63 P 36 P 41:Abort
+Transaction P 63 C 65 F 99 F 52:Abort
+Thread 8: m pop_back PRODUCE ITEM 28
+Thread 1: m pop_back PRODUCE ITEM 68
+Thread 1: m pop_back PRODUCE ITEM 63
+Thread 2: new Method PRODUCE ITEM 8
+Thread 7: m pop_back CONSUME ITEM 87
+Thread 4: new Method READ ITEM 8
+Thread 3: new Method CONSUME ITEM 21
+Thread 6: new Method PRODUCE ITEM 28
+Transaction P 12 F 39 F 78 F 49:Commit
+Thread 1: new Method PRODUCE ITEM 63
+Thread 8: new Method PRODUCE ITEM 28
+Thread 4: m pop_back READ ITEM 8
+Thread 3: new Method READ ITEM 18
+Thread 5: new Method PRODUCE ITEM 12
+Thread 2: new Method PRODUCE ITEM 70
+Transaction C 87 P 28 F 6 P 37:Abort
+Thread 3: m pop_back READ ITEM 18
+Thread 3: m pop_back CONSUME ITEM 21
+Thread 3: m pop_back CONSUME ITEM 85
+Thread 5: m pop_back PRODUCE ITEM 12
+Thread 6: new Method PRODUCE ITEM 59
+Thread 7: new Method PRODUCE ITEM 41
+Transaction F 8 F 93 F 50 F 64:Abort
+Thread 8: new Method CONSUME ITEM 55
+Thread 1: new Method PRODUCE ITEM 68
+Thread 2: new Method CONSUME ITEM 96
+Thread 7: m pop_back PRODUCE ITEM 41
+Transaction C 85 C 21 F 18 P 73:Abort
+Thread 6: new Method READ ITEM 16
+Transaction P 12 F 69 P 77 C 100:Abort
+Thread 4: new Method PRODUCE ITEM 7
+Thread 1: new Method READ ITEM 75
+Thread 6: m pop_back READ ITEM 16
+Thread 6: m pop_back PRODUCE ITEM 59
+Thread 6: m pop_back PRODUCE ITEM 28
+Thread 8: new Method CONSUME ITEM 100
+Thread 3: new Method READ ITEM 95
+Transaction P 41 C 21 F 91 P 83:Abort
+Thread 1: m pop_back READ ITEM 75
+Thread 1: m pop_back PRODUCE ITEM 68
+Thread 1: m pop_back PRODUCE ITEM 63
+Thread 5: new Method READ ITEM 2
+Thread 2: new Method PRODUCE ITEM 63
+Thread 3: m pop_back READ ITEM 95
+Thread 4: new Method PRODUCE ITEM 13
+Thread 8: new Method READ ITEM 92
+Transaction P 28 P 59 F 16 P 63:Abort
+Thread 7: new Method CONSUME ITEM 3
+Thread 5: new Method READ ITEM 7
+Transaction P 63 P 68 F 75 F 9:Abort
+Thread 8: m pop_back READ ITEM 92
+Thread 8: m pop_back CONSUME ITEM 100
+Thread 8: m pop_back CONSUME ITEM 55
+Thread 8: m pop_back PRODUCE ITEM 28
+Thread 5: m pop_back READ ITEM 7
+Thread 6: new Method READ ITEM 25
+Thread 5: m pop_back READ ITEM 2
+Thread 1: new Method READ ITEM 42
+Transaction F 95 P 15 F 1 C 8:Abort
+Thread 4: m pop_back PRODUCE ITEM 13
+Thread 4: m pop_back PRODUCE ITEM 7
+Thread 7: m pop_back CONSUME ITEM 3
+Thread 6: m pop_back READ ITEM 25
+Thread 3: new Method READ ITEM 40
+Transaction P 28 C 55 C 100 F 92:Abort
+Transaction F 2 F 7 F 39 P 10:Abort
+Thread 1: new Method PRODUCE ITEM 58
+Transaction F 25 F 36 P 50 P 94:Abort
+Thread 4: new Method PRODUCE ITEM 7
+Thread 5: new Method CONSUME ITEM 83
+Thread 3: new Method READ ITEM 75
+Thread 7: new Method CONSUME ITEM 3
+Thread 1: m pop_back PRODUCE ITEM 58
+Thread 1: m pop_back READ ITEM 42
+Transaction P 8 P 70 C 96 P 63:Commit
+Thread 5: m pop_back CONSUME ITEM 83
+Thread 3: m pop_back READ ITEM 75
+Thread 3: m pop_back READ ITEM 40
+Thread 6: new Method PRODUCE ITEM 51
+Thread 4: new Method PRODUCE ITEM 13
+Transaction F 42 P 58 F 14 F 41:Abort
+Thread 7: new Method CONSUME ITEM 42
+Thread 2: new Method CONSUME ITEM 49
+Transaction F 40 F 75 C 13 F 47:Abort
+Transaction C 83 P 41 C 8 C 54:Abort
+Thread 1: new Method CONSUME ITEM 62
+Thread 5: new Method PRODUCE ITEM 70
+Thread 7: new Method READ ITEM 94
+Thread 6: new Method PRODUCE ITEM 15
+Thread 2: new Method READ ITEM 8
+Thread 3: new Method CONSUME ITEM 98
+Thread 5: m pop_back PRODUCE ITEM 70
+Thread 1: m pop_back CONSUME ITEM 62
+Thread 4: new Method CONSUME ITEM 79
+Thread 6: m pop_back PRODUCE ITEM 15
+Thread 4: m pop_back CONSUME ITEM 79
+Thread 6: m pop_back PRODUCE ITEM 51
+Transaction P 70 P 37 P 97 F 96:Abort
+Thread 2: new Method PRODUCE ITEM 99
+Thread 3: new Method READ ITEM 1
+Thread 4: m pop_back PRODUCE ITEM 13
+Thread 4: m pop_back PRODUCE ITEM 7
+Thread 7: new Method CONSUME ITEM 36
+Thread 5: new Method READ ITEM 85
+Transaction C 62 P 94 F 88 C 3:Abort
+Thread 3: m pop_back READ ITEM 1
+Thread 3: m pop_back CONSUME ITEM 98
+Transaction P 51 P 15 F 53 P 69:Abort
+Thread 1: new Method CONSUME ITEM 18
+Thread 5: new Method PRODUCE ITEM 8
+Transaction P 7 P 13 C 79 P 39:Abort
+Thread 2: new Method PRODUCE ITEM 43
+Thread 1: m pop_back CONSUME ITEM 18
+Transaction C 98 F 1 F 79 C 29:Abort
+Thread 2: m pop_back PRODUCE ITEM 43
+Thread 2: m pop_back PRODUCE ITEM 99
+Thread 2: m pop_back READ ITEM 8
+Thread 2: m pop_back CONSUME ITEM 49
+Thread 5: m pop_back PRODUCE ITEM 8
+Thread 5: m pop_back READ ITEM 85
+Thread 4: new Method CONSUME ITEM 80
+Thread 3: new Method READ ITEM 53
+Transaction C 18 P 53 P 79 C 71:Abort
+Thread 4: m pop_back CONSUME ITEM 80
+Transaction F 85 P 8 P 92 F 80:Abort
+Thread 6: new Method PRODUCE ITEM 46
+Transaction C 49 F 8 P 99 P 43:Abort
+Thread 1: new Method READ ITEM 81
+Thread 3: new Method READ ITEM 10
+Thread 5: new Method READ ITEM 6
+Transaction C 80 P 74 F 68 P 43:Abort
+Thread 2: new Method CONSUME ITEM 87
+Transaction C 3 C 42 F 94 C 36:Commit
+Thread 6: new Method PRODUCE ITEM 73
+Thread 1: new Method PRODUCE ITEM 12
+Thread 5: m pop_back READ ITEM 6
+Thread 2: m pop_back CONSUME ITEM 87
+Thread 4: new Method CONSUME ITEM 74
+Thread 7: new Method READ ITEM 6
+Thread 3: new Method CONSUME ITEM 37
+Thread 6: m pop_back PRODUCE ITEM 73
+Thread 6: m pop_back PRODUCE ITEM 46
+Thread 1: m pop_back PRODUCE ITEM 12
+Thread 1: m pop_back READ ITEM 81
+Thread 7: m pop_back READ ITEM 6
+Thread 4: m pop_back CONSUME ITEM 74
+Thread 3: m pop_back CONSUME ITEM 37
+Thread 3: m pop_back READ ITEM 10
+Thread 3: m pop_back READ ITEM 53
+Transaction F 6 F 18 F 85 P 48:Abort
+Transaction C 87 F 79 P 72 F 84:Abort
+Transaction F 81 P 12 C 22 F 14:Abort
+Transaction P 46 P 73 P 81 F 13:Abort
+Thread 2: new Method READ ITEM 46
+Thread 5: new Method CONSUME ITEM 68
+Transaction F 6 C 19 F 80 F 52:Abort
+Transaction F 53 F 10 C 37 C 2:Abort
+Transaction C 74 P 27 F 54 P 98:Abort
+Thread 1: new Method PRODUCE ITEM 13
+Thread 2: m pop_back READ ITEM 46
+Thread 5: m pop_back CONSUME ITEM 68
+Thread 6: new Method PRODUCE ITEM 37
+Thread 7: new Method CONSUME ITEM 2
+Thread 3: new Method PRODUCE ITEM 71
+Thread 4: new Method PRODUCE ITEM 25
+Thread 3: m pop_back PRODUCE ITEM 71
+Transaction F 46 F 92 P 35 C 81:Abort
+Transaction C 68 C 92 P 21 F 42:Abort
+Thread 1: new Method PRODUCE ITEM 73
+Thread 6: new Method CONSUME ITEM 67
+Thread 2: new Method PRODUCE ITEM 100
+Thread 5: new Method READ ITEM 9
+Thread 4: new Method CONSUME ITEM 37
+Thread 6: m pop_back CONSUME ITEM 67
+Thread 1: m pop_back PRODUCE ITEM 73
+Transaction P 71 C 97 P 19 P 92:Abort
+Thread 1: m pop_back PRODUCE ITEM 13
+Thread 7: new Method CONSUME ITEM 73
+Thread 4: m pop_back CONSUME ITEM 37
+Thread 4: m pop_back PRODUCE ITEM 25
+Thread 5: new Method READ ITEM 65
+Thread 2: m pop_back PRODUCE ITEM 100
+Thread 6: m pop_back PRODUCE ITEM 37
+Thread 7: new Method PRODUCE ITEM 39
+Thread 5: new Method READ ITEM 17
+Transaction P 25 C 37 P 78 P 20:Abort
+Thread 3: new Method PRODUCE ITEM 62
+Transaction P 13 P 73 P 21 F 20:Abort
+Transaction P 37 C 67 P 19 F 28:Abort
+Thread 7: m pop_back PRODUCE ITEM 39
+Thread 7: m pop_back CONSUME ITEM 73
+Thread 7: m pop_back CONSUME ITEM 2
+Transaction P 100 P 54 F 90 C 16:Abort
+Thread 4: new Method PRODUCE ITEM 70
+Thread 5: m pop_back READ ITEM 17
+Thread 1: new Method READ ITEM 82
+Thread 5: m pop_back READ ITEM 65
+Thread 5: m pop_back READ ITEM 9
+Thread 6: new Method READ ITEM 7
+Thread 1: new Method CONSUME ITEM 84
+Transaction F 9 F 65 F 17 P 34:Abort
+Thread 3: new Method PRODUCE ITEM 14
+Thread 2: new Method CONSUME ITEM 71
+Thread 4: m pop_back PRODUCE ITEM 70
+Transaction C 2 C 73 P 39 F 43:Abort
+Thread 6: m pop_back READ ITEM 7
+Thread 1: new Method CONSUME ITEM 46
+Thread 5: new Method PRODUCE ITEM 86
+Thread 2: new Method READ ITEM 55
+Thread 3: new Method READ ITEM 98
+Thread 7: new Method CONSUME ITEM 55
+Thread 1: m pop_back CONSUME ITEM 46
+Thread 1: m pop_back CONSUME ITEM 84
+Thread 1: m pop_back READ ITEM 82
+Transaction P 70 C 72 P 3 C 90:Abort
+Transaction F 7 F 16 P 95 P 45:Abort
+Thread 5: new Method READ ITEM 86
+Thread 2: new Method READ ITEM 72
+Thread 4: new Method PRODUCE ITEM 20
+Thread 6: new Method READ ITEM 97
+Thread 7: new Method READ ITEM 14
+Transaction F 82 C 84 C 46 F 24:Abort
+Thread 3: new Method PRODUCE ITEM 84
+Thread 4: m pop_back PRODUCE ITEM 20
+Thread 7: m pop_back READ ITEM 14
+Thread 6: m pop_back READ ITEM 97
+Thread 5: new Method CONSUME ITEM 100
+Thread 1: new Method PRODUCE ITEM 59
+Thread 3: m pop_back PRODUCE ITEM 84
+Thread 3: m pop_back READ ITEM 98
+Thread 3: m pop_back PRODUCE ITEM 14
+Thread 3: m pop_back PRODUCE ITEM 62
+Thread 7: m pop_back CONSUME ITEM 55
+Thread 2: new Method PRODUCE ITEM 81
+Transaction P 20 P 46 P 14 P 39:Abort
+Thread 1: new Method READ ITEM 6
+Thread 4: new Method PRODUCE ITEM 39
+Transaction F 97 P 46 C 18 C 84:Abort
+Thread 2: m pop_back PRODUCE ITEM 81
+Thread 2: m pop_back READ ITEM 72
+Thread 5: new Method CONSUME ITEM 35
+Transaction P 62 P 14 F 98 P 84:Abort
+Transaction C 55 F 14 F 8 P 35:Abort
+Thread 1: m pop_back READ ITEM 6
+Thread 1: m pop_back PRODUCE ITEM 59
+Thread 4: m pop_back PRODUCE ITEM 39
+Thread 2: m pop_back READ ITEM 55
+Thread 2: m pop_back CONSUME ITEM 71
+Thread 3: new Method READ ITEM 52
+Thread 5: m pop_back CONSUME ITEM 35
+Thread 5: m pop_back CONSUME ITEM 100
+Thread 5: m pop_back READ ITEM 86
+Thread 5: m pop_back PRODUCE ITEM 86
+Transaction P 59 F 6 F 24 C 89:Abort
+Thread 7: new Method CONSUME ITEM 32
+Transaction P 39 F 24 P 43 F 28:Abort
+Thread 3: m pop_back READ ITEM 52
+Transaction C 71 F 55 F 72 P 81:Abort
+Thread 1: new Method READ ITEM 54
+Transaction P 86 F 86 C 100 C 35:Abort
+Thread 4: new Method CONSUME ITEM 36
+Transaction F 52 F 90 P 4 C 66:Abort
+Thread 2: new Method CONSUME ITEM 96
+Thread 1: new Method CONSUME ITEM 76
+Thread 5: new Method PRODUCE ITEM 73
+Thread 7: new Method PRODUCE ITEM 79
+Thread 4: m pop_back CONSUME ITEM 36
+Thread 3: new Method READ ITEM 34
+Thread 2: m pop_back CONSUME ITEM 96
+Thread 1: m pop_back CONSUME ITEM 76
+Thread 1: m pop_back READ ITEM 54
+Thread 5: m pop_back PRODUCE ITEM 73
+Transaction C 36 C 8 P 21 C 34:Abort
+Thread 3: m pop_back READ ITEM 34
+Thread 7: new Method READ ITEM 81
+Transaction C 96 P 6 C 10 P 89:Abort
+Transaction F 54 C 76 F 5 P 95:Abort
+Thread 4: new Method CONSUME ITEM 33
+Transaction P 73 C 30 P 43 C 59:Abort
+Transaction F 34 C 36 P 93 C 59:Abort
+Thread 4: m pop_back CONSUME ITEM 33
+Thread 7: new Method CONSUME ITEM 73
+Thread 1: new Method CONSUME ITEM 40
+Thread 5: new Method CONSUME ITEM 23
+Transaction C 33 P 42 C 32 P 39:Abort
+Thread 1: new Method CONSUME ITEM 68
+Thread 3: new Method READ ITEM 20
+Thread 1: m pop_back CONSUME ITEM 68
+Thread 1: m pop_back CONSUME ITEM 40
+Thread 4: new Method CONSUME ITEM 20
+Transaction C 40 C 68 P 83 P 91:Abort
+Thread 4: new Method CONSUME ITEM 37
+Thread 3: m pop_back READ ITEM 20
+Thread 5: m pop_back CONSUME ITEM 23
+Transaction C 32 P 79 F 81 C 73:Commit
+Thread 4: m pop_back CONSUME ITEM 37
+Thread 4: m pop_back CONSUME ITEM 20
+Thread 1: new Method PRODUCE ITEM 77
+Thread 3: new Method READ ITEM 20
+Thread 7: new Method PRODUCE ITEM 29
+Thread 5: new Method CONSUME ITEM 23
+Transaction C 20 C 37 P 55 C 35:Abort
+Thread 1: new Method PRODUCE ITEM 7
+Thread 7: m pop_back PRODUCE ITEM 29
+Thread 4: new Method READ ITEM 99
+Thread 3: new Method CONSUME ITEM 64
+Thread 5: new Method CONSUME ITEM 19
+Thread 1: new Method CONSUME ITEM 76
+Thread 4: m pop_back READ ITEM 99
+Transaction P 29 P 55 C 52 P 5:Abort
+Thread 5: new Method CONSUME ITEM 28
+Thread 5: m pop_back CONSUME ITEM 28
+Thread 1: m pop_back CONSUME ITEM 76
+Thread 5: m pop_back CONSUME ITEM 19
+Thread 5: m pop_back CONSUME ITEM 23
+Thread 1: m pop_back PRODUCE ITEM 7
+Thread 3: new Method READ ITEM 97
+Thread 1: m pop_back PRODUCE ITEM 77
+Thread 7: new Method CONSUME ITEM 84
+Transaction F 99 P 44 F 74 F 59:Abort
+Thread 3: m pop_back READ ITEM 97
+Thread 3: m pop_back CONSUME ITEM 64
+Thread 3: m pop_back READ ITEM 20
+Transaction C 23 C 19 C 28 F 9:Abort
+Transaction P 77 P 7 C 76 C 16:Abort
+Thread 4: new Method CONSUME ITEM 9
+Thread 7: new Method PRODUCE ITEM 75
+Transaction F 20 C 64 F 97 P 77:Abort
+Thread 5: new Method READ ITEM 63
+Thread 1: new Method READ ITEM 64
+Thread 4: new Method CONSUME ITEM 73
+Thread 7: new Method CONSUME ITEM 53
+Thread 3: new Method PRODUCE ITEM 67
+Thread 1: new Method CONSUME ITEM 70
+Thread 5: new Method PRODUCE ITEM 41
+Thread 4: m pop_back CONSUME ITEM 73
+Thread 7: new Method PRODUCE ITEM 64
+Thread 4: m pop_back CONSUME ITEM 9
+Thread 5: m pop_back PRODUCE ITEM 41
+Thread 5: m pop_back READ ITEM 63
+Thread 1: new Method PRODUCE ITEM 29
+Thread 7: m pop_back PRODUCE ITEM 64
+Thread 3: new Method READ ITEM 94
+Thread 7: m pop_back CONSUME ITEM 53
+Thread 7: m pop_back PRODUCE ITEM 75
+Thread 7: m pop_back CONSUME ITEM 84
+Thread 1: m pop_back PRODUCE ITEM 29
+Thread 1: m pop_back CONSUME ITEM 70
+Thread 1: m pop_back READ ITEM 64
+Transaction C 9 C 73 C 64 F 29:Abort
+Transaction F 63 P 41 C 30 P 33:Abort
+Thread 3: new Method READ ITEM 57
+Transaction C 84 P 75 C 53 P 64:Abort
+Thread 4: new Method CONSUME ITEM 3
+Thread 3: m pop_back READ ITEM 57
+Transaction F 64 C 70 P 29 F 37:Abort
+Thread 3: m pop_back READ ITEM 94
+Thread 3: m pop_back PRODUCE ITEM 67
+Thread 4: m pop_back CONSUME ITEM 3
+Thread 7: new Method READ ITEM 82
+Transaction P 67 F 94 F 57 F 42:Abort
+Thread 5: new Method CONSUME ITEM 89
+Thread 3: new Method READ ITEM 54
+Transaction C 3 F 27 C 93 C 94:Abort
+Thread 7: new Method CONSUME ITEM 72
+Thread 5: m pop_back CONSUME ITEM 89
+Thread 3: new Method READ ITEM 71
+Thread 4: new Method PRODUCE ITEM 57
+Transaction C 89 C 43 F 41 P 36:Abort
+Thread 7: new Method READ ITEM 59
+Thread 7: m pop_back READ ITEM 59
+Thread 7: m pop_back CONSUME ITEM 72
+Thread 7: m pop_back READ ITEM 82
+Thread 4: new Method PRODUCE ITEM 83
+Thread 3: new Method PRODUCE ITEM 32
+Transaction F 82 C 72 F 59 C 97:Abort
+Thread 3: new Method CONSUME ITEM 75
+Thread 4: new Method CONSUME ITEM 72
+Thread 7: new Method CONSUME ITEM 61
+Thread 3: m pop_back CONSUME ITEM 75
+Thread 7: m pop_back CONSUME ITEM 61
+Thread 3: m pop_back PRODUCE ITEM 32
+Thread 3: m pop_back READ ITEM 71
+Thread 3: m pop_back READ ITEM 54
+Thread 4: new Method CONSUME ITEM 94
+Transaction C 61 F 29 P 76 P 10:Abort
+Transaction F 54 F 71 P 32 C 75:Abort
+Thread 7: new Method READ ITEM 76
+Thread 3: new Method CONSUME ITEM 7
+Thread 7: m pop_back READ ITEM 76
+Thread 3: m pop_back CONSUME ITEM 7
+Transaction P 57 P 83 C 72 C 94:Commit
+Transaction F 76 P 69 F 91 C 36:Abort
+Transaction C 7 C 52 F 23 P 34:Abort
+Thread 4: new Method READ ITEM 70
+Thread 3: new Method PRODUCE ITEM 15
+Thread 7: new Method CONSUME ITEM 20
+Thread 3: m pop_back PRODUCE ITEM 15
+Thread 4: new Method READ ITEM 1
+Thread 7: new Method CONSUME ITEM 74
+Thread 4: m pop_back READ ITEM 1
+Thread 4: m pop_back READ ITEM 70
+Thread 7: m pop_back CONSUME ITEM 74
+Thread 7: m pop_back CONSUME ITEM 20
+Transaction P 15 P 80 F 3 C 24:Abort
+Transaction F 70 F 1 P 57 F 48:Abort
+Thread 3: new Method CONSUME ITEM 29
+Transaction C 20 C 74 P 22 C 90:Abort
+Thread 4: new Method PRODUCE ITEM 8
+Thread 7: new Method READ ITEM 12
+Thread 4: m pop_back PRODUCE ITEM 8
+Thread 3: new Method READ ITEM 43
+Thread 7: new Method CONSUME ITEM 3
+Transaction P 8 F 63 P 32 F 43:Abort
+Thread 3: new Method PRODUCE ITEM 39
+Thread 7: m pop_back CONSUME ITEM 3
+Thread 7: m pop_back READ ITEM 12
+Thread 4: new Method PRODUCE ITEM 63
+Thread 3: m pop_back PRODUCE ITEM 39
+Thread 3: m pop_back READ ITEM 43
+Thread 3: m pop_back CONSUME ITEM 29
+Thread 4: m pop_back PRODUCE ITEM 63
+Transaction F 12 C 3 F 22 F 52:Abort
+Transaction C 29 F 43 P 39 F 26:Abort
+Thread 7: new Method READ ITEM 7
+Thread 3: new Method CONSUME ITEM 76
+Thread 3: m pop_back CONSUME ITEM 76
+Transaction P 63 C 47 C 7 P 13:Abort
+Thread 7: m pop_back READ ITEM 7
+Transaction C 76 C 12 F 16 C 8:Abort
+Transaction F 7 P 92 P 70 C 40:Abort
+Thread 4: new Method READ ITEM 75
+Thread 3: new Method CONSUME ITEM 51
+Thread 7: new Method CONSUME ITEM 21
+Thread 4: m pop_back READ ITEM 75
+Thread 3: m pop_back CONSUME ITEM 51
+Transaction F 75 P 18 F 2 C 56:Abort
+Thread 7: new Method PRODUCE ITEM 76
+Transaction C 51 C 80 P 37 F 79:Abort
+Thread 4: new Method CONSUME ITEM 76
+Thread 4: m pop_back CONSUME ITEM 76
+Thread 7: new Method CONSUME ITEM 6
+Thread 3: new Method PRODUCE ITEM 27
+Thread 7: m pop_back CONSUME ITEM 6
+Thread 7: m pop_back PRODUCE ITEM 76
+Thread 7: m pop_back CONSUME ITEM 21
+Transaction C 76 C 18 F 46 C 36:Abort
+Thread 3: new Method PRODUCE ITEM 42
+Transaction C 21 P 76 C 6 P 40:Abort
+Thread 7: new Method PRODUCE ITEM 40
+Thread 3: new Method PRODUCE ITEM 69
+Thread 7: m pop_back PRODUCE ITEM 40
+Thread 3: m pop_back PRODUCE ITEM 69
+Thread 3: m pop_back PRODUCE ITEM 42
+Thread 3: m pop_back PRODUCE ITEM 27
+Transaction P 40 P 92 C 45 P 57:Abort
+Transaction P 27 P 42 P 69 C 9:Abort
+Thread 7: new Method READ ITEM 6
+Thread 7: m pop_back READ ITEM 6
+Thread 3: new Method CONSUME ITEM 46
+Thread 3: m pop_back CONSUME ITEM 46
+Transaction F 6 P 100 C 37 F 32:Abort
+Transaction C 46 P 66 F 46 F 65:Abort
+Thread 7: new Method CONSUME ITEM 50
+Thread 7: new Method CONSUME ITEM 91
+Thread 7: m pop_back CONSUME ITEM 91
+Thread 7: m pop_back CONSUME ITEM 50
+Transaction C 50 C 91 P 41 P 77:Abort
+CPU Time: 0.13245s Wall Time: 0.016013s
+Method Count = 0
+vector_items1[1]->sum = -1.00, vector_items2[1]->sum = 0.00
+vector_items1[2]->sum = 1.00, vector_items2[2]->sum = 1.00
+vector_items1[3]->sum = 1.00, vector_items2[3]->sum = 0.00
+vector_items1[5]->sum = 1.00, vector_items2[5]->sum = 1.00
+vector_items1[6]->sum = -1.00, vector_items2[6]->sum = 0.00
+vector_items1[7]->sum = -1.00, vector_items2[7]->sum = 0.00
+vector_items1[8]->sum = 2.00, vector_items2[8]->sum = 1.00
+vector_items1[9]->sum = 1.00, vector_items2[9]->sum = 1.00
+vector_items1[10]->sum = 2.00, vector_items2[10]->sum = 1.00
+vector_items1[11]->sum = 2.00, vector_items2[11]->sum = 1.00
+vector_items1[12]->sum = 4.00, vector_items2[12]->sum = 1.00
+vector_items1[13]->sum = -1.00, vector_items2[13]->sum = 0.00
+vector_items1[15]->sum = 1.00, vector_items2[15]->sum = 1.00
+vector_items1[17]->sum = -1.00, vector_items2[17]->sum = 0.00
+vector_items1[19]->sum = 1.00, vector_items2[19]->sum = 1.00
+vector_items1[20]->sum = 1.00, vector_items2[20]->sum = 1.00
+vector_items1[21]->sum = 1.00, vector_items2[21]->sum = 1.00
+vector_items1[22]->sum = 1.00, vector_items2[22]->sum = 1.00
+vector_items1[23]->sum = 1.00, vector_items2[23]->sum = 1.00
+vector_items1[25]->sum = 0.00, vector_items2[25]->sum = 0.00
+vector_items1[27]->sum = 0.00, vector_items2[27]->sum = 0.00
+vector_items1[29]->sum = 1.00, vector_items2[29]->sum = 1.00
+vector_items1[30]->sum = 1.00, vector_items2[30]->sum = 1.00
+vector_items1[31]->sum = -2.00, vector_items2[31]->sum = 0.00
+vector_items1[32]->sum = 0.00, vector_items2[32]->sum = 0.00
+vector_items1[33]->sum = 0.00, vector_items2[33]->sum = 0.00
+vector_items1[34]->sum = -1.00, vector_items2[34]->sum = 0.00
+vector_items1[35]->sum = 0.00, vector_items2[35]->sum = 0.00
+vector_items1[36]->sum = 0.00, vector_items2[36]->sum = 0.00
+vector_items1[37]->sum = 0.00, vector_items2[37]->sum = 0.00
+vector_items1[38]->sum = 1.00, vector_items2[38]->sum = 1.00
+vector_items1[39]->sum = 1.00, vector_items2[39]->sum = 1.00
+vector_items1[40]->sum = 1.00, vector_items2[40]->sum = 1.00
+vector_items1[41]->sum = 1.00, vector_items2[41]->sum = 1.00
+vector_items1[42]->sum = 0.00, vector_items2[42]->sum = 0.00
+vector_items1[43]->sum = 0.00, vector_items2[43]->sum = 1.00
+vector_items1[44]->sum = 0.00, vector_items2[44]->sum = 0.00
+vector_items1[45]->sum = 1.00, vector_items2[45]->sum = 1.00
+vector_items1[47]->sum = -1.00, vector_items2[47]->sum = 0.00
+vector_items1[48]->sum = 0.00, vector_items2[48]->sum = 0.00
+vector_items1[49]->sum = 1.00, vector_items2[49]->sum = 1.00
+vector_items1[50]->sum = 1.00, vector_items2[50]->sum = 1.00
+vector_items1[53]->sum = 1.00, vector_items2[53]->sum = 1.00
+vector_items1[54]->sum = 1.00, vector_items2[54]->sum = 1.00
+vector_items1[55]->sum = 2.00, vector_items2[55]->sum = 1.00
+vector_items1[56]->sum = 1.00, vector_items2[56]->sum = 1.00
+vector_items1[57]->sum = 1.00, vector_items2[57]->sum = 1.00
+vector_items1[58]->sum = 1.00, vector_items2[58]->sum = 1.00
+vector_items1[59]->sum = 0.00, vector_items2[59]->sum = 0.00
+vector_items1[61]->sum = 0.00, vector_items2[61]->sum = 0.00
+vector_items1[63]->sum = 2.00, vector_items2[63]->sum = 1.00
+vector_items1[64]->sum = 1.00, vector_items2[64]->sum = 1.00
+vector_items1[65]->sum = 1.00, vector_items2[65]->sum = 1.00
+vector_items1[66]->sum = 1.00, vector_items2[66]->sum = 1.00
+vector_items1[68]->sum = 0.00, vector_items2[68]->sum = 0.00
+vector_items1[69]->sum = 1.00, vector_items2[69]->sum = 1.00
+vector_items1[70]->sum = 2.00, vector_items2[70]->sum = 1.00
+vector_items1[71]->sum = 0.00, vector_items2[71]->sum = 1.00
+vector_items1[72]->sum = 0.00, vector_items2[72]->sum = 0.00
+vector_items1[73]->sum = -1.00, vector_items2[73]->sum = 0.00
+vector_items1[74]->sum = -1.00, vector_items2[74]->sum = 0.00
+vector_items1[76]->sum = 0.00, vector_items2[76]->sum = 0.00
+vector_items1[77]->sum = -3.00, vector_items2[77]->sum = 0.00
+vector_items1[78]->sum = 2.00, vector_items2[78]->sum = 1.00
+vector_items1[79]->sum = 3.00, vector_items2[79]->sum = 1.00
+vector_items1[80]->sum = 0.00, vector_items2[80]->sum = 0.00
+vector_items1[81]->sum = 1.00, vector_items2[81]->sum = 1.00
+vector_items1[82]->sum = 0.00, vector_items2[82]->sum = 1.00
+vector_items1[83]->sum = 0.00, vector_items2[83]->sum = 1.00
+vector_items1[84]->sum = 2.00, vector_items2[84]->sum = 1.00
+vector_items1[85]->sum = 0.00, vector_items2[85]->sum = 1.00
+vector_items1[86]->sum = 0.00, vector_items2[86]->sum = 0.00
+vector_items1[87]->sum = 0.00, vector_items2[87]->sum = 0.00
+vector_items1[88]->sum = -1.00, vector_items2[88]->sum = 0.00
+vector_items1[89]->sum = -1.00, vector_items2[89]->sum = 0.00
+vector_items1[90]->sum = -1.00, vector_items2[90]->sum = 0.00
+vector_items1[92]->sum = -1.00, vector_items2[92]->sum = 0.00
+vector_items1[93]->sum = 1.00, vector_items2[93]->sum = 1.00
+vector_items1[94]->sum = 0.00, vector_items2[94]->sum = 0.00
+vector_items1[95]->sum = -1.00, vector_items2[95]->sum = 0.00
+vector_items1[96]->sum = -1.00, vector_items2[96]->sum = 0.00
+vector_items1[97]->sum = -1.00, vector_items2[97]->sum = 0.00
+vector_items1[98]->sum = 2.00, vector_items2[98]->sum = 1.00
+vector_items1[99]->sum = 0.00, vector_items2[99]->sum = 0.00
+vector_items1[100]->sum = 1.00, vector_items2[100]->sum = 1.00
+-------------Program Not Correct-------------
+-------------Persisted Program Correct Up To This Point-------------
+VECTOR SUMS NOT EQUAL
+Total Time: 0.019419241000000 seconds
+Total Method Time: 0.001256594000000 seconds
+Total Verification Time: 0.015106348000000 seconds
+Total commit 50, abort (total/fake) 750/0
