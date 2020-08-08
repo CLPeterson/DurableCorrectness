@@ -26,6 +26,7 @@
 #include <string.h>
 #include <assert.h>
 #include <vector>
+#include <climits>
 extern "C"
 {
 #include "../../common/fraser/portable_defns.h"

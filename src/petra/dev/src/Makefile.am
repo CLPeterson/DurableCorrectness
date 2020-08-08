@@ -26,7 +26,10 @@ trans_CPPFLAGS = $(WARN_FLAGS) -std=c++14 -pthread\
 
 trans_LDFLAGS = -L/opt/intel/tbb/lib/intel64/gcc4.7
 
-trans_LDADD =  -lpmemobj -lpmem -lrt -ltbb -ltcmalloc common/fraser/libfd.la
+# uncomment this for a pmem system
+# PMEM_LIB_FLAGS = -lpmemobj -lpmem
+
+trans_LDADD =  $(PMEM_LIB_FLAGS) -lrt -ltbb -ltcmalloc common/fraser/libfd.la
 
 
 transRomulus_SRCS = \
@@ -75,7 +78,7 @@ transOneFile_CPPFLAGS = $(WARN_FLAGS) -std=c++14 \
  
 transRomulus_LDFLAGS = -L/opt/intel/tbb/lib/intel64/gcc4.7/
 
-transRomulus_LDADD = -lpmemobj -lpmem -lrt -ltbb -lpthread
+transRomulus_LDADD = $(PMEM_LIB_FLAGS) -lrt -ltbb -lpthread
 
 transRomulus_SOURCES = bench/RomulusMain.cc \
 				common/timehelper.cc\
@@ -95,4 +98,4 @@ transOneFile_SOURCES = bench/OneFileMain.cc \
 				common/vsv.cc #CORRECTNESS ANNOTATIONS	
 
 
-transOneFile_LDADD = -lpmemobj -lpmem -ltbb	#CORRECTNESS ANNOTATIONS added -ltbb		
+transOneFile_LDADD = $(PMEM_LIB_FLAGS) -ltbb	#CORRECTNESS ANNOTATIONS added -ltbb		

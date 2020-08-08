@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <new>
+#include <climits>
 #include "transmap.h"
 
 

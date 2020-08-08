@@ -10,6 +10,8 @@
 #include <new>
 #include <iostream>
 #include <set>
+#include <map>
+#include <climits>
 #include "translist.h"
 
 #define SET_MARK(_p)    ((Node *)(((uintptr_t)(_p)) | 1))

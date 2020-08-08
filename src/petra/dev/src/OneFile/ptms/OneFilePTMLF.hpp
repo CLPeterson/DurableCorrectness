@@ -27,9 +27,11 @@
 #include <libpmem.h>
 #include <immintrin.h>
 
-#include "../../common/vsv.h" //CORRECTNESS ANNOTATIONS
+
 
 #endif
+
+#include "../../common/vsv.h" //CORRECTNESS ANNOTATIONS
 
 // Please keep this file in sync (as much as possible) with stms/OneFileLF.hpp
 
@@ -79,8 +81,8 @@ namespace poflf {
 // Maximum number of registered threads that can execute transactions
 static const int REGISTRY_MAX_THREADS = 128;
 // Maximum number of stores in the WriteSet per transaction
-static const uint64_t TX_MAX_STORES = 2048*1024;
-//static const uint64_t TX_MAX_STORES = 40*1024; //CORRECTNESS ANNOTATION
+static const uint64_t TX_MAX_STORES = 64*1024;
+// static const uint64_t TX_MAX_STORES = 40*1024; //CORRECTNESS ANNOTATION
 // Number of buckets in the hashmap of the WriteSet.
 static const uint64_t HASH_BUCKETS = 2048;
 
@@ -94,8 +96,8 @@ static const char * PFILE_NAME = "/dev/shm/ponefilelf_shared";
 // Start address of mapped persistent memory
 static uint8_t* PREGION_ADDR = (uint8_t*)0x7fea00000000;
 // Size of persistent memory. Part of it will be used by the redo logs
-static const uint64_t PREGION_SIZE = 12*1024*1024*1024ULL;   // 1 GB by default
-//static const uint64_t PREGION_SIZE = 1024*1024*1024ULL;   //CORRECTNESS ANNOTATION
+static const uint64_t PREGION_SIZE = 2*1024*1024*1024ULL;   // 1 GB by default
+// static const uint64_t PREGION_SIZE = 1024*1024*1024ULL;   //CORRECTNESS ANNOTATION
 // End address of mapped persistent memory
 static uint8_t* PREGION_END = (PREGION_ADDR+PREGION_SIZE);
 // Maximum number of root pointers available for the user
@@ -732,10 +734,10 @@ public:
             esloco.init(regionAddr+sizeof(PMetadata), regionSize-sizeof(PMetadata), true);
             PFENCE();
             pmd->id = PMetadata::MAGIC_ID;
-			long int invocation = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS	
+			// long int invocation = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS	
 			PWB(&pmd->id); 
-			long int response = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS
-			handle_PWB(&pmd->id, invocation, response);
+			// long int response = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS
+			// handle_PWB(&pmd->id, invocation, response);
 			//printf("PWB(%p)\n", &pmd->id); //CORRECTNESS
             PFENCE();
         }

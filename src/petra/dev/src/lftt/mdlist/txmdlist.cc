@@ -6,6 +6,7 @@
 
 #include <array>
 #include <cmath>
+#include <climits>
 #include "txmdlist.h"
 
 
