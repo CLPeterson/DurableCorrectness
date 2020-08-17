@@ -776,32 +776,32 @@ public:
 		/*std::string transaction;
 		transaction.append("Transaction");
 		
-		for(int i = 0; i < desc->size; i++)
+		for(int i = 0; i < ops.size(); i++)
 		{
-			if(desc->ops[i].type == MAP_INSERT)
+			if(ops[i].type == MAP_INSERT)
 			{
 				char str[80];
-				sprintf(str, " P %d", desc->ops[i].key);
+				sprintf(str, " P %d", ops[i].key);
 				transaction.append(str); 
-			} else if (desc->ops[i].type == MAP_DELETE)
+			} else if (ops[i].type == MAP_DELETE)
 			{
 				char str[80];
-				sprintf(str, " C %d", desc->ops[i].key);
+				sprintf(str, " C %d", ops[i].key);
 				transaction.append(str); 
-			} else if (desc->ops[i].type == MAP_FIND)
+			} else if (ops[i].type == MAP_FIND)
 			{
 				char str[80];
-				sprintf(str, " F %d", desc->ops[i].key);
+				sprintf(str, " F %d", ops[i].key);
 				transaction.append(str); 
-			} else if (desc->ops[i].type == MAP_UPDATE)
+			} else if (ops[i].type == MAP_UPDATE)
 			{
 				char str[80];
-				sprintf(str, " U %d", desc->ops[i].key);
+				sprintf(str, " U %d", ops[i].key);
 				transaction.append(str); 
 			}
 
 		}
-		if(desc->status == COMMITTED)
+		if(ret)
 			transaction.append(":Commit"); 
 		else
 			transaction.append(":Abort");

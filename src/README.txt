@@ -55,6 +55,9 @@ To run on Non-Persistent Memory System
 comment out following line
 petra/dev/src/Makefile.am line 30
 
-sudo rm /dev/shm/*
+make CPPFLAGS="-DUSE_DRAM_ALLOCATOR -DPWB_IS_CLFLUSH -DROMULUS_LR_PTM -O0 -g"
+rm /dev/shm/*
+
+
 
 
