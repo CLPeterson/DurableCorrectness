@@ -21,10 +21,11 @@ int main(int argc,char* argv[])
 	std::string data_structure;
 
 	std::string cleanup("sudo rm /mnt/pmem0/*");
+	//std::string cleanup("sudo rm /dev/shm/*");
 
 	system(cleanup.c_str());
 	
-	//for(unsigned int i = 0; i < 4; i++)
+	//for(unsigned int i = 0; i < 3; i++)
 	for(unsigned int i = 0; i < 6; i++)
 	{	
 		test_size.clear();

@@ -122,7 +122,8 @@ am_trans_OBJECTS = bench/trans-main.$(OBJEXT) \
 	boostinglist/trans-lockkey.$(OBJEXT) \
 	common/trans-vsv.$(OBJEXT)
 trans_OBJECTS = $(am_trans_OBJECTS)
-trans_DEPENDENCIES = common/fraser/libfd.la
+am__DEPENDENCIES_1 =
+trans_DEPENDENCIES = $(am__DEPENDENCIES_1) common/fraser/libfd.la
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
 am__v_lt_0 = --silent
@@ -134,7 +135,7 @@ am_transOneFile_OBJECTS = bench/transOneFile-OneFileMain.$(OBJEXT) \
 	common/transOneFile-timehelper.$(OBJEXT) \
 	common/transOneFile-vsv.$(OBJEXT)
 transOneFile_OBJECTS = $(am_transOneFile_OBJECTS)
-transOneFile_DEPENDENCIES =
+transOneFile_DEPENDENCIES = $(am__DEPENDENCIES_1)
 am_transRomulus_OBJECTS = bench/transRomulus-RomulusMain.$(OBJEXT) \
 	common/transRomulus-timehelper.$(OBJEXT) \
 	romulus/commonromulus/transRomulus-ThreadRegistry.$(OBJEXT) \
@@ -148,7 +149,7 @@ am_transRomulus_OBJECTS = bench/transRomulus-RomulusMain.$(OBJEXT) \
 	romulus/romulusni/transRomulus-malloc.$(OBJEXT) \
 	common/transRomulus-vsv.$(OBJEXT)
 transRomulus_OBJECTS = $(am_transRomulus_OBJECTS)
-transRomulus_DEPENDENCIES =
+transRomulus_DEPENDENCIES = $(am__DEPENDENCIES_1)
 transRomulus_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
 	$(CXXFLAGS) $(transRomulus_LDFLAGS) $(LDFLAGS) -o $@
@@ -431,7 +432,10 @@ trans_CPPFLAGS = $(WARN_FLAGS) -std=c++14 -pthread\
 				 -I/opt/intel/tbb/include -I$(top_builddir)/src -I$(top_srcdir)/src  
 
 trans_LDFLAGS = -L/opt/intel/tbb/lib/intel64/gcc4.7
-trans_LDADD = -lpmemobj -lpmem -lrt -ltbb -ltcmalloc common/fraser/libfd.la
+
+# uncomment this for a pmem system
+PMEM_LIB_FLAGS = -lpmemobj -lpmem
+trans_LDADD = $(PMEM_LIB_FLAGS) -lrt -ltbb -ltcmalloc common/fraser/libfd.la
 transRomulus_SRCS = \
 	romulus/commonromulus/ThreadRegistry.cpp \
 	romulus/romulus/malloc.cpp \
@@ -475,7 +479,7 @@ transOneFile_CPPFLAGS = $(WARN_FLAGS) -std=c++14 \
 				 -fuse-ld=gold
 
 transRomulus_LDFLAGS = -L/opt/intel/tbb/lib/intel64/gcc4.7/
-transRomulus_LDADD = -lpmemobj -lpmem -lrt -ltbb -lpthread
+transRomulus_LDADD = $(PMEM_LIB_FLAGS) -lrt -ltbb -lpthread
 transRomulus_SOURCES = bench/RomulusMain.cc \
 				common/timehelper.cc\
 				romulus/commonromulus/ThreadRegistry.cpp \
@@ -493,7 +497,7 @@ transOneFile_SOURCES = bench/OneFileMain.cc \
 				common/timehelper.cc \
 				common/vsv.cc #CORRECTNESS ANNOTATIONS	
 
-transOneFile_LDADD = -lpmemobj -lpmem -ltbb	#CORRECTNESS ANNOTATIONS added -ltbb		
+transOneFile_LDADD = $(PMEM_LIB_FLAGS) -ltbb	#CORRECTNESS ANNOTATIONS added -ltbb		
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 

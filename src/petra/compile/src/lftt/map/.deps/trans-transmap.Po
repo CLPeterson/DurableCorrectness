@@ -62,8 +62,16 @@ lftt/map/trans-transmap.o: ../../dev/src/lftt/map/transmap.cc \
  /usr/include/c++/8/typeinfo /usr/include/c++/8/bits/hash_bytes.h \
  /usr/include/c++/8/bits/nested_exception.h \
  /usr/include/c++/8/bits/move.h /usr/include/c++/8/bits/concept_check.h \
- /usr/include/c++/8/type_traits ../../dev/src/lftt/map/transmap.h \
- /usr/include/c++/8/cstdint \
+ /usr/include/c++/8/type_traits /usr/include/c++/8/climits \
+ /usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ ../../dev/src/lftt/map/transmap.h /usr/include/c++/8/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/8/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
@@ -360,17 +368,9 @@ lftt/map/trans-transmap.o: ../../dev/src/lftt/map/transmap.cc \
  /usr/include/boost/container_hash/detail/limits.hpp \
  /usr/include/boost/limits.hpp /usr/include/boost/core/enable_if.hpp \
  /usr/include/boost/integer/static_log2.hpp \
- /usr/include/boost/integer_fwd.hpp /usr/include/c++/8/climits \
- /usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/syslimits.h \
- /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
- /usr/include/x86_64-linux-gnu/bits/local_lim.h \
- /usr/include/linux/limits.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
- /usr/include/boost/cstdint.hpp /usr/include/boost/assert.hpp \
- /usr/include/assert.h /usr/include/boost/type_traits/is_enum.hpp \
+ /usr/include/boost/integer_fwd.hpp /usr/include/boost/cstdint.hpp \
+ /usr/include/boost/assert.hpp /usr/include/assert.h \
+ /usr/include/boost/type_traits/is_enum.hpp \
  /usr/include/boost/type_traits/intrinsics.hpp \
  /usr/include/boost/type_traits/detail/config.hpp \
  /usr/include/boost/version.hpp \
@@ -562,6 +562,26 @@ lftt/map/trans-transmap.o: ../../dev/src/lftt/map/transmap.cc \
 /usr/include/c++/8/bits/concept_check.h:
 
 /usr/include/c++/8/type_traits:
+
+/usr/include/c++/8/climits:
+
+/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/limits.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
 ../../dev/src/lftt/map/transmap.h:
 
@@ -1256,26 +1276,6 @@ lftt/map/trans-transmap.o: ../../dev/src/lftt/map/transmap.cc \
 /usr/include/boost/integer/static_log2.hpp:
 
 /usr/include/boost/integer_fwd.hpp:
-
-/usr/include/c++/8/climits:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/limits.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/syslimits.h:
-
-/usr/include/limits.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-/usr/include/linux/limits.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
 /usr/include/boost/cstdint.hpp:
 

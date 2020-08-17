@@ -85,7 +85,7 @@ public:
 
             Node* newNode = TM_ALLOC<Node>(key);
 			//printf("New node %p\n", newNode); //CORRECTNESS ANNOTATIONS
-			insert_persist_map(newNode, (int) key, INT_MIN, SET, PRODUCER); //CORRECTNESS ANNOTATIONS
+			//insert_persist_map(newNode, (int) key, INT_MIN, SET, PRODUCER); //CORRECTNESS ANNOTATIONS
             prev->next = newNode;
             newNode->next = node;
 // #ifndef PMDK_PTM
@@ -112,7 +112,7 @@ public:
             if (!retval) return retval;
 // #endif
             prev->next = node->next;
-			insert_persist_map(node, (int) key, INT_MIN, SET, CONSUMER); //CORRECTNESS ANNOTATIONS
+			//insert_persist_map(node, (int) key, INT_MIN, SET, CONSUMER); //CORRECTNESS ANNOTATIONS
             TM_FREE(node);
 // #ifndef PMDK_PTM
 //         });

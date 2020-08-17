@@ -1407,7 +1407,7 @@ void vsv_init()
 	t = new std::thread[NUM_THRDS];
 	persist_map = new std::unordered_map<void*,Method>[NUM_THRDS];
 
-	start = std::chrono::high_resolution_clock::now();
+	//start = std::chrono::high_resolution_clock::now();
 
 	//thread_map = new std::unordered_map<std::thread::id,int>();
 	printf("VSV_Init() Finished\n");
@@ -1416,6 +1416,7 @@ void vsv_init()
 
 void vsv_startup()
 {
+	start = std::chrono::high_resolution_clock::now();
 	v = std::thread(verify, &final_outcome, &final_outcome_persist, &final_outcome_compare);
 }
 

@@ -21,6 +21,12 @@ To Test Persistent Memory:
 sudo ./src/trans 0 2 10000 1 10000 50 50
 sudo rm /mnt/pmem0/*
 
+To run scripts with tmux
+tmux
+run script
+ctrl+b d to detach
+tmux attach to attach
+
 ListBench.cpp
 LinkFree/LinkFreeList.h
 include/BenchUtils.h
@@ -44,3 +50,11 @@ commented out line 188
 
 libnvram/Makefile
 commented out line 72
+
+To run on Non-Persistent Memory System
+comment out following line
+petra/dev/src/Makefile.am line 30
+
+sudo rm /dev/shm/*
+
+
