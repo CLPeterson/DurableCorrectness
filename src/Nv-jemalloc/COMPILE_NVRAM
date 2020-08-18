@@ -1,0 +1,6 @@
+
+configure with with following options:
+./configure --prefix=JEMALLOC_PATH --with-jemalloc-prefix=nv_ --enable-ivsalloc
+
+If your system does not have XSL installed (the case on lpd servers) and the build process complains about not being able to compile the docs:
+make && make install_bin install_include install_lib
