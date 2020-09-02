@@ -1,2 +1,11 @@
-src/petra/compile
 **.o
+src/petra/compile
+src/petra/dev/.vscode/
+src/petra/dev/acinclude/
+src/petra/dev/autom4te.cache/
+src/petra/dev/bin/
+src/petra/dev/configure
+src/petra/dev/src/Makefile
+src/petra/dev/Makefile.in
+src/petra/dev/aclocal.m4
+src/petra/dev/src/config.h.in~
