@@ -28,6 +28,7 @@ unsigned int TEST_SIZE;
 unsigned int TRANS_SIZE;
 unsigned int KEY_RANGE_; //Replace TEST_SIZE*NUM_THRDS*TRANS_SIZE
 Semantics SEMANTICS;
+bool VERBOSE;
 
 struct MyHashCompare {
     //static size_t hash( int x ) { {
@@ -516,8 +517,10 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 				break;
 			}
 
-			if(method_count%5000 == 0)
+if(VERBOSE) {
+			if(method_count%5000 == 0 && method_count != 0)
 				printf("Method Count = %u\n", method_count);
+}
 			method_count = method_count + 1;
 
 			it_start = it;
@@ -851,10 +854,10 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 				if((ceil(vec_verify->sum) + vec_verify->sum_r) < 0)
 				{
 					outcome = false;
-	#if DEBUG_
+if(VERBOSE) {
 					//printf("WARNING: Item %d, sum_r %.2lf\n", it_verify->second.key, it_verify->second.sum_r);
-					printf("WARNING: Item %d, sum_r %.2lf\n", vec_verify->key, vec_verify->sum_r);
-	#endif
+					printf("WARNING: Non-Linearizable Read, Item %d, sum_r %.2lf\n", vec_verify->key, vec_verify->sum_r);
+}
 				}
 
 				int N;
@@ -866,10 +869,10 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 				if(((ceil(vec_verify->sum) + vec_verify->sum_f) * N) < 0)
 				{
 					outcome = false;
-	#if DEBUG_
+if(VERBOSE) {
 					//printf("WARNING: Item %d, sum_f %.2lf\n", it_verify->second.key, it_verify->second.sum_f);
-					printf("WARNING: Item %d, sum_f %.2lf\n", vec_verify->key, vec_verify->sum_f);
-	#endif
+					printf("WARNING: Non-Linearizable Failed Method Call, Item %d, sum_f %.2lf\n", vec_verify->key, vec_verify->sum_f);
+}
 				}
 
 
@@ -879,15 +882,15 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 		if(outcome == true)
 		{
 			*final_outcome = true;
-#if DEBUG_
-			printf("-------------Program Correct Up To This Point-------------\n");
-#endif
+if(VERBOSE) {
+			printf("-------------Execution Linearizable Up To This Time Step------\n");
+}
 		} else
 		{
 			*final_outcome = false;
-#if DEBUG_
-			printf("-------------Program Not Correct-------------\n");
-#endif
+if(VERBOSE) {
+			printf("-------------Execution Not Linearizable Up To This Time Step--\n");
+}
 		}
 		
 
@@ -897,25 +900,54 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 //Should probably move vector sum computation to this function
 void compare_vectors(Item** vector_items1, Item** vector_items2, bool* outcome_compare)
 {
+	std::stack<int> incorrect_items;
 	for (int i = 0; i < KEY_RANGE_+1; i++)
 	{
 		if(vector_items1[i] != NULL && vector_items2[i] == NULL)
 		{
-			//printf("vector_items1[%d]->sum = %.2lf\n", i, vector_items1[i]->sum);
-			if(vector_items1[i]->sum != 0)
+if(VERBOSE) {
+			printf("Items[%d]->sum = %.2lf\n", i, vector_items1[i]->sum);
+}
+			if(vector_items1[i]->sum != 0) 
+			{
 				*outcome_compare = false;
+				incorrect_items.push(i);
+			}
 		} else if(vector_items1[i] == NULL && vector_items2[i] != NULL)
 		{
-			//printf("vector_items2[%d]->sum = %.2lf\n", i, vector_items2[i]->sum);
+if(VERBOSE) {
+			printf("Items_Durable[%d]->sum = %.2lf\n", i, vector_items2[i]->sum);
+}
 			if(vector_items2[i]->sum != 0)
-				*outcome_compare = false;	
+			{
+				*outcome_compare = false;
+				incorrect_items.push(i);	
+			}
 		} else if(vector_items1[i] != NULL && vector_items2[i] != NULL)
 		{
-			//printf("vector_items1[%d]->sum = %.2lf, vector_items2[%d]->sum = %.2lf\n", i, vector_items1[i]->sum, i, vector_items2[i]->sum);
+if(VERBOSE) {
+			printf("Items[%d]->sum = %.2lf, Items_Durable[%d]->sum = %.2lf\n", i, vector_items1[i]->sum, i, vector_items2[i]->sum);
+}
 			if(vector_items1[i]->sum != vector_items2[i]->sum)	
+			{
 				*outcome_compare = false;
+				incorrect_items.push(i);
+			}
+		} else if(vector_items1[i] == NULL && vector_items2[i] == NULL) {
+if(VERBOSE) {
+			printf("Items[%d]->sum = 0.00, Items_Durable[%d]->sum = 0.00\n", i, i);
+}
 		}
 	}
+if(VERBOSE) {
+	while(!incorrect_items.empty())
+	{
+		int top = incorrect_items.top();
+			
+		printf("WARNING: NVM not consistent with cache-side Item %d\n", top);
+		incorrect_items.pop();
+	}
+}
 }
 
 void verify_loop(std::map<long int,Method,bool(*)(long int,long int)>& map_methods, Item** vector_items, std::atomic<int>* _thrd_lists_size, std::list<Method>* thrd_lists, int* it_count, std::list<Method>::iterator* it, long int& min, bool& stop)
@@ -1373,7 +1405,7 @@ int get_method_id_persist()
 
 void vsv_init()
 {
-	printf("VSV_Init()\n");
+	//printf("VSV_Init()\n");
 	pfile = fopen("output.txt", "a");
 
 	//barrier.store(0);
@@ -1410,7 +1442,7 @@ void vsv_init()
 	//start = std::chrono::high_resolution_clock::now();
 
 	//thread_map = new std::unordered_map<std::thread::id,int>();
-	printf("VSV_Init() Finished\n");
+	//printf("VSV_Init() Finished\n");
 
 }
 
@@ -1427,23 +1459,23 @@ void vsv_shutdown()
 
 	if(final_outcome == true)
 	{
-		printf("-------------Program Correct Up To This Point-------------\n");
+		printf("-------------Execution Linearizable---------------------------\n");
 	} else {
-		printf("-------------Program Not Correct-------------\n");
+		printf("-------------Execution Not Linearizable-----------------------\n");
 	}
 
 	if(final_outcome_persist == true)
 	{
-		printf("-------------Persisted Program Correct Up To This Point-------------\n");
+		printf("-------------Persisted Execution Linearizable-----------------\n");
 	} else {
-		printf("-------------Persisted Program Not Correct-------------\n");
+		printf("-------------Persisted Execution Not Linearizable-------------\n");
 	}
 
 	if(final_outcome_compare == true)
 	{
-		printf("VECTOR SUMS EQUAL\n");
+		printf("VECTOR SUMS EQUAL => Execution Durable Linearizable\n");
 	} else {
-		printf("VECTOR SUMS NOT EQUAL\n");
+		printf("VECTOR SUMS NOT EQUAL => Execution Not Durable Linearizable\n");
 	}
 			
 	auto finish = std::chrono::high_resolution_clock::now();
@@ -1461,12 +1493,12 @@ void vsv_shutdown()
 			elapsed_time_method = method_time[i];
 	}	
 	double elapsed_time_method_double = elapsed_time_method*0.000000001;
-	printf("Total Method Time: %.15lf seconds\n", elapsed_time_method_double);
+	//printf("Total Method Time: %.15lf seconds\n", elapsed_time_method_double);
 
 	//Elapsed verification time
 	double elapsed_time_verify_double = elapsed_time_verify*0.000000001;
 	//elapsed_time_verify_double = elapsed_time_verify_double - elapsed_time_method_double;	
-	printf("Total Verification Time: %.15lf seconds\n", elapsed_time_verify_double);
+	//printf("Total Verification Time: %.15lf seconds\n", elapsed_time_verify_double);
 	
 	//fprintf(pfile, "%.15lf %.15lf\n", elapsed_time_method_double, elapsed_time_verify_double);
 	fprintf(pfile, "%.15lf ", elapsed_time_double);
@@ -1871,6 +1903,10 @@ void vsv_args(int argc, const char *argv[])
 	TRANS_SIZE = 2;
 	KEY_RANGE_ = 100;
 
+	VERBOSE = false;
+
+	char vflag[] = "-v";
+
 	if(argc > 1) {
 		if(atoi(argv[1]) < 3) SEMANTICS = SET;
 		else if (atoi(argv[1]) >= 3) SEMANTICS = MAP;
@@ -1879,8 +1915,18 @@ void vsv_args(int argc, const char *argv[])
 	if(argc > 3) TEST_SIZE = atoi(argv[3]);
 	if(argc > 4) TRANS_SIZE = atoi(argv[4]);
 	if(argc > 5) KEY_RANGE_ = atoi(argv[5]) + 2;
+	if(argc > 8) {
+		if(strcmp (vflag,argv[8]) == 0)
+		{
+			VERBOSE = true;
+			//printf("VERBOSE flag toggled!\n");
+		} else {
+			//printf("vflag = %s, argv[8] = %s\n", vflag, argv[8]);
+		}
+		
+	}
 
-	printf("NUM_THRDS = %d, TEST_SIZE = %d, TRANS_SIZE = %d, KEY_RANGE_ = %d\n", NUM_THRDS, TEST_SIZE, TRANS_SIZE, KEY_RANGE_);
+	//printf("NUM_THRDS = %d, TEST_SIZE = %d, TRANS_SIZE = %d, KEY_RANGE_ = %d\n", NUM_THRDS, TEST_SIZE, TRANS_SIZE, KEY_RANGE_);
 
 	/*if(argc > 1) setType = atoi(argv[1]);
     if(argc > 2) numThread = atoi(argv[2]);

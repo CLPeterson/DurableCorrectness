@@ -27,7 +27,7 @@ trans_CPPFLAGS = $(WARN_FLAGS) -std=c++14 -pthread\
 trans_LDFLAGS = -L/opt/intel/tbb/lib/intel64/gcc4.7
 
 # uncomment this for a pmem system
-PMEM_LIB_FLAGS = -lpmemobj -lpmem
+#PMEM_LIB_FLAGS = -lpmemobj -lpmem
 
 trans_LDADD =  $(PMEM_LIB_FLAGS) -lrt -ltbb -ltcmalloc common/fraser/libfd.la
 

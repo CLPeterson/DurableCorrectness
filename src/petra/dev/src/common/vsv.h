@@ -37,6 +37,7 @@ extern unsigned int NUM_THRDS;
 extern unsigned int TEST_SIZE;
 extern unsigned int TRANS_SIZE;
 extern unsigned int KEY_RANGE_; //Replace TEST_SIZE*NUM_THRDS*TRANS_SIZE
+extern bool VERBOSE;
 
 typedef enum Semantics
 {

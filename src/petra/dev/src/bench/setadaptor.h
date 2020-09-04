@@ -268,6 +268,14 @@ public:
     { 
         cap = std::max(cap,(uint64_t)keyRange);
 
+	ALLOCATOR_DRAM_ONLY_CODE
+            (
+                // std::cout << "USING DRAM ALLOCATOR" << std::endl;
+                m_descAllocator = new Allocator<Desc>(cap * (threadCount + 1) * Desc::SizeOf(transSize), threadCount, Desc::SizeOf(transSize));
+                m_nodeAllocator = new Allocator<node_t>(cap * (threadCount + 1) *  sizeof(node_t) * transSize, (threadCount + 1), sizeof(node_t));
+                m_nodeDescAllocator = new Allocator<NodeDesc>(cap * (threadCount * 3) *  sizeof(NodeDesc) * transSize, threadCount, sizeof(NodeDesc));
+            ) 
+
         ALLOCATOR_PERSISTABLE_ONLY_CODE
         (
             // std::cout << "USING MMAP ALLOCATOR" << std::endl;
@@ -385,6 +393,14 @@ public:
         // , m_list(&m_nodeAllocator, &m_descAllocator, &m_nodeDescAllocator, &m_AdoptDescAllocator, keyRange)
     { 
         cap = std::max(cap,(uint64_t)keyRange);
+
+		ALLOCATOR_DRAM_ONLY_CODE
+            (
+                // std::cout << "USING DRAM ALLOCATOR" << std::endl;
+                m_descAllocator = new Allocator<TxMdList::Desc>(cap * (threadCount + 1) * TxMdList::Desc::SizeOf(transSize), threadCount, TxMdList::Desc::SizeOf(transSize));
+                m_nodeAllocator = new Allocator<TxMdList::Node>(cap * (threadCount + 1) *  sizeof(TxMdList::Node) * transSize, (threadCount + 1), sizeof(TxMdList::Node));
+                m_nodeDescAllocator = new Allocator<TxMdList::NodeDesc>(cap * (threadCount * 3) *  sizeof(TxMdList::NodeDesc) * transSize, threadCount, sizeof(TxMdList::NodeDesc));
+            )  
 
         ALLOCATOR_PERSISTABLE_ONLY_CODE
         (

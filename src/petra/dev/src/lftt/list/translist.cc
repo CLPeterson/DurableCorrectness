@@ -432,7 +432,8 @@ NO_READ_ONLY_OPT_CODE
 		//rollback_txn_persist();
 	}
 
-	/*std::string transaction;
+if(VERBOSE) {
+	std::string transaction;
 	transaction.append("Transaction");
 	
 	for(int i = 0; i < desc->size; i++)
@@ -440,17 +441,17 @@ NO_READ_ONLY_OPT_CODE
 		if(desc->ops[i].type == INSERT)
 		{
 			char str[80];
-			sprintf(str, " P %d", desc->ops[i].key);
+			sprintf(str, " Ins %d", desc->ops[i].key);
 			transaction.append(str); 
 		} else if (desc->ops[i].type == DELETE)
 		{
 			char str[80];
-			sprintf(str, " C %d", desc->ops[i].key);
+			sprintf(str, " Del %d", desc->ops[i].key);
 			transaction.append(str); 
 		} else if (desc->ops[i].type == FIND)
 		{
 			char str[80];
-			sprintf(str, " F %d", desc->ops[i].key);
+			sprintf(str, " Find %d", desc->ops[i].key);
 			transaction.append(str); 
 		}
 	}
@@ -458,7 +459,8 @@ NO_READ_ONLY_OPT_CODE
 		transaction.append(":Commit"); 
 	else
 		transaction.append(":Abort");
-	printf("%s\n", transaction.c_str());*/
+	printf("%s\n", transaction.c_str());
+}
 
 	if(desc->persistStatus == PERSISTED && desc->status == COMMITTED)
 	{

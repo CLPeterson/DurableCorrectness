@@ -99,7 +99,7 @@ enum PersistStatus
     MAYBE = 0,
     IN_PROGRESS,
     PERSISTED,
-};    
+};   
 
 static int gc_id[NUM_LEVELS];
 
@@ -147,7 +147,7 @@ static inline bool FinishPendingTxn(trans_skip* l, NodeDesc* nodeDesc, Desc* des
     }
 
 
-    bool needHelp = false;
+	bool needHelp = false;
 
     if(desc->status != LIVE)
     {
@@ -170,7 +170,7 @@ READ_ONLY_OPT_CODE
     }   
 
 
-    return true;
+    return true;	
 }
 
 static inline bool IsNodeActive(NodeDesc* nodeDesc)
@@ -246,7 +246,7 @@ static int get_level(ptst_t *ptst)
 static node_t *alloc_node(ptst_t *ptst)
 {
 
-    
+
 
     int l;
     node_t *n;
@@ -259,10 +259,10 @@ static node_t *alloc_node(ptst_t *ptst)
 
 
 /* Free a node to the garbage collector. */
-// static void free_node(ptst_t *ptst, node_t* n)
-// {
-//     fr_gc_free(ptst, (void *)n, gc_id[(n->level & LEVEL_MASK) - 1]);
-// }
+static void free_node(ptst_t *ptst, node_t* n)
+{
+    fr_gc_free(ptst, (void *)n, gc_id[(n->level & LEVEL_MASK) - 1]);
+}
 
 
 /*
@@ -274,7 +274,7 @@ static node_t *alloc_node(ptst_t *ptst)
  */
 static node_t* strong_search_predecessors(trans_skip *l, setkey_t k, node_t* *pa, node_t* *na)
 {
-    // printf("strong_search_predecessors begins!\n\r");
+	// printf("strong_search_predecessors begins!\n\r");
     node_t* x, *x_next, *old_x_next, *y, *y_next;
     setkey_t  y_k;
     int        i;
@@ -285,7 +285,7 @@ static node_t* strong_search_predecessors(trans_skip *l, setkey_t k, node_t* *pa
     x = &l->head;
     for ( i = NUM_LEVELS - 1; i >= 0; i-- )
     {
-        // printf("strong_search_predecessors outer loop %d!\n\r", i);
+		// printf("strong_search_predecessors outer loop %d!\n\r", i);
         /* We start our search at previous level's unmarked predecessor. */
         READ_FIELD(x_next, x->next[i]);
         /* If this pointer's marked, so is @pa[i+1]. May as well retry. */
@@ -293,20 +293,20 @@ static node_t* strong_search_predecessors(trans_skip *l, setkey_t k, node_t* *pa
 
         for ( y = x_next; ; y = y_next )
         {
-            // printf("strong_search_predecessors inner loop %p \n\r", y);
+			// printf("strong_search_predecessors inner loop %p \n\r", y);
             /* Shift over a sequence of marked nodes. */
             for ( ; ; )
             {
-                // printf("strong_search_predecessors inner loop2 %p %p %p i=%d \n\r", y_next, y, y->next, i);
+				// printf("strong_search_predecessors inner loop2 %p %p %p i=%d \n\r", y_next, y, y->next, i);
                 // printf("y->next[%d]=%p\n\r", i, y->next[i]);
                 READ_FIELD(y_next, y->next[i]);
-                // printf("strong_search_predecessors inner loop2 y_next=%p \n\r", y_next);
+				// printf("strong_search_predecessors inner loop2 y_next=%p \n\r", y_next);
                 if ( !is_marked_ref(y_next) ) break;
                 y = (node_t*)get_unmarked_ref(y_next);
             }
 
             READ_FIELD(y_k, y->k);
-            // printf("strong_search_predecessors inner loop y_k=%d \n\r", y_k);
+			// printf("strong_search_predecessors inner loop y_k=%d \n\r", y_k);
             if ( y_k >= k ) break;
 
             /* Update estimate of predecessor at this level. */
@@ -314,13 +314,13 @@ static node_t* strong_search_predecessors(trans_skip *l, setkey_t k, node_t* *pa
             x_next = y_next;
         }
 
-        // printf("strong_search_predecessors outer loop after inner loop \n\r");
+		// printf("strong_search_predecessors outer loop after inner loop \n\r");
 
         /* Swing forward pointer over any marked nodes. */
         if ( x_next != y )
         {
             old_x_next = CASPO(&x->next[i], x_next, y);
-            // printf("strong_search_predecessors outer loop after CASPO \n\r");
+			// printf("strong_search_predecessors outer loop after CASPO \n\r");
             if ( old_x_next != x_next ) goto retry;
         }
 
@@ -328,7 +328,7 @@ static node_t* strong_search_predecessors(trans_skip *l, setkey_t k, node_t* *pa
         if ( na ) na[i] = y;
     }
 
-    // printf("strong_search_predecessors finishes!\n\r");
+	// printf("strong_search_predecessors finishes!\n\r");
     return(y);
 }
 
@@ -336,7 +336,7 @@ static node_t* strong_search_predecessors(trans_skip *l, setkey_t k, node_t* *pa
 /* This function does not remove marked nodes. Use it optimistically. */
 static node_t* weak_search_predecessors(trans_skip *l, setkey_t k, node_t* *pa, node_t* *na)
 {
-    // printf("weak_search_predecessors begins!\n\r");
+	// printf("weak_search_predecessors begins!\n\r");
     node_t* x, *x_next;
     setkey_t  x_next_k;
     int        i;
@@ -344,17 +344,17 @@ static node_t* weak_search_predecessors(trans_skip *l, setkey_t k, node_t* *pa, 
     x = &l->head;
     for ( i = NUM_LEVELS - 1; i >= 0; i-- )
     {
-        // printf("weak_search_predecessors outer loop %d!\n\r", i);
+		// printf("weak_search_predecessors outer loop %d!\n\r", i);
         for ( ; ; )
         {
-            // printf("weak_search_predecessors inner loop!\n\r");
+			// printf("weak_search_predecessors inner loop!\n\r");
             READ_FIELD(x_next, x->next[i]);
-            // printf("weak_search_predecessors inner loop after READ_FIELD! x_next=%p\n\r", x_next);
+			// printf("weak_search_predecessors inner loop after READ_FIELD! x_next=%p\n\r", x_next);
             x_next = (node_t*)get_unmarked_ref(x_next);
-            // printf("weak_search_predecessors inner loop after get_unmarked_ref x_next_k=%ul , x_next=%p, x_next->k=%ul!\n\r", x_next_k, x_next, x_next->k);
+			// printf("weak_search_predecessors inner loop after get_unmarked_ref x_next_k=%ul , x_next=%p, x_next->k=%ul!\n\r", x_next_k, x_next, x_next->k);
 
             READ_FIELD(x_next_k, x_next->k);
-            // printf("weak_search_predecessors inner loop after READ_FIELD 2!\n\r");
+			// printf("weak_search_predecessors inner loop after READ_FIELD 2!\n\r");
             if ( x_next_k >= k ) break;
 
             x = x_next;
@@ -363,7 +363,7 @@ static node_t* weak_search_predecessors(trans_skip *l, setkey_t k, node_t* *pa, 
         if ( pa ) pa[i] = x;
         if ( na ) na[i] = x_next;
     }
-    // printf("weak_search_predecessors finishes!\n\r");
+	// printf("weak_search_predecessors finishes!\n\r");
 
     return(x_next);
 }
@@ -427,7 +427,7 @@ static void do_full_delete(ptst_t *ptst, trans_skip *l, node_t* x, int level)
 #else
     (void)strong_search_predecessors(l, k, NULL, NULL);
 #endif
-    // free_node(ptst, x);
+    free_node(ptst, x);
 }
 
 
@@ -464,7 +464,7 @@ trans_skip *transskip_alloc(Allocator<Desc>* _descAllocator, Allocator<NodeDesc>
 
     l->descAllocator = _descAllocator;
     l->nodeDescAllocator = _nodeDescAllocator;
-    l->nodeAllocator = _nodeAllocator;
+	l->nodeAllocator = _nodeAllocator;
     lastTxId.store(0);
 
     return(l);
@@ -473,7 +473,6 @@ trans_skip *transskip_alloc(Allocator<Desc>* _descAllocator, Allocator<NodeDesc>
 
 bool transskip_insert(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_t*& n)
 {
-    // printf("transskip_insert begins! key=%d\n\r", k);
     n = NULL;
     bool ret = false;
     NodeDesc* nodeDesc = l->nodeDescAllocator->Alloc();
@@ -486,43 +485,34 @@ bool transskip_insert(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_
     int        i, level;
 
     k = CALLER_TO_INTERNAL_KEY(k);
-    // printf("transskip_insert after CALLER_TO_INTERNAL_KEY!\n\r");
 
     ptst = fr_critical_enter();
-    // printf("transskip_insert after fr_critical_enter!\n\r");
 
     succ = weak_search_predecessors(l, k, preds, succs);
-    // printf("transskip_insert after weak_search_predecessors!\n\r");
     
  retry:
-    // printf("transskip_insert retry loop begins!\n\r");
+
     if ( succ->k == k )
     {
         NodeDesc* oldCurrDesc = succ->nodeDesc;
 
         if(IS_MARKED(oldCurrDesc))
         {
-            // printf("transskip_insert IS_MARKED if begins!\n\r");
             READ_FIELD(level, succ->level);
-            // printf("transskip_insert IS_MARKED if after READ_FIELD!\n\r");
             mark_deleted(succ, level & LEVEL_MASK);
-            // printf("transskip_insert IS_MARKED if after mark_deleted!\n\r");
             succ = strong_search_predecessors(l, k, preds, succs);
-            // printf("transskip_insert IS_MARKED if finishes!\n\r");
             goto retry;
         }
 
         if(!FinishPendingTxn(l, oldCurrDesc, desc))
         {
-            // printf("transskip_insert after FinishPendingTxn if!\n\r");
-            // if ( new_node != NULL ) free_node(ptst, new_node);
+            if ( new_node != NULL ) free_node(ptst, new_node);
             ret = false;
             goto out;
         }
 
         if(IsSameOperation(oldCurrDesc, nodeDesc))
         {
-            // printf("transskip_insert after IsSameOperation if!\n\r");
             ret = true;
             goto out;
         }
@@ -530,12 +520,11 @@ bool transskip_insert(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_
         //if(!IsKeyExist(oldCurrDesc))
 		if(!IsKeyExist_mod(oldCurrDesc, desc))
         {
-            // printf("transskip_insert after IsKeyExist if!\n\r");
             NodeDesc* currDesc = succ->nodeDesc;
 
             if(desc->status != LIVE)
             {
-                // if ( new_node != NULL ) free_node(ptst, new_node);
+                if ( new_node != NULL ) free_node(ptst, new_node);
                 ret = false;
                 goto out;
             }
@@ -547,10 +536,9 @@ bool transskip_insert(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_
 
                 if(currDesc == oldCurrDesc)
                 {
-                    // if ( new_node != NULL ) free_node(ptst, new_node);
+                    if ( new_node != NULL ) free_node(ptst, new_node);
                     n = succ;
                     ret = true;
-                    // printf("transskip_insert was successsful!\n\r");
                     goto out;
                 }
             }
@@ -559,7 +547,7 @@ bool transskip_insert(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_
         }
         else
         {
-            // if ( new_node != NULL ) free_node(ptst, new_node);
+            if ( new_node != NULL ) free_node(ptst, new_node);
             ret = false;
             goto out;
         }
@@ -577,13 +565,11 @@ bool transskip_insert(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_
     /* Not in the list, so initialise a new node for insertion. */
     if ( new_node == NULL )
     {
-        // printf("transskip_insert initing new node!\n\r");
-        new_node    = l->nodeAllocator->Alloc();//alloc_node(ptst);
-        new_node->level = get_level(ptst);
+        new_node    = alloc_node(ptst);
+		//new_node->level = get_level(ptst); //Causes segmentation fault
         new_node->k = k;
         new_node->v = (void*)0xf0f0f0f0;
         new_node->nodeDesc = nodeDesc;
-        // new_node->next = l->nodeAllocator->Alloc();
     }
     level = new_node->level;
 
@@ -592,25 +578,20 @@ bool transskip_insert(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_
     {
         new_node->next[i] = succs[i];
     }
-    // printf("transskip_insert after assigning next!\n\r");
 
     /* We've committed when we've inserted at level 1. */
     WMB_NEAR_CAS(); /* make sure node fully initialised before inserting */
-    // printf("transskip_insert after WMB_NEAR_CAS!\n\r");
 
     if(desc->status != LIVE)
     {
         ret = false;
         goto out;
     }
-    // printf("transskip_insert after checking the status!\n\r");
 
     old_next = CASPO(&preds[0]->next[0], succ, new_node);
-    // printf("transskip_insert after CASPO!\n\r");
     if ( old_next != succ )
     {
         succ = strong_search_predecessors(l, k, preds, succs);
-        // printf("transskip_insert after strong_search_predecessors!\n\r");
         goto retry;
     }
 
@@ -618,7 +599,6 @@ bool transskip_insert(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_
     i = 1;
     while ( i < level )
     {
-        // printf("transskip_insert insert new node at level %d!\n\r", i);
         pred = preds[i];
         succ = succs[i];
 
@@ -663,7 +643,6 @@ bool transskip_insert(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_
 
     n = new_node;
     ret = true;
-    // printf("transskip_insert finishes!\n\r");
 
  out:
     fr_critical_exit(ptst);
@@ -672,7 +651,6 @@ bool transskip_insert(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_
 
 bool transskip_delete(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_t*& n)
 {
-    // printf("transskip_delete begins!\n\r");
     n = NULL;
     bool ret = false;
     NodeDesc* nodeDesc = NULL;
@@ -761,7 +739,6 @@ bool transskip_delete(trans_skip *l, setkey_t k, Desc* desc, uint8_t opid, node_
 
 out:
     fr_critical_exit(ptst);
-    // printf("transskip_delete finishes!\n\r");
     return ret;
 }
 
@@ -815,7 +792,7 @@ setval_t transskip_delete_org(trans_skip *l, setkey_t k)
         }
     }
 
-    // free_node(ptst, x);
+    free_node(ptst, x);
 
  out:
     fr_critical_exit(ptst);
@@ -966,8 +943,7 @@ static inline bool help_ops(trans_skip* l, Desc* desc, uint8_t opid)
     {
         if(__sync_bool_compare_and_swap(&desc->status, LIVE, ABORTED))
         {
-
-            PERSIST_CODE
+			PERSIST_CODE
             (
                 if(__sync_bool_compare_and_swap(&desc->persistStatus, MAYBE, IN_PROGRESS)) 
                 {
@@ -997,7 +973,6 @@ static inline bool help_ops(trans_skip* l, Desc* desc, uint8_t opid)
                 }
             ) 
         }
-        
         return false;
     }
 
@@ -1007,7 +982,7 @@ static inline bool help_ops(trans_skip* l, Desc* desc, uint8_t opid)
 
     while(desc->status == LIVE && ret && opid < desc->size)
     {
-		long int invocation = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS	
+        long int invocation = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS	
 		long int response; //CORRECTNESS ANNOTATIONS
 
         const Operator& op = desc->ops[opid];
@@ -1225,7 +1200,8 @@ NO_READ_ONLY_OPT_CODE
 		//rollback_txn_persist();
 	}
 
-	/*std::string transaction;
+if(VERBOSE) {
+	std::string transaction;
 	transaction.append("Transaction");
 	
 	for(int i = 0; i < desc->size; i++)
@@ -1233,17 +1209,17 @@ NO_READ_ONLY_OPT_CODE
 		if(desc->ops[i].type == INSERT)
 		{
 			char str[80];
-			sprintf(str, " P %d", desc->ops[i].key);
+			sprintf(str, " Ins %d", desc->ops[i].key);
 			transaction.append(str); 
 		} else if (desc->ops[i].type == DELETE)
 		{
 			char str[80];
-			sprintf(str, " C %d", desc->ops[i].key);
+			sprintf(str, " Del %d", desc->ops[i].key);
 			transaction.append(str); 
 		} else if (desc->ops[i].type == FIND)
 		{
 			char str[80];
-			sprintf(str, " F %d", desc->ops[i].key);
+			sprintf(str, " Find %d", desc->ops[i].key);
 			transaction.append(str); 
 		}
 	}
@@ -1251,7 +1227,9 @@ NO_READ_ONLY_OPT_CODE
 		transaction.append(":Commit"); 
 	else
 		transaction.append(":Abort");
-	printf("%s\n", transaction.c_str());*/
+	printf("%s\n", transaction.c_str());
+}
+
 
 	if(desc->persistStatus == PERSISTED && desc->status == COMMITTED)
 	{
@@ -1283,7 +1261,7 @@ NO_READ_ONLY_OPT_CODE
 		insert_txn_persist(txn_invocation, txn_response, desc->size); //CORRECTNESS ANNOTATIONS
 	} else {
 		rollback_txn_persist();
-	}
+	}    
 
     return ret;
 }
@@ -1502,7 +1480,6 @@ NO_READ_ONLY_OPT_CODE
 }
 
 
-
 bool execute_ops(trans_skip* l, Desc* desc)
 {
     helpStack.Init();
@@ -1539,4 +1516,11 @@ void transskip_free(trans_skip* l)
 	fclose(pfile); //CORRECTNESS ANNOTATIONS
 
     //transskip_print(l);
+}
+
+void ResetMetrics(trans_skip* l)
+{
+    g_count_commit = 0;
+    g_count_abort = 0;
+    g_count_fake_abort = 0;
 }

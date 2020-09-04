@@ -54,8 +54,9 @@ READ_ONLY_OPT_CODE
         
         for(unsigned int i = 0; i < testSize; ++i)
         {
-
+if(VERBOSE) {
 			if(((int) i) % 10000 == 0) printf("Thread %d: Iteration %u\n", threadId, i);
+}
 
             for(uint32_t t = 0; t < tranSize; ++t)
             {
@@ -130,7 +131,9 @@ READ_ONLY_OPT_CODE
 
     for(unsigned int i = 0; i < testSize; ++i)
     {
+if(VERBOSE) {
 		if(((int) i) % 10000 == 0) printf("Thread %d: Iteration %u\n", threadId, i);
+}
 
         for(uint32_t t = 0; t < tranSize; ++t)
         {
@@ -508,7 +511,6 @@ int main(int argc, const char *argv[])
 
     bool recovery = false;
 
-
     if(argc > 1) setType = atoi(argv[1]);
     if(argc > 2) numThread = atoi(argv[2]);
     if(argc > 3) testSize = atoi(argv[3]);
@@ -516,7 +518,7 @@ int main(int argc, const char *argv[])
     if(argc > 5) keyRange = atoi(argv[5]);
     if(argc > 6) insertion = atoi(argv[6]);
     if(argc > 7) deletion = atoi(argv[7]);
-    if(argc > 8) update = atoi(argv[8]);
+    //if(argc > 8) update = atoi(argv[8]);
 
     assert(setType < 7);
     assert(keyRange < 0xffffffff);
@@ -563,7 +565,9 @@ int main(int argc, const char *argv[])
     //     { SetAdaptor<BoostingList> set; Tester(numThread, testSize, tranSize, keyRange, insertion, deletion, set); }
     //     break;
     case 1:
-        { SetAdaptor<trans_skip> set(testSize, numThread + 1, tranSize, keyRange); Tester(numThread, testSize, tranSize, keyRange, insertion, deletion, set); }
+        { SetAdaptor<trans_skip> set(testSize, numThread + 1, tranSize, keyRange); 
+		Tester(numThread, testSize, tranSize, keyRange, insertion, deletion, set); 
+		}
         break;
     case 2:
         { SetAdaptor<TxMdList> set(testSize, numThread + 1, tranSize, keyRange); Tester(numThread, testSize, tranSize, keyRange, insertion, deletion, set); }

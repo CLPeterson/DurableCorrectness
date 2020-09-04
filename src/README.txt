@@ -1,3 +1,17 @@
+PETRA
+Install dependencies:
+sudo apt-get install libboost-all-dev libgoogle-perftools-dev libtool m4 automake cmake libtbb-dev libgsl0-dev
+
+cd src/petra/
+mkdir compile
+cd dev
+bash bootstrap.sh
+cd ../compile
+../dev/configure
+
+make CPPFLAGS="-DUSE_DRAM_ALLOCATOR -DPWB_IS_CLFLUSH -DROMULUS_LR_PTM -O0 -g"
+
+
 Makefile can be updated at petra/dev/src/Makefile.am
 
 make CPPFLAGS="-DUSE_DRAM_ALLOCATOR -DPWB_IS_CLWB -DROMULUS_LR_PTM"

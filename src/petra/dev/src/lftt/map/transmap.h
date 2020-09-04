@@ -32,23 +32,32 @@
 #define KEY uint32_t
 #define VALUE uint32_t
 
+//#define USE_MEM_POOL
+
 class TransMap
 {
 public:
 
-enum OpStatus
+	enum OpStatus
 	{
 	    MAP_ACTIVE = 0,
 	    MAP_COMMITTED,
 	    MAP_ABORTED
 	};
 
-    enum PersistStatus
+	enum PersistStatus
     {
         MAYBE = 0,
         IN_PROGRESS,
         PERSISTED,
     };   	
+
+	// enum ReturnCode
+ //    {
+ //        OK = 0,
+ //        SKIP,
+ //        FAIL
+ //    };
 
 	enum OpType
 	{
@@ -75,13 +84,13 @@ enum OpStatus
 
         // Status of the transaction: values in [0, size] means live txn, values -1 means aborted, value -2 means committed.
         volatile uint8_t status;
-		volatile uint8_t persistStatus;		
+		volatile uint8_t persistStatus;
         uint8_t size;
-		bool isReadOnly;
+        bool isReadOnly;
 		uint32_t txid;
         Operator ops[];
     };
-
+    
     struct NodeDesc
     {
         NodeDesc(Desc* _desc, uint8_t _opid)
@@ -105,7 +114,7 @@ enum OpStatus
 		VALUE value;
 
 		NodeDesc* nodeDesc;
-	}DataNode;       
+	}DataNode;
 
     struct HelpStack
     {
@@ -144,6 +153,9 @@ enum OpStatus
         Desc* helps[256];
         uint8_t index;
     };
+
+    
+
 #ifdef useThreadWatch
 	HASH * /* volatile  */ Thread_watch;
 #endif
@@ -152,9 +164,9 @@ enum OpStatus
     void ***Thread_pool_vector;
 	int *Thread_pool_vector_size;
 #endif
-
-	// void **Thread_pool_stack;
-	// void **Thread_spines;
+	
+	void **Thread_pool_stack;
+	//void **Thread_spines;
 	
 	int MAIN_SIZE;
 	int MAIN_POW;
@@ -167,6 +179,9 @@ enum OpStatus
 		/* volatile  */ unsigned int spine_elements;
 	#endif
 
+
+
+	
 
 	TransMap(Allocator<void**>* headAllocator, Allocator<DataNode>* nodeAllocator, Allocator<TransMap::Desc>* descAllocator, Allocator<TransMap::NodeDesc>* nodeDescAllocator,
 	Allocator<MapSpine>* _mapSpineAllocator, uint64_t initalPowerOfTwo, uint64_t numThreads, bool newMap = true)
@@ -193,7 +208,7 @@ ALLOCATOR_PERSISTABLE_ONLY_CODE
 	#ifdef useThreadWatch
 			Thread_watch				=(HASH * /* volatile  */ )	calloc(Threads,sizeof(HASH));
 	#endif
-			// Thread_pool_stack			=(void **)			calloc(Threads,sizeof(void *));
+			Thread_pool_stack			=(void **)			calloc(Threads,sizeof(void *));
 	#ifdef useVectorPool
 			Thread_pool_vector			=(void ***)			calloc(Threads,sizeof(void **));
 			Thread_pool_vector_size		=(int *)			calloc(Threads,sizeof(int));
@@ -202,7 +217,8 @@ ALLOCATOR_PERSISTABLE_ONLY_CODE
 				Thread_pool_vector_size[i]=10;
 			}
 	#endif
-			
+			//Thread_spines			=(void **)		calloc(Threads,sizeof(void *));			
+
 			elements				=0;
 			#ifdef SPINE_COUNT
 		 		spine_elements=0;
@@ -214,15 +230,30 @@ ALLOCATOR_PERSISTABLE_ONLY_CODE
 			//printf("initialized!\n\r");
 		}
 
-~TransMap()
+	~TransMap()
 	{
 		printf("Total commit %u, abort (total/fake) %u/%u\n", g_count_commit, g_count_abort, g_count_fake_abort);
-
+	    
 		FILE* pfile = fopen("output.txt", "a"); //CORRECTNESS ANNOTATIONS
 		fprintf(pfile, "%u %u\n", g_count_commit, g_count_abort); //CORRECTNESS ANNOTATIONS
 		fclose(pfile); //CORRECTNESS ANNOTATIONS
+	}
 
-	}        
+	// TransMap(/*Allocator<Node>* nodeAllocator,*/ Allocator<Desc>* descAllocator, Allocator<NodeDesc>* nodeDescAllocator, uint64_t initalPowerOfTwo, uint64_t numThreads);
+	// ~TransMap();
+
+    //Desc* AllocateDesc(uint8_t size);
+
+    // inline bool Insert(Desc* desc, uint8_t opid, KEY k, VALUE v, int T);
+    // inline bool Update(Desc* desc, uint8_t opid, KEY k,/*VALUE e_value,*/ VALUE v, int T, DataNode*& toReturn);
+    // inline bool Delete(Desc* desc, uint8_t opid, KEY k, int T);
+    // inline VALUE Find(Desc* desc, uint8_t opid, KEY k, int T);
+    //NOTE: add markfordeletion to Find
+
+	//bool ExecuteOps(Desc* desc, int threadId);
+
+
+	
 
 	//TODO UPDATE HASH FUNCTION
 	/**
@@ -268,11 +299,12 @@ ALLOCATOR_PERSISTABLE_ONLY_CODE
 
 	}
 
-    bool ExecuteOps(Desc* desc, int threadId);
+	bool ExecuteOps(Desc* desc, int threadId);
 	bool ExecuteOpsDBBenchmark(Desc* desc, int threadId);
 	bool ExecuteOpsTATPBenchmark(Desc* desc, int threadId);
 
-	//////////////////////////////////////////////////////////////////////////////////
+
+		//////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////Bit Marking Functions//////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////
@@ -322,9 +354,8 @@ ALLOCATOR_PERSISTABLE_ONLY_CODE
 		return oldCurrDesc->desc->ops[oldCurrDesc->opid].value;
 	}
 
-
 	inline int POW(int pow){
-		int res = 1;
+		int res=1;
 		if(pow==0) return 1;
 		else{
 			while(pow!=0){
@@ -335,15 +366,15 @@ ALLOCATOR_PERSISTABLE_ONLY_CODE
 		return res;
 	}
 
-
-
 inline bool Insert(Desc* desc, uint8_t opid, KEY k, VALUE v, int T)
 {
     //inserted = NULL;
-	// printf("Insert %d begins!\n\r", k);
 
-    NodeDesc* nodeDesc = new(m_nodeDescAllocator->Alloc()) NodeDesc(desc, opid);
-	// printf("Insert %d after NodeDesc alloc!\n\r", k);
+//	#ifdef USE_MEM_POOL
+    	NodeDesc* nodeDesc = new(m_nodeDescAllocator->Alloc()) NodeDesc(desc, opid);
+//    #else
+//    	NodeDesc* nodeDesc = (NodeDesc*)malloc(sizeof(NodeDesc));nodeDesc->desc = desc;nodeDesc->opid=opid;
+//	#endif
 
 	HASH hash=HASH_KEY(k);//reorders the bits in the key to more evenly distribute the bits
 	#ifdef useThreadWatch
@@ -351,30 +382,27 @@ inline bool Insert(Desc* desc, uint8_t opid, KEY k, VALUE v, int T)
 	#endif
 	
 	//Allocates a bucket, then stores the value, key and hash into it
-    // DataNode *temp_bucket=(DataNode *) new(m_nodeAllocator->Alloc()) DataNode();
-    DataNode *temp_bucket = Allocate_Node(v,hash,T, nodeDesc);
-	// printf("Insert %d after Allocate_Node!\n\r", k);
-
+	//#ifdef USE_KEY
+	//	DataNode *temp_bucket=Allocate_Node(v,k,hash,T, nodeDesc);
+	//#else
+		DataNode *temp_bucket=Allocate_Node(v,hash,T, nodeDesc);
+	//#endif
 	#ifdef DEBUG
 	assert(temp_bucket!=NULL);
 	#endif
 	
 	bool res=putIfAbsent_main(desc, hash,temp_bucket,T, nodeDesc);
-	// printf("Insert %d after putIfAbsent_main!\n\r", k);
-	// if(!res){
-	// 	Free_Node_Stack(temp_bucket, T);
-	// }
+	if(!res){
+		Free_Node_Stack(temp_bucket, T);
+	}
 		
 	#ifdef useThreadWatch
 		Thread_watch[T]=0;//Removes the hash from the watchlist
 	#endif	
-	//printf("Insert finishes!\n\r");
 	return res;
 }
 
-
 inline bool putIfAbsent_main(Desc* desc, HASH hash,DataNode *temp_bucket, int T, NodeDesc* nodeDesc){
-	// printf("putIfAbsent_main begins!\n\r");
 	
 	//This count bounds the number of times the thread will loop as a result of CAS failure.
 	int cas_fail_count=0;
@@ -511,7 +539,7 @@ insert_main:
 			}//End Else Create Spine
 		}//End Else, Data Node
 	}//End While Loop
-	//printf("putIfAbsent_main returns false!\n\r");
+
 	return false;
  }//End Put Main
 
@@ -523,7 +551,6 @@ replace MAIN_POW/MAIN_SIZE with correct values, then change put_main's calls to 
 **DONT FORGET: to do get/delete as well
 */
 inline bool putIfAbsent_sub(Desc* desc,void* /* volatile  */* local, DataNode *temp_bucket, int T, NodeDesc* nodeDesc){
-	//printf("putIfAbsent_sub begins!\n\r");
 	insert_sub:
 		HASH h=(temp_bucket->hash)>>MAIN_POW;//Shifts the hash to move the siginifcant bits to the right most position
 	for(int right=MAIN_POW; right<KEY_SIZE; right+=SUB_POW){
@@ -536,7 +563,6 @@ inline bool putIfAbsent_sub(Desc* desc,void* /* volatile  */* local, DataNode *t
 		int cas_fail_count=0;//CAS fail count, as described in put_main
 
 		void *node=getNodeRaw(local,pos);
-		// printf("node from getNodeRaw: %p , pos=%d, local=%p\n\r", node, pos, local);
 		do{
 			if(cas_fail_count>=MAX_CAS_FAILURE){
 					#ifdef DEBUGPRINTS_MARK
@@ -549,7 +575,6 @@ inline bool putIfAbsent_sub(Desc* desc,void* /* volatile  */* local, DataNode *t
 			
 			
 			if(node==NULL){//Same logic as Put Main
-			//printf("putIfAbsent_sub if(node==NULL){!\n\r");
 				void *node2;
 				if( (node2=replace_node(local, pos, NULL, temp_bucket))==node){
 					increment_size();//Increments size because an element was insert
@@ -596,7 +621,6 @@ inline bool putIfAbsent_sub(Desc* desc,void* /* volatile  */* local, DataNode *t
 
 			                //if(currDesc == oldCurrDesc)
 			                {
-								//printf("putIfAbsent_sub came here!\n\r");
 			                    //Update desc to logically add the key to the table since it's already physically there
 			                    currDesc = __sync_val_compare_and_swap(&((DataNode *)node2)->nodeDesc, oldCurrDesc, nodeDesc);
 
@@ -636,12 +660,10 @@ inline bool putIfAbsent_sub(Desc* desc,void* /* volatile  */* local, DataNode *t
 			}
 			else if(isSpine(node)){//If it is a spine break out of the while loop and continue
 				//the for loop, then examine the enxt depth
-				//printf("putIfAbsent_sub else if(isSpine(node)!\n\r");
 				local=unmark_spine(node);
 				break;
 			}
 			else if(isMarkedData(node)){
-				//printf("putIfAbsent_sub isMarkedData(node)!\n\r");
 					#ifdef DEBUGPRINTS_MARK
 					printf("Found marked sub\n");
 					#endif
@@ -651,7 +673,6 @@ inline bool putIfAbsent_sub(Desc* desc,void* /* volatile  */* local, DataNode *t
 				break;
 			}
 			else{//is Data Node
-			//printf("putIfAbsent_sub else!\n\r");
 				#ifdef DEBUG
 				if( ((DataNode *)node)->hash==0){
 					quick_print(local);
@@ -660,10 +681,8 @@ inline bool putIfAbsent_sub(Desc* desc,void* /* volatile  */* local, DataNode *t
 				}
 				#endif
 				if( ((DataNode *)node)->hash==temp_bucket->hash  ){//It is a key match
-				//printf("putIfAbsent_sub if( ((DataNode *)node)->hash==temp_bucket->hash  ){//It is a key match!\n\r");
 					NodeDesc* oldCurrDesc = ((DataNode *)node)->nodeDesc;
 					FinishPendingTxn(oldCurrDesc, desc, T);
-					//printf("putIfAbsent_sub after FinishPendingTxn\n\r");
 
 		            if(IsSameOperation(oldCurrDesc, nodeDesc))
 		            {
@@ -675,7 +694,6 @@ inline bool putIfAbsent_sub(Desc* desc,void* /* volatile  */* local, DataNode *t
 		            	return false;
 	                else // the key they wanted to insert, isn't logically in the table so we can insert
 	            	{
-						//printf("putIfAbsent_sub  !IsKeyExist\n\r");
 	            		
 	            		NodeDesc* currDesc = ((DataNode *)node)->nodeDesc;
 
@@ -717,7 +735,6 @@ inline bool putIfAbsent_sub(Desc* desc,void* /* volatile  */* local, DataNode *t
 				}
 				else{//Create a Spine
 				//noMatch_putSub2:
-				//printf("putIfAbsent_sub else{//Create a Spine!\n\r");
 					bool res=Allocate_Spine(T, local,pos,(DataNode *)node,temp_bucket, right+SUB_POW);
 					if(res){
 						increment_size();
@@ -733,7 +750,7 @@ inline bool putIfAbsent_sub(Desc* desc,void* /* volatile  */* local, DataNode *t
 		}while(true);//End While Loop
 	}//End For Loop
 
-//printf("putIfAbsent_sub returns false!\n\r");
+
 	return false;
 }//End Sub Put
 
@@ -742,9 +759,11 @@ inline bool putIfAbsent_sub(Desc* desc,void* /* volatile  */* local, DataNode *t
 inline bool Update(Desc* desc, uint8_t opid, KEY k,/*VALUE e_value,*/ VALUE v, int T){//, DataNode*& toreturn){//T is the executing thread's ID
 	/*if(e_value==v)
 		return true;*/
-
-	NodeDesc* nodeDesc = new(m_nodeDescAllocator->Alloc()) NodeDesc(desc, opid);
-
+//	#ifdef USE_MEM_POOL
+		NodeDesc* nodeDesc = new(m_nodeDescAllocator->Alloc()) NodeDesc(desc, opid);
+//	#else
+//		NodeDesc* nodeDesc = (NodeDesc*)malloc(sizeof(NodeDesc));nodeDesc->desc = desc;nodeDesc->opid=opid;
+//	#endif
 
 	
 	HASH hash=HASH_KEY(k);//reorders the bits in the key to more evenly distribute the bits
@@ -753,19 +772,19 @@ inline bool Update(Desc* desc, uint8_t opid, KEY k,/*VALUE e_value,*/ VALUE v, i
 #endif
 
 	//Allocates a bucket, then stores the value, key and hash into it
-
-    // DataNode *temp_bucket=(DataNode *) new(m_nodeAllocator->Alloc()) DataNode();
-    DataNode *temp_bucket = Allocate_Node(v,hash,T, nodeDesc);
-
-
+//#ifdef USE_KEY
+//	DataNode *temp_bucket=Allocate_Node(v,k,hash,T, nodeDesc);
+//#else
+	DataNode *temp_bucket=Allocate_Node(v,hash,T, nodeDesc);
+//#endif
 #ifdef DEBUG
 	assert(temp_bucket!=NULL);
 #endif
 
 	bool res=putUpdate_main(desc, hash,/*e_value,*/ temp_bucket,T, nodeDesc);//, toreturn);
-	// if(!res){
-	// 	Free_Node_Stack(temp_bucket, T);
-	// }
+	if(!res){
+		Free_Node_Stack(temp_bucket, T);
+	}
 
 #ifdef useThreadWatch
 	Thread_watch[T]=0;//Removes the hash from the watchlist
@@ -1040,8 +1059,11 @@ They don't modify the table and if a data node is marked they ignore the marking
 	// for the while loop and needs to be done for map interface in general in the update template pseudocode
 	//inline VALUE get_first(KEY k, int T){
 inline VALUE Find(Desc* desc, uint8_t opid, KEY k, int T){
+//	#ifdef USE_MEM_POOL
 		NodeDesc* nodeDesc = new(m_nodeDescAllocator->Alloc()) NodeDesc(desc, opid);
-
+//	#else
+//		NodeDesc* nodeDesc = (NodeDesc*)malloc(sizeof(NodeDesc));nodeDesc->desc = desc;nodeDesc->opid=opid;
+//	#endif
 		HASH h=HASH_KEY(k);//Reorders the bits for more even distribution
 #ifdef useThreadWatch
 		Thread_watch[T]=h;//Adds the hash to the watchlist
@@ -1052,8 +1074,8 @@ inline VALUE Find(Desc* desc, uint8_t opid, KEY k, int T){
 #endif
 		return v;
 	}
-
-inline VALUE get_main(Desc* desc, HASH hash, NodeDesc* nodeDesc, int T) {
+	
+	inline VALUE get_main(Desc* desc, HASH hash, NodeDesc* nodeDesc, int T) {
 	find_main:
 		int pos=getMAINPOS(hash);//&(MAIN_SIZE-1));
 	#ifdef DEBUG	
@@ -1097,12 +1119,6 @@ inline VALUE get_main(Desc* desc, HASH hash, NodeDesc* nodeDesc, int T) {
 	                	((DataNode *)node)->value = currDesc->desc->ops[currDesc->opid].value;
 	                }
 
-// READ_ONLY_OPT_CODE
-// (
-//         if(desc->isReadOnly)
-//             return ((DataNode *)node)->value;
-// ) 					
-
 	                //if(currDesc == oldCurrDesc)
 	                {
 	                    //Update desc to logically add the key to the table since it's already physically there
@@ -1144,8 +1160,8 @@ inline VALUE get_main(Desc* desc, HASH hash, NodeDesc* nodeDesc, int T) {
 			}
 		}//End Is Data Node
 	}//End Get Main
-
-inline VALUE get_sub(Desc* desc, HASH hash, void* /* volatile  */* local, NodeDesc* nodeDesc, int T){
+	
+	inline VALUE get_sub(Desc* desc, HASH hash, void* /* volatile  */* local, NodeDesc* nodeDesc, int T){
 	find_sub:
 		HASH h=hash>>MAIN_POW; //Adjusts the hash bits
 		int pos=h&(SUB_SIZE-1);//determines the position to check
@@ -1188,12 +1204,6 @@ inline VALUE get_sub(Desc* desc, HASH hash, void* /* volatile  */* local, NodeDe
 		                {
 		                	((DataNode *)node)->value = currDesc->desc->ops[currDesc->opid].value;
 		                }
-
-// READ_ONLY_OPT_CODE
-// (
-//         if(desc->isReadOnly)
-//             return ((DataNode *)node)->value;
-// ) 						
 
 		                //if(currDesc == oldCurrDesc)
 		                {
@@ -1280,12 +1290,6 @@ inline VALUE get_sub(Desc* desc, HASH hash, void* /* volatile  */* local, NodeDe
                 	((DataNode *)node)->value = currDesc->desc->ops[currDesc->opid].value;
                 }
 
-// READ_ONLY_OPT_CODE
-// (
-//         if(desc->isReadOnly)
-//             return ((DataNode *)node)->value;
-// ) 				
-
                 //if(currDesc == oldCurrDesc)
                 {
                     //Update desc to logically add the key to the table since it's already physically there
@@ -1321,7 +1325,8 @@ inline VALUE get_sub(Desc* desc, HASH hash, void* /* volatile  */* local, NodeDe
 		}
 		/*else
 			return NULL;*/
-	}//end get sub    
+	}//end get sub
+
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -1346,9 +1351,11 @@ If it failes to remove an element, and the current node is now...
 	//inline bool remove_first(KEY k, int T){
 	//NOTE: nodeDesc is pass by value
 inline bool Delete(Desc* desc, uint8_t opid, KEY k, int T){
-	//printf("Delete starts!\n\r");
-	    NodeDesc* nodeDesc = new(m_nodeDescAllocator->Alloc()) NodeDesc(desc, opid);
-		// NodeDesc* nodeDesc = (NodeDesc*)malloc(sizeof(NodeDesc));nodeDesc->desc = desc;nodeDesc->opid=opid;
+//	#ifdef USE_MEM_POOL
+		NodeDesc* nodeDesc = new(m_nodeDescAllocator->Alloc()) NodeDesc(desc, opid);
+//	#else
+//		NodeDesc* nodeDesc = (NodeDesc*)malloc(sizeof(NodeDesc));nodeDesc->desc = desc;nodeDesc->opid=opid;
+//	#endif
 		HASH h=HASH_KEY(k);//Reorders the bits for more even distribution
 #ifdef useThreadWatch
 		Thread_watch[T]=h;//Adds the key to the watchlist
@@ -1358,7 +1365,6 @@ inline bool Delete(Desc* desc, uint8_t opid, KEY k, int T){
 #ifdef useThreadWatch
 		Thread_watch[T]=0;//Removes the key from the watch list
 #endif
-		//printf("Delete finishes!\n\r");
 		return res;//Returns the result.
 	}
 	
@@ -1430,8 +1436,8 @@ inline bool Delete(Desc* desc, uint8_t opid, KEY k, int T){
 	//noMatch_removeMain:
 		return false;
 	}//End Remove Main
-
-inline bool remove_sub(Desc* desc, HASH hash, void* /* volatile  */ * local, int T, NodeDesc* nodeDesc) {
+	
+	inline bool remove_sub(Desc* desc, HASH hash, void* /* volatile  */ * local, int T, NodeDesc* nodeDesc) {
 	delete_sub:
 		HASH h=hash>>MAIN_POW;//Adjusts the hash
 		int pos=h&(SUB_SIZE-1);//Gets the position of the sig node
@@ -1512,7 +1518,7 @@ inline bool remove_sub(Desc* desc, HASH hash, void* /* volatile  */ * local, int
 		return false;
 	}//End Remove Sub
 
-	/**
+		/**
 	This function is used to expand the table at a position that is under heavy CAS contention.
 	IF a thread fails to pass a CAS on a position in X tries, and the current values after those
 	CAS operations don't allow the thread to return, the thread will mark the node.
@@ -1527,7 +1533,7 @@ inline bool remove_sub(Desc* desc, HASH hash, void* /* volatile  */ * local, int
 	
 	If it is data then a spine containing an unmarked node is created at the position
 	*/
-	void * forceExpandTable(int T,void * /* volatile  */ *local,int pos, void *n, int right){
+void * forceExpandTable(int T,void * /* volatile  */ *local,int pos, void *n, int right){
 		
 		//Gets a Spine node from the Spine pool or allocates a new one
 		//See Allocate_Spine for more details on the Spine Pool
@@ -1594,18 +1600,87 @@ inline bool remove_sub(Desc* desc, HASH hash, void* /* volatile  */ * local, int
 	If there are no nodes in the stack or vector, then the thread will allocate a new node
 	
 	**/
+	//#ifdef USE_KEY
+	//	inline DataNode * Allocate_Node(VALUE v, KEY k, HASH h, int T, NodeDesc* nodeDesc){
+	//#else
 		inline DataNode * Allocate_Node(VALUE v, HASH h, int T, NodeDesc* nodeDesc){
+	//#endif
 	
-	    DataNode *new_temp_node=(DataNode *) new(m_nodeAllocator->Alloc()) DataNode();
-        new_temp_node->value =v;//Assign the value
+	    DataNode *new_temp_node=(DataNode *)Thread_pool_stack[T];
+		
+	    if(new_temp_node!=NULL){//Check to see if the stack was empty
+			Thread_pool_stack[T]=new_temp_node->next;//If it wasn't set the stack equal to the next pointer
+            #ifdef DEBUGPRINTS_RECYCLE
+				printf("Removed From the Stack %p by %d\n",new_temp_node,T);
+			#endif 
+			//The Next pointer can be NULL or a data node memory address
+	    }
+	    else{//Check the Vector
+#ifdef useVectorPool
+			int size=Thread_pool_vector_size[T];
+			for(int i=0; i<size; i++){//Goes through each position in the reuse vector
+				DataNode *D=(DataNode *)(Thread_pool_vector[T][i]);//Gets the reference
+				if( (D!=NULL) && (!inUse(D->hash,T)) ){//If it is not null and not inuse, then
+					Thread_pool_vector[T][i]=NULL;//Set the Position to NULL
+
+					#ifdef DEBUGPRINTS_RECYCLE
+					printf("Removed From the vector %p by %d\n",D,T);
+					#endif 
+				
+					D->value = v;//Assign the value
+					D->hash = h;//Assign the hash
+					//#ifdef USE_KEY
+					//D->key = k;//Assign the key
+					//#endif
+					return D;//Return
+				}//End if
+			}//End For Loop on Vector
+#endif
+			//No valid nodes, then malloc
+			new_temp_node= (DataNode *)calloc(1,sizeof(DataNode));
+			#ifdef DEBUG
+			assert(new_temp_node!=NULL);//Insures a node was allocated
+			#endif
+	    }//End Else
+	    
+	    new_temp_node->value =v;//Assign the value
 	    new_temp_node->hash = h;//Assign the hash
+	//#ifdef USE_KEY
+	//    new_temp_node->key = k;//Assign the key
+	//#endif
+	
 		new_temp_node->nodeDesc = nodeDesc;
 
-	    return new_temp_node;//Return        
-
+	    return new_temp_node;//Return
 	}
+	
 
-/**
+	
+	/*
+	Adds a node to the stack, used for when a thread fails to insert its node and chooses not to try again.
+	See logic above put main for scenarios when a threads operation is immeditly replaced
+	*/
+	inline void Free_Node_Stack(void *node, int T){
+		
+		//Add to Stack
+		/*if(Thread_pool_stack[T]==NULL){//If null set the next pointer to NULL
+			Thread_pool_stack[T]=node;
+			((DataNode *)node)->next=NULL;
+			return;
+		}
+		else{*/
+			((DataNode *)node)->next=Thread_pool_stack[T];//Sets the next pointer to the stack
+			Thread_pool_stack[T]=node;//Then set the stack to the node
+			#ifdef DEBUGPRINTS_RECYCLE
+			printf("Placed on Stack(4) %p by %d\n",node,T);
+			#endif
+			return;
+	//	}
+	}
+	
+	
+	
+	/**
 	This function  allocates the spine nodes used for expansion
 	
 	IF two nodes collide more than once, then the collision is fully resolved.
@@ -1613,7 +1688,7 @@ inline bool remove_sub(Desc* desc, HASH hash, void* /* volatile  */ * local, int
 	to be reused later on.
 	
 	*/
-	inline bool Allocate_Spine(int T, void* /* volatile  */* s, int pos, DataNode *n1/*current node*/, DataNode *n2/*colliding node*/, int right){
+inline bool Allocate_Spine(int T, void* /* volatile  */* s, int pos, DataNode *n1/*current node*/, DataNode *n2/*colliding node*/, int right){
 		//printf("Allocate_Spine begins!\n\r");
 		//Gets the hash value of the node to replace
 		
@@ -1773,20 +1848,33 @@ inline bool remove_sub(Desc* desc, HASH hash, void* /* volatile  */ * local, int
 			return false;
 		}
 	}//End Spine Allocator	
-
+	
 	//Allocate spine from memory
 	inline void * getSpine(){
 		//Could add Code to allocate more than one spine
-		//printf("getSpine begins!\n\r");
-	    MapSpine *new_temp_spine=(MapSpine *) new(m_mapSpineAllocator->Alloc()) MapSpine();
+		void* s=(void*)calloc(SUB_SIZE,(sizeof(void */* volatile  */)));
 		#ifdef DEBUG
-		assert(new_temp_spine!=NULL);
+		assert(s!=NULL);
 	//	assert(isEmptyArray(s,SUB_SIZE));
 		#endif
-		//printf("getSpine finishes!\n\r");
-		return new_temp_spine;
-	}	
-
+		return s;
+	}
+   
+	/*Loop through the thread watch list and if any thread is watching the hash value
+		Then return true, otherwise return false.
+		We can ignore our own thread
+	*/
+#ifdef useThreadWatch
+	inline bool inUse(HASH h, int T){
+		//Thread_pool_stack		Thread_pool_vector
+        for(int i=0; i<Threads; i++){
+            if(h==Thread_watch[i] && T!=i)//HASH Compare
+                return true;
+        }
+        return false;
+	}; //TODO: pretty sure this semicolon is just ignored
+#endif
+	
 // //////Atomic CAS/Writes////
 // //SWAPS NULL OR DATA NODE FOR DATA NODE
 	inline void * replace_node(void* /* volatile  */ *s , int pos, void *current_node, DataNode *new_node){
@@ -1798,12 +1886,10 @@ inline bool remove_sub(Desc* desc, HASH hash, void* /* volatile  */ * local, int
 	}
 // //Replaces two pointers
 	inline void * replace_node(void* /* volatile  */ *s, int pos, void *current_node, void *new_node) {
-		//printf("replace_node begins %p == %p ?\n\r", current_node, s[pos]);
+		
 		if (current_node == s[pos]) {
-			//printf("replace_node if (current_node == s[pos]) {\n\r");
 			return __sync_val_compare_and_swap(&(s[pos]), current_node, new_node);
 		}
-		//printf("replace_node returns s[pos]=%p\n\r", s[pos]);
 		return  s[pos];
 	}
 
@@ -1813,7 +1899,7 @@ inline bool remove_sub(Desc* desc, HASH hash, void* /* volatile  */ * local, int
 			return __sync_bool_compare_and_swap(&(s[pos]), current_node, NULL);
 		}
 		return false;
-	}    
+	}
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -1839,6 +1925,8 @@ int capacity(){
 		return -1;
 	#endif
 }
+
+
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -1868,12 +1956,12 @@ inline void FinishPendingTxn(NodeDesc* nodeDesc, Desc* desc, int threadId)
     }
 
     //HelpOps(nodeDesc->desc, nodeDesc->opid + 1, threadId);
-	HelpOps_rec(nodeDesc->desc, nodeDesc->opid + 1, threadId); 
+	HelpOps_rec(nodeDesc->desc, nodeDesc->opid + 1, threadId);
 }
 
 inline bool IsNodeActive(NodeDesc* nodeDesc)
 {
-    bool ret = (nodeDesc->desc->status == MAP_COMMITTED);
+	bool ret = (nodeDesc->desc->status == MAP_COMMITTED);
 
     PERSIST_CODE
     (
@@ -1881,7 +1969,6 @@ inline bool IsNodeActive(NodeDesc* nodeDesc)
     )
 
     return ret;
-
 }
 
 // checks if the node exists
@@ -1963,6 +2050,7 @@ PERSIST_CODE
 	void persistDesc(Desc* desc);
 )	
 
+
 	Allocator<void **>* m_headAllocator;
     Allocator<DataNode>* m_nodeAllocator;
     Allocator<Desc>* m_descAllocator;
@@ -1989,11 +2077,8 @@ PERSIST_CODE
     uint32_t g_count_commit = 0;
     uint32_t g_count_abort = 0;
     uint32_t g_count_fake_abort = 0;
-
-
-};// end class TransMap
-
+}; // end class TransMap
 
  
 
-#endif /* end of include guard: TRANSMAP_H */
+#endif /* end of include guard: TRANSMAP_H */    
