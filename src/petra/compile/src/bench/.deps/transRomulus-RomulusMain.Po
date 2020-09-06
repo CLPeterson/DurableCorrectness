@@ -822,69 +822,37 @@ bench/transRomulus-RomulusMain.o: ../../dev/src/bench/RomulusMain.cc \
  ../../dev/src/bench/RomulusSetadaptor.h \
  ../../dev/src/bench/../romulus/datastructures/TMLinkedListSet.hpp \
  ../../dev/src/bench/../romulus/datastructures/../commonromulus/tm.h \
- ../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/RomulusLR.hpp \
- /usr/include/x86_64-linux-gnu/sys/mman.h \
- /usr/include/x86_64-linux-gnu/bits/mman.h \
- /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
- /usr/include/x86_64-linux-gnu/bits/mman-shared.h \
+ ../../dev/src/bench/../romulus/datastructures/../commonromulus/../pmdk/PMDKTM.hpp \
+ /usr/include/c++/8/shared_mutex /usr/include/c++/8/condition_variable \
+ /usr/include/libpmemobj++/p.hpp \
+ /usr/include/libpmemobj++/detail/common.hpp \
+ /usr/include/libpmemobj++/detail/pexceptions.hpp \
+ /usr/include/libpmemobj/tx_base.h /usr/include/setjmp.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp2.h \
+ /usr/include/libpmemobj/base.h \
+ /usr/include/libpmemobj++/detail/specialization.hpp \
+ /usr/include/libpmemobj++/transaction.hpp \
+ /usr/include/libpmemobj++/pool.hpp \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h \
- /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/fcntl.h \
- /usr/include/x86_64-linux-gnu/bits/fcntl.h \
- /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
- /usr/include/linux/falloc.h /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
- /usr/include/libpmem.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/mmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/mm_malloc.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/emmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/pmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/tmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/popcntintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/wmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avxintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx2intrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512erintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512pfintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512cdintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vlintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512bwintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512dqintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vlbwintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vldqintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512ifmaintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512ifmavlintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vbmiintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vbmivlintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx5124fmapsintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx5124vnniwintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vpopcntdqintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vbmi2intrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vbmi2vlintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vnniintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vnnivlintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vpopcntdqvlintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/avx512bitalgintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/shaintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/lzcntintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/bmiintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/bmi2intrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/fmaintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/f16cintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/rtmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/xtestintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/cetintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/gfniintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/vaesintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/vpclmulqdqintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/movdirintrin.h \
- ../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../commonromulus/pfences.h \
- ../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../commonromulus/ThreadRegistry.hpp \
- ../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../../common/vsv.h \
+ /usr/include/x86_64-linux-gnu/bits/statx.h \
+ /usr/include/libpmemobj++/detail/ctl.hpp /usr/include/libpmemobj.h \
+ /usr/include/libpmemobj/action.h /usr/include/libpmemobj/action_base.h \
+ /usr/include/libpmemobj/atomic.h /usr/include/libpmemobj/atomic_base.h \
+ /usr/include/libpmemobj/types.h /usr/include/libpmemobj/ctl.h \
+ /usr/include/libpmemobj/iterator.h \
+ /usr/include/libpmemobj/iterator_base.h \
+ /usr/include/libpmemobj/lists_atomic.h \
+ /usr/include/libpmemobj/lists_atomic_base.h \
+ /usr/include/libpmemobj/thread.h /usr/include/libpmemobj/pool.h \
+ /usr/include/libpmemobj/pool_base.h /usr/include/libpmemobj/tx.h \
+ /usr/include/libpmemobj++/allocator.hpp \
+ /usr/include/libpmemobj++/detail/life.hpp \
+ /usr/include/libpmemobj++/detail/array_traits.hpp \
+ /usr/include/libpmemobj++/detail/integer_sequence.hpp \
+ /usr/include/libpmemobj++/persistent_ptr.hpp \
+ /usr/include/libpmemobj++/detail/persistent_ptr_base.hpp \
+ /usr/include/libpmemobj++/pext.hpp \
  ../../dev/src/bench/../romulus/datastructures/../../common/vsv.h \
  ../../dev/src/bench/../romulus/datastructures/TMHashMap.hpp \
  ../../dev/src/bench/../romulus/datastructures/TMSkipList.hpp \
@@ -2737,15 +2705,31 @@ bench/transRomulus-RomulusMain.o: ../../dev/src/bench/RomulusMain.cc \
 
 ../../dev/src/bench/../romulus/datastructures/../commonromulus/tm.h:
 
-../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/RomulusLR.hpp:
+../../dev/src/bench/../romulus/datastructures/../commonromulus/../pmdk/PMDKTM.hpp:
 
-/usr/include/x86_64-linux-gnu/sys/mman.h:
+/usr/include/c++/8/shared_mutex:
 
-/usr/include/x86_64-linux-gnu/bits/mman.h:
+/usr/include/c++/8/condition_variable:
 
-/usr/include/x86_64-linux-gnu/bits/mman-linux.h:
+/usr/include/libpmemobj++/p.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/mman-shared.h:
+/usr/include/libpmemobj++/detail/common.hpp:
+
+/usr/include/libpmemobj++/detail/pexceptions.hpp:
+
+/usr/include/libpmemobj/tx_base.h:
+
+/usr/include/setjmp.h:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp2.h:
+
+/usr/include/libpmemobj/base.h:
+
+/usr/include/libpmemobj++/detail/specialization.hpp:
+
+/usr/include/libpmemobj++/transaction.hpp:
+
+/usr/include/libpmemobj++/pool.hpp:
 
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 
@@ -2753,119 +2737,51 @@ bench/transRomulus-RomulusMain.o: ../../dev/src/bench/RomulusMain.cc \
 
 /usr/include/x86_64-linux-gnu/bits/statx.h:
 
-/usr/include/fcntl.h:
+/usr/include/libpmemobj++/detail/ctl.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/fcntl.h:
+/usr/include/libpmemobj.h:
 
-/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
+/usr/include/libpmemobj/action.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
+/usr/include/libpmemobj/action_base.h:
 
-/usr/include/linux/falloc.h:
+/usr/include/libpmemobj/atomic.h:
 
-/usr/include/x86_64-linux-gnu/bits/fcntl2.h:
+/usr/include/libpmemobj/atomic_base.h:
 
-/usr/include/libpmem.h:
+/usr/include/libpmemobj/types.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/immintrin.h:
+/usr/include/libpmemobj/ctl.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/mmintrin.h:
+/usr/include/libpmemobj/iterator.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/xmmintrin.h:
+/usr/include/libpmemobj/iterator_base.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/mm_malloc.h:
+/usr/include/libpmemobj/lists_atomic.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/emmintrin.h:
+/usr/include/libpmemobj/lists_atomic_base.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/pmmintrin.h:
+/usr/include/libpmemobj/thread.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/tmmintrin.h:
+/usr/include/libpmemobj/pool.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/smmintrin.h:
+/usr/include/libpmemobj/pool_base.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/popcntintrin.h:
+/usr/include/libpmemobj/tx.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/wmmintrin.h:
+/usr/include/libpmemobj++/allocator.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avxintrin.h:
+/usr/include/libpmemobj++/detail/life.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx2intrin.h:
+/usr/include/libpmemobj++/detail/array_traits.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512fintrin.h:
+/usr/include/libpmemobj++/detail/integer_sequence.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512erintrin.h:
+/usr/include/libpmemobj++/persistent_ptr.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512pfintrin.h:
+/usr/include/libpmemobj++/detail/persistent_ptr_base.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512cdintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vlintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512bwintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512dqintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vlbwintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vldqintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512ifmaintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512ifmavlintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vbmiintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vbmivlintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx5124fmapsintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx5124vnniwintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vpopcntdqintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vbmi2intrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vbmi2vlintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vnniintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vnnivlintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512vpopcntdqvlintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/avx512bitalgintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/shaintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/lzcntintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/bmiintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/bmi2intrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/fmaintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/f16cintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/rtmintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/xtestintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/cetintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/gfniintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/vaesintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/vpclmulqdqintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/8/include/movdirintrin.h:
-
-../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../commonromulus/pfences.h:
-
-../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../commonromulus/ThreadRegistry.hpp:
-
-../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../../common/vsv.h:
+/usr/include/libpmemobj++/pext.hpp:
 
 ../../dev/src/bench/../romulus/datastructures/../../common/vsv.h:
 

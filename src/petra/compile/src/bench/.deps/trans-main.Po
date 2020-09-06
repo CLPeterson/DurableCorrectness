@@ -922,10 +922,34 @@ bench/trans-main.o: ../../dev/src/bench/main.cc \
  ../../dev/src/bench/../lftt/map/../../common/vsv.h \
  ../../dev/src/bench/../romulus/datastructures/TMLinkedListSet.hpp \
  ../../dev/src/bench/../romulus/datastructures/../commonromulus/tm.h \
- ../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/RomulusLR.hpp \
- ../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../commonromulus/pfences.h \
- ../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../commonromulus/ThreadRegistry.hpp \
- ../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../../common/vsv.h \
+ ../../dev/src/bench/../romulus/datastructures/../commonromulus/../pmdk/PMDKTM.hpp \
+ /usr/include/c++/8/shared_mutex /usr/include/c++/8/condition_variable \
+ /usr/include/libpmemobj++/p.hpp \
+ /usr/include/libpmemobj++/detail/common.hpp \
+ /usr/include/libpmemobj++/detail/pexceptions.hpp \
+ /usr/include/libpmemobj/tx_base.h /usr/include/setjmp.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp2.h \
+ /usr/include/libpmemobj/base.h \
+ /usr/include/libpmemobj++/detail/specialization.hpp \
+ /usr/include/libpmemobj++/transaction.hpp \
+ /usr/include/libpmemobj++/pool.hpp \
+ /usr/include/libpmemobj++/detail/ctl.hpp /usr/include/libpmemobj.h \
+ /usr/include/libpmemobj/action.h /usr/include/libpmemobj/action_base.h \
+ /usr/include/libpmemobj/atomic.h /usr/include/libpmemobj/atomic_base.h \
+ /usr/include/libpmemobj/types.h /usr/include/libpmemobj/ctl.h \
+ /usr/include/libpmemobj/iterator.h \
+ /usr/include/libpmemobj/iterator_base.h \
+ /usr/include/libpmemobj/lists_atomic.h \
+ /usr/include/libpmemobj/lists_atomic_base.h \
+ /usr/include/libpmemobj/thread.h /usr/include/libpmemobj/pool.h \
+ /usr/include/libpmemobj/pool_base.h /usr/include/libpmemobj/tx.h \
+ /usr/include/libpmemobj++/allocator.hpp \
+ /usr/include/libpmemobj++/detail/life.hpp \
+ /usr/include/libpmemobj++/detail/array_traits.hpp \
+ /usr/include/libpmemobj++/detail/integer_sequence.hpp \
+ /usr/include/libpmemobj++/persistent_ptr.hpp \
+ /usr/include/libpmemobj++/detail/persistent_ptr_base.hpp \
+ /usr/include/libpmemobj++/pext.hpp \
  ../../dev/src/bench/../romulus/datastructures/../../common/vsv.h \
  ../../dev/src/bench/../common/allocator.h \
  ../../dev/src/bench/../common/vsv.h
@@ -3002,13 +3026,77 @@ bench/trans-main.o: ../../dev/src/bench/main.cc \
 
 ../../dev/src/bench/../romulus/datastructures/../commonromulus/tm.h:
 
-../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/RomulusLR.hpp:
+../../dev/src/bench/../romulus/datastructures/../commonromulus/../pmdk/PMDKTM.hpp:
 
-../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../commonromulus/pfences.h:
+/usr/include/c++/8/shared_mutex:
 
-../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../commonromulus/ThreadRegistry.hpp:
+/usr/include/c++/8/condition_variable:
 
-../../dev/src/bench/../romulus/datastructures/../commonromulus/../romuluslr/../../common/vsv.h:
+/usr/include/libpmemobj++/p.hpp:
+
+/usr/include/libpmemobj++/detail/common.hpp:
+
+/usr/include/libpmemobj++/detail/pexceptions.hpp:
+
+/usr/include/libpmemobj/tx_base.h:
+
+/usr/include/setjmp.h:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp2.h:
+
+/usr/include/libpmemobj/base.h:
+
+/usr/include/libpmemobj++/detail/specialization.hpp:
+
+/usr/include/libpmemobj++/transaction.hpp:
+
+/usr/include/libpmemobj++/pool.hpp:
+
+/usr/include/libpmemobj++/detail/ctl.hpp:
+
+/usr/include/libpmemobj.h:
+
+/usr/include/libpmemobj/action.h:
+
+/usr/include/libpmemobj/action_base.h:
+
+/usr/include/libpmemobj/atomic.h:
+
+/usr/include/libpmemobj/atomic_base.h:
+
+/usr/include/libpmemobj/types.h:
+
+/usr/include/libpmemobj/ctl.h:
+
+/usr/include/libpmemobj/iterator.h:
+
+/usr/include/libpmemobj/iterator_base.h:
+
+/usr/include/libpmemobj/lists_atomic.h:
+
+/usr/include/libpmemobj/lists_atomic_base.h:
+
+/usr/include/libpmemobj/thread.h:
+
+/usr/include/libpmemobj/pool.h:
+
+/usr/include/libpmemobj/pool_base.h:
+
+/usr/include/libpmemobj/tx.h:
+
+/usr/include/libpmemobj++/allocator.hpp:
+
+/usr/include/libpmemobj++/detail/life.hpp:
+
+/usr/include/libpmemobj++/detail/array_traits.hpp:
+
+/usr/include/libpmemobj++/detail/integer_sequence.hpp:
+
+/usr/include/libpmemobj++/persistent_ptr.hpp:
+
+/usr/include/libpmemobj++/detail/persistent_ptr_base.hpp:
+
+/usr/include/libpmemobj++/pext.hpp:
 
 ../../dev/src/bench/../romulus/datastructures/../../common/vsv.h:
 

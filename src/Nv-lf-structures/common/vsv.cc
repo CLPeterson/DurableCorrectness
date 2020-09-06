@@ -1555,6 +1555,27 @@ void insert_persist_map(void* ptr, int _item_key, int _item_val, Semantics _sema
 		Method m1_persist(-1, _process, _item_key, _item_val, _semantics, _type, 0, 0, true);
 		std::pair<void*,Method> pair (ptr,m1_persist);
 		persist_map[_process].insert(pair);
+	} else {
+		
+		if((got->second.item_key == _item_key) && (got->second.type == PRODUCER && _type == CONSUMER))
+		{
+			//Producer followed by Consumer eliminate each other
+			persist_map[_process].erase(got);
+		} else if ((got->second.item_key == _item_key) && (got->second.type == CONSUMER && _type == PRODUCER))
+		{
+			//Item exists in the persisted state
+			persist_map[_process].erase(got);
+			Method m1_persist(-1, _process, _item_key, _item_val, _semantics, _type, 0, 0, true);
+			std::pair<void*,Method> pair (ptr,m1_persist);
+			persist_map[_process].insert(pair);
+		}
+		/*else if((got->second.item_key == _item_key) && (got->second.type == PRODUCER && _type == WRITER)) {
+			//Writer overwrite Producer
+			persist_map[_process].erase(got);
+			Method m1_persist(-1, _process, _item_key, _item_val, _semantics, _type, 0, 0, true);
+			std::pair<void*,Method> pair (ptr,m1_persist);
+			persist_map[_process].insert(pair);
+		}*/
 	}
 }
 
@@ -1573,9 +1594,10 @@ void handle_PWB(void* ptr, long int _invocation, long int _response)
 
 		create_method_persist(got->second.item_key, got->second.item_val, got->second.semantics, got->second.type, _invocation, _response, true);
 		persist_map[_process].erase(got);
+	} else {
+		//printf("Thread %d: handle_PWB did not find Node %p\n", _process, ptr);
 	}
 }
-
 //TODO: FIXE ME!!!! Major Bug here, method will be inserted in thrd_lists twice when insert_txn is called
 #if STRICT_SERIALIZABILITY
 void insert_txn(long int _txn_invocation, long int _txn_response, int size)

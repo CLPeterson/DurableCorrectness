@@ -286,10 +286,12 @@ public:
 bool ret = true;
         // TM_BEGIN_TRANSACTION();
 
+		long int txn_invocation = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS
+
         ret = poflf::OneFileLF::template updateTx<bool>([=] () {
                 bool ret = true;
         // TM_WRITE_TRANSACTION([&] () {
-			//long int txn_invocation = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS
+			
             for(uint32_t i = 0; i < ops.size(); ++i)
             {
 				long int response; //CORRECTNESS ANNOTATIONS
@@ -369,6 +371,8 @@ bool ret = true;
 			insert_txn_persist(txn_invocation_persist, txn_response_persist, ops.size()); //CORRECTNESS ANNOTATIONS
 			*/
 			
+			long int txn_response = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS
+			insert_txn(txn_invocation, txn_response, ops.size()); //CORRECTNESS ANNOTATIONS
         }
         else
         {
@@ -464,10 +468,12 @@ public:
 bool ret = true;
         // TM_BEGIN_TRANSACTION();
 
+		long int txn_invocation = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS
+
         ret = poflf::OneFileLF::template updateTx<bool>([=] () {
                 bool ret = true;
         // TM_WRITE_TRANSACTION([&] () {
-			long int txn_invocation = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS
+			
             for(uint32_t i = 0; i < ops.size(); ++i)
             {
 				long int response; //CORRECTNESS ANNOTATIONS
@@ -548,6 +554,8 @@ bool ret = true;
 			insert_txn_persist(txn_invocation_persist, txn_response_persist, ops.size()); //CORRECTNESS ANNOTATIONS
 			*/
 			
+			long int txn_response = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS
+			insert_txn(txn_invocation, txn_response, ops.size()); //CORRECTNESS ANNOTATIONS
         }
         else
         {
@@ -681,11 +689,14 @@ public:
     bool ExecuteOps(const MapOpArray& ops, int threadId)
     {
         bool ret = true;
+
+		long int txn_invocation = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS
+
         ret = poflf::OneFileLF::template updateTx<bool>([=] () {
                 bool ret = true;
             if(ret == true)
             {
-				long int txn_invocation = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS
+				
                 for(uint32_t i = 0; i < ops.size(); ++i)
                 {
 					long int response; //CORRECTNESS ANNOTATIONS
@@ -764,6 +775,8 @@ public:
 			insert_txn_persist(txn_invocation_persist, txn_response_persist, ops.size()); //CORRECTNESS ANNOTATIONS
 			*/
 			
+			long int txn_response = get_elapsed_nanoseconds(); //CORRECTNESS ANNOTATIONS
+			insert_txn(txn_invocation, txn_response, ops.size()); //CORRECTNESS ANNOTATIONS
         }
         else
         {
