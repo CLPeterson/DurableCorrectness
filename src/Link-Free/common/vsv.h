@@ -1,33 +1,6 @@
 #ifndef VSV_H
 #define VSV_H
 
-
-/*
-#include <chrono>
-#include <stdio.h>
-#include <thread>
-#include <chrono>
-#include <list>
-#include <atomic>
-//#include <queue>          // std::priority_queue
-#include <vector>         // std::vector
-#include <array>
-#include <map>
-#include <unordered_map>
-#include <climits>
-#include <stack>          // std::stack
-#include <math.h>       // pow 
-#include <boost/random.hpp>
-#include <sys/time.h>
-#include <mutex>
-#include "tbb/concurrent_hash_map.h"
-#include <sstream>
-*/
-
-//These options are mutually exclusive
-#define LINEARIZABILITY 1
-#define STRICT_SERIALIZABILITY 0
-
 //Toggle this flag for buffered durable linearizability
 #define BUFFERED_LINEARIZABILITY 0
 
@@ -37,7 +10,10 @@
 extern unsigned int NUM_THRDS;
 extern unsigned int TEST_SIZE;
 extern unsigned int TRANS_SIZE;
-extern unsigned int KEY_RANGE_; //Replace TEST_SIZE*NUM_THRDS*TRANS_SIZE
+extern unsigned int KEY_RANGE_; 
+extern bool VERBOSE;
+extern unsigned int LINEARIZABILITY;
+extern unsigned int STRICT_SERIALIZABILITY;
 
 typedef enum Semantics
 {
@@ -72,11 +48,9 @@ typedef struct Method
 	bool status;
 	bool persist;
 
-#if STRICT_SERIALIZABILITY
 	int txn_id;
 	long int txn_invocation;
 	long int txn_response;
-#endif
 
 	Method(int _id, int _process, int _item_key, int _item_val, Semantics _semantics, Type _type, long int _invocation, long int _response, bool _status) 
 	{
@@ -104,12 +78,10 @@ extern void create_method(int _item_key, int _item_val, Semantics _semantics, Ty
 extern void create_method_persist(int _item_key, int _item_val, Semantics _semantics, Type _type, long int _invocation, long int _response, bool _status);
 extern void insert_persist_map(void* ptr, int _item_key, int _item_val, Semantics _semantics, Type _type);
 extern void handle_PWB(void* ptr, long int _invocation, long int _response);
-#if STRICT_SERIALIZABILITY
 extern void insert_txn(long int _txn_invocation, long int _txn_response, int size);
 extern void insert_txn_persist(long int _txn_invocation, long int _txn_response, int size);
 extern void rollback_txn();
 extern void rollback_txn_persist();
-#endif
 extern void insert_method();
 extern void insert_method_persist();
 extern void vsv_exit();

@@ -55,7 +55,7 @@ READ_ONLY_OPT_CODE
         for(unsigned int i = 0; i < testSize; ++i)
         {
 if(VERBOSE) {
-			if(((int) i) % 10000 == 0) printf("Thread %d: Iteration %u\n", threadId, i);
+			if(((int) i) % 10000 == 0 && i != 0) printf("Thread %d: Iteration %u\n", threadId, i);
 }
 
             for(uint32_t t = 0; t < tranSize; ++t)
@@ -132,7 +132,7 @@ READ_ONLY_OPT_CODE
     for(unsigned int i = 0; i < testSize; ++i)
     {
 if(VERBOSE) {
-		if(((int) i) % 10000 == 0) printf("Thread %d: Iteration %u\n", threadId, i);
+		if(((int) i) % 10000 == 0 && i != 0) printf("Thread %d: Iteration %u\n", threadId, i);
 }
 
         for(uint32_t t = 0; t < tranSize; ++t)

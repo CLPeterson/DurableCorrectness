@@ -50,7 +50,9 @@ void WorkThread(uint32_t numThread, int threadId, uint32_t testSize, uint32_t tr
         // if(i % 100 == 0)
         //     std::cout << i << std::endl;
 
-		if(((int) i) % 10000 == 0) printf("Thread %d: Iteration %u\n", threadId, i);
+if(VERBOSE) {
+		if(((int) i) % 10000 == 0 && i != 0) printf("Thread %d: Iteration %u\n", threadId, i);
+}
 
         for(uint32_t t = 0; t < tranSize; ++t)
         {
@@ -90,7 +92,9 @@ void MapWorkThread(uint32_t numThread, int threadId, uint32_t testSize, uint32_t
 
     for(unsigned int i = 0; i < testSize; ++i)
     {
-		if(((int) i) % 10000 == 0) printf("Thread %d: Iteration %u\n", threadId, i);
+if(VERBOSE) {
+		if(((int) i) % 10000 == 0 && i != 0) printf("Thread %d: Iteration %u\n", threadId, i);
+}
 
         for(uint32_t t = 0; t < tranSize; ++t)
         {

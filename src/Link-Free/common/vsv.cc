@@ -8,13 +8,12 @@
 #include <thread>
 #include <list>
 #include <atomic>
-//#include <queue>          // std::priority_queue
-#include <vector>         // std::vector
+#include <vector> 
 #include <array>
 #include <map>
 #include <unordered_map>
 #include <climits>
-#include <stack>          // std::stack
+#include <stack>  
 #include <math.h>       // pow 
 #include <boost/random.hpp>
 #include <sys/time.h>
@@ -26,8 +25,11 @@
 unsigned int NUM_THRDS;
 unsigned int TEST_SIZE;
 unsigned int TRANS_SIZE;
-unsigned int KEY_RANGE_; //Replace TEST_SIZE*NUM_THRDS*TRANS_SIZE
+unsigned int KEY_RANGE_;
 Semantics SEMANTICS;
+bool VERBOSE;
+unsigned int LINEARIZABILITY;
+unsigned int STRICT_SERIALIZABILITY;
 
 struct MyHashCompare {
     //static size_t hash( int x ) { {
@@ -72,7 +74,6 @@ typedef struct Item
 
 	ItemStatus status;
 	
-	//std::stack<int> promote_items;
 	std::list<int> promote_items;
 
 	std::list<Method> demote_methods;
@@ -135,19 +136,16 @@ typedef struct Item
 	{
 		long int add_num = x * denominator;
 		numerator = numerator + add_num;
-		//printf("add_num = %ld, numerator/denominator = %ld\n", add_num, numerator/denominator);
 		sum = (double) numerator/denominator;
 	}
 	void sub_int(long int x)
 	{
 		long int sub_num = x * denominator;
 		numerator = numerator - sub_num;
-		//printf("sub_num = %ld, numerator/denominator = %ld\n", sub_num, numerator/denominator);
 		sum = (double) numerator/denominator;
 	}
 	void add_frac(long int num, long int den)
 	{
-		//printf("num = %ld, den = %ld, numerator = %ld, denominator = %ld\n", num, den, numerator, denominator);
 #if DEBUG_
 		if(den == 0)
 			printf("WARNING: add_frac: den = 0\n");
@@ -170,8 +168,6 @@ typedef struct Item
 #endif
 		sum = (double) numerator/denominator;
 
-		//if(sum < 0)
-			//printf("WARNING: ADD sum < 0\n");
 	}
 
 	void sub_frac(long int num, long int den)
@@ -204,7 +200,6 @@ typedef struct Item
 	{
 		exponent = exponent + 1;
 		long int den = (long int) pow (2, exponent);
-		//printf("denominator = %ld\n", den);
 		sub_frac(1, den);
 	}
 
@@ -220,7 +215,6 @@ typedef struct Item
 			den = 1;
 			printf("exponent = %.2f\n", exponent);
 		}
-		//printf("denominator = %ld\n", den);
 		add_frac(1, den);
 		exponent = exponent - 1;
 	}
@@ -280,14 +274,12 @@ typedef struct Item
 	{
 		exponent_f = exponent_f + 1;
 		long int den = (long int) pow (2, exponent_f);
-		//printf("denominator = %ld\n", den);
 		sub_frac_f(1, den);
 	}
 
 	void promote_f()
 	{
 		long int den = (long int) pow (2, exponent_f);
-		//printf("denominator = %ld\n", den);
 		add_frac_f(1, den);
 		exponent_f = exponent_f - 1;
 	}	
@@ -327,14 +319,12 @@ typedef struct Item
 	{
 		exponent_r = exponent_r + 1;
 		long int den = (long int) pow (2, exponent_r);
-		//printf("denominator = %ld\n", den);
 		sub_frac_r(1, den);
 	}
 
 	void promote_r()
 	{
 		long int den = (long int) pow (2, exponent_r);
-		//printf("denominator = %ld\n", den);
 		add_frac_r(1, den);
 		exponent_r = exponent_r - 1;
 	}	
@@ -360,7 +350,6 @@ std::chrono::time_point<std::chrono::high_resolution_clock> start;
 long int* method_time;
 int* method_id;
 int* method_id_persist;
-long int elapsed_time_verify;
 
 unsigned int method_count;
 
@@ -400,13 +389,9 @@ void handle_failed_consumer(std::map<long int,Method,bool(*)(long int,long int)>
 #if LINEARIZABILITY
 		if(it_0->second.response < it->second.invocation)
 #elif STRICT_SERIALIZABILITY
-		//if(it_0->second.response < it->second.invocation)
 		if((it_0->second.txn_id == it->second.txn_id && it_0->second.response < it->second.invocation) || (it_0->second.txn_response < it->second.txn_invocation))
 #endif
-		{
-			//std::unordered_map<int,Item>::iterator it_item_0;
-			//it_item_0 = map_items.find(it_0->second.item_key);
-			
+		{		
 			Item* vec_item_0;
 			if(it_0->second.item_key != INT_MIN)
 				vec_item_0 = vector_items[it_0->second.item_key];
@@ -429,13 +414,9 @@ void handle_failed_read(std::map<long int,Method,bool(*)(long int,long int)>& ma
 #if LINEARIZABILITY
 		if(it_0->second.response < it->second.invocation)
 #elif STRICT_SERIALIZABILITY
-		//if(it_0->second.response < it->second.invocation)
 		if((it_0->second.txn_id == it->second.txn_id && it_0->second.response < it->second.invocation) || (it_0->second.txn_response < it->second.txn_invocation))
 #endif
 		{
-			//std::unordered_map<int,Item>::iterator it_item_0;
-			//it_item_0 = map_items.find(it_0->second.item_key);
-			
 			Item* vec_item_0;
 			if(it_0->second.item_key != INT_MIN)
 				vec_item_0 = vector_items[it_0->second.item_key];
@@ -452,23 +433,19 @@ void handle_failed_read(std::map<long int,Method,bool(*)(long int,long int)>& ma
 
 void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map_methods, Item** vector_items, std::map<long int,Method,bool(*)(long int,long int)>::iterator& it_start, long unsigned int& count_iterated, long int min, bool reset_it_start, bool* final_outcome)
 {
-	//bool is_quiescent = true; //ADD to VectorSpace
-
 	if(!map_methods.empty())
 	{
 		std::stack<Item*> stack_consumer;
 		std::stack<std::map<long int,Method,bool(*)(long int,long int)>::iterator> stack_finished_methods;
 		std::stack<Item*> stack_failed;
 
-		//bool reset_it_start = true;
 		std::map<long int,Method,bool(*)(long int,long int)>::iterator it;
 
 		if(count_iterated == 0)
 		{
 			it=map_methods.begin();
 			reset_it_start = false;
-		//} else if(it != map_methods.end()) {
-		} else if(it_start != map_methods.end()) { //ADD to VectorSpace
+		} else if(it_start != map_methods.end()) {
 			it=++it_start;
 		} else {
 			it = it_start;
@@ -476,55 +453,28 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 	
 		for (; it!=map_methods.end(); ++it)
 		{
-			/*if(it->second.response > min) //ADD to VectorSpace
-			{
-				long int invoc[NUM_THRDS] = {};
-				std::map<long int,Method,bool(*)(long int,long int)>::iterator q_check;
-				int q_count = 0;
-				for(q_check = it; q_check != map_methods.end(); ++q_check)
-				{
-					if(invoc[q_check->second.process] != 0)
-					{
-						invoc[q_check->second.process] = q_check->second.invocation;
-						if(q_check->second.invocation < min)
-						{
-							is_quiescent = false;
-							break;
-						}
-
-						q_count = q_count + 1;
-						if(q_count >= (NUM_THRDS -1))
-							break;
-					}
-				}
-
-				break;
-			}*/
 #if DEBUG_
-			//if(vec_item->status != PRESENT)
-				//printf("WARNING: Current item not present!\n");
-
 			if((it->second).type == PRODUCER)
 				printf("PRODUCER invocation %ld, response %ld, item %d\n", it->second.invocation, it->second.response, it->second.item_key);
 			else if((it->second).type == CONSUMER)
 				printf("CONSUMER invocation %ld, response %ld, item %d\n", it->second.invocation, it->second.response, it->second.item_key);
 #endif
 
-
 			if(it->second.response > min) 
 			{
 				break;
 			}
 
-			if(method_count%5000 == 0)
+if(VERBOSE) {
+			if(method_count%5000 == 0 && method_count != 0)
 				printf("Method Count = %u\n", method_count);
+}
 			method_count = method_count + 1;
 
 			it_start = it;
 			reset_it_start = false;
 			count_iterated = count_iterated + 1;
 
-			//printf("it->second.item_key = %d, KEY_RANGE_ = %d, INT_MIN = %d\n", it->second.item_key, KEY_RANGE_, INT_MIN);
 			if(it->second.item_key != INT_MIN && vector_items[it->second.item_key] == NULL)
 			{
 				Item* item = new Item(it->second.item_key);
@@ -544,7 +494,6 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 				vec_item = vector_items[it->second.item_key];
 			} else {	
 				vec_item = vector_items[KEY_RANGE_];
-				//vec_item->producer = map_methods.end();
 			}
 
 			if(it->second.type == PRODUCER)
@@ -554,14 +503,8 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 					vec_item->producer = it;
 
 					vec_item->add_int(1);
-		
-					/*if(vec_item->status == ABSENT)
-					{				
-						vec_item->status = PRESENT;
-						vec_item->demote_methods.clear();
-					}*/
 					
-					if(vec_item->status == PRESENT) //ADD to VectorSpace
+					if(vec_item->status == PRESENT)
 					{
 						if(it->second.semantics == FIFO || it->second.semantics == LIFO)
 						{
@@ -571,7 +514,6 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 			#if LINEARIZABILITY
 								if(it_0->second.response < it->second.invocation)
 			#elif STRICT_SERIALIZABILITY
-								//if(it_0->second.response < it->second.invocation)
 								if((it_0->second.txn_id == it->second.txn_id && it_0->second.response < it->second.invocation) || (it_0->second.txn_response < it->second.txn_invocation))
 			#endif
 								{
@@ -586,7 +528,6 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 									//FIFO Semantics
 									if((it_0->second.type == PRODUCER && vec_item_0->status == PRESENT) && (it->second.type == PRODUCER) && (it_0->second.semantics == FIFO))
 									{
-										//vec_item_0->promote_items.push(vec_item->key);
 										vec_item_0->promote_items.push_back(vec_item->key);
 										vec_item->demote();
 										vec_item->demote_methods.push_back(it_0->second);
@@ -596,7 +537,6 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 									//LIFO Semantics
 									if((it_0->second.type == PRODUCER && vec_item_0->status == PRESENT) && (it->second.type == PRODUCER) && (it_0->second.semantics == LIFO))
 									{
-										//vec_item->promote_items.push(vec_item_0->key);
 										vec_item->promote_items.push_back(vec_item_0->key);
 										vec_item_0->demote();
 										vec_item_0->demote_methods.push_back(it->second);
@@ -619,16 +559,13 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 					vec_item->demote_r();
 
 				} else {
-					//TODO: Probably should handle the same as a failed consumer
 					handle_failed_read(map_methods, vector_items, it, vec_item, stack_failed);
 				}
 
 			}
 
-			//if(((it->second).type == CONSUMER) && ((it->second).semantics == FIFO))
 			if(it->second.type == CONSUMER)
 			{
-				//printf("Consume Item %d\n", it->second.item_key);
 				if(it->second.status == true)
 				{
 					//PROMOTE READS
@@ -640,38 +577,28 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 					vec_item->sub_int(1);
 
 					vec_item->status = ABSENT;
-
-					
+				
 					if(vec_item->sum < 0)
 					{
-						//printf("WARNING: Sum < 0\n");
 						std::list<Method>::iterator it_method;
 						for(it_method = vec_item->demote_methods.begin(); it_method != vec_item->demote_methods.end(); ++it_method)
 						{
-							//printf("Item %d considers promoting Item %d\n", it_method->item_key, vec_item->key);
-
 							if((it->second.response < it_method->invocation) || (it_method->response < it->second.invocation))
 							{
 								//Methods do not overlap
-								//printf("NOTE: Methods do not overlap\n");
-							} else {
-								//printf("NOTE: CONSUME Item %d overlaps with PRODUCE Item %d\n", it->second.item_val, it_method->item_val);
-								
+							} else {							
 								vec_item->promote();
-
 #if DEBUG_
 								printf("Item %d promotes Item %d\n", it_method->item_key, vec_item->key);
 #endif
 
-								//Need to remove from promote list
-								
+								//Need to remove from promote list							
 								Item* vec_method_item;
 								if(it_method->item_key != INT_MIN)
 									vec_method_item = vector_items[it_method->item_key];
 								else
 									vec_method_item = vector_items[KEY_RANGE_];
 								
-
 								std::list<int>::iterator it_item;
 								for(it_item = vec_method_item->promote_items.begin(); it_item != vec_method_item->promote_items.end(); ++it_item)
 								{
@@ -683,21 +610,16 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 								--it_method;
 								
 							}
-
 						}
 					}
 
 					stack_consumer.push(vec_item);
-
-					//map_methods.erase(it); //TODO: Dangerous, make sure this is correct
+					//map_methods.erase(it); //TODO: Handled in !stack_finished_methods.empty() loop
 					stack_finished_methods.push(it);
-					//printf("stack_finished_methods.push(Consume(%d))\n", it->second.item_key);
 
 					if(vec_item->producer != map_methods.end())
-					{
-						
+					{					
 						stack_finished_methods.push(vec_item->producer);
-						//printf("stack_finished_methods.push(Produce(%d))\n", vec_item->producer->second.item_key);
 					}
 
 				} else {	
@@ -756,15 +678,9 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 
 		//TODO: insert methods_top in a map and check for duplicates
 	
-		//printf("Handling stack_finished_method\n");
 		while(!stack_finished_methods.empty())
 		{
 			std::map<long int,Method,bool(*)(long int,long int)>::iterator methods_top = stack_finished_methods.top();
-			
-			//if(methods_top->second.type == PRODUCER)
-				//printf("Erase PRODUCER key %d, it_start->second.item_key = %d\n", methods_top->second.item_key, it_start->second.item_key);
-			//else if (methods_top->second.type == CONSUMER)
-				//printf("Erase CONSUMER key %d, it_start->second.item_key = %d\n", methods_top->second.item_key, it_start->second.item_key);
 				
 			if(methods_top->second.item_key != it_start->second.item_key) 
 			{
@@ -779,12 +695,7 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 					else if (methods_top->second.type == CONSUMER)
 						printf("CONSUMER key %d, response = %ld not found in method map\n", methods_top->second.item_key, methods_top->second.response);
 #endif
-				} else {
-					/*if(methods_top->second.type == PRODUCER)
-						printf("PRODUCER key %d, response = %ld found in method map\n", methods_top->second.item_key, methods_top->second.response);
-					else if (methods_top->second.type == CONSUMER)
-						printf("CONSUMER key %d, response = %ld found in method map\n", methods_top->second.item_key, methods_top->second.response);*/
-				}
+				} 
 
 				//if(methods_top != map_methods.end() && methods_top != map_methods.begin())
 				if (it_method != map_methods.end())
@@ -795,128 +706,154 @@ void verify_checkpoint(std::map<long int,Method,bool(*)(long int,long int)>& map
 					else if (methods_top->second.type == CONSUMER)
 						printf("Erase CONSUMER key %d, it_start->second.item_key = %d\n", methods_top->second.item_key, it_start->second.item_key);
 #endif
-
-					map_methods.erase(methods_top); //TODO: Dangerous, make sure this is correct, fails with the persistent verification	
-					//printf("Erase return\n");	
+					map_methods.erase(methods_top); //TODO: Dangerous, make sure this is correct, fails with the persistent verification
 				}
 			}
 			stack_finished_methods.pop();
 		}
-		//printf("Finished handling stack_finished_method\n");
 		
 		//Verify Sums 
-		bool outcome = true; //ADD to VectorSpace
+		bool outcome = true; 
 
-		//if(is_quiescent) //ADD to VectorSpace
-		//{
-			Item* vec_verify;
-			for (int i = 0; i < KEY_RANGE_+1; i++)
+		Item* vec_verify;
+		for (int i = 0; i < KEY_RANGE_+1; i++)
+		{
+			vec_verify = vector_items[i];
+
+			if(vec_verify == NULL) continue;
+
+			if(vec_verify->sum < 0)
 			{
-				vec_verify = vector_items[i];
+				outcome = false;
 
-				if(vec_verify == NULL) continue;
-
-				if(vec_verify->sum < 0)
+				std::pair<int,int> mypair (vec_verify->key,vec_verify->key);
+				incorrect_methods.insert(mypair);
+//#if DEBUG_
+				/*printf("Demote list:\n");
+				std::list<Method>::iterator it_m;
+				for(it_m = vec_verify->demote_methods.begin(); it_m != vec_verify->demote_methods.end(); ++it_m)
 				{
-					outcome = false;
-	//#if DEBUG_
-					//printf("WARNING: Item %d, sum %.2lf\n", it_verify->second.key, it_verify->second.sum);
-					//printf("WARNING: Item %d, sum %.2lf\n", vec_verify->key, vec_verify->sum);
-					std::pair<int,int> mypair (vec_verify->key,vec_verify->key);
-					incorrect_methods.insert(mypair);
-					/*printf("Demote list:\n");
-					std::list<Method>::iterator it_m;
-					for(it_m = vec_verify->demote_methods.begin(); it_m != vec_verify->demote_methods.end(); ++it_m)
+					printf("%d, Promote List: ", it_m->item_key);
+					Item* vec_promote_item;
+					if(it_m->item_key != INT_MIN)
+						vec_promote_item = vector_items[it_m->item_key];
+					else
+						vec_promote_item = vector_items[KEY_RANGE_];
+
+					std::list<int>::iterator it_item1;
+					for(it_item1 = vec_promote_item->promote_items.begin(); it_item1 != vec_promote_item->promote_items.end(); ++it_item1)
 					{
-						printf("%d, Promote List: ", it_m->item_key);
-						Item* vec_promote_item;
-						if(it_m->item_key != INT_MIN)
-							vec_promote_item = vector_items[it_m->item_key];
-						else
-							vec_promote_item = vector_items[KEY_RANGE_];
-
-						std::list<int>::iterator it_item1;
-						for(it_item1 = vec_promote_item->promote_items.begin(); it_item1 != vec_promote_item->promote_items.end(); ++it_item1)
-						{
-							printf("%d ", *it_item1);
-						}
-						printf("\n");
+						printf("%d ", *it_item1);
 					}
-					printf("\n");	*/	
-
-	//#endif
+					printf("\n");
 				}
-				//printf("Item %d, sum %.2lf\n", it_verify->second.key, it_verify->second.sum);
-
-				if((ceil(vec_verify->sum) + vec_verify->sum_r) < 0)
-				{
-					outcome = false;
-	#if DEBUG_
-					//printf("WARNING: Item %d, sum_r %.2lf\n", it_verify->second.key, it_verify->second.sum_r);
-					printf("WARNING: Item %d, sum_r %.2lf\n", vec_verify->key, vec_verify->sum_r);
-	#endif
-				}
-
-				int N;
-				if(vec_verify->sum_f == 0)
-					N = 0;
-				else
-					N = -1;
-
-				if(((ceil(vec_verify->sum) + vec_verify->sum_f) * N) < 0)
-				{
-					outcome = false;
-	#if DEBUG_
-					//printf("WARNING: Item %d, sum_f %.2lf\n", it_verify->second.key, it_verify->second.sum_f);
-					printf("WARNING: Item %d, sum_f %.2lf\n", vec_verify->key, vec_verify->sum_f);
-	#endif
-				}
-
-
+				printf("\n");	*/	
+//#endif
 			}
-		//}
+
+			if((ceil(vec_verify->sum) + vec_verify->sum_r) < 0)
+			{
+				outcome = false;
+if(VERBOSE) {
+			if(LINEARIZABILITY)
+				printf("WARNING: Non-Linearizable Read, Item %d, sum_r %.2lf\n", vec_verify->key, vec_verify->sum_r);
+			else if(STRICT_SERIALIZABILITY)
+				printf("WARNING: Non-Serializable Read, Item %d, sum_r %.2lf\n", vec_verify->key, vec_verify->sum_r);
+}
+			}
+
+			int N;
+			if(vec_verify->sum_f == 0)
+				N = 0;
+			else
+				N = -1;
+
+			if(((ceil(vec_verify->sum) + vec_verify->sum_f) * N) < 0)
+			{
+				outcome = false;
+if(VERBOSE) {
+			if(LINEARIZABILITY)
+				printf("WARNING: Non-Linearizable Failed Method Call, Item %d, sum_f %.2lf\n", vec_verify->key, vec_verify->sum_f);
+			else if(STRICT_SERIALIZABILITY)
+				printf("WARNING: Non-Serializable Failed Method Call, Item %d, sum_f %.2lf\n", vec_verify->key, vec_verify->sum_f);
+}
+			}
+		}
 
 		if(outcome == true)
 		{
 			*final_outcome = true;
-#if DEBUG_
-			printf("-------------Program Correct Up To This Point-------------\n");
-#endif
+if(VERBOSE) {
+		if(LINEARIZABILITY)
+			printf("-------------Execution Linearizable Up To This Time Step------\n");
+		else if(STRICT_SERIALIZABILITY)
+			printf("-------------Execution Serializable Up To This Time Step------\n");
+}
 		} else
 		{
 			*final_outcome = false;
-#if DEBUG_
-			printf("-------------Program Not Correct-------------\n");
-#endif
+if(VERBOSE) {
+		if(LINEARIZABILITY)
+			printf("-------------Execution Not Linearizable Up To This Time Step--\n");
+		else if(STRICT_SERIALIZABILITY)
+			printf("-------------Execution Not Serializable Up To This Time Step--\n");
+}
 		}
-		
-
 	}
 }
 
 //Should probably move vector sum computation to this function
 void compare_vectors(Item** vector_items1, Item** vector_items2, bool* outcome_compare)
 {
+	std::stack<int> incorrect_items;
 	for (int i = 0; i < KEY_RANGE_+1; i++)
 	{
 		if(vector_items1[i] != NULL && vector_items2[i] == NULL)
 		{
-			//printf("vector_items1[%d]->sum = %.2lf\n", i, vector_items1[i]->sum);
-			if(vector_items1[i]->sum != 0)
+if(VERBOSE) {
+			printf("Items[%d]->sum = %.2lf\n", i, vector_items1[i]->sum);
+}
+			if(vector_items1[i]->sum != 0) 
+			{
 				*outcome_compare = false;
+				incorrect_items.push(i);
+			}
 		} else if(vector_items1[i] == NULL && vector_items2[i] != NULL)
 		{
-			//printf("vector_items2[%d]->sum = %.2lf\n", i, vector_items2[i]->sum);
+if(VERBOSE) {
+			printf("Items_Durable[%d]->sum = %.2lf\n", i, vector_items2[i]->sum);
+}
 			if(vector_items2[i]->sum != 0)
-				*outcome_compare = false;	
+			{
+				*outcome_compare = false;
+				incorrect_items.push(i);	
+			}
 		} else if(vector_items1[i] != NULL && vector_items2[i] != NULL)
 		{
-			//printf("vector_items1[%d]->sum = %.2lf, vector_items2[%d]->sum = %.2lf\n", i, vector_items1[i]->sum, i, vector_items2[i]->sum);
+if(VERBOSE) {
+			printf("Items[%d]->sum = %.2lf, Items_Durable[%d]->sum = %.2lf\n", i, vector_items1[i]->sum, i, vector_items2[i]->sum);
+}
 			if(vector_items1[i]->sum != vector_items2[i]->sum)	
+			{
 				*outcome_compare = false;
+				incorrect_items.push(i);
+			}
+		} else if(vector_items1[i] == NULL && vector_items2[i] == NULL) {
+if(VERBOSE) {
+			printf("Items[%d]->sum = 0.00, Items_Durable[%d]->sum = 0.00\n", i, i);
+}
 		}
 	}
+if(VERBOSE) {
+	while(!incorrect_items.empty())
+	{
+		int top = incorrect_items.top();
+			
+		printf("WARNING: NVM not consistent with cache-side Item %d\n", top);
+		incorrect_items.pop();
+	}
 }
+} //end compare_vectors
 
 void verify_loop(std::map<long int,Method,bool(*)(long int,long int)>& map_methods, Item** vector_items, std::atomic<int>* _thrd_lists_size, std::list<Method>* thrd_lists, int* it_count, std::list<Method>::iterator* it, long int& min, bool& stop)
 {
@@ -939,11 +876,6 @@ void verify_loop(std::map<long int,Method,bool(*)(long int,long int)>& map_metho
 			}
 			
 			Method m = *it[i];
-
-			//if(m.item_key%500 == 0)
-				//printf("Checking method %d\n", m.item_key);
-
-			//pq_methods.push(m);
 
 			//Consider doing a left shift by bits to store number of threads, and store thread id in lower bits
 			std::map<long int,Method,bool(*)(long int,long int)>::iterator it_method;
@@ -968,19 +900,8 @@ void verify_loop(std::map<long int,Method,bool(*)(long int,long int)>& map_metho
 				printf("Thread %d: WRITE ITEM %d, _thrd_lists_size[%d] = %d\n", i, m.item_key, i, _thrd_size);
 			else printf("Thread %d: STRAY ITEM %d, _thrd_lists_size[%d] = %d\n", i, m.item_key, i, _thrd_size);
 #endif
-
-			//printf("Insert method %d\n", m.id);
 			
 			it_count[i] = it_count[i] + 1;
-
-			//Item* item = new Item(m.item_key);
-			//item->producer = map_methods.end();
-			////map_items.insert(std::pair<int,Item>(m.item_key,item) );
-			//if(m.item_key != INT_MIN)
-				//vector_items[m.item_key] = item;
-			//else
-				//vector_items[KEY_RANGE_] = item;
-			////it_item = map_items.find(m.item_key);
 
 			_thrd_size = _thrd_lists_size[i].load();
 			
@@ -997,36 +918,21 @@ void verify(bool* outcome, bool* outcome_persist, bool* outcome_compare)
 {
 	printf("Begin Verification\n");
 	//wait(NUM_THRDS);
-	auto start_time = std::chrono::time_point_cast<std::chrono::nanoseconds>(start);
-	auto start_time_epoch = start_time.time_since_epoch();
-	std::chrono::time_point<std::chrono::high_resolution_clock> end;
-	end = std::chrono::high_resolution_clock::now();
-	auto pre_verify = std::chrono::time_point_cast<std::chrono::nanoseconds>(end);
-	auto pre_verify_epoch = pre_verify.time_since_epoch();
-	long int verify_start = pre_verify_epoch.count() - start_time_epoch.count();
 
-	//std::priority_queue<Method,std::vector<Method>,Comparator> pq_methods;
 	bool(*fn_pt)(long int,long int) = fncomp;
   	std::map<long int,Method,bool(*)(long int,long int)> map_methods (fn_pt);
 	std::map<long int,Method,bool(*)(long int,long int)> map_methods_persist (fn_pt);
 
-	//std::unordered_map<int,Item> map_items;
-	//Item* vector_items[KEY_RANGE_+1] = {}; //Plus 1 to handle case of key = INT_MIN (For failed consumers)
 	Item** vector_items = (Item**) calloc((KEY_RANGE_+1), sizeof(Item*)); //Plus 1 to handle case of key = INT_MIN (For failed consumers)
-	//std::vector<Item*> vector_items (KEY_RANGE_+1,0); //Plus 1 to handle case of key = INT_MIN (For failed consumers)
-	//Item* vector_items_persist[KEY_RANGE_+1] = {}; //Plus 1 to handle case of key = INT_MIN (For failed consumers)
 	Item** vector_items_persist = (Item**) calloc((KEY_RANGE_+1), sizeof(Item*)); //Plus 1 to handle case of key = INT_MIN (For failed consumers)
-	//std::vector<Item*> vector_items_persist (KEY_RANGE_+1,0); //Plus 1 to handle case of key = INT_MIN (For failed consumers)
 
-	std::map<long int,Method,bool(*)(long int,long int)>::iterator it_start = map_methods.end(); //ADDED RECENTLY
-	std::map<long int,Method,bool(*)(long int,long int)>::iterator it_start_persist = map_methods_persist.end(); //ADDED RECENTLY
+	std::map<long int,Method,bool(*)(long int,long int)>::iterator it_start = map_methods.end(); 
+	std::map<long int,Method,bool(*)(long int,long int)>::iterator it_start_persist = map_methods_persist.end();
 
 	std::list<Method>::iterator* it = new std::list<Method>::iterator[NUM_THRDS];
 	std::list<Method>::iterator* it_persist = new std::list<Method>::iterator[NUM_THRDS];
 
-	//int* it_count = new int[NUM_THRDS];
 	int* it_count = (int*) calloc (NUM_THRDS, sizeof(int));
-	//int* it_count_persist = new int[NUM_THRDS];
 	int* it_count_persist = (int*) calloc (NUM_THRDS, sizeof(int));
 
 	bool stop = false;
@@ -1052,26 +958,19 @@ void verify(bool* outcome, bool* outcome_persist, bool* outcome_compare)
 			min = sync_time;
 #endif
 
-		//printf("VERIFY CHECKPOINT\n");
 		verify_checkpoint(map_methods, vector_items, it_start, count_iterated, min, true, outcome);
-		//printf("VERIFY CHECKPOINT PERSIST\n");
 		verify_checkpoint(map_methods_persist, vector_items_persist, it_start_persist, count_iterated_persist, min, true, outcome_persist); //use min here instead of min_persist
 
-		//compare_vectors(vector_items, vector_items_persist, outcome_compare);
-
+		//compare_vectors(vector_items, vector_items_persist, outcome_compare); //Compare vectors at every time step
 	}
 
 #if !BUFFERED_LINEARIZABILITY
-	//printf("VERIFY CHECKPOINT\n");
 	verify_checkpoint(map_methods, vector_items, it_start, count_iterated, LONG_MAX, false, outcome);
-	//printf("VERIFY CHECKPOINT PERSIST\n");
 	verify_checkpoint(map_methods_persist, vector_items_persist, it_start_persist, count_iterated_persist, LONG_MAX, false, outcome_persist);
 
 	compare_vectors(vector_items, vector_items_persist, outcome_compare);
 #else
-	//printf("VERIFY CHECKPOINT\n");
 	verify_checkpoint(map_methods, vector_items, it_start, count_iterated, sync_time, false, outcome);
-	//printf("VERIFY CHECKPOINT PERSIST\n");
 	verify_checkpoint(map_methods_persist, vector_items_persist, it_start_persist, count_iterated_persist, sync_time, false, outcome_persist);
 
 	compare_vectors(vector_items, vector_items_persist, outcome_compare);
@@ -1080,29 +979,7 @@ void verify(bool* outcome, bool* outcome_persist, bool* outcome_compare)
 
 #if DEBUG_
 	printf("All threads finished!\n");
-
-
-	/*std::map<long int,Method,bool(*)(long int,long int)>::iterator it_;
-	for (it_=map_methods.begin(); it_!=map_methods.end(); ++it_)
-	{
-		std::unordered_map<int,Item>::iterator it_item;
-		it_item = map_items.find(it_->second.item_key);
-		if(it_->second.type == PRODUCER)
-			printf("PRODUCER inv %ld, res %ld, item %d, sum %.2lf, sum_r = %.2lf, sum_f = %.2lf, tid = %d\n", it_->second.invocation, it_->second.response, it_->second.item_key, it_item->second.sum, it_item->second.sum_r, it_item->second.sum_f, it_->second.process);
-		else if ((it_->second).type == CONSUMER)
-			printf("CONSUMER inv %ld, res %ld, item %d, sum %.2lf, sum_r = %.2lf, sum_f = %.2lf, tid = %d\n", it_->second.invocation, it_->second.response, it_->second.item_key, it_item->second.sum, it_item->second.sum_r, it_item->second.sum_f, it_->second.process);
-		else if ((it_->second).type == READER)
-			printf("READER inv %ld, res %ld, item %d, sum %.2lf, sum_r = %.2lf, sum_f = %.2lf, tid = %d\n", it_->second.invocation, it_->second.response, it_->second.item_key, it_item->second.sum, it_item->second.sum_r, it_item->second.sum_f, it_->second.process);
-	}*/
 #endif
-
-	end = std::chrono::high_resolution_clock::now();
-
-	auto post_verify = std::chrono::time_point_cast<std::chrono::nanoseconds>(end);
-	auto post_verify_epoch = post_verify.time_since_epoch();
-	long int verify_finish = post_verify_epoch.count() - start_time_epoch.count();
-
-	elapsed_time_verify = verify_finish - verify_start;
 
 	free(vector_items);
 	free(vector_items_persist);
@@ -1321,8 +1198,6 @@ int get_process_id()
 {
 	std::thread::id this_id = std::this_thread::get_id();
 
-	//printf("Thread::get_id() = %p\n", this_id);
-
 	//std::unordered_map<std::thread::id,int>::iterator got = thread_map->find (this_id);
 	tbb::concurrent_hash_map<std::thread::id,int,MyHashCompare>::accessor a;
 	
@@ -1373,7 +1248,7 @@ int get_method_id_persist()
 
 void vsv_init()
 {
-	printf("VSV_Init()\n");
+	//printf("VSV_Init()\n");
 	pfile = fopen("output.txt", "a");
 
 	//barrier.store(0);
@@ -1397,8 +1272,8 @@ void vsv_init()
 	thrd_lists_itr_persist = new std::list<Method>::iterator[NUM_THRDS];
 	for(int i = 0; i < NUM_THRDS; i++)
 	{
-		thrd_lists_itr[i] = thrd_lists[i].end(); //ADDED RECENTLY
-		thrd_lists_itr_persist[i] = thrd_lists_persist[i].end(); //ADDED RECENTLY
+		thrd_lists_itr[i] = thrd_lists[i].end();
+		thrd_lists_itr_persist[i] = thrd_lists_persist[i].end();
 	}
 	done = (std::atomic<bool>*) calloc (NUM_THRDS, sizeof(std::atomic<bool>));
 	method_time = (long int*) calloc (NUM_THRDS, sizeof(long int));
@@ -1406,12 +1281,6 @@ void vsv_init()
 	method_id_persist = (int*) calloc (NUM_THRDS, sizeof(int));
 	t = new std::thread[NUM_THRDS];
 	persist_map = new std::unordered_map<void*,Method>[NUM_THRDS];
-
-	//start = std::chrono::high_resolution_clock::now();
-
-	//thread_map = new std::unordered_map<std::thread::id,int>();
-	printf("VSV_Init() Finished\n");
-
 }
 
 void vsv_startup()
@@ -1427,23 +1296,38 @@ void vsv_shutdown()
 
 	if(final_outcome == true)
 	{
-		printf("-------------Program Correct Up To This Point-------------\n");
+		if(LINEARIZABILITY)
+			printf("-------------Execution Linearizable---------------------------\n");
+		else if(STRICT_SERIALIZABILITY)
+			printf("-------------Execution Serializable---------------------------\n");
 	} else {
-		printf("-------------Program Not Correct-------------\n");
+		if(LINEARIZABILITY)
+			printf("-------------Execution Not Linearizable-----------------------\n");
+		else if(STRICT_SERIALIZABILITY)
+			printf("-------------Execution Not Serializable-----------------------\n");
 	}
 
 	if(final_outcome_persist == true)
 	{
-		printf("-------------Persisted Program Correct Up To This Point-------------\n");
+		if(LINEARIZABILITY)
+			printf("-------------Persisted Execution Linearizable-----------------\n");
+		else if(STRICT_SERIALIZABILITY)
+			printf("-------------Persisted Execution Serializable-----------------\n");
 	} else {
-		printf("-------------Persisted Program Not Correct-------------\n");
+		if(LINEARIZABILITY)
+			printf("-------------Persisted Execution Not Linearizable-------------\n");
+		else if(STRICT_SERIALIZABILITY)
+			printf("-------------Persisted Execution Not Serializable-------------\n");
 	}
 
 	if(final_outcome_compare == true)
 	{
-		printf("VECTOR SUMS EQUAL\n");
+		if(final_outcome && final_outcome_persist)
+			printf("VECTOR SUMS EQUAL => Execution Durable Linearizable\n");
+		else
+			printf("VECTOR SUMS EQUAL\n");
 	} else {
-		printf("VECTOR SUMS NOT EQUAL\n");
+		printf("VECTOR SUMS NOT EQUAL => Execution Not Durable Linearizable\n");
 	}
 			
 	auto finish = std::chrono::high_resolution_clock::now();
@@ -1451,8 +1335,9 @@ void vsv_shutdown()
 	//Elapsed time
 	auto elapsed_time = std::chrono::duration_cast<std::chrono::nanoseconds>(finish - start);
 	double elapsed_time_double = elapsed_time.count()*0.000000001;
-	printf("Total Time: %.15lf seconds\n", elapsed_time_double);
-	
+	printf("Verification Time: %.15lf seconds\n", elapsed_time_double);
+
+#if DEBUG_	
 	//Elapsed method time
 	long int elapsed_time_method = 0;
 	for(int i = 0; i < NUM_THRDS; i++)
@@ -1461,15 +1346,14 @@ void vsv_shutdown()
 			elapsed_time_method = method_time[i];
 	}	
 	double elapsed_time_method_double = elapsed_time_method*0.000000001;
-	printf("Total Method Time: %.15lf seconds\n", elapsed_time_method_double);
+	//printf("Total Method Time: %.15lf seconds\n", elapsed_time_method_double);
 
 	//Elapsed verification time
-	double elapsed_time_verify_double = elapsed_time_verify*0.000000001;
-	//elapsed_time_verify_double = elapsed_time_verify_double - elapsed_time_method_double;	
-	printf("Total Verification Time: %.15lf seconds\n", elapsed_time_verify_double);
+	//double elapsed_time_verify_double = elapsed_time_double - elapsed_time_method_double;	
+	//printf("Total Verification Time: %.15lf seconds\n", elapsed_time_verify_double);
+#endif
 	
-	//fprintf(pfile, "%.15lf %.15lf\n", elapsed_time_method_double, elapsed_time_verify_double);
-	fprintf(pfile, "%.15lf\n", elapsed_time_double);
+	fprintf(pfile, "%.15lf ", elapsed_time_double);
 	fclose(pfile);
 }
 
@@ -1498,12 +1382,11 @@ void create_method(int _item_key, int _item_val, Semantics _semantics, Type _typ
 {
 	int _process = get_process_id();
 	int m_id = get_method_id();
-	//int m_id = _process + 1 + (_iteration * TRANS_SIZE + _operation) * NUM_THRDS;
 	bool empty = thrd_lists[_process].empty();
-	//bool empty_persist = thrd_lists_persist[_process].empty();
-	//Method* m1 = new Method(m_id, _process, _item_key, _item_val, _semantics, _type, _invocation, _response, _status);
+	
 	Method m1(m_id, _process, _item_key, _item_val, _semantics, _type, _invocation, _response, _status);
-	/*if(m1.type == PRODUCER)
+#if DEBUG_
+	if(m1.type == PRODUCER)
 		printf("Thread %d: new Method PRODUCE ITEM %d\n", _process, m1.item_key);
 	else if (m1.type == CONSUMER)
 		printf("Thread %d: new Method CONSUME ITEM %d\n", _process, m1.item_key);
@@ -1511,15 +1394,10 @@ void create_method(int _item_key, int _item_val, Semantics _semantics, Type _typ
 		printf("Thread %d: new Method READ ITEM %d\n", _process, m1.item_key);
 	else if (m1.type == WRITER)
 		printf("Thread %d: new Method WRITE ITEM %d\n", _process, m1.item_key);
-	else printf("Thread %d: new Method STRAY ITEM %d\n", _process, m1.item_key);*/
-	//Method* m1_persist = new Method(m_id, _process, _item_key, _item_val, _semantics, _type, _invocation, _response, _status);
-	//Method m1_persist(m_id, _process, _item_key, _item_val, _semantics, _type, _invocation, _response, _status);
-	//thrd_lists[_process].push_back(*m1);
+	else printf("Thread %d: new Method STRAY ITEM %d\n", _process, m1.item_key);
+#endif
 	thrd_lists[_process].push_back(m1);
-	//thrd_lists_persist[_process].push_back(*m1_persist);
-	//thrd_lists_persist[_process].push_back(m1_persist);
 	if(empty) thrd_lists_itr[_process] = thrd_lists[_process].begin();
-	//if(empty_persist) thrd_lists_itr_persist[_process] = thrd_lists_persist[_process].begin();
 	update_method_time(_invocation, _response);
 
 }
@@ -1530,7 +1408,8 @@ void create_method_persist(int _item_key, int _item_val, Semantics _semantics, T
 	int m_id = get_method_id_persist();	
 	bool empty_persist = thrd_lists_persist[_process].empty();
 	Method m1_persist(m_id, _process, _item_key, _item_val, _semantics, _type, _invocation, _response, _status);
-	/*if(m1_persist.type == PRODUCER)
+#if DEBUG_
+	if(m1_persist.type == PRODUCER)
 		printf("Thread %d: new Method PRODUCE ITEM %d\n", _process, m1_persist.item_key);
 	else if (m1_persist.type == CONSUMER)
 		printf("Thread %d: new Method CONSUME ITEM %d\n", _process, m1_persist.item_key);
@@ -1538,7 +1417,8 @@ void create_method_persist(int _item_key, int _item_val, Semantics _semantics, T
 		printf("Thread %d: new Method READ ITEM %d\n", _process, m1_persist.item_key);
 	else if (m1_persist.type == WRITER)
 		printf("Thread %d: new Method WRITE ITEM %d\n", _process, m1_persist.item_key);
-	else printf("Thread %d: new Method STRAY ITEM %d\n", _process, m1_persist.item_key);*/
+	else printf("Thread %d: new Method STRAY ITEM %d\n", _process, m1_persist.item_key);
+#endif
 	thrd_lists_persist[_process].push_back(m1_persist);
 	if(empty_persist) thrd_lists_itr_persist[_process] = thrd_lists_persist[_process].begin();
 
@@ -1555,6 +1435,27 @@ void insert_persist_map(void* ptr, int _item_key, int _item_val, Semantics _sema
 		Method m1_persist(-1, _process, _item_key, _item_val, _semantics, _type, 0, 0, true);
 		std::pair<void*,Method> pair (ptr,m1_persist);
 		persist_map[_process].insert(pair);
+	} else {
+		
+		if((got->second.item_key == _item_key) && (got->second.type == PRODUCER && _type == CONSUMER))
+		{
+			//Producer followed by Consumer eliminate each other
+			persist_map[_process].erase(got);
+		} else if ((got->second.item_key == _item_key) && (got->second.type == CONSUMER && _type == PRODUCER))
+		{
+			//Item exists in the persisted state
+			persist_map[_process].erase(got);
+			Method m1_persist(-1, _process, _item_key, _item_val, _semantics, _type, 0, 0, true);
+			std::pair<void*,Method> pair (ptr,m1_persist);
+			persist_map[_process].insert(pair);
+		}
+		/*else if((got->second.item_key == _item_key) && (got->second.type == PRODUCER && _type == WRITER)) {
+			//Writer overwrite Producer
+			persist_map[_process].erase(got);
+			Method m1_persist(-1, _process, _item_key, _item_val, _semantics, _type, 0, 0, true);
+			std::pair<void*,Method> pair (ptr,m1_persist);
+			persist_map[_process].insert(pair);
+		}*/
 	}
 }
 
@@ -1566,33 +1467,33 @@ void handle_PWB(void* ptr, long int _invocation, long int _response)
 
 	if ( got != persist_map[_process].end() )
 	{
-		/*if(got->second.type == PRODUCER)
+#if DEBUG_
+		if(got->second.type == PRODUCER)
 			printf("Thread %d: handle_PWB PRODUCE ITEM %d\n", _process, got->second.item_key);
 		else if (got->second.type == CONSUMER)
-			printf("Thread %d: handle_PWB CONSUME ITEM %d\n", _process, got->second.item_key);*/
+			printf("Thread %d: handle_PWB CONSUME ITEM %d\n", _process, got->second.item_key);
+#endif
 
 		create_method_persist(got->second.item_key, got->second.item_val, got->second.semantics, got->second.type, _invocation, _response, true);
 		persist_map[_process].erase(got);
+	} else {
+		//printf("Thread %d: handle_PWB did not find Node %p\n", _process, ptr);
 	}
 }
 
-//TODO: FIXE ME!!!! Major Bug here, method will be inserted in thrd_lists twice when insert_txn is called
-#if STRICT_SERIALIZABILITY
 void insert_txn(long int _txn_invocation, long int _txn_response, int size)
 {
 	int _process = get_process_id();
 
-	//printf("Thread %d: Attempting to Insert_txn\n", _process);
-
-	if(thrd_lists[_process].size() == 0) return; //ADDED RECENTLY
+	if(thrd_lists[_process].size() == 0) return; 
 
 	std::list<Method>::iterator m1_it = thrd_lists_itr[_process];
-	if(m1_it == thrd_lists[_process].end()) return; //ADDED RECENTLY
-	//std::list<Method>::iterator m1_persist_it = thrd_lists_itr_persist[_process];
+	if(m1_it == thrd_lists[_process].end()) return; 
 
 	std::list<Method>::iterator m1_it_prev;
 
-	/*std::list<Method>::iterator m1_it_begin;
+#if DEBUG_
+	std::list<Method>::iterator m1_it_begin;
 
 	m1_it_begin = thrd_lists[_process].begin();
 
@@ -1605,18 +1506,17 @@ void insert_txn(long int _txn_invocation, long int _txn_response, int size)
 	else if(m1_it->type == WRITER)
 		printf("Thread %d: m1_it_begin set to WRITER ITEM %d\n", _process, m1_it_begin->item_key);
 	else
-		printf("Thread %d: m1_it_begin set to STRAY ITEM %d\n", _process, m1_it_begin->item_key);*/
+		printf("Thread %d: m1_it_begin set to STRAY ITEM %d\n", _process, m1_it_begin->item_key);
+#endif
 
-	//if(m1_it != thrd_lists[_process].begin()) ++m1_it;
 	if(thrd_lists_size[_process].load() != 0) ++m1_it;
-	if(m1_it == thrd_lists[_process].end()) return; //ADDED RECENTLY
-	//if(m1_persist_it != thrd_lists_persist[_process].begin()) ++m1_persist_it;
-	//if(thrd_lists_size_persist[_process].load() != 0) ++m1_persist_it;
+	if(m1_it == thrd_lists[_process].end()) return;
 
 	if(m1_it == thrd_lists[_process].end()) { 
 		//printf("Thread %d: Iterator fail 1\n", _process); 
 	} else {
-		/*if(m1_it->type == PRODUCER)
+#if DEBUG_
+		if(m1_it->type == PRODUCER)
 			printf("Thread %d: m1_it 1 advanced to PRODUCER ITEM %d\n", _process, m1_it->item_key);
 		else if(m1_it->type == CONSUMER)
 			printf("Thread %d: m1_it 1 advanced to CONSUMER ITEM %d\n", _process, m1_it->item_key);
@@ -1625,12 +1525,11 @@ void insert_txn(long int _txn_invocation, long int _txn_response, int size)
 		else if(m1_it->type == CONSUMER)
 			printf("Thread %d: m1_it 1 advanced to WRITER ITEM %d\n", _process, m1_it->item_key);
 		else
-			printf("Thread %d: m1_it 1 advanced to STRAY ITEM %d\n", _process, m1_it->item_key);*/
+			printf("Thread %d: m1_it 1 advanced to STRAY ITEM %d\n", _process, m1_it->item_key);
+#endif
 	}
 
 	int txn_id = m1_it->id;
-	//int txn_id_persist = m1_persist_it->id;
-	//for(unsigned int j = 0; j < TRANS_SIZE; j++)
 	
 	int running_size = 0;
 
@@ -1639,17 +1538,9 @@ void insert_txn(long int _txn_invocation, long int _txn_response, int size)
 		m1_it->txn_invocation = _txn_invocation;
 		m1_it->txn_response = _txn_response;
 		m1_it->txn_id = txn_id;
-		//thrd_lists[_process].push_back(*m1_it); //REMOVE LATER
-	
-		//m1_persist_it->txn_invocation = _txn_invocation; 
-		//m1_persist_it->txn_response = _txn_response; 
-		//m1_persist_it->txn_id = txn_id_persist; 	
-		//thrd_lists_persist[_process].push_back(*m1_persist_it); //REMOVE LATER
 
 		running_size = running_size + 1;
 
-		//printf("Thread %d: txn_id = %d, method_id = %d, txn_inv = %ld, txn_res = %ld \n", id, txn_id, (*it_list).id, txn_invocation, txn_response);
-		//if(j < (TRANS_SIZE - 1)) 
 		m1_it_prev = m1_it;
 		if(j < (size - 1))
 		{
@@ -1659,7 +1550,8 @@ void insert_txn(long int _txn_invocation, long int _txn_response, int size)
 				m1_it = m1_it_prev; break; 
 			}
 			else {
-				/*if(m1_it->type == PRODUCER)
+#if DEBUG_
+				if(m1_it->type == PRODUCER)
 					printf("Thread %d: m1_it 2 advanced to PRODUCER ITEM %d\n", _process, m1_it->item_key);
 				else if(m1_it->type == CONSUMER)
 					printf("Thread %d: m1_it 2 advanced to CONSUMER ITEM %d\n", _process, m1_it->item_key);
@@ -1668,26 +1560,14 @@ void insert_txn(long int _txn_invocation, long int _txn_response, int size)
 				else if(m1_it->type == WRITER)
 					printf("Thread %d: m1_it 2 advanced to WRITER ITEM %d\n", _process, m1_it->item_key);
 				else
-					printf("Thread %d: m1_it 2 advanced to STRAY ITEM %d\n", _process, m1_it->item_key);*/
+					printf("Thread %d: m1_it 2 advanced to STRAY ITEM %d\n", _process, m1_it->item_key);
+#endif
 			}	
 		}
 		
 	}
 	thrd_lists_itr[_process] = m1_it;
-	//thrd_lists_itr_persist[_process] = m1_persist_it;
-
-	//printf("Thread %d: size = %d, running_size = %d\n", _process, thrd_lists_size[_process].load(), running_size);
-
-	//thrd_lists_size[_process].fetch_add(TRANS_SIZE);
-	//thrd_lists_size[_process].fetch_add(size);
 	thrd_lists_size[_process].fetch_add(running_size);
-	//thrd_lists_size_persist[_process].fetch_add(TRANS_SIZE);
-	//thrd_lists_size_persist[_process].fetch_add(size);
-	//thrd_lists_size_persist[_process].fetch_add(running_size);
-
-
-	//if(thrd_lists_size[_process].load() >= (TRANS_SIZE*TEST_SIZE)) printf("thread_list_size[%d] = %d\n", _process, thrd_lists_size[_process].load());
-	//if(thrd_lists_size_persist[_process].load() >= (TRANS_SIZE*TEST_SIZE)) printf("thread_list_size_persist[%d] = %d\n", _process, thrd_lists_size_persist[_process].load());
 
 }
 
@@ -1695,17 +1575,18 @@ void insert_txn_persist(long int _txn_invocation, long int _txn_response, int si
 {
 	int _process = get_process_id();
 
-	if(thrd_lists_persist[_process].size() == 0) return; //ADDED RECENTLY
+	if(thrd_lists_persist[_process].size() == 0) return;
 
 	std::list<Method>::iterator m1_persist_it = thrd_lists_itr_persist[_process];
-	if(m1_persist_it == thrd_lists_persist[_process].end()) return; //ADDED RECENTLY
+	if(m1_persist_it == thrd_lists_persist[_process].end()) return;
 
 	std::list<Method>::iterator m1_persist_it_prev;
 
 	if(thrd_lists_size_persist[_process].load() != 0) ++m1_persist_it;
-	if(m1_persist_it == thrd_lists_persist[_process].end()) return; //ADDED RECENTLY
+	if(m1_persist_it == thrd_lists_persist[_process].end()) return;
 
-	/*if(m1_persist_it == thrd_lists[_process].end()) { printf("Thread %d: Iterator fail 1\n", _process); }
+#if DEBUG_
+	if(m1_persist_it == thrd_lists[_process].end()) { printf("Thread %d: Iterator fail 1\n", _process); }
 	else {
 		if(m1_persist_it->type == PRODUCER)
 			printf("Thread %d: m1_it 1 advanced to PRODUCER ITEM %d\n", _process, m1_persist_it->item_key);
@@ -1717,10 +1598,10 @@ void insert_txn_persist(long int _txn_invocation, long int _txn_response, int si
 			printf("Thread %d: m1_it 1 advanced to WRITER ITEM %d\n", _process, m1_persist_it->item_key);
 		else
 			printf("Thread %d: m1_it 1 advanced to STRAY ITEM %d\n", _process, m1_persist_it->item_key);
-	}*/
+	}
+#endif
 
 	int txn_id_persist = m1_persist_it->id;
-	
 	int running_size = 0;
 
 	for(unsigned int j = 0; j < size; j++)
@@ -1739,7 +1620,8 @@ void insert_txn_persist(long int _txn_invocation, long int _txn_response, int si
 				//printf("Thread %d: Persist Iterator fail 2\n", _process); 
 				m1_persist_it = m1_persist_it_prev; break; 
 			} else {
-				/*if(m1_persist_it->type == PRODUCER)
+#if DEBUG_
+				if(m1_persist_it->type == PRODUCER)
 					printf("Thread %d: m1_it 2 advanced to PRODUCER ITEM %d\n", _process, m1_persist_it->item_key);
 				else if(m1_persist_it->type == CONSUMER)
 					printf("Thread %d: m1_it 2 advanced to CONSUMER ITEM %d\n", _process, m1_persist_it->item_key);
@@ -1748,12 +1630,12 @@ void insert_txn_persist(long int _txn_invocation, long int _txn_response, int si
 				else if(m1_persist_it->type == WRITER)
 					printf("Thread %d: m1_it 2 advanced to WRITER ITEM %d\n", _process, m1_persist_it->item_key);
 				else
-					printf("Thread %d: m1_it 2 advanced to STRAY ITEM %d\n", _process, m1_persist_it->item_key);*/
+					printf("Thread %d: m1_it 2 advanced to STRAY ITEM %d\n", _process, m1_persist_it->item_key);
+#endif
 			}	
 		}
 		
 	}
-	//printf("Thread %d: size = %d, running_size = %d\n", _process, thrd_lists_size_persist[_process].load(), running_size);
 
 	thrd_lists_itr_persist[_process] = m1_persist_it;	
 	thrd_lists_size_persist[_process].fetch_add(running_size);
@@ -1763,16 +1645,13 @@ void rollback_txn()
 {
 	int _process = get_process_id();
 
-	//printf("Thread %d: Attempting to Rollback_txn\n", _process);
-
 	int size = thrd_lists_size[_process].load();
-	//int size_persist = thrd_lists_size_persist[_process].load();
-	
-	//printf("Abort\n");
+
 	while(thrd_lists[_process].size() > size)
 	{
 		Method m = thrd_lists[_process].back();
-		/*if(m.type == PRODUCER)
+#if DEBUG_
+		if(m.type == PRODUCER)
 			printf("Thread %d: m pop_back PRODUCE ITEM %d\n", _process, m.item_key);
 		else if(m.type == CONSUMER)
 			printf("Thread %d: m pop_back CONSUME ITEM %d\n", _process, m.item_key);
@@ -1781,14 +1660,11 @@ void rollback_txn()
 		else if(m.type == WRITER)
 			printf("Thread %d: m pop_back WRITE ITEM %d\n", _process, m.item_key);
 		else
-			printf("Thread %d: m pop_back STRAY ITEM %d\n", _process, m.item_key);*/
+			printf("Thread %d: m pop_back STRAY ITEM %d\n", _process, m.item_key);
+#endif
 		thrd_lists[_process].pop_back();
 	}
 
-	//while(thrd_lists_persist[_process].size() > size_persist)
-	//{
-	//	thrd_lists_persist[_process].pop_back();
-	//}
 }
 
 void rollback_txn_persist()
@@ -1801,7 +1677,8 @@ void rollback_txn_persist()
 	
 	while(thrd_lists_persist[_process].size() > size_persist)
 	{
-		/*Method m = thrd_lists[_process].back();
+#if DEBUG_
+		Method m = thrd_lists[_process].back();
 		if(m.type == PRODUCER)
 			printf("Thread %d: m pop_back PRODUCER ITEM %d\n", _process, m.item_key);
 		else if(m.type == CONSUMER)
@@ -1811,48 +1688,28 @@ void rollback_txn_persist()
 		else if(m.type == WRITER)
 			printf("Thread %d: m pop_back WRITER ITEM %d\n", _process, m.item_key);
 		else
-			printf("Thread %d: m pop_back STRAY ITEM %d\n", _process, m.item_key);*/
-		//printf("thrd_lists[%d].size() = %d, size = %d\n", _process, thrd_lists[_process].size(), size);
+			printf("Thread %d: m pop_back STRAY ITEM %d\n", _process, m.item_key);
+#endif
 		thrd_lists_persist[_process].pop_back();
 	}
 }
 
-#endif
-
 void insert_method()
 {
 	int _process = get_process_id();
-
-	if(thrd_lists[_process].size() == 0) return; //ADDED RECENTLY
-
+	if(thrd_lists[_process].size() == 0) return;
 	std::list<Method>::iterator m1_it = thrd_lists_itr[_process];
-	//std::list<Method>::iterator m1_persist_it = thrd_lists_itr_persist[_process];
-
-	//if(m1_it != thrd_lists[_process].begin()) ++m1_it;
 	if(thrd_lists_size[_process].load() != 0) ++m1_it;
-
-	//if(m1_persist_it != thrd_lists_persist[_process].begin()) ++m1_persist_it;
-	//if(thrd_lists_size_persist[_process].load() != 0) ++m1_persist_it;
-	
 	thrd_lists_size[_process].fetch_add(1);
-	//thrd_lists_size_persist[_process].fetch_add(1);
-
-	//if(thrd_lists_size[_process].load() >= (TRANS_SIZE*TEST_SIZE)) printf("thread_list_size[%d] = %d\n", _process, thrd_lists_size[_process].load());
-	//if(thrd_lists_size_persist[_process].load() >= (TRANS_SIZE*TEST_SIZE)) printf("thread_list_size_persist[%d] = %d\n", _process, thrd_lists_size_persist[_process].load());
 }
 
 void insert_method_persist()
 {
 	int _process = get_process_id();
-
-	if(thrd_lists_persist[_process].size() == 0) return; //ADDED RECENTLY
-
+	if(thrd_lists_persist[_process].size() == 0) return;
 	std::list<Method>::iterator m1_persist_it = thrd_lists_itr_persist[_process];
-
-	if(thrd_lists_size_persist[_process].load() != 0) ++m1_persist_it;
-	
+	if(thrd_lists_size_persist[_process].load() != 0) ++m1_persist_it;	
 	thrd_lists_size_persist[_process].fetch_add(1);
-
 }
 
 void vsv_exit()
@@ -1871,6 +1728,12 @@ void vsv_args(int argc, const char *argv[])
 	TRANS_SIZE = 2;
 	KEY_RANGE_ = 100;
 
+	VERBOSE = false;
+	LINEARIZABILITY = 1;
+	STRICT_SERIALIZABILITY = 0;
+
+	char vflag[] = "-v";
+
 	if(argc > 1) {
 		if(atoi(argv[1]) < 3) SEMANTICS = SET;
 		else if (atoi(argv[1]) >= 3) SEMANTICS = MAP;
@@ -1879,8 +1742,22 @@ void vsv_args(int argc, const char *argv[])
 	if(argc > 3) TEST_SIZE = atoi(argv[3]);
 	if(argc > 4) TRANS_SIZE = atoi(argv[4]);
 	if(argc > 5) KEY_RANGE_ = atoi(argv[5]) + 2;
+	if(argc > 8) {
+		if(strcmp (vflag,argv[8]) == 0)
+		{
+			VERBOSE = true;
+			//printf("VERBOSE flag toggled!\n");
+		} else {
+			//printf("vflag = %s, argv[8] = %s\n", vflag, argv[8]);
+		}		
+	}
 
-	printf("NUM_THRDS = %d, TEST_SIZE = %d, TRANS_SIZE = %d, KEY_RANGE_ = %d\n", NUM_THRDS, TEST_SIZE, TRANS_SIZE, KEY_RANGE_);
+	if(TRANS_SIZE > 1) {
+		LINEARIZABILITY = 0;
+		STRICT_SERIALIZABILITY = 1;
+	}
+
+	//printf("NUM_THRDS = %d, TEST_SIZE = %d, TRANS_SIZE = %d, KEY_RANGE_ = %d\n", NUM_THRDS, TEST_SIZE, TRANS_SIZE, KEY_RANGE_);
 
 	/*if(argc > 1) setType = atoi(argv[1]);
     if(argc > 2) numThread = atoi(argv[2]);
@@ -1891,9 +1768,3 @@ void vsv_args(int argc, const char *argv[])
     if(argc > 7) deletion = atoi(argv[7]);
     if(argc > 8) update = atoi(argv[8]);*/
 }
-
-void vsv_args2()
-{
-	printf("Hello\n");	
-}
-

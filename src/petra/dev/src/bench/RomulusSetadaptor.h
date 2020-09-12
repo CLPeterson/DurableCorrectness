@@ -179,7 +179,8 @@ public:
         }
         // printf("commit %u, abort %u\n\r", g_count_commit, g_count_abort);
 
-		/*std::string transaction;
+if(VERBOSE) {
+		std::string transaction;
 		transaction.append("Transaction");
 		
 		for(int i = 0; i < ops.size(); i++)
@@ -187,17 +188,17 @@ public:
 			if(ops[i].type == INSERT)
 			{
 				char str[80];
-				sprintf(str, " P %d", ops[i].key);
+				sprintf(str, " Ins %d", ops[i].key);
 				transaction.append(str); 
 			} else if (ops[i].type == DELETE)
 			{
 				char str[80];
-				sprintf(str, " C %d", ops[i].key);
+				sprintf(str, " Del %d", ops[i].key);
 				transaction.append(str); 
 			} else if (ops[i].type == FIND)
 			{
 				char str[80];
-				sprintf(str, " F %d", ops[i].key);
+				sprintf(str, " Find %d", ops[i].key);
 				transaction.append(str); 
 			}
 		}
@@ -205,7 +206,8 @@ public:
 			transaction.append(":Commit"); 
 		else
 			transaction.append(":Abort");
-		printf("%s\n", transaction.c_str());*/
+		printf("%s\n", transaction.c_str());
+}
 
         return ret;
 
@@ -351,7 +353,8 @@ public:
         }
         // printf("commit %u, abort %u\n\r", g_count_commit, g_count_abort);
 
-		/*std::string transaction;
+if(VERBOSE) {
+		std::string transaction;
 		transaction.append("Transaction");
 		
 		for(int i = 0; i < ops.size(); i++)
@@ -359,17 +362,17 @@ public:
 			if(ops[i].type == INSERT)
 			{
 				char str[80];
-				sprintf(str, " P %d", ops[i].key);
+				sprintf(str, " Ins %d", ops[i].key);
 				transaction.append(str); 
 			} else if (ops[i].type == DELETE)
 			{
 				char str[80];
-				sprintf(str, " C %d", ops[i].key);
+				sprintf(str, " Del %d", ops[i].key);
 				transaction.append(str); 
 			} else if (ops[i].type == FIND)
 			{
 				char str[80];
-				sprintf(str, " F %d", ops[i].key);
+				sprintf(str, " Find %d", ops[i].key);
 				transaction.append(str); 
 			}
 		}
@@ -377,7 +380,8 @@ public:
 			transaction.append(":Commit"); 
 		else
 			transaction.append(":Abort");
-		printf("%s\n", transaction.c_str());*/
+		printf("%s\n", transaction.c_str());
+}
 
         return ret;
 
@@ -521,7 +525,8 @@ public:
         }
         // printf("commit %u, abort %u\n\r", g_count_commit, g_count_abort);
 
-		/*std::string transaction;
+if(VERBOSE) {
+		std::string transaction;
 		transaction.append("Transaction");
 		
 		for(int i = 0; i < ops.size(); i++)
@@ -529,17 +534,17 @@ public:
 			if(ops[i].type == INSERT)
 			{
 				char str[80];
-				sprintf(str, " P %d", ops[i].key);
+				sprintf(str, " Ins %d", ops[i].key);
 				transaction.append(str); 
 			} else if (ops[i].type == DELETE)
 			{
 				char str[80];
-				sprintf(str, " C %d", ops[i].key);
+				sprintf(str, " Del %d", ops[i].key);
 				transaction.append(str); 
 			} else if (ops[i].type == FIND)
 			{
 				char str[80];
-				sprintf(str, " F %d", ops[i].key);
+				sprintf(str, " Find %d", ops[i].key);
 				transaction.append(str); 
 			}
 		}
@@ -547,7 +552,8 @@ public:
 			transaction.append(":Commit"); 
 		else
 			transaction.append(":Abort");
-		printf("%s\n", transaction.c_str());*/
+		printf("%s\n", transaction.c_str());
+}
 
         return ret;
 
@@ -735,7 +741,8 @@ public:
         }
         // printf("commit %u, abort %u\n\r", g_count_commit, g_count_abort);
 
-		/*std::string transaction;
+if(VERBOSE) {
+		std::string transaction;
 		transaction.append("Transaction");
 		
 		for(int i = 0; i < ops.size(); i++)
@@ -743,22 +750,22 @@ public:
 			if(ops[i].type == MAP_INSERT)
 			{
 				char str[80];
-				sprintf(str, " P %d", ops[i].key);
+				sprintf(str, " Ins %d", ops[i].key);
 				transaction.append(str); 
 			} else if (ops[i].type == MAP_DELETE)
 			{
 				char str[80];
-				sprintf(str, " C %d", ops[i].key);
+				sprintf(str, " Del %d", ops[i].key);
 				transaction.append(str); 
 			} else if (ops[i].type == MAP_FIND)
 			{
 				char str[80];
-				sprintf(str, " F %d", ops[i].key);
+				sprintf(str, " Find %d", ops[i].key);
 				transaction.append(str); 
 			} else if (ops[i].type == MAP_UPDATE)
 			{
 				char str[80];
-				sprintf(str, " U %d", ops[i].key);
+				sprintf(str, " Update %d", ops[i].key);
 				transaction.append(str); 
 			}
 
@@ -767,7 +774,8 @@ public:
 			transaction.append(":Commit"); 
 		else
 			transaction.append(":Abort");
-		printf("%s\n", transaction.c_str());*/
+		printf("%s\n", transaction.c_str());
+}
 
         return ret;
     }
