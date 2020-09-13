@@ -63,7 +63,7 @@ common/vsv.o: common/vsv.cc common/vsv.h <br />
 common/timehelper.o: common/timehelper.cc common/timehelper.h <br />
 &nbsp;&nbsp;&nbsp;&nbsp;g++ -o common/timehelper.o -c common/timehelper.cc
 
-List $(OBJ) -ltbb in line in Makefile that creates the executable
+List $(OBJ) -ltbb in line that creates the executable in Makefile 
 
 Include vsv.h in the driver file for the experimental evaluation: <br />
 `#include "../common/vsv.h"`
