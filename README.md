@@ -94,7 +94,7 @@ Include vsv.h in the driver file for the experimental evaluation: <br />
 `#include "../common/vsv.h"`
 
 Call the following commands at the beginning of the main method to initialize the command line arguments. These functions must be configured by the user based on the format of the command line arguments for the executable. <br />
-`vsv_args(argc, argv);`
+`vsv_args(argc, argv);` <br />
 `vsv_init();`
 
 Call the following command at the end of the worker thread body. <br />
