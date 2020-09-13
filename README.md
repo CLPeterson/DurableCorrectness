@@ -76,31 +76,34 @@ For example, to test LinkFreeHash with 16 threads, test size is 100, key range i
 `./main 2 16 100 1 1000 50 25`
 
 # To Use VSV-D for Arbitrary User Code:
-Place vsv.cc, vsv.h, timehelper.cc, timehelper.h, and threadbarrier.h in directory common
+Place vsv.cc, vsv.h, timehelper.cc, timehelper.h, and threadbarrier.h in directory named common
 
 Update Makefile
 
 OBJ = common/vsv.o common/timehelper.o
 
 common/vsv.o: common/vsv.cc common/vsv.h <br />
-	g++ -o common/vsv.o -c common/vsv.cc -ltbb -ggdb -O0 -g
+&nbsp;&nbsp;&nbsp;&nbsp;g++ -o common/vsv.o -c common/vsv.cc -ltbb -ggdb -O0 -g
 
 common/timehelper.o: common/timehelper.cc common/timehelper.h <br />
-	g++ -o common/timehelper.o -c common/timehelper.cc
+&nbsp;&nbsp;&nbsp;&nbsp;g++ -o common/timehelper.o -c common/timehelper.cc
 
 List $(OBJ) -ltbb in line in Makefile that creates the executable
 
-Include vsv.h in the driver file for the experimental evaluation:
+Include vsv.h in the driver file for the experimental evaluation: <br />
+`#include "../common/vsv.h"`
 
-#include "../common/vsv.h"
+Call the following commands at the beginning of the main method to initialize the command line arguments. These functions must be configured by the user based on the format of the command line arguments for the executable. <br />
+`vsv_args(argc, argv);`
+`vsv_init();`
 
-Call vsv_args(argc, argv); and vsv_init(); at the beginning of the main method to initialize the command line arguments. These functions must be configured by the user based on the format of the command line arguments for the executable.
+Call the following command at the end of the worker thread body. <br />
+`vsv_exit();`
 
-Call vsv_exit(); at the end of the worker thread body.
-
-Call vsv_startup(); in the main method.
+Call the following command in the main method. <br />
+`vsv_startup();`
 * Calling vsv_startup(); immediately afte launching worker threads will execute the verification thread while program is running
 * Calling vsv_startup(); after threads have joined will execute the verification thread after the program is finished.
 
-Call vsv_shutdown(); to join the verification thread and finalize verification results.
-
+Call the following command to join the verification thread and finalize verification results. <br />
+`vsv_shutdown();`
