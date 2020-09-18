@@ -1377,7 +1377,6 @@ void update_method_time(long int _invocation, long int _response)
 	method_time[_process] = method_time[_process] + (_response - _invocation);
 }
 
-//TODO: FIXE ME!!!! Major Bug here, method will be inserted in thrd_lists twice when insert_txn is called
 void create_method(int _item_key, int _item_val, Semantics _semantics, Type _type, long int _invocation, long int _response, bool _status)
 {
 	int _process = get_process_id();

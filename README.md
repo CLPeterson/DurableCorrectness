@@ -77,8 +77,39 @@ Call the following command at the end of the worker thread body. <br />
 
 Call the following command in the main method. <br />
 `vsv_startup();`
-* Calling vsv_startup(); immediately afte launching worker threads will execute the verification thread while program is running
+* Calling vsv_startup(); immediately after launching worker threads will execute the verification thread while program is running
 * Calling vsv_startup(); after threads have joined will execute the verification thread after the program is finished.
 
 Call the following command to join the verification thread and finalize verification results. <br />
 `vsv_shutdown();`
+
+Call the following command immediately after a method call, where \_invocation is the time in nanoseconds before the method call, \_response is the time in nanoseconds after the method call, and _status is the return value of the method call. <br />
+`create_method(int _item_key, int _item_val, Semantics _semantics, Type _type, long int _invocation, long int _response, bool _status);`
+
+Call the following command immediately after create_method for durable data structures (non-transactional only). <br />
+`insert_method();`
+
+Call the following command immediately after a commit for durable transactional data structures, where \_txn\_invocation is the time in nanoseconds before the transaction, and \_txn\_response is the time in nanoseconds after the transaction (transactional only). <br />
+`insert_txn(long int _txn_invocation, long int _txn_response, int size);`
+
+Call the following command immediately after an abort for durable transactional data structures (transactional only). <br />
+`rollback_txn()`
+
+Call the following command immediately after a persist barrier (pwb;flush;), where \_invocation is the time in nanoseconds before the persist barrier, \_response is the time in nanoseconds after the persist barrier, and _status is the return value of the method call. <br />
+`create_method_persist(int _item_key, int _item_val, Semantics _semantics, Type _type, long int _invocation, long int _response, bool _status);`
+
+Call the following command immediately after create\_method\_persist for durable data structures (non-transactional only). <br />
+`insert_method_persist();`
+
+ Call the following command to place a method call is inserted in the persist\_map (Used when pwb is called on a memory address outside of the method call). <br />
+`insert_persist_map(void* ptr, int _item_key, int _item_val, Semantics _semantics, Type _type);`
+
+Call the following command if persist barrier is called on memory addresses outside of a method call.  <br />
+`handle_PWB(void* ptr, long int _invocation, long int _response);`
+
+Call the following command immediately after a commit for durable transactional data structures is persisted, where \_txn\_invocation is the time in nanoseconds before the transaction, and \_txn\_response is the time in nanoseconds after the transaction (transactional only). <br />
+`insert_txn_persist(long int _txn_invocation, long int _txn_response, int size)`
+
+Call the following command immediately after an abort for durable transactional data structures (transactional only). <br />
+`rollback_txn_persist()`
+
