@@ -101,7 +101,7 @@ Call the following command immediately after a persist barrier (pwb;flush;), whe
 Call the following command immediately after create\_method\_persist for durable data structures (non-transactional only). <br />
 `insert_method_persist();`
 
- Call the following command to place a method call is inserted in the persist\_map (Used when pwb is called on a memory address outside of the method call). <br />
+ Call the following command to insert a method call in the persist\_map (Used when pwb is called on a memory address outside of the method call). <br />
 `insert_persist_map(void* ptr, int _item_key, int _item_val, Semantics _semantics, Type _type);`
 
 Call the following command if persist barrier is called on memory addresses outside of a method call.  <br />
