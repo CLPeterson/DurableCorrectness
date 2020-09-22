@@ -212,6 +212,11 @@ public:
         // return m_list->ExecuteOps(desc);
     }
 
+	void validate_and_recovery(){
+		printf("Starting Recovery\n");
+		romuluslr::RomulusLR::validate_and_recovery();
+	}
+
 private:
 
     TMLinkedListSet<int>* romulusSet;
@@ -384,6 +389,11 @@ public:
         // return m_list->ExecuteOps(desc);
     }
 
+	void validate_and_recovery(){
+		printf("Starting Recovery\n");
+		romuluslr::RomulusLR::validate_and_recovery();
+	}
+
 private:
 
     TMSkipList<int>* romulusSkipList;
@@ -553,6 +563,11 @@ public:
 
         // return m_list->ExecuteOps(desc);
     }
+
+	void validate_and_recovery(){
+		printf("Starting Recovery\n");
+		romuluslr::RomulusLR::validate_and_recovery();
+	}
 
 private:
 
@@ -771,6 +786,11 @@ public:
 
         return ret;
     }
+
+	void validate_and_recovery(){
+		printf("Starting Recovery\n");
+		romuluslr::RomulusLR::validate_and_recovery();
+	}
 
 private:
     TMHashMap<int,int>* romulusMap;

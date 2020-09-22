@@ -226,6 +226,11 @@ public:
         // return m_list->ExecuteOps(desc);
     }
 
+	void validate_and_recovery() {
+		printf("Starting recovery\n");
+		poflf::OneFileLF::validate_and_recovery();
+	}
+
 private:
 
     TMLinkedListSet<int,poflf::OneFileLF,poflf::tmtype>* onefileSet;
@@ -413,6 +418,11 @@ bool ret = true;
         return ret;
     }
 
+	void validate_and_recovery() {
+		printf("Starting recovery\n");
+		poflf::OneFileLF::validate_and_recovery();
+	}
+
 private:
 
     TMSkipList<int,poflf::OneFileLF,poflf::tmtype>* onefileSkipList;
@@ -595,6 +605,11 @@ bool ret = true;
 
         return ret;
     }
+
+	void validate_and_recovery() {
+		printf("Starting recovery\n");
+		poflf::OneFileLF::validate_and_recovery();
+	}
 
 private:
 
@@ -822,6 +837,11 @@ public:
 
         return ret;
     }
+
+	void validate_and_recovery() {
+		printf("Starting recovery\n");
+		poflf::OneFileLF::validate_and_recovery();
+	}
 
 private:
     TMHashMap<int,int, poflf::OneFileLF,poflf::tmtype>* onefileMap;

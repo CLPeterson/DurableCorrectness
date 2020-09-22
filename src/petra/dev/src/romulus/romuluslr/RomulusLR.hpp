@@ -867,6 +867,10 @@ public:
     	gRomLR.ns_init();
     }
 
+	static void validate_and_recovery() { //CORRECTNESS ANNOTATIONS
+    	gRomLR.recover();
+    }
+
     template<class F>
     static void read_transaction(F&& func) {
         gRomLR.ns_read_transaction(func);

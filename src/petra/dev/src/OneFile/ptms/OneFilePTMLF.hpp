@@ -922,6 +922,16 @@ public:
         ptr->pstore(obj);
     }
 
+	void recover() {
+        uint64_t lcurTx = curTx->load(std::memory_order_acquire);
+        opData[trans2idx(lcurTx)].pWriteSet->applyFromRecover();
+        PSYNC();
+    }
+
+	static void validate_and_recovery() {
+		gOFLF.recover();
+	}
+
 private:
     // Progress condition: wait-free population oblivious
     inline void helpApply(uint64_t lcurTx, const int tid) {
@@ -949,11 +959,11 @@ private:
     // Upon restart, re-applies the last transaction, so as to guarantee that
     // we have a consistent state in persistent memory.
     // This is not needed on x86, where the DCAS has atomicity writting to persistent memory.
-    void recover() {
-        uint64_t lcurTx = curTx->load(std::memory_order_acquire);
-        opData[trans2idx(lcurTx)].pWriteSet->applyFromRecover();
-        PSYNC();
-    }
+    //void recover() {
+    //    uint64_t lcurTx = curTx->load(std::memory_order_acquire);
+    //    opData[trans2idx(lcurTx)].pWriteSet->applyFromRecover();
+    //    PSYNC();
+    //}
 };
 
 

@@ -170,6 +170,9 @@ void Tester(uint32_t numThread, uint32_t testSize, uint32_t tranSize, uint32_t k
             thread[i].join();
         }
     }
+
+	//set.validate_and_recovery();
+
 	vsv_startup(); //CORRECTNESS ANNOTATIONS
 	vsv_shutdown(); //CORRECTNESS ANNOTATIONS
 
