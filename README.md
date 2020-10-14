@@ -28,6 +28,27 @@ deletion: Deletion Percent <br />
 For example, to test TransSkip with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
 `./src/trans 1 16 100 4 1000 50 25 -v`
 
+## Replicate the Results of the Paper:
+Build Scripts:
+`cd src/petra/script` <br />
+`make clean` <br />
+`make` <br />
+
+Run Petra Script:
+`./scriptPetra` <br />
+
+Run Romulus Script:
+`./scriptRomulus` <br />
+
+Run OneFile Script:
+`./scriptOneFile` <br />
+
+Format of Output:
+`<program time> <verification time> <commit> <abort>` (LinkedList, NUM\_THRDS = 48) <br />
+`<program time> <verification time> <commit> <abort>` (SkipList, NUM\_THRDS = 48) <br />
+`<program time> <verification time> <commit> <abort>` (MDList, NUM\_THRDS = 48) <br />
+`<program time> <verification time> <commit> <abort>` (Map, NUM\_THRDS = 48) <br />
+
 # Durable Sets
 ## Build:
 
@@ -49,6 +70,20 @@ deletion: Deletion Percent <br />
 
 For example, to test LinkFreeHash with 16 threads, test size is 100, key range is 1000, insert percent is 50, and delete percent is 25: <br />
 `./main 2 16 100 1 1000 50 25`
+
+## Replicate the Results of the Paper:
+Build Scripts:
+`cd src/Link-Free/bench/script` <br />
+`make clean` <br />
+`make` <br />
+
+Run Script:
+`./script` <br />
+
+Format of Output:
+`<program time> <verification time>` (LinkedList, NUM\_THRDS = 48) <br />
+`<program time> <verification time>` (SkipList, NUM\_THRDS = 48) <br />
+`<program time> <verification time>` (Map, NUM\_THRDS = 48) <br />
 
 # To Use VSV-D for Arbitrary User Code:
 Place vsv.cc, vsv.h, timehelper.cc, timehelper.h, and threadbarrier.h in directory named common
