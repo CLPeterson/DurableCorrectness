@@ -10,20 +10,23 @@ FILE *pfile;
 
 int main(int argc,char* argv[]) 
 { 
-	system("sudo [ -f ../compile/output.txt ] && rm ../compile/output.txt");
-	system("sudo [ -f output.txt ] && rm output.txt");
+	//system("sudo [ -f ../compile/output.txt ] && rm ../compile/output.txt");
+	system("[ -f ../compile/output.txt ] && rm ../compile/output.txt");
+	//system("sudo [ -f output.txt ] && rm output.txt");
+	system("[ -f output.txt ] && rm output.txt");
 
 	std::string command;
 
-	std::string executable("sudo ../compile/src/./transOneFile");
+	//std::string executable("sudo ../compile/src/./transOneFile");
+	std::string executable("../compile/src/./transOneFile");
 	std::string test_size;
 	std::string key_range;
 	std::string data_structure;
 
-	std::string cleanup("sudo rm /mnt/pmem0/*");
+	//std::string cleanup("sudo rm /mnt/pmem0/*");
 	//std::string cleanup("sudo rm /dev/shm/*");
 
-	system(cleanup.c_str());
+	//system(cleanup.c_str());
 	
 	//for(unsigned int i = 0; i < 4; i++)
 	for(unsigned int i = 0; i < 6; i++)
@@ -81,7 +84,7 @@ int main(int argc,char* argv[])
 			command.append(key_range);
 			command.append(" 33 33");
 			system(command.c_str());
-			system(cleanup.c_str());
+			//system(cleanup.c_str());
 
 		}
 		system("sudo chmod 777 output.txt");
