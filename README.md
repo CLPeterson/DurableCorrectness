@@ -29,21 +29,21 @@ For example, to test TransSkip with 16 threads, test size is 100, transaction si
 `./src/trans 1 16 100 4 1000 50 25 -v`
 
 ## Replicate the Results of the Paper:
-Build Scripts:
+Build Scripts: <br />
 `cd src/petra/script` <br />
 `make clean` <br />
 `make` <br />
 
-Run Petra Script:
+Run Petra Script: <br />
 `./scriptPetra` <br />
 
-Run Romulus Script:
+Run Romulus Script: <br />
 `./scriptRomulus` <br />
 
-Run OneFile Script:
+Run OneFile Script: <br />
 `./scriptOneFile` <br />
 
-Format of Output:
+Format of Output: <br />
 `<program time> <verification time> <commit> <abort>` (LinkedList, NUM\_THRDS = 48) <br />
 `<program time> <verification time> <commit> <abort>` (SkipList, NUM\_THRDS = 48) <br />
 `<program time> <verification time> <commit> <abort>` (MDList, NUM\_THRDS = 48) <br />
@@ -72,15 +72,15 @@ For example, to test LinkFreeHash with 16 threads, test size is 100, key range i
 `./main 2 16 100 1 1000 50 25`
 
 ## Replicate the Results of the Paper:
-Build Scripts:
+Build Scripts: <br />
 `cd src/Link-Free/bench/script` <br />
 `make clean` <br />
 `make` <br />
 
-Run Script:
+Run Script: <br />
 `./script` <br />
 
-Format of Output:
+Format of Output: <br />
 `<program time> <verification time>` (LinkedList, NUM\_THRDS = 48) <br />
 `<program time> <verification time>` (SkipList, NUM\_THRDS = 48) <br />
 `<program time> <verification time>` (Map, NUM\_THRDS = 48) <br />
