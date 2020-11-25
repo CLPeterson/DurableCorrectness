@@ -1,4 +1,10 @@
 # PETRA
+## Virtual Machine Settings:
+Operating System: Ubuntu-18.04.4 (desktop-amd64) <br />
+Memory: 16 GB <br />
+Processors: 4 <br />
+Hard Disk: (SCSI) 20 GB <br />
+
 ## Build:
 Install dependencies:
 
@@ -28,6 +34,20 @@ deletion: Deletion Percent <br />
 For example, to test TransSkip with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
 `./src/trans 1 16 100 4 1000 50 25 -v`
 
+## Run Small Examples:
+TransList with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/trans 0 16 100 4 1000 50 25 -v` <br />
+
+TransSkip with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/trans 1 16 100 4 1000 50 25 -v` <br />
+
+TransMDList with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/trans 2 16 100 4 1000 50 25 -v` <br />
+
+TransMap with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/trans 3 16 100 4 1000 50 25 -v` <br />
+
+
 ## Replicate the Results of the Paper:
 Build Scripts: <br />
 `cd src/petra/script` <br />
@@ -53,6 +73,7 @@ Format of Output: <br />
 ## Build:
 
 `cd src/Link-Free/` <br />
+`make clean` <br />
 `make`
 
 ## Options:

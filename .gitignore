@@ -9,3 +9,6 @@ src/petra/dev/src/Makefile
 src/petra/dev/Makefile.in
 src/petra/dev/aclocal.m4
 src/petra/dev/src/config.h.in~
+src/Link-Free/main
+src/Link-Free/common/vsv.o
+src/Link-Free/common/timehelper.o
