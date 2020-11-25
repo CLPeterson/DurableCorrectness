@@ -87,7 +87,7 @@ int main(int argc,char* argv[])
 			//system(cleanup.c_str());
 
 		}
-		system("sudo chmod 777 output.txt");
+		//system("sudo chmod 777 output.txt");
 		pfile = fopen("output.txt", "a");
 		if (pfile == NULL) {
 		    perror("fopen()");

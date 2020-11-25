@@ -11,7 +11,7 @@ FILE *pfile;
 int main(int argc,char* argv[]) 
 { 
 	//system("sudo [ -f ../compile/output.txt ] && rm ../compile/output.txt");
-	system("sudo [ -f ../compile/output.txt ] && rm ../compile/output.txt");
+	system("[ -f ../compile/output.txt ] && rm ../compile/output.txt");
 	system("[ -f output.txt ] && rm output.txt");
 
 	std::string command;
@@ -86,7 +86,7 @@ int main(int argc,char* argv[])
 			//system(cleanup.c_str());
 
 		}
-		system("sudo chmod 777 output.txt");
+		//system("sudo chmod 777 output.txt");
 		pfile = fopen("output.txt", "a");
 		if (pfile == NULL) {
 		    perror("fopen()");
