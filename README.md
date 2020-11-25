@@ -34,7 +34,7 @@ deletion: Deletion Percent <br />
 For example, to test TransSkip with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
 `./src/trans 1 16 100 4 1000 50 25 -v`
 
-## Run Small Examples:
+## Run Small Examples for PETRA:
 TransList with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
 `./src/trans 0 16 100 4 1000 50 25 -v` <br />
 
@@ -47,6 +47,31 @@ TransMDList with 16 threads, test size is 100, transaction size is 4 operations,
 TransMap with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
 `./src/trans 3 16 100 4 1000 50 25 -v` <br />
 
+## Run Small Examples for Romulus:
+TransList with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/transRomulus 0 16 100 4 1000 50 25 -v` <br />
+
+TransSkip with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/transRomulus 1 16 100 4 1000 50 25 -v` <br />
+
+TransMDList with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/transRomulus 2 16 100 4 1000 50 25 -v` <br />
+
+TransMap with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/transRomulus 3 16 100 4 1000 50 25 -v` <br />
+
+## Run Small Examples for OneFile:
+TransList with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/transOneFile 0 16 100 4 1000 50 25 -v` <br />
+
+TransSkip with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/transOneFile 1 16 100 4 1000 50 25 -v` <br />
+
+TransMDList with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/transOneFile 2 16 100 4 1000 50 25 -v` <br />
+
+TransMap with 16 threads, test size is 100, transaction size is 4 operations, key range is 1000, insert percent is 50, and delete percent is 25 with verbose flag: <br />
+`./src/transOneFile 3 16 100 4 1000 50 25 -v` <br />
 
 ## Replicate the Results of the Paper:
 Build Scripts: <br />
@@ -91,6 +116,16 @@ deletion: Deletion Percent <br />
 
 For example, to test LinkFreeHash with 16 threads, test size is 100, key range is 1000, insert percent is 50, and delete percent is 25: <br />
 `./main 2 16 100 1 1000 50 25`
+
+## Run Small Examples for Durable Sets:
+LinkFreeList with 16 threads, test size is 100, key range is 1000, insert percent is 50, and delete percent is 25: <br />
+`./main 0 16 100 1 1000 50 25` <br />
+
+LinkFreeSkip with 16 threads, test size is 100, key range is 1000, insert percent is 50, and delete percent is 25: <br />
+`./main 1 16 100 1 1000 50 25` <br />
+
+LinkFreeHash with 16 threads, test size is 100, key range is 1000, insert percent is 50, and delete percent is 25: <br />
+`./main 2 16 100 1 1000 50 25` <br />
 
 ## Replicate the Results of the Paper:
 Build Scripts: <br />
