@@ -79,13 +79,13 @@ Build Scripts: <br />
 `make clean` <br />
 `make` <br />
 
-Run Petra Script: <br />
+Run Petra Script (Approximately 45 minutes): <br />
 `./scriptPetra` <br />
 
-Run Romulus Script: <br />
+Run Romulus Script (Approximately 13 hours): <br />
 `./scriptRomulus` <br />
 
-Run OneFile Script: <br />
+Run OneFile Script (Approximately 5 hours): <br />
 `./scriptOneFile` <br />
 
 Format of Output: <br />
@@ -133,7 +133,7 @@ Build Scripts: <br />
 `make clean` <br />
 `make` <br />
 
-Run Script: <br />
+Run Script (Approximately 70 hours): <br />
 `./script` <br />
 
 Format of Output: <br />
